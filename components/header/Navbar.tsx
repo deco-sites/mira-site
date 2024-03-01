@@ -6,7 +6,7 @@ import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
-import { Buttons, Logo } from "$store/components/header/Header.tsx";
+import { Buttons } from "$store/components/header/Header.tsx";
 import ToggleDarkMode from "deco-sites/mira-site/components/header/Buttons/ToggleDarkMode.tsx";
 
 function Navbar({ logoPosition = "left" }: {
@@ -81,8 +81,8 @@ function Navbar({ logoPosition = "left" }: {
           </a>
         </div>
         <div class="flex-none flex items-center justify-end gap-6 col-span-1">
-          <Button class="btn rounded-full bg-[#FF8352] dark:bg-[#F5BF62]">
-            <p>PARTICIPE DO PRÓXIMO WORKSHOP</p>
+          <Button class="btn h-8 rounded-full text-sm bg-[#FF8352] dark:bg-[#F5BF62]">
+            PARTICIPE DO PRÓXIMO WORKSHOP
             <Icon id="ExternalLink" size={20} strokeWidth={0.01} />
           </Button>
           <ToggleDarkMode />
