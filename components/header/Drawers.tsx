@@ -13,7 +13,6 @@ const Menu = lazy(() => import("$store/components/header/Menu.tsx"));
 const Searchbar = lazy(() => import("$store/components/search/Searchbar.tsx"));
 
 export interface Props {
-  menu: MenuProps;
   searchbar?: SearchbarProps;
   /**
    * @ignore_gen true
@@ -52,7 +51,7 @@ const Aside = (
   </div>
 );
 
-function Drawers({ menu, searchbar, children, platform }: Props) {
+function Drawers({ searchbar, children, platform }: Props) {
   const { displayCart, displayMenu, displaySearchDrawer } = useUI();
 
   return (
@@ -71,7 +70,6 @@ function Drawers({ menu, searchbar, children, platform }: Props) {
             }}
             title={displayMenu.value ? "Menu" : "Buscar"}
           >
-            {displayMenu.value && <Menu {...menu} />}
             {searchbar && displaySearchDrawer.value && (
               <div class="w-screen">
                 <Searchbar {...searchbar} />

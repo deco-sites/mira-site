@@ -1,22 +1,17 @@
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import { MenuButton } from "$store/islands/Header/Buttons.tsx";
-import Button from "$store/components/ui/Button.tsx";
-import { usePlatform } from "$store/sdk/usePlatform.tsx";
-import type { SiteNavigationElement } from "apps/commerce/types.ts";
-import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
-import { Buttons } from "$store/components/header/Header.tsx";
+import { Buttons, WorkshopButton } from "$store/components/header/Header.tsx";
 import ToggleDarkMode from "deco-sites/mira-site/components/header/Buttons/ToggleDarkMode.tsx";
 
-function Navbar({ logoPosition = "left" }: {
-  items: SiteNavigationElement[];
+function Navbar({ slogan, workshopButton, logoPosition = "left" }: {
   searchbar?: SearchbarProps;
+  slogan?: string;
+  workshopButton?: WorkshopButton;
   buttons?: Buttons;
   logoPosition?: "left" | "center";
 }) {
-  const platform = usePlatform();
-
   return (
     <>
       {/* Mobile Version */}
@@ -55,7 +50,9 @@ function Navbar({ logoPosition = "left" }: {
             logoPosition === "left" ? "justify-center" : "justify-start"
           }`}
         >
-          <NavItem />
+          <h3 class="text-sm font-extrabold dark:text-white py-6">
+            {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
+          </h3>
         </ul>
         <div
           class={`flex ${
@@ -81,10 +78,13 @@ function Navbar({ logoPosition = "left" }: {
           </a>
         </div>
         <div class="flex-none flex items-center justify-end gap-6 col-span-1">
-          <Button class="btn h-8 rounded-full text-sm bg-[#FF8352] dark:bg-[#F5BF62]">
-            PARTICIPE DO PRÓXIMO WORKSHOP
+          <a
+            class="btn h-8 rounded-full text-sm bg-[#FF8352] dark:bg-[#F5BF62]"
+            href={workshopButton?.url ?? "https://www.miraeducacao.com.br/"}
+          >
+            {workshopButton?.text ?? "PARTICIPE DO PRÓXIMO WORKSHOP"}
             <Icon id="ExternalLink" size={20} strokeWidth={0.01} />
-          </Button>
+          </a>
           <ToggleDarkMode />
         </div>
       </div>
