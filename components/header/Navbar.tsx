@@ -15,11 +15,11 @@ function Navbar({ logo, slogan, workshopButton }: {
       {/* Mobile Version */}
       <div
         style={{ height: navbarHeight }}
-        class="lg:hidden flex flex-row justify-between items-center border-b border-base-200 w-full pt-2 px-6 pb-6"
+        class="lg:hidden flex flex-col items-start w-full px-6 pb-6"
       >
-        <div>
+        <div class="flex flex-row w-full items-center justify-between">
           <a
-            class="flex-grow inline-flex items-center justify-center"
+            class="flex flex-col justify-center items-start gap-2"
             href="/"
             style={{ minHeight: navbarHeight }}
             aria-label="Store logo"
@@ -43,14 +43,13 @@ function Navbar({ logo, slogan, workshopButton }: {
               </>
             )}
           </a>
-          <h3 class="text-xs font-extrabold text-white dark:text-black">
-            {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
-          </h3>
+          <div class="">
+            <ToggleDarkMode />
+          </div>
         </div>
-
-        <div class="">
-          <ToggleDarkMode />
-        </div>
+        <h3 class="text-xs font-extrabold text-white dark:text-black">
+          {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
+        </h3>
       </div>
 
       {/* Desktop Version */}
