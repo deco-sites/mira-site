@@ -34,14 +34,14 @@ function Navbar({ logo, slogan, workshopButton, logoPosition = "left" }: {
           {logo && (
             <>
               <Image
-                class="hidden dark:inline"
+                class="inline dark:hidden"
                 src={logo.srcDark || ""}
                 alt={logo.alt || ""}
                 width={logo.width || 100}
                 height={logo.height || 13}
               />
               <Image
-                class="inline dark:hidden"
+                class="hidden dark:inline"
                 src={logo.srcLight || ""}
                 alt={logo.alt || ""}
                 width={logo.width || 100}
@@ -63,7 +63,7 @@ function Navbar({ logo, slogan, workshopButton, logoPosition = "left" }: {
             logoPosition === "left" ? "justify-center" : "justify-start"
           }`}
         >
-          <h3 class="text-sm font-extrabold dark:text-white py-6">
+          <h3 class="text-sm font-extrabold text-white dark:text-black py-6">
             {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
           </h3>
         </ul>
@@ -82,14 +82,14 @@ function Navbar({ logo, slogan, workshopButton, logoPosition = "left" }: {
             {logo && (
               <>
                 <Image
-                  class="hidden dark:inline"
+                  class="inline dark:hidden"
                   src={logo.srcDark || ""}
                   alt={logo.alt || ""}
                   width={logo.width || 100}
                   height={logo.height || 13}
                 />
                 <Image
-                  class="inline dark:hidden"
+                  class="hidden dark:inline"
                   src={logo.srcLight || ""}
                   alt={logo.alt || ""}
                   width={logo.width || 100}
@@ -101,7 +101,7 @@ function Navbar({ logo, slogan, workshopButton, logoPosition = "left" }: {
         </div>
         <div class="flex-none flex items-center justify-end gap-6 col-span-1">
           <a
-            class="btn h-8 rounded-full text-sm bg-[#FF8352] dark:bg-[#F5BF62]"
+            class="btn h-8 rounded-full text-sm bg-[#F5BF62] dark:bg-[#FF8352]"
             href={workshopButton?.url ?? "https://www.miraeducacao.com.br/"}
           >
             {workshopButton?.text ?? "PARTICIPE DO PRÓXIMO WORKSHOP"}
