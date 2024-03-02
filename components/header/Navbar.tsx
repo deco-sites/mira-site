@@ -13,10 +13,7 @@ function Navbar({ logo, slogan, workshopButton }: {
   return (
     <>
       {/* Mobile Version */}
-      <div
-        style={{ height: navbarHeight }}
-        class="lg:hidden flex flex-col items-start w-full px-6 pb-6"
-      >
+      <div class="lg:hidden flex flex-col items-start w-full px-6 pb-6">
         <div class="flex flex-row w-full items-center justify-between">
           <a
             class="flex flex-col justify-center items-start gap-2"
