@@ -1,6 +1,3 @@
-import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
-import Drawers from "$store/islands/Header/Drawers.tsx";
-import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Alert from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
@@ -13,12 +10,6 @@ export interface Logo {
   width?: number;
   height?: number;
 }
-export interface Buttons {
-  hideSearchButton?: boolean;
-  hideAccountButton?: boolean;
-  hideWishlistButton?: boolean;
-  hideCartButton?: boolean;
-}
 
 export interface WorkshopButton {
   text?: string;
@@ -28,32 +19,20 @@ export interface WorkshopButton {
 export interface Props {
   alerts?: string[];
 
-  /** @title Search Bar */
-  searchbar?: Omit<SearchbarProps, "platform">;
-
   slogan?: string;
 
   workshopButton?: WorkshopButton;
 
   /** @title Logo */
   logo?: Logo;
-
-  logoPosition?: "left" | "center";
-
-  buttons?: Buttons;
 }
 
 function Header({
   alerts,
-  searchbar,
   logo,
   slogan,
   workshopButton,
-  logoPosition = "center",
-  buttons,
 }: Props) {
-  const platform = usePlatform();
-
   return (
     <>
       <header style={{ height: headerHeight }}>
@@ -63,8 +42,6 @@ function Header({
             logo={logo}
             slogan={slogan}
             workshopButton={workshopButton}
-            logoPosition={logoPosition}
-            buttons={buttons}
           />
         </div>
         <script type="module" src="/dark.js" />

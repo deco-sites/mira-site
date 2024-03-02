@@ -2,19 +2,13 @@ import Icon from "$store/components/ui/Icon.tsx";
 import { MenuButton } from "$store/islands/Header/Buttons.tsx";
 import { navbarHeight } from "./constants.ts";
 import Image from "apps/website/components/Image.tsx";
-import {
-  Buttons,
-  Logo,
-  WorkshopButton,
-} from "$store/components/header/Header.tsx";
+import { Logo, WorkshopButton } from "$store/components/header/Header.tsx";
 import ToggleDarkMode from "deco-sites/mira-site/components/header/Buttons/ToggleDarkMode.tsx";
 
-function Navbar({ logo, slogan, workshopButton, logoPosition = "left" }: {
+function Navbar({ logo, slogan, workshopButton }: {
   logo?: Logo;
-  logoPosition?: "left" | "center";
   slogan?: string;
   workshopButton?: WorkshopButton;
-  buttons?: Buttons;
 }) {
   return (
     <>
@@ -59,21 +53,13 @@ function Navbar({ logo, slogan, workshopButton, logoPosition = "left" }: {
       {/* Desktop Version */}
       <div class="hidden lg:grid lg:grid-cols-3 items-center border-b border-base-200 w-full px-6">
         <ul
-          class={`flex gap-6 col-span-1 ${
-            logoPosition === "left" ? "justify-center" : "justify-start"
-          }`}
+          class={"flex gap-6 col-span-1 justify-center"}
         >
           <h3 class="text-sm font-extrabold text-white dark:text-black py-6">
             {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
           </h3>
         </ul>
-        <div
-          class={`flex ${
-            logoPosition === "left"
-              ? "justify-start -order-1"
-              : "justify-center"
-          }`}
-        >
+        <div class="flex justify-start -order-1">
           <a
             href="/"
             aria-label="Mira logo"
