@@ -15,38 +15,41 @@ function Navbar({ logo, slogan, workshopButton }: {
       {/* Mobile Version */}
       <div
         style={{ height: navbarHeight }}
-        class="lg:hidden grid grid-cols-3 justify-between items-center border-b border-base-200 w-full px-6 pb-6 gap-2"
+        class="lg:hidden flex flex-row justify-between items-center border-b border-base-200 w-full pt-2 px-6 pb-6"
       >
-        <MenuButton />
+        <div>
+          <a
+            class="flex-grow inline-flex items-center justify-center"
+            href="/"
+            style={{ minHeight: navbarHeight }}
+            aria-label="Store logo"
+          >
+            {logo && (
+              <>
+                <Image
+                  class="inline dark:hidden"
+                  src={logo.srcDark || ""}
+                  alt={logo.alt || ""}
+                  width={logo.width || 100}
+                  height={logo.height || 13}
+                />
+                <Image
+                  class="hidden dark:inline"
+                  src={logo.srcLight || ""}
+                  alt={logo.alt || ""}
+                  width={logo.width || 100}
+                  height={logo.height || 13}
+                />
+              </>
+            )}
+          </a>
+          <h3 class="text-xs font-extrabold text-white dark:text-black">
+            {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
+          </h3>
+        </div>
 
-        <a
-          href="/"
-          class="flex-grow inline-flex items-center justify-center"
-          style={{ minHeight: navbarHeight }}
-          aria-label="Store logo"
-        >
-          {logo && (
-            <>
-              <Image
-                class="inline dark:hidden"
-                src={logo.srcDark || ""}
-                alt={logo.alt || ""}
-                width={logo.width || 100}
-                height={logo.height || 13}
-              />
-              <Image
-                class="hidden dark:inline"
-                src={logo.srcLight || ""}
-                alt={logo.alt || ""}
-                width={logo.width || 100}
-                height={logo.height || 13}
-              />
-            </>
-          )}
-        </a>
-
-        <div class="flex justify-end gap-1">
-          {/* <ToggleDarkMode/> */}
+        <div class="">
+          <ToggleDarkMode />
         </div>
       </div>
 
