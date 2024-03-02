@@ -110,8 +110,7 @@ const manifest = {
     "deco-sites/mira-site/sections/Miscellaneous/CookieConsent.tsx": $$$$$$36,
     "deco-sites/mira-site/sections/Miscellaneous/Slide.tsx": $$$$$$37,
     "deco-sites/mira-site/sections/Newsletter/Newsletter.tsx": $$$$$$38,
-    "deco-sites/mira-site/sections/Product/ImageGalleryFrontBack.tsx":
-      $$$$$$39,
+    "deco-sites/mira-site/sections/Product/ImageGalleryFrontBack.tsx": $$$$$$39,
     "deco-sites/mira-site/sections/Product/ImageGallerySlider.tsx": $$$$$$40,
     "deco-sites/mira-site/sections/Product/NotFound.tsx": $$$$$$41,
     "deco-sites/mira-site/sections/Product/NotFoundChallenge.tsx": $$$$$$42,

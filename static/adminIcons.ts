@@ -98,8 +98,9 @@ export const share = `<svg id="share" xmlns="http://www.w3.org/2000/svg" fill="n
 		<path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M8.7 10.7l6.6 -3.4"></path>
 		<path d="M8.7 13.3l6.6 3.4"></path>
     </svg>`;
-
-export const AvailableIcons = { ChevronLeft, ChevronRight, ChevronUp, ChevronDown, QuestionMarkCircle, User, ShoppingCart, Bars3, Heart, MagnifyingGlass, XMark, Plus, Minus, MapPin, Phone, Elos, Mastercards, Visas, Pixs, Instagram, Truck, Discount, Return, CreditCards, Deco, Discord, FilterList, Trash, WhatsApp, ArrowsPointingOut, Star, Ruler, Message, Close, Zoom, Twitter, Facebook, Linkedin, Tiktok, Elo, Diners, Mastercard, Pix, Visa, Alert, AlertInfo, AlertSuccess, AlertWarning, AlertError, share };
+export const ExternalLink = `<svg id="ExternalLink" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M18.5624 6V15.75C18.5624 15.8992 18.5031 16.0423 18.3976 16.1477C18.2921 16.2532 18.1491 16.3125 17.9999 16.3125C17.8507 16.3125 17.7076 16.2532 17.6021 16.1477C17.4966 16.0423 17.4374 15.8992 17.4374 15.75V7.3575L6.39738 18.3975C6.29075 18.4969 6.14972 18.551 6.00399 18.5484C5.85827 18.5458 5.71923 18.4868 5.61617 18.3837C5.51311 18.2807 5.45407 18.1416 5.4515 17.9959C5.44893 17.8502 5.50302 17.7091 5.60238 17.6025L16.6424 6.5625H8.24988C8.1007 6.5625 7.95763 6.50324 7.85214 6.39775C7.74665 6.29226 7.68738 6.14918 7.68738 6C7.68738 5.85082 7.74665 5.70774 7.85214 5.60225C7.95763 5.49676 8.1007 5.4375 8.24988 5.4375H17.9999C18.1491 5.4375 18.2921 5.49676 18.3976 5.60225C18.5031 5.70774 18.5624 5.85082 18.5624 6Z" fill="black"/>
+	</svg>`;
 
 // Icons for ButtonGroup widget
 
@@ -161,3 +162,13 @@ export const Lowercase = `<svg id="letter-case-lower" width="20" height="20" vie
 		<path fill-rule="evenodd" clip-rule="evenodd" d="M5.41663 10.8334C4.26603 10.8334 3.33329 11.7661 3.33329 12.9167C3.33329 14.0673 4.26603 15 5.41663 15C6.56722 15 7.49996 14.0673 7.49996 12.9167C7.49996 11.7661 6.56722 10.8334 5.41663 10.8334ZM7.52115 9.81246C6.92111 9.40486 6.19668 9.16669 5.41663 9.16669C3.34556 9.16669 1.66663 10.8456 1.66663 12.9167C1.66663 14.9878 3.34556 16.6667 5.41663 16.6667C6.19668 16.6667 6.92111 16.4285 7.52115 16.0209C7.60624 16.3908 7.93755 16.6667 8.33329 16.6667C8.79353 16.6667 9.16663 16.2936 9.16663 15.8334V10C9.16663 9.53978 8.79353 9.16669 8.33329 9.16669C7.93755 9.16669 7.60624 9.44254 7.52115 9.81246ZM14.5833 10.8334C13.4327 10.8334 12.5 11.7661 12.5 12.9167C12.5 14.0673 13.4327 15 14.5833 15C15.7339 15 16.6666 14.0673 16.6666 12.9167C16.6666 11.7661 15.7339 10.8334 14.5833 10.8334ZM16.6878 9.81246C16.0878 9.40486 15.3633 9.16669 14.5833 9.16669C12.5122 9.16669 10.8333 10.8456 10.8333 12.9167C10.8333 14.9878 12.5122 16.6667 14.5833 16.6667C15.3633 16.6667 16.0878 16.4285 16.6878 16.0209C16.7729 16.3908 17.1042 16.6667 17.5 16.6667C17.9602 16.6667 18.3333 16.2936 18.3333 15.8334V10C18.3333 9.53978 17.9602 9.16669 17.5 9.16669C17.1042 9.16669 16.7729 9.44254 16.6878 9.81246Z" fill="inherit"/>
 	</svg>`;
 
+
+
+export const Sun = `<svg id="Sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+	</svg>`;
+export const Moon = `<svg id="Moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+	</svg>`;
+
+export const AvailableIcons = { ChevronLeft, ChevronRight, ChevronUp, ChevronDown, QuestionMarkCircle, User, ShoppingCart, Bars3, Heart, MagnifyingGlass, XMark, Plus, Minus, MapPin, Phone, Elos, Mastercards, Visas, Pixs, Instagram, Truck, Discount, Return, CreditCards, Deco, Discord, FilterList, Trash, WhatsApp, ArrowsPointingOut, Star, Ruler, Message, Close, Zoom, Twitter, Facebook, Linkedin, Tiktok, Elo, Diners, Mastercard, Pix, Visa, Alert, AlertInfo, AlertSuccess, AlertWarning, AlertError, share, ExternalLink, Left, Center, Right, SideToSide, Default, AlignJustified, AlignLeft, AlignCenter, AlignRight, Uppercase, Lettercase, Lowercase, Sun, Moon };

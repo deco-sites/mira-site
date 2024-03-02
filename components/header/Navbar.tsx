@@ -1,140 +1,98 @@
-import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import { MenuButton, SearchButton } from "$store/islands/Header/Buttons.tsx";
-import CartButtonLinx from "$store/islands/Header/Cart/linx.tsx";
-import CartButtonShopify from "$store/islands/Header/Cart/shopify.tsx";
-import CartButtonVDNA from "$store/islands/Header/Cart/vnda.tsx";
-import CartButtonVTEX from "$store/islands/Header/Cart/vtex.tsx";
-import CartButtonWake from "$store/islands/Header/Cart/wake.tsx";
-import CartButtonNuvemshop from "$store/islands/Header/Cart/nuvemshop.tsx";
-import Searchbar from "$store/islands/Header/Searchbar.tsx";
-import { usePlatform } from "$store/sdk/usePlatform.tsx";
-import type { SiteNavigationElement } from "apps/commerce/types.ts";
-import Image from "apps/website/components/Image.tsx";
-import NavItem from "./NavItem.tsx";
+import { MenuButton } from "$store/islands/Header/Buttons.tsx";
 import { navbarHeight } from "./constants.ts";
-import { Buttons, Logo } from "$store/components/header/Header.tsx";
+import Image from "apps/website/components/Image.tsx";
+import { Logo, WorkshopButton } from "$store/components/header/Header.tsx";
+import ToggleDarkMode from "deco-sites/mira-site/components/header/Buttons/ToggleDarkMode.tsx";
 
-function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
-  items: SiteNavigationElement[];
-  searchbar?: SearchbarProps;
+function Navbar({ logo, slogan, workshopButton }: {
   logo?: Logo;
-  buttons?: Buttons;
-  logoPosition?: "left" | "center";
+  slogan?: string;
+  workshopButton?: WorkshopButton;
 }) {
-  const platform = usePlatform();
-
   return (
     <>
       {/* Mobile Version */}
-      <div
-        style={{ height: navbarHeight }}
-        class="lg:hidden grid grid-cols-3 justify-between items-center border-b border-base-200 w-full px-6 pb-6 gap-2"
-      >
-        <MenuButton />
-        {logo && (
+      <div class="lg:hidden flex flex-col items-start w-full px-6 pb-6">
+        <div class="flex flex-row w-full items-center justify-between">
           <a
+            class="flex flex-col justify-center items-start gap-2"
             href="/"
-            class="flex-grow inline-flex items-center justify-center"
             style={{ minHeight: navbarHeight }}
             aria-label="Store logo"
           >
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              width={logo.width || 100}
-              height={logo.height || 13}
-            />
+            {logo && (
+              <>
+                <Image
+                  class="inline dark:hidden"
+                  src={logo.srcDark || ""}
+                  alt={logo.alt || ""}
+                  width={logo.width || 100}
+                  height={logo.height || 13}
+                />
+                <Image
+                  class="hidden dark:inline"
+                  src={logo.srcLight || ""}
+                  alt={logo.alt || ""}
+                  width={logo.width || 100}
+                  height={logo.height || 13}
+                />
+              </>
+            )}
           </a>
-        )}
-
-        <div class="flex justify-end gap-1">
-          <SearchButton />
-          {platform === "vtex" && <CartButtonVTEX />}
-          {platform === "vnda" && <CartButtonVDNA />}
-          {platform === "wake" && <CartButtonWake />}
-          {platform === "linx" && <CartButtonLinx />}
-          {platform === "shopify" && <CartButtonShopify />}
-          {platform === "nuvemshop" && <CartButtonNuvemshop />}
+          <div class="">
+            <ToggleDarkMode />
+          </div>
         </div>
+        <h3 class="text-xs font-extrabold text-white dark:text-black">
+          {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
+        </h3>
       </div>
 
       {/* Desktop Version */}
       <div class="hidden lg:grid lg:grid-cols-3 items-center border-b border-base-200 w-full px-6">
         <ul
-          class={`flex gap-6 col-span-1 ${
-            logoPosition === "left" ? "justify-center" : "justify-start"
-          }`}
+          class={"flex gap-6 col-span-1 justify-center"}
         >
-          {items.map((item) => <NavItem item={item} />)}
+          <h3 class="text-sm font-extrabold text-white dark:text-black py-6">
+            {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
+          </h3>
         </ul>
-        <div
-          class={`flex ${
-            logoPosition === "left"
-              ? "justify-start -order-1"
-              : "justify-center"
-          }`}
-        >
-          {logo && (
-            <a
-              href="/"
-              aria-label="Store logo"
-              class="block"
-            >
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                width={logo.width || 100}
-                height={logo.height || 13}
-              />
-            </a>
-          )}
+        <div class="flex justify-start -order-1">
+          <a
+            href="/"
+            aria-label="Mira logo"
+            class="block"
+          >
+            {logo && (
+              <>
+                <Image
+                  class="inline dark:hidden"
+                  src={logo.srcDark || ""}
+                  alt={logo.alt || ""}
+                  width={logo.width || 100}
+                  height={logo.height || 13}
+                />
+                <Image
+                  class="hidden dark:inline"
+                  src={logo.srcLight || ""}
+                  alt={logo.alt || ""}
+                  width={logo.width || 100}
+                  height={logo.height || 13}
+                />
+              </>
+            )}
+          </a>
         </div>
         <div class="flex-none flex items-center justify-end gap-6 col-span-1">
-          {!buttons?.hideSearchButton && (
-            <div class="flex items-center text-xs font-thin gap-1">
-              <SearchButton />SEARCH
-            </div>
-          )}
-
-          <Searchbar searchbar={searchbar} />
-          {!buttons?.hideAccountButton && (
-            <a
-              class="flex items-center text-xs font-thin"
-              href="/account"
-              aria-label="Account"
-            >
-              <div class="flex btn btn-circle btn-sm btn-ghost gap-1">
-                <Icon id="User" size={20} strokeWidth={0.4} />
-              </div>
-              ACCOUNT
-            </a>
-          )}
-          {!buttons?.hideWishlistButton && (
-            <a
-              class="flex items-center text-xs font-thin"
-              href="/wishlist"
-              aria-label="Wishlist"
-            >
-              <button
-                class="flex btn btn-circle btn-sm btn-ghost gap-1"
-                aria-label="Wishlist"
-              >
-                <Icon id="Heart" size={24} strokeWidth={0.4} />
-              </button>
-              WISHLIST
-            </a>
-          )}
-          {!buttons?.hideCartButton && (
-            <div class="flex items-center text-xs font-thin">
-              {platform === "vtex" && <CartButtonVTEX />}
-              {platform === "vnda" && <CartButtonVDNA />}
-              {platform === "wake" && <CartButtonWake />}
-              {platform === "linx" && <CartButtonLinx />}
-              {platform === "shopify" && <CartButtonShopify />}
-              {platform === "nuvemshop" && <CartButtonNuvemshop />}
-            </div>
-          )}
+          <a
+            class="btn h-8 rounded-full text-sm bg-[#F5BF62] dark:bg-[#FF8352]"
+            href={workshopButton?.url ?? "https://www.miraeducacao.com.br/"}
+          >
+            {workshopButton?.text ?? "PARTICIPE DO PRÓXIMO WORKSHOP"}
+            <Icon id="ExternalLink" size={20} strokeWidth={0.01} />
+          </a>
+          <ToggleDarkMode />
         </div>
       </div>
     </>
