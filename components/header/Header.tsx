@@ -7,7 +7,8 @@ import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
 
 export interface Logo {
-  src: ImageWidget;
+  srcDark: ImageWidget;
+  srcLight: ImageWidget;
   alt: string;
   width?: number;
   height?: number;
@@ -45,6 +46,7 @@ export interface Props {
 function Header({
   alerts,
   searchbar,
+  logo,
   slogan,
   workshopButton,
   logoPosition = "center",
@@ -62,7 +64,7 @@ function Header({
           <div class="fixed w-full z-50 dark:bg-black">
             {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
             <Navbar
-              searchbar={searchbar && { ...searchbar, platform }}
+              logo={logo}
               slogan={slogan}
               workshopButton={workshopButton}
               logoPosition={logoPosition}

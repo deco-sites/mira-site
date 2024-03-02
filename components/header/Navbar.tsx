@@ -1,16 +1,20 @@
-import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import { MenuButton } from "$store/islands/Header/Buttons.tsx";
 import { navbarHeight } from "./constants.ts";
-import { Buttons, WorkshopButton } from "$store/components/header/Header.tsx";
+import Image from "apps/website/components/Image.tsx";
+import {
+  Buttons,
+  Logo,
+  WorkshopButton,
+} from "$store/components/header/Header.tsx";
 import ToggleDarkMode from "deco-sites/mira-site/components/header/Buttons/ToggleDarkMode.tsx";
 
-function Navbar({ slogan, workshopButton, logoPosition = "left" }: {
-  searchbar?: SearchbarProps;
+function Navbar({ logo, slogan, workshopButton, logoPosition = "left" }: {
+  logo?: Logo;
+  logoPosition?: "left" | "center";
   slogan?: string;
   workshopButton?: WorkshopButton;
   buttons?: Buttons;
-  logoPosition?: "left" | "center";
 }) {
   return (
     <>
@@ -27,15 +31,24 @@ function Navbar({ slogan, workshopButton, logoPosition = "left" }: {
           style={{ minHeight: navbarHeight }}
           aria-label="Store logo"
         >
-          <img
-            src="../miralogo-light.png"
-            class="w-[63px] h-[17.16px] max-w-[63px] h-[17.16px] lg:max-w-[234px] lg:h-[17.16px] 2xl:max-w-[342px] 2xl:h-[17.16px] inline dark:hidden"
-          />
-
-          <img
-            src="../miralogo-dark.png"
-            class="w-[63px] h-[17.16px] max-w-[63px] h-[17.16px] lg:max-w-[234px] lg:h-[17.16px] 2xl:max-w-[342px] 2xl:h-[17.16px] hidden dark:inline"
-          />
+          {logo && (
+            <>
+              <Image
+                class="hidden dark:inline"
+                src={logo.srcDark}
+                alt={logo.alt}
+                width={logo.width || 100}
+                height={logo.height || 13}
+              />
+              <Image
+                class="inline dark:hidden"
+                src={logo.srcLight}
+                alt={logo.alt}
+                width={logo.width || 100}
+                height={logo.height || 13}
+              />
+            </>
+          )}
         </a>
 
         <div class="flex justify-end gap-1">
@@ -66,15 +79,24 @@ function Navbar({ slogan, workshopButton, logoPosition = "left" }: {
             aria-label="Mira logo"
             class="block"
           >
-            <img
-              src="../miralogo-light.png"
-              class="w-[63px] h-[17.16px] max-w-[63px] h-[17.16px] lg:max-w-[234px] lg:h-[17.16px] 2xl:max-w-[342px] 2xl:h-[17.16px] inline dark:hidden"
-            />
-
-            <img
-              src="../miralogo-dark.png"
-              class="w-[63px] h-[17.16px] max-w-[63px] h-[17.16px] lg:max-w-[234px] lg:h-[17.16px] 2xl:max-w-[342px] 2xl:h-[17.16px] hidden dark:inline"
-            />
+            {logo && (
+              <>
+                <Image
+                  class="hidden dark:inline"
+                  src={logo.srcDark}
+                  alt={logo.alt}
+                  width={logo.width || 100}
+                  height={logo.height || 13}
+                />
+                <Image
+                  class="inline dark:hidden"
+                  src={logo.srcLight}
+                  alt={logo.alt}
+                  width={logo.width || 100}
+                  height={logo.height || 13}
+                />
+              </>
+            )}
           </a>
         </div>
         <div class="flex-none flex items-center justify-end gap-6 col-span-1">
