@@ -35,15 +35,15 @@ function Navbar({ logo, slogan, workshopButton, logoPosition = "left" }: {
             <>
               <Image
                 class="hidden dark:inline"
-                src={logo.srcDark}
-                alt={logo.alt}
+                src={logo.srcDark || ""}
+                alt={logo.alt || ""}
                 width={logo.width || 100}
                 height={logo.height || 13}
               />
               <Image
                 class="inline dark:hidden"
-                src={logo.srcLight}
-                alt={logo.alt}
+                src={logo.srcLight || ""}
+                alt={logo.alt || ""}
                 width={logo.width || 100}
                 height={logo.height || 13}
               />
@@ -83,15 +83,15 @@ function Navbar({ logo, slogan, workshopButton, logoPosition = "left" }: {
               <>
                 <Image
                   class="hidden dark:inline"
-                  src={logo.srcDark}
-                  alt={logo.alt}
+                  src={logo.srcDark || ""}
+                  alt={logo.alt || ""}
                   width={logo.width || 100}
                   height={logo.height || 13}
                 />
                 <Image
                   class="inline dark:hidden"
-                  src={logo.srcLight}
-                  alt={logo.alt}
+                  src={logo.srcLight || ""}
+                  alt={logo.alt || ""}
                   width={logo.width || 100}
                   height={logo.height || 13}
                 />

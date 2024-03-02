@@ -7,9 +7,9 @@ import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
 
 export interface Logo {
-  srcDark: ImageWidget;
-  srcLight: ImageWidget;
-  alt: string;
+  srcDark?: ImageWidget;
+  srcLight?: ImageWidget;
+  alt?: string;
   width?: number;
   height?: number;
 }
@@ -57,21 +57,16 @@ function Header({
   return (
     <>
       <header style={{ height: headerHeight }}>
-        <Drawers
-          searchbar={searchbar}
-          platform={platform}
-        >
-          <div class="fixed w-full z-50 dark:bg-black">
-            {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
-            <Navbar
-              logo={logo}
-              slogan={slogan}
-              workshopButton={workshopButton}
-              logoPosition={logoPosition}
-              buttons={buttons}
-            />
-          </div>
-        </Drawers>
+        <div class="fixed w-full z-50 dark:bg-black">
+          {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
+          <Navbar
+            logo={logo}
+            slogan={slogan}
+            workshopButton={workshopButton}
+            logoPosition={logoPosition}
+            buttons={buttons}
+          />
+        </div>
         <script type="module" src="/dark.js" />
       </header>
     </>
