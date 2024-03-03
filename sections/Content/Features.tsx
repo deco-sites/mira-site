@@ -46,16 +46,16 @@ export default function Features(
             class="lg:col-span-2 font-black text-2xl leading-[1.65rem] lg:text-[2.5rem] lg:leading-[3.5rem] text-white dark:text-black"
             dangerouslySetInnerHTML={{ __html: title }}
           />
-          <div class="flex items-center space-x-5 max-[1024px]:mt-6">
+          <div class="flex items-center max-[1024px]:mt-6">
             <Image
-              class="inline dark:hidden  w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
+              class="inline dark:hidden mr-1 lg:mr-8 w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
               src={widget1?.srcDark || ""}
               alt={widget1?.alt || ""}
               width={widget1?.width || 40}
               height={widget1?.height || 20}
             />
             <Image
-              class="hidden dark:inline  w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
+              class="hidden dark:inline mr-1 lg:mr-8 w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
               src={widget1?.srcLight || ""}
               alt={widget1?.alt || ""}
               width={widget1?.width || 40}
@@ -63,14 +63,14 @@ export default function Features(
             />
 
             <Image
-              class="inline dark:hidden  w-[3.889rem] h-[2.604rem] md:w-[7.779rem] md:h-[5.208rem]"
+              class="inline dark:hidden w-[3.889rem] h-[2.604rem] md:w-[7.779rem] md:h-[5.208rem]"
               src={widget2?.srcDark || ""}
               alt={widget2?.alt || ""}
               width={widget2?.width || 40}
               height={widget2?.height || 20}
             />
             <Image
-              class="hidden dark:inline  w-[3.889rem] h-[2.604rem] md:w-[7.779rem] md:h-[5.208rem]"
+              class="hidden dark:inline w-[3.889rem] h-[2.604rem] md:w-[7.779rem] md:h-[5.208rem]"
               src={widget2?.srcLight || ""}
               alt={widget2?.alt || ""}
               width={widget2?.width || 40}
