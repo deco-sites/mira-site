@@ -44,7 +44,7 @@ function Navbar({ logo, slogan, workshopButton }: {
             <ToggleDarkMode />
           </div>
         </div>
-        <h3 class="text-xs font-extrabold text-white dark:text-black">
+        <h3 class="text-[13px]  leading-[15.6px]  font-extrabold text-white dark:text-black">
           {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
         </h3>
       </div>
@@ -54,7 +54,7 @@ function Navbar({ logo, slogan, workshopButton }: {
         <ul
           class={"flex gap-6 col-span-1 justify-center"}
         >
-          <h3 class="text-sm font-extrabold text-white dark:text-black py-6">
+          <h3 class="text-[16px] leading-6 font-extrabold text-white dark:text-black py-6">
             {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
           </h3>
         </ul>
