@@ -86,7 +86,7 @@ function Navbar({ logo, slogan, workshopButton }: {
         </div>
         <div class="flex-none flex items-center justify-end gap-6 col-span-1">
           <a
-            class="btn h-8 rounded-full text-sm bg-[#F5BF62] dark:bg-[#FF8352]"
+            class="btn h-8 rounded-full border-none text-sm bg-[#F5BF62] dark:bg-[#FF8352]"
             href={workshopButton?.url ?? "https://www.miraeducacao.com.br/"}
           >
             {workshopButton?.text ?? "PARTICIPE DO PRÓXIMO WORKSHOP"}

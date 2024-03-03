@@ -2,7 +2,7 @@ import Icon from "$store/components/ui/Icon.tsx";
 
 export default function ToggleDarkMode() {
   return (
-    <label class="swap swap-rotate bg-[#F5BF62] dark:bg-[#FF8352] border p-2 rounded-full">
+    <label class="swap swap-rotate bg-[#F5BF62] dark:bg-[#FF8352] border-none p-2 rounded-full">
       <input type="checkbox" data-toggle-darkmode />
       <Icon
         id="Sun"
