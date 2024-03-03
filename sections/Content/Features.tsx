@@ -2,33 +2,90 @@ import { ImageWidget } from "apps/admin/widgets.ts";
 import SlideBanner, {
   Props as SlideBannerProps,
 } from "deco-sites/mira-site/sections/Miscellaneous/Slide.tsx";
+import Image from "apps/website/components/Image.tsx";
 
+export interface WidgetData {
+  srcDark?: ImageWidget;
+  srcLight?: ImageWidget;
+  alt?: string;
+  width?: number;
+  height?: number;
+}
 
 export interface Props {
   /** @format html */
   title?: string;
-  
-  widget1?: ImageWidget
-  widget2?: ImageWidget
+
+  widget1?: WidgetData;
+  widget2?: WidgetData;
 
   /** @format html */
-  description?: string;
+  description1?: string;
 
-  slideBanner: SlideBannerProps
+  /** @format html */
+  description2?: string;
+
+  slideBanner: SlideBannerProps;
 }
- 
+
 export default function Features(
-  { title,widget1, widget2, description, slideBanner }: Props,
+  {
+    title = "Title",
+    widget1,
+    widget2,
+    description1,
+    description2,
+    slideBanner,
+  }: Props,
 ) {
   return (
     <section class="relative bg-white text-black max-w-screen">
-      <div class="mx-6 lg:container lg:mx-auto flex justify-center items-center flex-col py-20 gap-20">
-        {title && (
-          <h2 class="font-medium text-[36px] lg:text-[72px] leading-[100%] text-center max-w-4xl z-10">
-            {title}˜
+      <div class="p-2 lg:px-14">
+        <div class="grid lg:grid-cols-3 mb-5 gap-3">
+          <h2 class="lg:col-span-2 font-medium text-4xl lg:text-5xl">
+            {title}
           </h2>
-        )}
-    
+          <div class="space-x-10">
+            <Image
+              class="inline dark:hidden"
+              src={widget1?.srcDark || ""}
+              alt={widget1?.alt || ""}
+              width={widget1?.width || 40}
+              height={widget1?.height || 20}
+            />
+            <Image
+              class="hidden dark:inline"
+              src={widget1?.srcDark || ""}
+              alt={widget1?.alt || ""}
+              width={widget1?.width || 40}
+              height={widget1?.height || 20}
+            />
+
+            <Image
+              class="inline dark:hidden"
+              src={widget2?.srcDark || ""}
+              alt={widget2?.alt || ""}
+              width={widget2?.width || 40}
+              height={widget2?.height || 20}
+            />
+            <Image
+              class="hidden dark:inline"
+              src={widget2?.srcDark || ""}
+              alt={widget2?.alt || ""}
+              width={widget2?.width || 40}
+              height={widget2?.height || 20}
+            />
+          </div>
+        </div>
+        <div class="grid lg:grid-cols-2 lg:gap-8">
+          <p class="text-base lg:text-2xl">
+            {description1}
+          </p>
+
+          <p class="text-base lg:text-2xl">
+            {description2}
+          </p>
+        </div>
       </div>
       <SlideBanner {...slideBanner} />
     </section>
