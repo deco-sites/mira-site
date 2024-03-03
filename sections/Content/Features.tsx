@@ -25,7 +25,7 @@ export interface Props {
   /** @format html */
   description2?: string;
 
-  slideBanner: SlideBannerProps;
+  slideBanner?: SlideBannerProps;
 }
 
 export default function Features(
@@ -42,9 +42,10 @@ export default function Features(
     <section class="relative bg-white text-black max-w-screen">
       <div class="p-2 lg:px-14">
         <div class="grid lg:grid-cols-3 mb-5 gap-3">
-          <h2 class="lg:col-span-2 font-medium text-4xl lg:text-5xl">
-            {title}
-          </h2>
+          <h2
+            class="lg:col-span-2 font-medium text-4xl lg:text-5xl"
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
           <div class="space-x-10">
             <Image
               class="inline dark:hidden"
@@ -55,7 +56,7 @@ export default function Features(
             />
             <Image
               class="hidden dark:inline"
-              src={widget1?.srcDark || ""}
+              src={widget1?.srcLight || ""}
               alt={widget1?.alt || ""}
               width={widget1?.width || 40}
               height={widget1?.height || 20}
@@ -70,7 +71,7 @@ export default function Features(
             />
             <Image
               class="hidden dark:inline"
-              src={widget2?.srcDark || ""}
+              src={widget2?.srcLight || ""}
               alt={widget2?.alt || ""}
               width={widget2?.width || 40}
               height={widget2?.height || 20}
@@ -78,13 +79,15 @@ export default function Features(
           </div>
         </div>
         <div class="grid lg:grid-cols-2 lg:gap-8">
-          <p class="text-base lg:text-2xl">
-            {description1}
-          </p>
+          <p
+            class="text-base lg:text-2xl"
+            dangerouslySetInnerHTML={{ __html: description1 || "" }}
+          />
 
-          <p class="text-base lg:text-2xl">
-            {description2}
-          </p>
+          <p
+            class="text-base lg:text-2xl"
+            dangerouslySetInnerHTML={{ __html: description2 || "" }}
+          />
         </div>
       </div>
       <SlideBanner {...slideBanner} />
