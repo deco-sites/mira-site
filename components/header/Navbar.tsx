@@ -12,7 +12,7 @@ function Navbar({ logo, slogan, workshopButton }: {
   return (
     <>
       {/* Mobile Version */}
-      <div class="min-[1386px]:hidden flex flex-col items-start w-full p-6">
+      <div class="min-[1386px]:hidden flex flex-col items-start w-full p-6 border-none">
         <div class="flex flex-row w-full items-center justify-between">
           <a
             class="flex flex-col justify-center items-start"
@@ -38,9 +38,7 @@ function Navbar({ logo, slogan, workshopButton }: {
               </>
             )}
           </a>
-          <div class="">
-            <ToggleDarkMode />
-          </div>
+          <ToggleDarkMode />
         </div>
         <h3 class="max-[1386px]:mt-2 text-[0.813rem]  leading-[0.975rem]  font-black text-white dark:text-black">
           {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
@@ -48,7 +46,7 @@ function Navbar({ logo, slogan, workshopButton }: {
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden min-[1386px]:grid min-[1386px]:grid-cols-3 items-center border-b border-base-200 w-full py-6 px-16">
+      <div class="hidden min-[1386px]:grid min-[1386px]:grid-cols-3 items-center border-none w-full py-6 px-16">
         <ul
           class={"flex gap-6 col-span-1 justify-center"}
         >
@@ -84,12 +82,10 @@ function Navbar({ logo, slogan, workshopButton }: {
         </div>
         <div class="flex items-center justify-end gap-6 col-span-1">
           <a
-            class="btn h-9 lg:h-14 rounded-full border-none text-[1rem] gap-2 bg-[#F5BF62] dark:bg-[#FF8352]"
+            class="btn h-9 lg:h-14 rounded-full border-none font-light text-black text-[1rem] gap-2 bg-primary dark:bg-secondary"
             href={workshopButton?.url ?? "https://www.miraeducacao.com.br/"}
           >
-            <span>
-              {workshopButton?.text ?? "PARTICIPE DO PRÓXIMO WORKSHOP"}
-            </span>
+            {workshopButton?.text ?? "PARTICIPE DO PRÓXIMO WORKSHOP"}
             <Icon id="ExternalLink" class="mb-1" size={20} strokeWidth={0.01} />
           </a>
           <ToggleDarkMode />
