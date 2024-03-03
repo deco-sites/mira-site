@@ -39,23 +39,23 @@ export default function Features(
   }: Props,
 ) {
   return (
-    <section class="relative bg-black dark:bg-[#FFF8E6] text-white dark:text-black max-w-screen">
-      <div class="p-2 lg:px-14">
-        <div class="grid lg:grid-cols-3 pb-14 gap-3">
+    <section class="max-w-screen py-10 lg:py-40 bg-black dark:bg-[#FFF8E6] text-white dark:text-black ">
+      <div class="px-6 lg:px-16 ">
+        <div class="grid lg:grid-cols-3 pb-6 lg:pb-20">
           <div
-            class="lg:col-span-2 font-medium text-2xl lg:text-5xl text-white dark:text-black"
+            class="lg:col-span-2 font-black text-2xl leading-[1.65rem] lg:text-[2.5rem] lg:leading-[3.5rem] text-white dark:text-black"
             dangerouslySetInnerHTML={{ __html: title }}
           />
-          <div class="flex flex-grow items-center space-x-10">
+          <div class="flex items-center space-x-5 max-[1024px]:mt-6">
             <Image
-              class="dark:hidden  w-20 h-10 md:w-40 md:h-20"
+              class="inline dark:hidden  w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
               src={widget1?.srcDark || ""}
               alt={widget1?.alt || ""}
               width={widget1?.width || 40}
               height={widget1?.height || 20}
             />
             <Image
-              class="hidden  w-20 h-10 md:w-40 md:h-20"
+              class="hidden dark:inline  w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
               src={widget1?.srcLight || ""}
               alt={widget1?.alt || ""}
               width={widget1?.width || 40}
@@ -63,14 +63,14 @@ export default function Features(
             />
 
             <Image
-              class="inline dark:hidden  w-20 h-10 md:w-40 md:h-20"
+              class="inline dark:hidden  w-[3.889rem] h-[2.604rem] md:w-[7.779rem] md:h-[5.208rem]"
               src={widget2?.srcDark || ""}
               alt={widget2?.alt || ""}
               width={widget2?.width || 40}
               height={widget2?.height || 20}
             />
             <Image
-              class="hidden dark:inline  w-20 h-10 md:w-40 md:h-20"
+              class="hidden dark:inline  w-[3.889rem] h-[2.604rem] md:w-[7.779rem] md:h-[5.208rem]"
               src={widget2?.srcLight || ""}
               alt={widget2?.alt || ""}
               width={widget2?.width || 40}
@@ -78,19 +78,21 @@ export default function Features(
             />
           </div>
         </div>
-        <div class="lg:flex lg:flex-row lg:gap-8 pb-14">
+        <div class="font-normal lg:flex lg:flex-row lg:gap-8">
           <div
-            class="text-white dark:text-black text-sm lg:text-xl"
+            class="text-white dark:text-black text-base lg:text-2xl lg:leading-9"
             dangerouslySetInnerHTML={{ __html: description1 || "" }}
           />
 
           <div
-            class="text-white dark:text-black text-sm lg:text-xl"
+            class="font-normal text-white dark:text-black text-base lg:text-2xl lg:leading-9"
             dangerouslySetInnerHTML={{ __html: description2 || "" }}
           />
         </div>
       </div>
-      <SlideBanner {...slideBanner} />
+      <div class="pt-10 lg:pt-20">
+        <SlideBanner {...slideBanner} />
+      </div>
     </section>
   );
 }
