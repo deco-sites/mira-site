@@ -80,12 +80,12 @@ export default function Features(
         </div>
         <div class="font-normal lg:flex lg:flex-row lg:gap-8">
           <div
-            class="text-white dark:text-black text-base lg:text-2xl lg:leading-9"
+            class="text-white font-merriweather dark:text-black text-base lg:text-2xl lg:leading-9"
             dangerouslySetInnerHTML={{ __html: description1 || "" }}
           />
 
           <div
-            class="font-normal text-white dark:text-black text-base lg:text-2xl lg:leading-9"
+            class="text-white font-merriweather dark:text-black text-base lg:text-2xl lg:leading-9"
             dangerouslySetInnerHTML={{ __html: description2 || "" }}
           />
         </div>
