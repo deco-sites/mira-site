@@ -62,10 +62,10 @@ export interface ComplementaryColors {
 
 export interface Button {
   /**
-   * @default 1px
+   * @default 0px
    * @title Border width
    */
-  "--border-btn": "1px" | "2px" | "3px" | "4px" | "5px" | "6px" | "7px" | "8px";
+  "--border-btn": "0px" | "1px" | "2px" | "3px" | "4px" | "5px" | "6px" | "7px" | "8px";
   /**
    * @default 0.2rem
    * @title Radius
