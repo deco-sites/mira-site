@@ -1,5 +1,4 @@
 import Icon from "$store/components/ui/Icon.tsx";
-import { MenuButton } from "$store/islands/Header/Buttons.tsx";
 import { navbarHeight } from "./constants.ts";
 import Image from "apps/website/components/Image.tsx";
 import { Logo, WorkshopButton } from "$store/components/header/Header.tsx";
@@ -13,25 +12,24 @@ function Navbar({ logo, slogan, workshopButton }: {
   return (
     <>
       {/* Mobile Version */}
-      <div class="lg:hidden flex flex-col items-start w-full px-6 pb-6">
+      <div class="min-[1386px]:hidden flex flex-col items-start w-full p-6 border-none">
         <div class="flex flex-row w-full items-center justify-between">
           <a
-            class="flex flex-col justify-center items-start gap-2"
+            class="flex flex-col justify-center items-start"
             href="/"
-            style={{ minHeight: navbarHeight }}
             aria-label="Store logo"
           >
             {logo && (
               <>
                 <Image
-                  class="inline dark:hidden"
+                  class="inline dark:hidden w-[3.938rem] h-[1.073rem]"
                   src={logo.srcDark || ""}
                   alt={logo.alt || ""}
                   width={logo.width || 100}
                   height={logo.height || 13}
                 />
                 <Image
-                  class="hidden dark:inline"
+                  class="hidden dark:inline w-[3.938rem] h-[1.073rem]"
                   src={logo.srcLight || ""}
                   alt={logo.alt || ""}
                   width={logo.width || 100}
@@ -40,21 +38,19 @@ function Navbar({ logo, slogan, workshopButton }: {
               </>
             )}
           </a>
-          <div class="">
-            <ToggleDarkMode />
-          </div>
+          <ToggleDarkMode />
         </div>
-        <h3 class="text-xs font-extrabold text-white dark:text-black">
+        <h3 class="max-[1386px]:mt-2 text-[0.813rem]  leading-[0.975rem]  font-black text-white dark:text-black">
           {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
         </h3>
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden lg:grid lg:grid-cols-3 items-center border-b border-base-200 w-full px-6">
+      <div class="hidden min-[1386px]:grid min-[1386px]:grid-cols-3 items-center border-none w-full py-6 px-16">
         <ul
           class={"flex gap-6 col-span-1 justify-center"}
         >
-          <h3 class="text-sm font-extrabold text-white dark:text-black py-6">
+          <h3 class="text-[1rem] leading-6 font-black text-white dark:text-black py-6">
             {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
           </h3>
         </ul>
@@ -67,14 +63,14 @@ function Navbar({ logo, slogan, workshopButton }: {
             {logo && (
               <>
                 <Image
-                  class="inline dark:hidden"
+                  class="inline dark:hidden w-[3.938rem] h-[1.573rem]"
                   src={logo.srcDark || ""}
                   alt={logo.alt || ""}
                   width={logo.width || 100}
                   height={logo.height || 13}
                 />
                 <Image
-                  class="hidden dark:inline"
+                  class="hidden dark:inline w-[3.938rem] h-[1.573rem]"
                   src={logo.srcLight || ""}
                   alt={logo.alt || ""}
                   width={logo.width || 100}
@@ -84,13 +80,13 @@ function Navbar({ logo, slogan, workshopButton }: {
             )}
           </a>
         </div>
-        <div class="flex-none flex items-center justify-end gap-6 col-span-1">
+        <div class="flex items-center justify-end gap-6 col-span-1">
           <a
-            class="btn h-8 rounded-full text-sm bg-[#F5BF62] dark:bg-[#FF8352]"
+            class="btn h-9 lg:h-14 rounded-full border-none font-light text-black text-[1rem] gap-2 bg-primary dark:bg-secondary"
             href={workshopButton?.url ?? "https://www.miraeducacao.com.br/"}
           >
             {workshopButton?.text ?? "PARTICIPE DO PRÓXIMO WORKSHOP"}
-            <Icon id="ExternalLink" size={20} strokeWidth={0.01} />
+            <Icon id="ExternalLink" class="mb-1" size={20} strokeWidth={0.01} />
           </a>
           <ToggleDarkMode />
         </div>
