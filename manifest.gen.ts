@@ -18,14 +18,14 @@ import * as $$$$$$6 from "./sections/Category/CategoryGrid.tsx";
 import * as $$$$$$7 from "./sections/Category/CategoryList.tsx";
 import * as $$$$$$8 from "./sections/Content/Benefits.tsx";
 import * as $$$$$$9 from "./sections/Content/BlogPosts.tsx";
-import * as $$$$$$10 from "./sections/Content/CallToAction.tsx";
-import * as $$$$$$11 from "./sections/Content/Faq.tsx";
-import * as $$$$$$12 from "./sections/Content/Features.tsx";
-import * as $$$$$$13 from "./sections/Content/Hero.tsx";
-import * as $$$$$$14 from "./sections/Content/ImageSection.tsx";
-import * as $$$$$$15 from "./sections/Content/Intro.tsx";
-import * as $$$$$$16 from "./sections/Content/Logos.tsx";
-import * as $$$$$$17 from "./sections/Content/Partners.tsx";
+import * as $$$$$$10 from "./sections/Content/Faq.tsx";
+import * as $$$$$$11 from "./sections/Content/Features.tsx";
+import * as $$$$$$12 from "./sections/Content/Hero.tsx";
+import * as $$$$$$13 from "./sections/Content/ImageSection.tsx";
+import * as $$$$$$14 from "./sections/Content/Intro.tsx";
+import * as $$$$$$15 from "./sections/Content/Logos.tsx";
+import * as $$$$$$16 from "./sections/Content/Partners.tsx";
+import * as $$$$$$17 from "./sections/Content/Pillars.tsx";
 import * as $$$$$$18 from "./sections/Content/RichText.tsx";
 import * as $$$$$$19 from "./sections/Content/Table.tsx";
 import * as $$$$$$20 from "./sections/Content/Testimonials.tsx";
@@ -82,14 +82,14 @@ const manifest = {
     "deco-sites/mira-site/sections/Category/CategoryList.tsx": $$$$$$7,
     "deco-sites/mira-site/sections/Content/Benefits.tsx": $$$$$$8,
     "deco-sites/mira-site/sections/Content/BlogPosts.tsx": $$$$$$9,
-    "deco-sites/mira-site/sections/Content/CallToAction.tsx": $$$$$$10,
-    "deco-sites/mira-site/sections/Content/Faq.tsx": $$$$$$11,
-    "deco-sites/mira-site/sections/Content/Features.tsx": $$$$$$12,
-    "deco-sites/mira-site/sections/Content/Hero.tsx": $$$$$$13,
-    "deco-sites/mira-site/sections/Content/ImageSection.tsx": $$$$$$14,
-    "deco-sites/mira-site/sections/Content/Intro.tsx": $$$$$$15,
-    "deco-sites/mira-site/sections/Content/Logos.tsx": $$$$$$16,
-    "deco-sites/mira-site/sections/Content/Partners.tsx": $$$$$$17,
+    "deco-sites/mira-site/sections/Content/Faq.tsx": $$$$$$10,
+    "deco-sites/mira-site/sections/Content/Features.tsx": $$$$$$11,
+    "deco-sites/mira-site/sections/Content/Hero.tsx": $$$$$$12,
+    "deco-sites/mira-site/sections/Content/ImageSection.tsx": $$$$$$13,
+    "deco-sites/mira-site/sections/Content/Intro.tsx": $$$$$$14,
+    "deco-sites/mira-site/sections/Content/Logos.tsx": $$$$$$15,
+    "deco-sites/mira-site/sections/Content/Partners.tsx": $$$$$$16,
+    "deco-sites/mira-site/sections/Content/Pillars.tsx": $$$$$$17,
     "deco-sites/mira-site/sections/Content/RichText.tsx": $$$$$$18,
     "deco-sites/mira-site/sections/Content/Table.tsx": $$$$$$19,
     "deco-sites/mira-site/sections/Content/Testimonials.tsx": $$$$$$20,
