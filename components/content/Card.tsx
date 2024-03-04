@@ -4,7 +4,7 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 
 export interface Props {
   logo?: ImageWidget;
-  logoDark?: ImageWidget; 
+  logoDark?: ImageWidget;
   /** @format textarea */
   text?: string;
   name?: string;
@@ -28,7 +28,7 @@ export default function Card(props: Props) {
               width={50}
               class="w-[80px] object-fit"
               sizes="(max-width: 640px) 100vw, 30vw"
-              src={logo ?? ''}
+              src={logo ?? ""}
               alt={role}
               decoding="async"
               loading="lazy"
