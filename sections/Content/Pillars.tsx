@@ -1,14 +1,14 @@
 import Accordion from "$store/components/daisy/Accordion.tsx";
 
 export interface AccordionItems {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
 
 export interface Props {
   title?: string;
   description?: string;
-  accordionItems: AccordionItems[];
+  accordionItems?: AccordionItems[];
 }
 
 const accordionExample = {
@@ -26,13 +26,13 @@ export default function Pillars(
   }: Props,
 ) {
   return (
-    <section class="px-6 py-10 lg:px-16 lg:py-40">
+    <section class="text-base-200 px-6 py-10 lg:px-16 lg:py-40">
       <div class="max-w-[640px] space-y-6 mb-10 lg:mb-20">
         <h2 class="text-[1.5rem] lg:text-[2.5rem] leading-relaxed lg:leading-[2.75rem] font-black dark:bg-[#FFF8E6]">
           {title}
         </h2>
 
-        <p class="text-base lg:text-[1.5rem] lg:leading-[2.25rem] font-normal dark:bg-[#FFF8E6]">
+        <p class="font-merriweather text-base lg:text-[1.5rem] lg:leading-[2.25rem] font-normal dark:bg-[#FFF8E6]">
           {description}
         </p>
       </div>

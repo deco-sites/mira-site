@@ -3,8 +3,8 @@ export interface Props {
 }
 
 interface Child {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
 
 export default function Accordion(props: Props) {
