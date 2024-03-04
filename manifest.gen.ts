@@ -16,7 +16,7 @@ import * as $$$$$$4 from "./sections/Cards/ImageCardsCarouselWithImage.tsx";
 import * as $$$$$$5 from "./sections/Category/CategoryBanner.tsx";
 import * as $$$$$$6 from "./sections/Category/CategoryGrid.tsx";
 import * as $$$$$$7 from "./sections/Category/CategoryList.tsx";
-import * as $$$$$$8 from "./sections/Content/AgendaSection.tsx"; 
+import * as $$$$$$8 from "./sections/Content/AgendaSection.tsx";
 import * as $$$$$$9 from "./sections/Content/Benefits.tsx";
 import * as $$$$$$10 from "./sections/Content/BlogPosts.tsx";
 import * as $$$$$$11 from "./sections/Content/CallToAction.tsx";
@@ -82,7 +82,7 @@ const manifest = {
     "deco-sites/mira-site/sections/Category/CategoryBanner.tsx": $$$$$$5,
     "deco-sites/mira-site/sections/Category/CategoryGrid.tsx": $$$$$$6,
     "deco-sites/mira-site/sections/Category/CategoryList.tsx": $$$$$$7,
-    "deco-sites/mira-site/sections/Content/AgendaSection.tsx": $$$$$$8, 
+    "deco-sites/mira-site/sections/Content/AgendaSection.tsx": $$$$$$8,
     "deco-sites/mira-site/sections/Content/Benefits.tsx": $$$$$$9,
     "deco-sites/mira-site/sections/Content/BlogPosts.tsx": $$$$$$10,
     "deco-sites/mira-site/sections/Content/CallToAction.tsx": $$$$$$11,
