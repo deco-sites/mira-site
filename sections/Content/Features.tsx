@@ -40,7 +40,7 @@ export default function Features(
 ) {
   return (
     <section class="max-w-screen py-10 lg:py-40 bg-black dark:bg-[#FFF8E6] text-white dark:text-black ">
-      <div class="px-6 lg:px-16 ">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-16 self-center">
         <div class="grid lg:grid-cols-3 pb-6 lg:pb-20">
           <div
             class="lg:col-span-2 font-black text-2xl leading-[1.65rem] lg:text-[2.5rem] lg:leading-[3.5rem] text-white dark:text-black"
@@ -90,7 +90,7 @@ export default function Features(
           />
         </div>
       </div>
-      <div class="pt-10 lg:pt-20">
+      <div class="min-w-screen pt-10 lg:pt-20">
         <SlideBanner {...slideBanner} />
       </div>
     </section>

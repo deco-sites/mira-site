@@ -24,11 +24,11 @@ export default function HeroFlats({
       <div class="flex-1">
       </div>
       <div class="min-h-[414px] max-w-[1312px]  xl:grid xl:grid-cols-2 xl:grid-rows-2 px-6 pb-10 lg:px-16 lg:pb-0">
-        <h1 class="font-black text-[2rem] lg:text-[4.5rem] leading-8 lg:leading-[4.5rem] dark:text-black">
+        <h1 class="font-black text-base-200 text-[2rem] lg:text-[4.5rem] leading-8 lg:leading-[4.5rem] dark:text-black">
           {title}
         </h1>
         <div class="row-span-2 max-w-[375px] flex items-end mt-6 xl:mt-0 mr-[142px] lg:mr-0 xl:pl-16 lg:pb-40">
-          <p class="font-merriweather text-base lg:text-[1.5rem] lg:leading-[2.25rem] dark:text-black">
+          <p class="font-merriweather text-base-200 text-base lg:text-[1.5rem] lg:leading-[2.25rem] dark:text-black">
             {description}
           </p>
         </div>
