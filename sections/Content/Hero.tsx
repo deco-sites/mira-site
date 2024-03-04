@@ -1,98 +1,47 @@
-import type { ImageWidget } from "apps/admin/widgets.ts";
-import Image from "apps/website/components/Image.tsx";
+import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
 
-export interface CTA {
-  id?: string;
-  href: string;
-  text: string;
-  variant: "Normal" | "Reverse";
+export interface WorkshopButton {
+  text?: string;
+  url?: string;
 }
 
 export interface Props {
-  /**
-   * @format html
-   */
   title: string;
   description: string;
-  image?: ImageWidget;
-  placement: "left" | "right";
-  cta: CTA[];
+  workshopButton?: WorkshopButton;
 }
 
-const PLACEMENT = {
-  left: "flex-col text-left lg:flex-row-reverse",
-  right: "flex-col text-left lg:flex-row",
-};
-
 export default function HeroFlats({
-  title = "Hero",
-  description = "Your description here",
-  image,
-  placement,
-  cta,
+  title = "Transforme suas conversas, transforme seus resultados.",
+  description = "A MIRA escala o alto desempenho através da comunicação.",
+  workshopButton = {
+    text: "PARTICIPE DO PRÓXIMO WORKSHOP",
+    url: "https://www.miraeducacao.com.br/",
+  },
 }: Props) {
   return (
-    <div>
-      <div class="mx-auto flex flex-col items-center gap-8">
-        <div
-          class={`flex w-full xl:container xl:mx-auto py-20 mx-5 md:mx-10 z-10 ${
-            image
-              ? PLACEMENT[placement]
-              : "flex-col items-center justify-center text-center"
-          } lg:py-36 gap-12 md:gap-20 items-center`}
-        >
-          {image && (
-            <Image
-              width={640}
-              class="w-full lg:w-1/2 object-fit"
-              sizes="(max-width: 640px) 100vw, 30vw"
-              src={image}
-              alt={image}
-              decoding="async"
-              loading="lazy"
-            />
-          )}
-          <div
-            class={`mx-6 lg:mx-auto lg:w-full space-y-4 gap-4 ${
-              image
-                ? "lg:w-1/2 lg:max-w-xl"
-                : "flex flex-col items-center justify-center lg:max-w-3xl"
-            }`}
+    <section class="flex flex-col h-screen mt-[-110px] justify-center items-center dark:bg-[#FFF8E6]">
+      <div class="flex-1">
+      </div>
+      <div class="min-h-[414px] max-w-[1312px]  xl:grid xl:grid-cols-2 xl:grid-rows-2 px-6 pb-10 lg:px-16 lg:pb-0">
+        <h1 class="font-black text-[2rem] lg:text-[4.5rem] leading-8 lg:leading-[4.5rem] dark:text-black">
+          {title}
+        </h1>
+        <div class="row-span-2 max-w-[375px] flex items-end mt-6 xl:mt-0 mr-[142px] lg:mr-0 xl:pl-16 lg:pb-40">
+          <p class="font-merriweather text-base lg:text-[1.5rem] lg:leading-[2.25rem] dark:text-black">
+            {description}
+          </p>
+        </div>
+        <div class="flex items-end justify-start pt-40 lg:pt-0 lg:pb-40">
+          <a
+            class="btn h-9 lg:h-14 rounded-full border-none font-light text-black text-[1rem] gap-2 bg-primary dark:bg-secondary"
+            href={workshopButton.url}
           >
-            <div
-              class="inline-block text-[80px] leading-[100%] font-medium tracking-[-2.4px]"
-              dangerouslySetInnerHTML={{
-                __html: title,
-              }}
-            >
-            </div>
-            <p class="text-zinc-400 text-[16px] md:text-[18px] leading-[150%]">
-              {description}
-            </p>
-            <div class="flex flex-col items-center lg:items-start lg:flex-row gap-4">
-              {cta?.map((item) => (
-                <a
-                  key={item?.id}
-                  id={item?.id}
-                  href={item?.href}
-                  target={item?.href.includes("http") ? "_blank" : "_self"}
-                  class={`group relative overflow-hidden rounded-full hover:bg-gradient-to-r px-6 py-2 lg:px-8 lg:py-3 transition-all duration-300 ease-out ${
-                    item.variant === "Reverse"
-                      ? "bg-secondary text-white"
-                      : "bg-accent text-black"
-                  }`}
-                >
-                  <span class="ease absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform bg-white opacity-10 transition-all duration-1000 group-hover:-translate-x-40">
-                  </span>
-                  <span class="relative font-medium lg:text-[20px]">
-                    {item?.text}
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
+            {workshopButton.text}
+            <Icon id="ExternalLink" class="mb-1" size={20} strokeWidth={0.01} />
+          </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

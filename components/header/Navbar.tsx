@@ -1,10 +1,16 @@
 import Icon from "$store/components/ui/Icon.tsx";
-import { navbarHeight } from "./constants.ts";
 import Image from "apps/website/components/Image.tsx";
 import { Logo, WorkshopButton } from "$store/components/header/Header.tsx";
 import ToggleDarkMode from "deco-sites/mira-site/components/header/Buttons/ToggleDarkMode.tsx";
 
-function Navbar({ logo, slogan, workshopButton }: {
+function Navbar({
+  logo,
+  slogan,
+  workshopButton = {
+    text: "PARTICIPE DO PRÓXIMO WORKSHOP",
+    url: "https://www.miraeducacao.com.br/",
+  },
+}: {
   logo?: Logo;
   slogan?: string;
   workshopButton?: WorkshopButton;
@@ -83,9 +89,9 @@ function Navbar({ logo, slogan, workshopButton }: {
         <div class="flex items-center justify-end gap-6 col-span-1">
           <a
             class="btn h-9 lg:h-14 rounded-full border-none font-light text-black text-[1rem] gap-2 bg-primary dark:bg-secondary"
-            href={workshopButton?.url ?? "https://www.miraeducacao.com.br/"}
+            href={workshopButton.url}
           >
-            {workshopButton?.text ?? "PARTICIPE DO PRÓXIMO WORKSHOP"}
+            {workshopButton.text}
             <Icon id="ExternalLink" class="mb-1" size={20} strokeWidth={0.01} />
           </a>
           <ToggleDarkMode />

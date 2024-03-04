@@ -5,6 +5,7 @@ export type AvailableIcons =
   | "ArrowsPointingOut"
   | "ArrowPointingLeft"
   | "ArrowPointingRight"
+  | "ArrowUpRight"
   | "Bars3"
   | "ChevronLeft"
   | "ChevronRight"
