@@ -8,7 +8,7 @@ export interface Props {
 }
 
 const DEFAULT_TEXT =
-  '<p style="color: #FFFBF0; font-size: 40px; font-style: normal; font-weight: 900; line-height: 110%; text-transform: uppercase;">As empresas não performam como poderiam e muitas vezes não acessam o real problema:</br><span style="color: #F5BF62;">Como as pessoas estão se comunicando no dia-a-dia.</span></p>';
+  '<p>As empresas não performam como poderiam e muitas vezes não acessam o real problema:</br><span class="text-primary dark:text-secondary">Como as pessoas estão se comunicando no dia-a-dia.</span></p>';
 [];
 
 const DEFAULT_SMALL_TEXT =
@@ -18,21 +18,23 @@ export default function RichText(
   { BigText = DEFAULT_TEXT, smallText = DEFAULT_SMALL_TEXT }: Props,
 ) {
   return (
-    <div class="w-full max-w-[1440px] flex flex-col lg:flex-row justify-center lg:justify-between items-start px-6 lg:px-16 py-10 lg:py-24 mx-auto">
-      <div class="flex flex-col w-[55.031%] gap-3">
-        <div
-          class="text-base-200 text-2xl lg:text-[40px] font-black leading-[110%] uppercase"
-          dangerouslySetInnerHTML={{ __html: BigText }}
-        >
+    <div class="dark:bg-base-300">
+      <div class="w-full max-w-[1440px] flex flex-col lg:flex-row justify-center gap-6 lg:gap-0 lg:justify-between items-start px-6 lg:px-16 py-10 lg:py-24 mx-auto">
+        <div class="flex flex-col w-full lg:w-[55.031%] gap-3">
+          <div
+            class="text-base-200 dark:text-black text-2xl lg:text-[32px] xl:text-[40px] font-black leading-[110%] uppercase"
+            dangerouslySetInnerHTML={{ __html: BigText }}
+          >
+          </div>
+          <Icon
+            id="LongBar"
+            stroke-width={1}
+            class="hidden lg:block left-[-1px] w-[121%] fill-primary dark:fill-secondary"
+          />
         </div>
-        <Icon
-          id="LongBar"
-          stroke-width={1}
-          class="hidden lg:block left-[-1px] w-[123.8%]"
-        />
-      </div>
-      <div class="w-[28.583%] text-base-200 font-merriweather text-base lg:text-2xl leading-[150%] overflow-auto">
-        {smallText}
+        <div class="lg:w-[28.583%] font-merryweather text-base-200 font-merriweather text-base lg:text-2xl leading-[150%] overflow-auto dark:text-black">
+          {smallText}
+        </div>
       </div>
     </div>
   );
