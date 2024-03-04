@@ -17,6 +17,9 @@ export default {
           "100%": { transform: "translateX(-50%)" },
         },
       },
+      fontFamily: {
+        merriweather: ["Merriweather", "serif"],
+      },
     },
   },
 };

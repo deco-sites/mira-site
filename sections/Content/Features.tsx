@@ -1,75 +1,97 @@
-import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
+import { ImageWidget } from "apps/admin/widgets.ts";
+import SlideBanner, {
+  Props as SlideBannerProps,
+} from "deco-sites/mira-site/sections/Miscellaneous/Slide.tsx";
+import Image from "apps/website/components/Image.tsx";
 
-/**
- * @titleBy title
- */
-export interface Card {
-  icon?: AvailableIcons;
-  /**
-   * @format html
-   */
-  title: string;
-  text: string;
+export interface WidgetData {
+  srcDark?: ImageWidget;
+  srcLight?: ImageWidget;
+  alt?: string;
+  width?: number;
+  height?: number;
 }
 
 export interface Props {
+  /** @format html */
   title?: string;
-  cards: Card[];
-}
 
-function FeatureCard({ icon, title, text }: Card) {
-  return (
-    <div class="feature-card group group-hover:-translate-y-3">
-      {icon && (
-        <div class="p-6 rounded-full bg-white text-[#1A1A1A]">
-          <Icon id={icon} size={48} />
-        </div>
-      )}
-      <div class="space-y-4 text-center">
-        {title && (
-          <div
-            class="text-2xl font-semibold leading-[110%]"
-            dangerouslySetInnerHTML={{ __html: title }}
-          />
-        )}
-        <p class="leading-[120%]" dangerouslySetInnerHTML={{ __html: text }} />
-      </div>
-    </div>
-  );
-}
+  widget1?: WidgetData;
+  widget2?: WidgetData;
 
-const DEFAULT_CARDS = [
-  {
-    "icon": "Discount" as AvailableIcons,
-    "text": ":)",
-    "title": "<p>Visit our coupon page!</p>",
-  },
-  {
-    "icon": "Discount" as AvailableIcons,
-    "text": ":)",
-    "title": "<p>Visit our coupon page!</p>",
-  },
-  {
-    "icon": "Discount" as AvailableIcons,
-    "text": ":)",
-    "title": "<p>Visit our coupon page!</p>",
-  },
-];
+  /** @format html */
+  description1?: string;
+
+  /** @format html */
+  description2?: string;
+
+  slideBanner?: SlideBannerProps;
+}
 
 export default function Features(
-  { title = "Feature", cards = DEFAULT_CARDS }: Props,
+  {
+    title = "Title",
+    widget1,
+    widget2,
+    description1,
+    description2,
+    slideBanner,
+  }: Props,
 ) {
   return (
-    <section class="relative bg-white text-black py-20 max-w-screen">
-      <div class="mx-6 lg:container lg:mx-auto flex justify-center items-center flex-col gap-20">
-        {title && (
-          <h2 class="font-medium text-[36px] lg:text-[72px] leading-[100%] text-center max-w-4xl z-10">
-            {title}
-          </h2>
-        )}
-        <div class="features">
-          {cards?.map((card) => <FeatureCard {...card} />)}
+    <section class="max-w-screen py-10 lg:py-40 bg-black dark:bg-[#FFF8E6] text-white dark:text-black ">
+      <div class="px-6 lg:px-16 ">
+        <div class="grid lg:grid-cols-3 pb-6 lg:pb-20">
+          <div
+            class="lg:col-span-2 font-black text-2xl leading-[1.65rem] lg:text-[2.5rem] lg:leading-[3.5rem] text-white dark:text-black"
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
+          <div class="flex items-center max-[1024px]:mt-6">
+            <Image
+              class="inline dark:hidden mr-1 lg:mr-8 w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
+              src={widget1?.srcDark || ""}
+              alt={widget1?.alt || ""}
+              width={widget1?.width || 40}
+              height={widget1?.height || 20}
+            />
+            <Image
+              class="hidden dark:inline mr-1 lg:mr-8 w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
+              src={widget1?.srcLight || ""}
+              alt={widget1?.alt || ""}
+              width={widget1?.width || 40}
+              height={widget1?.height || 20}
+            />
+
+            <Image
+              class="inline dark:hidden w-[3.889rem] h-[2.604rem] md:w-[7.779rem] md:h-[5.208rem]"
+              src={widget2?.srcDark || ""}
+              alt={widget2?.alt || ""}
+              width={widget2?.width || 40}
+              height={widget2?.height || 20}
+            />
+            <Image
+              class="hidden dark:inline w-[3.889rem] h-[2.604rem] md:w-[7.779rem] md:h-[5.208rem]"
+              src={widget2?.srcLight || ""}
+              alt={widget2?.alt || ""}
+              width={widget2?.width || 40}
+              height={widget2?.height || 20}
+            />
+          </div>
         </div>
+        <div class="font-normal lg:flex lg:flex-row lg:gap-8">
+          <div
+            class="text-white font-merriweather dark:text-black text-base lg:text-2xl lg:leading-9"
+            dangerouslySetInnerHTML={{ __html: description1 || "" }}
+          />
+
+          <div
+            class="text-white font-merriweather dark:text-black text-base lg:text-2xl lg:leading-9"
+            dangerouslySetInnerHTML={{ __html: description2 || "" }}
+          />
+        </div>
+      </div>
+      <div class="pt-10 lg:pt-20">
+        <SlideBanner {...slideBanner} />
       </div>
     </section>
   );
