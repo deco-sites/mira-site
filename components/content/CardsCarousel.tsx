@@ -27,7 +27,7 @@ function CardsCarousel(
   }
 
   return (
-    <div class="w-full max-w-[1440px] py-10 flex flex-col gap-5 px-6 lg:px-16 mx-auto lg:gap-6 lg:py-24">
+    <div class="w-full max-w-[1440px] py-10 flex flex-col gap-10 lg:gap-20 px-6 lg:px-16 mx-auto lg:py-24">
       <h3
         class="text-base-200 dark:text-black text-2xl lg:text-[32px] xl:text-[40px] font-black leading-[110%] uppercase"
         dangerouslySetInnerHTML={{ __html: title }}
