@@ -13,7 +13,7 @@ export default function Accordion(props: Props) {
   const { children2 } = props;
   const itemVisible = useSignal(0);
   const len = children2.length;
-  const len2 = 8 * len;
+  const len2 = 8 * (len-1);
 
   return (
     <>
@@ -21,7 +21,7 @@ export default function Accordion(props: Props) {
         return (
           <li
             key={index}
-            className={`flex w-[calc((100%/${len})-${len2}px)] items-start lg:mr-2 rounded-[24px] mb-2 text-black 
+            className={`flex w-[calc((100%/${len})-${len2}px)] items-start lg:mr-2 rounded-[24px] mb-2 text-black hover:cursor-pointer
             ${
               itemVisible.value == index
                 ? "bg-primary dark:bg-secondary"

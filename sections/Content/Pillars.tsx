@@ -28,9 +28,9 @@ export default function Pillars(
   }: Props,
 ) {
   return (
-    <section class="w-screen dark:bg-[#FFF8E6]">
-      <div class="text-base-200 px-6 py-10 lg:px-16 lg:py-40 max-w-[1440px] mx-auto">
-        <div class="max-w-[640px] space-y-6 mb-10 lg:mb-20">
+    <section class="w-full dark:bg-base-300">
+      <div class="flex flex-col text-base-200 px-6 py-10 lg:px-16 lg:py-40 max-w-[1440px] mx-auto gap-10 lg:gap-20">
+        <div class="max-w-[640px] space-y-6">
           <h2 class="text-[1.5rem] lg:text-[2.5rem] leading-relaxed lg:leading-[2.75rem] font-black dark:text-black">
             {title}
           </h2>
