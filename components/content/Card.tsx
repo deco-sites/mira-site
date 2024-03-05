@@ -14,6 +14,7 @@ export interface Props {
 export default function Card(props: Props) {
   const {
     logo,
+    logoDark,
     text,
     name,
     role,
@@ -23,12 +24,20 @@ export default function Card(props: Props) {
       <div class="flex flex-col h-full gap-6 items-start font-merriweather justify-between dark:text-black">
         <div class="flex flex-col gap-12">
           <h4 class="card-title">
-            {/* <Image id={logo}  class="fill-base-200 group-hover:fill-black dark:fill-black" /> */}
             <Image
               width={50}
-              class="w-[80px] object-fit"
+              class="w-[80px] object-fit dark:hidden"
               sizes="(max-width: 640px) 100vw, 30vw"
               src={logo ?? ""}
+              alt={role}
+              decoding="async"
+              loading="lazy"
+            />
+            <Image
+              width={50}
+              class="hidden w-[80px] object-fit dark:visible"
+              sizes="(max-width: 640px) 100vw, 30vw"
+              src={logoDark ?? ""}
               alt={role}
               decoding="async"
               loading="lazy"
