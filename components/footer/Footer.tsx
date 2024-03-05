@@ -1,6 +1,7 @@
 import Divider from "$store/components/footer/Divider.tsx";
 import Logo from "$store/components/footer/Logo.tsx";
 import type { Props as LogoProps } from "$store/components/footer/Logo.tsx";
+import CopyButton from "$store/islands/CopyButton.tsx";
 
 export interface Props {
   logo?: LogoProps;
@@ -19,9 +20,7 @@ function Footer({
             Linguagem cria{" "}
             <span class="text-primary dark:text-secondary">realidade</span>.
           </div>
-          <button class="btn text-black h-auto border-0 flex rounded-[36px] px-3 lg:px-6 py-2 lg:py-4 items-center font-normal text-[13px] leading-[150%] lg:text-base bg-primary dark:bg-secondary uppercase">
-            {contactButton ?? "CONTATO@MIRACOMPANY.CO"}
-          </button>
+          <CopyButton contactButton={contactButton} />
         </div>
         <div class="flex flex-col gap-8">
           <Divider />
