@@ -28,7 +28,8 @@ export interface Props {
   slideBanner?: SlideBannerProps;
 }
 
-const DEFAULT_TEXT = '<p><span class="text-primary dark:text-secondary">MIRA E VANTO GROUP:</span></br>POSSIBILITANDO A TRANSFORMAÇÃO ORGANIZACIONAL NO BRASIL</p>';
+const DEFAULT_TEXT =
+  '<p><span class="text-primary dark:text-secondary">MIRA E VANTO GROUP:</span></br>POSSIBILITANDO A TRANSFORMAÇÃO ORGANIZACIONAL NO BRASIL</p>';
 
 export default function Features(
   {

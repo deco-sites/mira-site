@@ -13,7 +13,7 @@ export default function Accordion(props: Props) {
   const { children2 } = props;
   const itemVisible = useSignal(0);
   const len = children2.length;
-  const len2 = 8 * (len-1);
+  const len2 = 8 * (len - 1);
 
   return (
     <>
