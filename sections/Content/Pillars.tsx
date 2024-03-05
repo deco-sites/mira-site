@@ -39,7 +39,7 @@ export default function Pillars(
             {description}
           </p>
         </div>
-        <div class="flex flex-col lg:flex-row lg:h-[720px] w-full">
+        <div class="flex flex-col min-[1264px]:flex-row min-[1264px]:h-[720px] w-full">
           <Accordion
             children2={accordionItems}
           />

@@ -1,4 +1,5 @@
 import { useSignal } from "@preact/signals";
+import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
 
 interface Child {
   title?: string;
@@ -18,38 +19,81 @@ export default function Accordion(props: Props) {
   return (
     <>
       {children2.map((c, index) => {
+        const firstTitle = c.title?.split(" ")[0];
+        const secondTitle = c.title?.split(" ")[1];
         return (
           <li
-            key={index}
-            className={`flex w-[calc((100%/${len})-${len2}px)] items-start lg:mr-2 rounded-[24px] mb-2 text-black hover:cursor-pointer
-            ${
+            className={`w-[calc((100%/${len})-${len2}px)] list-none lg:mr-2 rounded-[24px] mb-2 ${
               itemVisible.value == index
                 ? "bg-primary dark:bg-secondary"
-                : "bg-[#FCD28A] dark:bg-[#F4B9AD]"
-            }
-            `}
+                : "bg-[#FCD28A] dark:bg-[#F4B9AD] flex items-center lg:items-start lg:justify-center"
+            } text-black`}
             onClick={() => (itemVisible.value = index)}
           >
-            <p
-              className={`flex justify-center items-center 
-              ${
-                itemVisible.value == index ? "px-4 py-8" : "px-6 py-3"
-              } lg:px-6 w-[66px] text-[2rem] lg:text-[3rem] font-black leading-[100%] tracking-[-3.2px] lg:leading-[140%] lg:tracking-[-4.8px]`}
+            <button
+              className={`flex items-center w-full ${
+                itemVisible.value == index ? "pt-8" : "py-3"
+              } px-6 lg:py-8`}
             >
-              {index + 1}
-            </p>
+              <div
+                className={`${
+                  itemVisible.value == index
+                    ? "pr-4"
+                    : "flex items-center lg:items-start lg:justify-center"
+                }`}
+              >
+                <span
+                  className={`text-[2rem] lg:text-[3rem] font-black leading-[100%] tracking-[-3.2px] lg:leading-[140%] lg:tracking-[-4.8px]`}
+                >
+                  {index + 1}
+                </span>
+              </div>
+              {itemVisible.value == index && (
+                <h3 className="min-[1264px]:hidden pl-6 lg:pl-12 font-black text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
+                  {firstTitle}
+                  <div className="flex items-center">
+                    <div class="p-1 lg:p-4 mr-4">
+                      <Icon
+                        id="InverseExternalLink"
+                        class="mx-0 lg:w-[38.24px] lg:h-[38.24px]"
+                        size={14.2}
+                        strokeWidth={20}
+                      />
+                    </div>
+                    <span className="text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
+                      {secondTitle}
+                    </span>
+                  </div>
+                </h3>
+              )}
+            </button>
             <div
-              className={`${
-                itemVisible.value == index ? "flex" : "hidden"
-              } flex-col px-6 py-8 lg:px-12 lg:py-16 gap-10 items-start`}
+              className={`grid 
+              overflow-hidden transition-all duration-700 ease-in-out ${
+                itemVisible.value === index
+                  ? "grid-rows-[1fr] opacity-100 ml-4 pl-8 pr-6 py-8 lg:px-12 lg:py-16 lg:pt-0 gap-10"
+                  : "grid-rows-[0fr] opacity-0 lg:w-0"
+              }`}
             >
-              <h3 className="flex items-start font-black text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
-                {c.title}
-              </h3>
-              <div className="overflow-hidden transition-max-height duration-300 ease-in-out 
-              mt-5 mr-6 mb-8 max-h-[1000px]
-              ">
-                <p className="font-merriweather text-base lg:text-[1.5rem] lg:leading-9">
+              <div className="overflow-hidden pl-2 lg:pl-12">
+                <h3 className="hidden min-[1264px]:block pl-6 lg:pl-0 lg:pb-10 font-black text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
+                  {firstTitle}
+                  <div className="flex items-center">
+                    <div class="p-4 mr-4">
+                      <Icon
+                        id="InverseExternalLink"
+                        class="mx-0"
+                        size={38.24}
+                        strokeWidth={20}
+                      />
+                    </div>
+
+                    <span className="text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
+                      {secondTitle}
+                    </span>
+                  </div>
+                </h3>
+                <p className="ml-6 lg:ml-0 font-merriweather text-base lg:text-[1.5rem] lg:leading-9">
                   {c.description}
                 </p>
               </div>
