@@ -1,12 +1,14 @@
-import Accordion from "$store/components/daisy/Accordion.tsx";
+import Accordion from "$store/islands/Accordion.tsx";
 
 export interface AccordionItems {
   title?: string;
+  /** @format textarea */
   description?: string;
 }
 
 export interface Props {
   title?: string;
+  /** @format textarea */
   description?: string;
   accordionItems?: AccordionItems[];
 }
@@ -26,19 +28,23 @@ export default function Pillars(
   }: Props,
 ) {
   return (
-    <section class="text-base-200 px-6 py-10 lg:px-16 lg:py-40">
-      <div class="max-w-[640px] space-y-6 mb-10 lg:mb-20">
-        <h2 class="text-[1.5rem] lg:text-[2.5rem] leading-relaxed lg:leading-[2.75rem] font-black dark:bg-[#FFF8E6]">
-          {title}
-        </h2>
+    <section class="w-screen dark:bg-[#FFF8E6]">
+      <div class="text-base-200 px-6 py-10 lg:px-16 lg:py-40 max-w-[1440px] mx-auto">
+        <div class="max-w-[640px] space-y-6 mb-10 lg:mb-20">
+          <h2 class="text-[1.5rem] lg:text-[2.5rem] leading-relaxed lg:leading-[2.75rem] font-black dark:text-black">
+            {title}
+          </h2>
 
-        <p class="font-merriweather text-base lg:text-[1.5rem] lg:leading-[2.25rem] font-normal dark:bg-[#FFF8E6]">
-          {description}
-        </p>
+          <p class="font-merriweather text-base lg:text-[1.5rem] lg:leading-[2.25rem] font-normal dark:text-black">
+            {description}
+          </p>
+        </div>
+        <div class="flex flex-col lg:flex-row lg:h-[720px] w-full">
+          <Accordion
+            children2={accordionItems}
+          />
+        </div>
       </div>
-      <Accordion
-        children={accordionItems}
-      />
     </section>
   );
 }
