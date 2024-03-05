@@ -20,7 +20,7 @@ export default function Accordion(props: Props) {
       {children2.map((c, index) => {
         return (
           <li
-            className={`list-none lg:mr-2 rounded-[24px] mb-2 ${
+            className={`w-[calc((100%/${len})-${len2}px)] list-none lg:mr-2 rounded-[24px] mb-2 ${
               itemVisible.value == index
                 ? "bg-primary dark:bg-secondary"
                 : "bg-[#FCD28A] dark:bg-[#F4B9AD] flex items-center lg:items-start lg:justify-center"
@@ -28,7 +28,9 @@ export default function Accordion(props: Props) {
             onClick={() => (itemVisible.value = index)}
           >
             <button
-              className={`flex items-center w-full px-6 py-3`}
+              className={`flex items-center w-full ${
+                itemVisible.value == index ? "pt-8" : "py-3"
+              } px-6 lg:py-8`}
             >
               <div
                 className={`${
@@ -44,7 +46,7 @@ export default function Accordion(props: Props) {
                 </span>
               </div>
               {itemVisible.value == index && (
-                <h3 className="lg:hidden pl-6 lg:pl-12 font-black text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
+                <h3 className="min-[1264px]:hidden pl-6 lg:pl-12 font-black text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
                   {c.title}
                 </h3>
               )}
@@ -57,8 +59,8 @@ export default function Accordion(props: Props) {
                   : "grid-rows-[0fr] opacity-0 lg:w-0"
               }`}
             >
-              <div className="overflow-hidden">
-                <h3 className="hidden lg:block pl-6 lg:pl-0 lg:pb-10 font-black text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
+              <div className="overflow-hidden pl-2 lg:pl-12">
+                <h3 className="hidden min-[1264px]:block pl-6 lg:pl-0 lg:pb-10 font-black text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
                   {c.title}
                 </h3>
                 <p className="ml-6 lg:ml-0 font-merriweather text-base lg:text-[1.5rem] lg:leading-9">
