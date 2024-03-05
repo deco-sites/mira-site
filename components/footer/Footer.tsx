@@ -20,7 +20,7 @@ function Footer({
             Linguagem cria{" "}
             <span class="text-primary dark:text-secondary">realidade</span>.
           </div>
-          <CopyButton contactButton={contactButton}/>
+          <CopyButton contactButton={contactButton} />
         </div>
         <div class="flex flex-col gap-8">
           <Divider />
