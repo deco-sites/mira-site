@@ -43,7 +43,7 @@ function CardsCarousel(
             {clientCard?.map((card, index) => (
               <Slider.Item
                 index={index}
-                class="carousel-item w-full lg:w-[calc((100%-46px)/3)] sm:first:pl-0 sm:last:pr-0 bg-transparent border-base-200 rounded-[24px_24px_0_24px] border-[0.5px] dark:border-black"
+                class="carousel-item w-[calc(100%-1px)] lg:w-[calc((100%-46px)/3)] sm:first:pl-0 sm:last:pr-0 bg-transparent border-base-200 rounded-[24px_24px_0_24px] border-[0.5px] dark:border-black"
               >
                 <Card {...card} />
               </Slider.Item>
