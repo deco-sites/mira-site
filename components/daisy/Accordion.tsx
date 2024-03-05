@@ -1,45 +1,60 @@
-export interface Props {
-  children: Child[];
-}
+import { useSignal } from "@preact/signals";
 
 interface Child {
   title?: string;
+  /** @format textarea */
   description?: string;
+}
+export interface Props {
+  children2: Child[];
 }
 
 export default function Accordion(props: Props) {
-  const { children } = props;
+  const { children2 } = props;
+  const itemVisible = useSignal(0);
+  const len = children2.length;
+  const len2 = 8 * len;
 
   return (
     <>
-      {children.map((c, index) => {
+      {children2.map((c, index) => {
         return (
-          <div
+          <li
             key={index}
-            className="grid grid-cols-5 justify-center items-center bg-primary rounded-[24px] mb-2 text-black dark:bg-secondary"
+            className={`flex w-[calc((100%/${len})-${len2}px)] items-start lg:mr-2 rounded-[24px] mb-2 text-black 
+            ${
+              itemVisible.value == index
+                ? "bg-primary dark:bg-secondary"
+                : "bg-[#FCD28A] dark:bg-[#F4B9AD]"
+            }
+            `}
+            onClick={() => (itemVisible.value = index)}
           >
-            <input
-              type="radio"
-              name="pilar"
-              id={`pilar-${index}`}
-              className="appearance-none peer"
-              checked={index === 0}
-            />
-            <h2 className="col-start-1 col-span-1 w-[66px] text-[2rem] font-black leading-loose flex justify-center items-center">
-              {index + 1}
-            </h2>
-            <label
-              htmlFor={`pilar-${index}`}
-              className="col-start-2 col-span-4 flex items-center cursor-pointer font-semibold text-lg"
+            <p
+              className={`flex justify-center items-center 
+              ${
+                itemVisible.value == index ? "px-4 py-8" : "px-6 py-3"
+              } lg:px-6 w-[66px] text-[2rem] lg:text-[3rem] font-black leading-[100%] tracking-[-3.2px] lg:leading-[140%] lg:tracking-[-4.8px]`}
             >
-              <h3 className="font-black text-[1.5rem] leading-relaxed">
+              {index + 1}
+            </p>
+            <div
+              className={`${
+                itemVisible.value == index ? "flex" : "hidden"
+              } flex-col px-6 py-8 lg:px-12 lg:py-16 gap-10 items-start`}
+            >
+              <h3 className="flex items-start font-black text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
                 {c.title}
               </h3>
-            </label>
-            <div className="col-start-2 col-span-4 peer-checked:mt-5 peer-checked:mr-6 peer-checked:mb-8 max-h-0 peer-checked:max-h-[1000px] overflow-hidden transition-max-height duration-300 ease-in-out ">
-              <p className="font-merriweather text-base">{c.description}</p>
+              <div className="overflow-hidden transition-max-height duration-300 ease-in-out 
+              mt-5 mr-6 mb-8 max-h-[1000px]
+              ">
+                <p className="font-merriweather text-base lg:text-[1.5rem] lg:leading-9">
+                  {c.description}
+                </p>
+              </div>
             </div>
-          </div>
+          </li>
         );
       })}
     </>
