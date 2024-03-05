@@ -14,7 +14,7 @@ export interface Props {
 }
 
 const accordionExample = {
-  title: "RECLAMAR \nAGIR",
+  title: "RECLAMAR AGIR",
   description:
     "Qual é a ação prática que eu posso tomar para abrir mão da reclamação persistente que tenho tido?",
 };

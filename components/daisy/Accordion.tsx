@@ -1,4 +1,5 @@
 import { useSignal } from "@preact/signals";
+import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
 
 interface Child {
   title?: string;
@@ -18,6 +19,8 @@ export default function Accordion(props: Props) {
   return (
     <>
       {children2.map((c, index) => {
+        const firstTitle = c.title?.split(" ")[0];
+        const secondTitle = c.title?.split(" ")[1];
         return (
           <li
             className={`w-[calc((100%/${len})-${len2}px)] list-none lg:mr-2 rounded-[24px] mb-2 ${
@@ -47,7 +50,20 @@ export default function Accordion(props: Props) {
               </div>
               {itemVisible.value == index && (
                 <h3 className="min-[1264px]:hidden pl-6 lg:pl-12 font-black text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
-                  {c.title}
+                  {firstTitle}
+                  <div className="flex items-center">
+                    <div class="p-1 lg:p-4 mr-4">
+                      <Icon
+                        id="InverseExternalLink"
+                        class="mx-0 lg:w-[38.24px] lg:h-[38.24px]"
+                        size={14.2}
+                        strokeWidth={20}
+                      />
+                    </div>
+                    <span className="text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
+                      {secondTitle}
+                    </span>
+                  </div>
                 </h3>
               )}
             </button>
@@ -61,7 +77,21 @@ export default function Accordion(props: Props) {
             >
               <div className="overflow-hidden pl-2 lg:pl-12">
                 <h3 className="hidden min-[1264px]:block pl-6 lg:pl-0 lg:pb-10 font-black text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
-                  {c.title}
+                  {firstTitle}
+                  <div className="flex items-center">
+                    <div class="p-4 mr-4">
+                      <Icon
+                        id="InverseExternalLink"
+                        class="mx-0"
+                        size={38.24}
+                        strokeWidth={20}
+                      />
+                    </div>
+
+                    <span className="text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
+                      {secondTitle}
+                    </span>
+                  </div>
                 </h3>
                 <p className="ml-6 lg:ml-0 font-merriweather text-base lg:text-[1.5rem] lg:leading-9">
                   {c.description}
