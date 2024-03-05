@@ -1,5 +1,5 @@
 import type { HTMLWidget } from "apps/admin/widgets.ts";
-import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
 
 export interface Props {
   BigText?: HTMLWidget;
