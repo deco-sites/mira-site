@@ -18,7 +18,7 @@ function Navbar({
   return (
     <>
       {/* Mobile Version */}
-      <div class="min-[1386px]:hidden flex flex-col items-start w-full p-6 border-none">
+      <div class="lg:hidden flex flex-col items-start w-full p-6 border-none">
         <div class="flex flex-row w-full items-center justify-between">
           <a
             class="flex flex-col justify-center items-start"
@@ -52,7 +52,7 @@ function Navbar({
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden min-[1386px]:grid min-[1386px]:grid-cols-3 items-center border-none w-full py-6 px-16">
+      <div class="hidden lg:grid lg:grid-cols-3 items-center border-none w-full py-6 px-16">
         <ul
           class={"flex gap-6 col-span-1 justify-center"}
         >
@@ -88,11 +88,15 @@ function Navbar({
         </div>
         <div class="flex items-center justify-end gap-6 col-span-1">
           <a
-            class="btn h-9 lg:h-14 rounded-full border-none font-light text-black text-[1rem] gap-2 bg-primary dark:bg-secondary"
+            class="flex flex-nowrap h-8 lg:h-13 px-3 py-2 rounded-full border-none font-light text-black text-[13px] leading-none gap-2 bg-primary dark:bg-secondary"
             href={workshopButton.url}
           >
-            {workshopButton.text}
-            <Icon id="ExternalLink" class="mb-1" size={20} strokeWidth={0.01} />
+            <h3 class="text-nowrap">
+              {workshopButton.text}
+            </h3>
+            <div class="mb-1 h-5 w-5">
+              <Icon id="ExternalLink" size={12} strokeWidth={0.01} />
+            </div>
           </a>
           <ToggleDarkMode />
         </div>
