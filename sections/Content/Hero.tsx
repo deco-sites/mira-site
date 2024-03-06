@@ -20,26 +20,40 @@ export default function HeroFlats({
   },
 }: Props) {
   return (
-    <section class="flex flex-col h-screen mt-[-110px] justify-center items-center dark:bg-[#FFF8E6]">
-      <div class="flex-1">
+    <section class="flex flex-col max-w-screen h-screen lg:mt-[-110px] justify-center items-center dark:bg-[#FFF8E6]">
+      <div class="hidden lg:block lg:flex-1">
       </div>
-      <div class="min-h-[414px] max-w-[1312px]  xl:grid xl:grid-cols-5 xl:grid-rows-2 px-6 pb-10 lg:px-16 lg:pb-0">
-        <h1 class="col-span-3 font-black text-base-200 text-[2rem] lg:text-[4.5rem] leading-8 lg:leading-[4.5rem] dark:text-black">
-          {title}
-        </h1>
-        <div class="col-span-2 row-span-2 max-w-[375px] flex items-end mt-6 xl:mt-0 mr-[142px] lg:mr-0 xl:pl-16 lg:pb-40">
-          <p class="font-merriweather text-base-200 text-base lg:text-[1.5rem] lg:leading-[2.25rem] dark:text-black">
-            {description}
-          </p>
-        </div>
-        <div class="col-span-3 flex items-end justify-start pt-40 lg:pt-0 lg:pb-40">
-          <a
-            class="btn h-9 lg:h-14 rounded-full border-none font-light text-black text-[1rem] gap-2 bg-primary dark:bg-secondary"
-            href={workshopButton.url}
-          >
-            {workshopButton.text}
-            <Icon id="ExternalLink" class="mb-1" size={20} strokeWidth={0.01} />
-          </a>
+      <div class="max-w-[1440px] mx-auto">
+        <div class="flex flex-col lg:flex-row justify-center items-centers lg:pb-28 2xl:pb-40 px-6 lg:px-16">
+          <div class="flex flex-col lg:max-w-[722px]">
+            <h1 class="font-black text-base-200 text-[2rem] md:text-5xl xl:text-[4.5rem] leading-8 lg:leading-[4.5rem] dark:text-black">
+              {title}
+            </h1>
+            <div class="hidden lg:flex items-end justify-start pt-40 lg:pt-0 lg:pb-32">
+            </div>
+          </div>
+          <div class="pt-6 flex items-center lg:items-end">
+            <p class="font-merriweather text-base-200 text-base md:text-lg xl:text-[1.5rem] lg:leading-[2.25rem] dark:text-black">
+              {description}
+            </p>
+          </div>
+          <div class="flex lg:hidden items-center pt-40 pb-32">
+            <a
+              class="flex px-3 py-2 max-w-[278px] h-9 rounded-full border-none font-light text-black text-[13px] bg-primary dark:bg-secondary p-0 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer"
+              href={workshopButton.url}
+            >
+              <h3 class="text-nowrap">
+                {workshopButton.text}
+              </h3>
+              <div class="mb-1 h-5 w-5 flex items-center justify-center">
+                <Icon
+                  id="ExternalLink"
+                  size={12}
+                  strokeWidth={0.01}
+                />
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </section>

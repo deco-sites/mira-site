@@ -52,7 +52,7 @@ function Navbar({
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden lg:grid lg:grid-cols-3 items-center border-none w-full py-6 px-16">
+      <div class="hidden lg:flex justify-between items-center border-none w-full pt-6 px-16">
         <ul
           class={"flex gap-6 col-span-1 justify-center"}
         >
@@ -88,13 +88,13 @@ function Navbar({
         </div>
         <div class="flex items-center justify-end gap-6 col-span-1">
           <a
-            class="flex flex-nowrap h-8 lg:h-13 px-3 py-2 rounded-full border-none font-light text-black text-[13px] leading-none gap-2 bg-primary dark:bg-secondary"
+            class="flex flex-nowrap h-8 lg:h-13 px-3 py-2 rounded-full border-none font-light text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-primary dark:bg-secondary"
             href={workshopButton.url}
           >
             <h3 class="text-nowrap">
               {workshopButton.text}
             </h3>
-            <div class="mb-1 h-5 w-5">
+            <div class="mb-1 mt-[2px]">
               <Icon id="ExternalLink" size={12} strokeWidth={0.01} />
             </div>
           </a>
