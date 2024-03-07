@@ -24,7 +24,7 @@ export default function Pillars(
     title = "OS PILARES DO MÉTODO MIRA",
     description =
       "Leia nossos 8 pilares e descubra o que é preciso para viver em alto desempenho.",
-    accordionItems = Array(7).fill(0).map(() => accordionExample),
+    accordionItems = Array(8).fill(0).map(() => accordionExample),
   }: Props,
 ) {
   return (
