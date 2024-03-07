@@ -57,19 +57,19 @@ export default function Accordion(props: Props) {
               }`}
             >
               <div className="overflow-hidden space-y-10">
-                <h3 className="font-black text-[1.5rem] leading-relaxed min-[1264px]:text-[4rem] min-[1264px]:leading-[110%]">
+                <h3 className="font-black text-[1.5rem] leading-relaxed min-[1264px]:text-[3.5rem] min-[1264px]:leading-[110%]">
                   {firstTitle}
                   <div className="flex items-center">
                     <div class="p-1 min-[1264px]:p-4 mr-4">
                       <Icon
                         id="InverseExternalLink"
-                        class="mx-0 min-[1264px]:w-[38.24px] min-[1264px]:h-[38.24px]"
+                        class="mx-0 min-[1264px]:w-[35px] min-[1264px]:h-[35px]"
                         size={14.2}
                         strokeWidth={20}
                       />
                     </div>
 
-                    <span className="text-[1.5rem] leading-relaxed min-[1264px]:text-[4rem] min-[1264px]:leading-[110%]">
+                    <span className="text-[1.5rem] leading-relaxed min-[1264px]:text-[3.5rem] min-[1264px]:leading-[110%]">
                       {secondTitle}
                     </span>
                   </div>
