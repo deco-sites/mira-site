@@ -46,7 +46,7 @@ export default function Features(
       <div class="max-[1440px]:max-w-[1224px] max-w-[1440px] mx-auto px-6 lg:px-16 self-center">
         <div class="grid lg:grid-cols-3 pb-6 lg:pb-20">
           <div
-            class="lg:col-span-2 font-black text-2xl leading-[1.65rem] lg:text-[2.5rem] lg:leading-[3.5rem] text-base-200 dark:text-black"
+            class="lg:col-span-2 font-black text-2xl leading-[1.65rem] lg:text-[2.4rem] xl:text-[2.5rem] lg:leading-[3.5rem] text-base-200 dark:text-black"
             dangerouslySetInnerHTML={{ __html: title }}
           />
           <div class="flex items-center max-[1024px]:mt-6">
@@ -83,12 +83,12 @@ export default function Features(
         </div>
         <div class="font-normal lg:flex lg:flex-row lg:gap-8">
           <div
-            class="text-base-200 font-merriweather dark:text-black text-base lg:text-2xl lg:leading-9"
+            class="text-base-200 font-merriweather dark:text-black text-base lg:text-lg 2xl:text-2xl lg:leading-9"
             dangerouslySetInnerHTML={{ __html: description1 || "" }}
           />
 
           <div
-            class="text-base-200 font-merriweather dark:text-black text-base lg:text-2xl lg:leading-9"
+            class="text-base-200 font-merriweather dark:text-black text-base lg:text-lg 2xl:text-2xl lg:leading-9"
             dangerouslySetInnerHTML={{ __html: description2 || "" }}
           />
         </div>
