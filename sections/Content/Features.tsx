@@ -55,7 +55,7 @@ export default function Features(
   }: Props,
 ) {
   return (
-    <section class="w-full py-10 lg:py-40 bg-black dark:bg-[#FFF8E6] text-white dark:text-black ">
+    <section class="w-full py-10 lg:py-24 bg-black dark:bg-[#FFF8E6] text-white dark:text-black ">
       <div class="max-[1440px]:max-w-[1224px] max-w-[1440px] mx-auto px-6 lg:px-16 self-center">
         <div class="grid lg:grid-cols-3 pb-6 lg:pb-20">
           <div

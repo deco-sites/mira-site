@@ -17,7 +17,7 @@ export default function AgendaCard(
   return (
     <a
       href={url}
-      class={`group w-full flex flex-col items-center text-base-200 dark:text-black ${
+      class={`group w-[calc(100vw/1.2-48px)] flex flex-col lg:w-[calc((100vw/2.5)-128px)] items-center text-base-200 dark:text-black ${
         alignment === "center" ? "text-center" : "text-left"
       }`}
     >

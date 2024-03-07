@@ -35,7 +35,7 @@ export default function Card(props: Props) {
             />
             <Image
               width={50}
-              class="hidden w-[80px] object-fit dark:visible"
+              class="hidden w-[80px] object-fit dark:flex"
               sizes="(max-width: 640px) 100vw, 30vw"
               src={logoDark ?? ""}
               alt={role}
@@ -43,7 +43,7 @@ export default function Card(props: Props) {
               loading="lazy"
             />
           </h4>
-          <p class="text-[18px] leading-[150%]">{text}</p>
+          <p class="text-[15px] lg:text-[16px] leading-[150%]">{text}</p>
         </div>
         <div class="flex flex-col justify-end">
           <p class="text-[16px] leading-[150%] font-bold">
