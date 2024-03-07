@@ -35,8 +35,7 @@ function Header({
 }: Props) {
   return (
     <>
-      <header class="h-[106px] lg:h-[82px]"
-        // style={{ height: headerHeight }}
+      <header class="h-[106px] lg:h-[82px]" // style={{ height: headerHeight }}
       >
         <div class="fixed w-full z-50 bg-black  dark:bg-[#FFF8E6]">
           {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
