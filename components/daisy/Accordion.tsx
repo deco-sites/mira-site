@@ -68,7 +68,6 @@ export default function Accordion(props: Props) {
                         strokeWidth={20}
                       />
                     </div>
-
                     <span className="text-[1.5rem] leading-relaxed min-[1264px]:text-[3.5rem] min-[1264px]:leading-[110%]">
                       {secondTitle}
                     </span>
