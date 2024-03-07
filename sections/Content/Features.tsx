@@ -50,7 +50,7 @@ export default function Features(
     widget2,
     description1,
     description2,
-    showSlideBanner = true,
+    showSlideBanner = false,
     slideBanner,
   }: Props,
 ) {

@@ -27,7 +27,7 @@ export default function Accordion(props: Props) {
               itemVisible.value == index
                 ? "bg-primary dark:bg-secondary"
                 : "bg-[#FCD28A] dark:bg-[#F4B9AD] min-[1264px]:justify-center"
-            } text-black`}
+            } text-black hover:cursor-pointer hover:opacity-75 transition-opacity duration-300`}
             onClick={() => (itemVisible.value = index)}
           >
             <div
