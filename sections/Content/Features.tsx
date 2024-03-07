@@ -67,12 +67,14 @@ export default function Features(
               class="inline dark:hidden w-[3.938rem] h-[1.573rem]"
               src={logo?.srcDark || ""}
               alt={logo?.alt || ""}
+              loading="lazy"
               width={logo?.width || 100}
               height={logo?.height || 13}
             />
             <Image
               class="hidden dark:inline w-[3.938rem] h-[1.573rem]"
               src={logo?.srcLight || ""}
+              loading="lazy"
               alt={logo?.alt || ""}
               width={logo?.width || 100}
               height={logo?.height || 13}
@@ -82,6 +84,7 @@ export default function Features(
               class="inline dark:hidden w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
               src={widget1?.srcDark || ""}
               alt={widget1?.alt || ""}
+              loading="lazy"
               width={widget1?.width || 40}
               height={widget1?.height || 20}
             />
@@ -89,6 +92,7 @@ export default function Features(
               class="hidden dark:inline w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
               src={widget1?.srcLight || ""}
               alt={widget1?.alt || ""}
+              loading="lazy"
               width={widget1?.width || 40}
               height={widget1?.height || 20}
             />
@@ -97,12 +101,14 @@ export default function Features(
               class="inline dark:hidden w-[3.889rem] h-[2.604rem] md:w-[7.779rem] md:h-[5.208rem]"
               src={widget2?.srcDark || ""}
               alt={widget2?.alt || ""}
+              loading="lazy"
               width={widget2?.width || 40}
               height={widget2?.height || 20}
             />
             <Image
               class="hidden dark:inline w-[3.889rem] h-[2.604rem] md:w-[7.779rem] md:h-[5.208rem]"
               src={widget2?.srcLight || ""}
+              loading="lazy"
               alt={widget2?.alt || ""}
               width={widget2?.width || 40}
               height={widget2?.height || 20}

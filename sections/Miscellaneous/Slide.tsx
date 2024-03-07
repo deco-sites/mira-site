@@ -27,6 +27,7 @@ export default function Slide({ content }: Props) {
           <img
             className="w-[96px] lg:w-[134px] h-auto block"
             src={isDark ? srcDark || "" : srcLight || ""}
+            loading="lazy"
             alt={alt || ""}
             width={width || 40}
             height={height || 20}
