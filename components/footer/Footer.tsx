@@ -10,14 +10,14 @@ export interface Props {
 
 function Footer({
   logo,
-  contactButton,
+  contactButton = 'CONTATO@MIRA.LC',
 }: Props) {
   return (
     <footer class="w-full flex flex-col bg-black dark:bg-[#FFF8E6]">
       <div class="flex flex-col w-full px-6 py-10 lg:px-16 lg:py-24 lg:mx-auto gap-6 lg:gap-[80px]">
         <div class="flex flex-col lg:flex-row lg:justify-between self-stretch items-start lg:items-end gap-6 lg:gap-0">
           <div class="text-base-200 dark:text-black font-extrabold leading-[90%] lg:leading-[100px] uppercase text-[48px] lg:text-[100px]">
-            Linguagem cria{" "}
+            Linguagem cria{" "}<br/>
             <span class="text-primary dark:text-secondary">realidade</span>.
           </div>
           <CopyButton contactButton={contactButton} />
