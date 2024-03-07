@@ -37,9 +37,8 @@ export default function Accordion(props: Props) {
             >
               <div
                 className={`${
-                  itemVisible.value == index
-                    ? "pr-4"
-                    : "flex items-center min-[1264px]:items-start min-[1264px]:justify-center"
+                  itemVisible.value !== index &&
+                  "flex items-center min-[1264px]:items-start min-[1264px]:justify-center"
                 }`}
               >
                 <span
