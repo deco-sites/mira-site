@@ -35,7 +35,7 @@ export default function Card(props: Props) {
             />
             <Image
               width={50}
-              class="hidden w-[80px] object-fit dark:visible"
+              class="hidden w-[80px] object-fit dark:flex"
               sizes="(max-width: 640px) 100vw, 30vw"
               src={logoDark ?? ""}
               alt={role}
