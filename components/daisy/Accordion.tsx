@@ -51,7 +51,7 @@ export default function Accordion(props: Props) {
             </div>
             <div
               className={`grid 
-              overflow-hidden transition-all duration-700 ease-in-out ${
+              overflow-hidden transition-all duration-700 min-[1264px]:duration-[1200ms] ease-in-out ${
                 itemVisible.value === index
                   ? "grid-rows-[1fr] min-[1264px]:grid-cols-[1fr] opacity-100 px-6 py-8 lg:px-12 lg:py-16 gap-10"
                   : "grid-rows-[0fr] min-[1264px]:grid-cols-[0fr] opacity-0 lg:w-0"
