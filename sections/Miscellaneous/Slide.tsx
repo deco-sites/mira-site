@@ -1,5 +1,4 @@
 import { ImageWidget } from "apps/admin/widgets.ts";
-import Image from "apps/website/components/Image.tsx";
 
 export interface SlideProps {
   repeat?: number;
@@ -15,48 +14,34 @@ export interface Props {
 }
 
 export default function Slide({ content }: Props) {
-  const slideContentDark = content?.map(
-    ({ srcDark, width, height, alt, repeat = 1 }) => {
-      return (
-        <div class="flex justify-center items-center gap-x-10 mx-4 text-base-content">
-          {Array(repeat).fill(0).map(() => (
-            <>
-              <div class="flex justify-center items-center gap-1 min-w-[142.86px] lg:min-w-[200px] min-h-[40px] lg:min-h-[58px] overflow-hidden">
-                <Image
-                  class="w-[96px] lg:w-[134px] h-auto block"
-                  src={srcDark || ""}
-                  alt={alt || ""}
-                  width={width || 40}
-                  height={height || 20}
-                />
-              </div>
-            </>
-          ))}
+  const renderSlideContent = (
+    { srcDark, srcLight, width, height, alt, repeat = 1 }: SlideProps,
+    isDark: boolean,
+  ) => (
+    <div className="flex justify-center items-center gap-x-10 mx-4 text-base-content">
+      {Array(repeat).fill(0).map((_, index) => (
+        <div
+          key={index}
+          className="flex justify-center items-center gap-1 min-w-[142.86px] lg:min-w-[200px] min-h-[40px] lg:min-h-[58px] overflow-hidden"
+        >
+          <img
+            className="w-[96px] lg:w-[134px] h-auto block"
+            src={isDark ? srcDark || "" : srcLight || ""}
+            alt={alt || ""}
+            width={width || 40}
+            height={height || 20}
+          />
         </div>
-      );
-    },
+      ))}
+    </div>
   );
 
-  const slideContentLight = content?.map(
-    ({ srcLight, width, height, alt, repeat = 1 }) => {
-      return (
-        <div class="flex justify-center items-center gap-x-10 mx-4 text-base-content">
-          {Array(repeat).fill(0).map(() => (
-            <>
-              <div class="flex justify-center items-center gap-1 min-w-[142.86px] lg:min-w-[200px] min-h-[40px] lg:min-h-[58px] overflow-hidden">
-                <Image
-                  class="w-[96px] lg:w-[134px] h-auto block"
-                  src={srcLight || ""}
-                  alt={alt || ""}
-                  width={width || 40}
-                  height={height || 20}
-                />
-              </div>
-            </>
-          ))}
-        </div>
-      );
-    },
+  const slideContentDark = content?.map((slideContent) =>
+    renderSlideContent(slideContent, true)
+  );
+
+  const slideContentLight = content?.map((slideContent) =>
+    renderSlideContent(slideContent, false)
   );
 
   return (

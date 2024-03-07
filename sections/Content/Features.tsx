@@ -35,6 +35,7 @@ export interface Props {
   /** @format html */
   description2?: string;
 
+  showSlideBanner?: boolean;
   slideBanner?: SlideBannerProps;
 }
 
@@ -49,6 +50,7 @@ export default function Features(
     widget2,
     description1,
     description2,
+    showSlideBanner = true,
     slideBanner,
   }: Props,
 ) {
@@ -119,7 +121,7 @@ export default function Features(
           />
         </div>
       </div>
-      <div class="w-full pt-10 lg:pt-20">
+      <div class={`${!showSlideBanner && "hidden"} w-full pt-10 lg:pt-20`}>
         <SlideBanner {...slideBanner} />
       </div>
     </section>
