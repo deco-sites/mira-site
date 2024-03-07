@@ -90,7 +90,6 @@ function Navbar({
             <p class="text-nowrap">{workshopButton.text}</p>
             <Icon id="ExternalLink" size={14} strokeWidth={0.01} />
           </a>
-          <ToggleDarkMode />
         </div>
       </div>
     </>
