@@ -18,7 +18,7 @@ function Navbar({
   return (
     <>
       {/* Mobile Version */}
-      <div class="min-[1386px]:hidden flex flex-col items-start w-full p-6 border-none">
+      <div class="lg:hidden flex flex-col items-start w-full p-6 border-none gap-2">
         <div class="flex flex-row w-full items-center justify-between">
           <a
             class="flex flex-col justify-center items-start"
@@ -46,21 +46,17 @@ function Navbar({
           </a>
           <ToggleDarkMode />
         </div>
-        <h3 class="max-[1386px]:mt-2 text-[0.813rem]  leading-[0.975rem]  font-black text-white dark:text-black">
+        <h3 class="text-[0.813rem]  leading-[0.975rem]  font-black text-white dark:text-black">
           {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
         </h3>
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden min-[1386px]:grid min-[1386px]:grid-cols-3 items-center border-none w-full py-6 px-16">
-        <ul
-          class={"flex gap-6 col-span-1 justify-center"}
-        >
-          <h3 class="text-[1rem] leading-6 font-black text-white dark:text-black py-6">
-            {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
-          </h3>
-        </ul>
-        <div class="flex justify-start -order-1">
+      <div class="hidden lg:flex border-none w-full py-6 px-16 justify-between items-center">
+        <h3 class="flex xl:w-1/3 lg:items-center lg:justify-center text-[1rem] leading-6 font-black text-white dark:text-black">
+          {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
+        </h3>
+        <div class="flex xl:w-1/3 justify-start -order-1">
           <a
             href="/"
             aria-label="Mira logo"
@@ -86,13 +82,13 @@ function Navbar({
             )}
           </a>
         </div>
-        <div class="flex items-center justify-end gap-6 col-span-1">
+        <div class="flex xl:w-1/3 items-center justify-end gap-6">
           <a
-            class="btn h-9 lg:h-14 rounded-full border-none font-light text-black text-[1rem] gap-2 bg-primary dark:bg-secondary"
+            class="flex flex-nowrap px-3 py-2 items-center rounded-full border-none font-light text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-primary dark:bg-secondary"
             href={workshopButton.url}
           >
-            {workshopButton.text}
-            <Icon id="ExternalLink" class="mb-1" size={20} strokeWidth={0.01} />
+            <p class="text-nowrap">{workshopButton.text}</p>
+            <Icon id="ExternalLink" size={14} strokeWidth={0.01} />
           </a>
           <ToggleDarkMode />
         </div>

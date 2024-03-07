@@ -23,77 +23,57 @@ export default function Accordion(props: Props) {
         const secondTitle = c.title?.split(" ")[1];
         return (
           <li
-            className={`w-[calc((100%/${len})-${len2}px)] list-none lg:mr-2 rounded-[24px] mb-2 ${
+            className={`flex flex-row w-[calc((100%/${len})-${len2}px)] max-h-[453px] list-none min-[1264px]:mr-2 rounded-[24px] mb-2 ${
               itemVisible.value == index
                 ? "bg-primary dark:bg-secondary"
-                : "bg-[#FCD28A] dark:bg-[#F4B9AD] flex items-center lg:items-start lg:justify-center"
+                : "bg-[#FCD28A] dark:bg-[#F4B9AD] min-[1264px]:justify-center  hover:cursor-pointer hover:opacity-75 transition-opacity duration-300"
             } text-black`}
             onClick={() => (itemVisible.value = index)}
           >
-            <button
-              className={`flex items-center w-full ${
+            <div
+              className={`flex items-start ${
                 itemVisible.value == index ? "pt-8" : "py-3"
-              } px-6 lg:py-8`}
+              } px-6 min-[1264px]:py-8`}
             >
               <div
                 className={`${
-                  itemVisible.value == index
-                    ? "pr-4"
-                    : "flex items-center lg:items-start lg:justify-center"
+                  itemVisible.value !== index &&
+                  "flex items-center min-[1264px]:items-start min-[1264px]:justify-center"
                 }`}
               >
                 <span
-                  className={`text-[2rem] lg:text-[3rem] font-black leading-[100%] tracking-[-3.2px] lg:leading-[140%] lg:tracking-[-4.8px]`}
+                  className={`text-[2rem] min-[1264px]:text-[3rem] font-black leading-[100%] tracking-[-3.2px] min-[1264px]:leading-[140%] min-[1264px]:tracking-[-4.8px]`}
                 >
                   {index + 1}
                 </span>
               </div>
-              {itemVisible.value == index && (
-                <h3 className="min-[1264px]:hidden pl-6 lg:pl-12 font-black text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
+            </div>
+            <div
+              className={`grid 
+              overflow-hidden transition-all min-[1264px]:transition-opacity duration-700 min-[1264px]:duration-[1200ms] ease-in-out ${
+                itemVisible.value === index
+                  ? "max-[1263px]:grid-rows-[1fr] min-[1264px]:grid-cols-[1fr] opacity-100 px-6 py-8 min-[1264px]:px-12 min-[1264px]:py-16 gap-10"
+                  : "max-[1263px]:grid-rows-[0fr] min-[1264px]:grid-cols-[0fr] opacity-0 min-[1264px]:w-0"
+              }`}
+            >
+              <div className="overflow-hidden space-y-10">
+                <h3 className="font-black text-[1.5rem] leading-relaxed min-[1264px]:text-[3.5rem] min-[1264px]:leading-[110%]">
                   {firstTitle}
                   <div className="flex items-center">
-                    <div class="p-1 lg:p-4 mr-4">
+                    <div class="p-1 min-[1264px]:p-4 mr-4">
                       <Icon
                         id="InverseExternalLink"
-                        class="mx-0 lg:w-[38.24px] lg:h-[38.24px]"
+                        class="mx-0 min-[1264px]:w-[35px] min-[1264px]:h-[35px]"
                         size={14.2}
                         strokeWidth={20}
                       />
                     </div>
-                    <span className="text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
+                    <span className="text-[1.5rem] leading-relaxed min-[1264px]:text-[3.5rem] min-[1264px]:leading-[110%]">
                       {secondTitle}
                     </span>
                   </div>
                 </h3>
-              )}
-            </button>
-            <div
-              className={`grid 
-              overflow-hidden transition-all duration-700 ease-in-out ${
-                itemVisible.value === index
-                  ? "grid-rows-[1fr] opacity-100 ml-4 pl-8 pr-6 py-8 lg:px-12 lg:py-16 lg:pt-0 gap-10"
-                  : "grid-rows-[0fr] opacity-0 lg:w-0"
-              }`}
-            >
-              <div className="overflow-hidden pl-2 lg:pl-12">
-                <h3 className="hidden min-[1264px]:block pl-6 lg:pl-0 lg:pb-10 font-black text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
-                  {firstTitle}
-                  <div className="flex items-center">
-                    <div class="p-4 mr-4">
-                      <Icon
-                        id="InverseExternalLink"
-                        class="mx-0"
-                        size={38.24}
-                        strokeWidth={20}
-                      />
-                    </div>
-
-                    <span className="text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
-                      {secondTitle}
-                    </span>
-                  </div>
-                </h3>
-                <p className="ml-6 lg:ml-0 font-merriweather text-base lg:text-[1.5rem] lg:leading-9">
+                <p className="font-merriweather text-base min-[1264px]:text-[1.5rem] min-[1264px]:leading-9">
                   {c.description}
                 </p>
               </div>
