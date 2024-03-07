@@ -23,15 +23,15 @@ export default function Accordion(props: Props) {
         const secondTitle = c.title?.split(" ")[1];
         return (
           <li
-            className={`w-[calc((100%/${len})-${len2}px)] list-none lg:mr-2 rounded-[24px] mb-2 ${
+            className={`flex flex-row w-[calc((100%/${len})-${len2}px)] list-none lg:mr-2 rounded-[24px] mb-2 ${
               itemVisible.value == index
                 ? "bg-primary dark:bg-secondary"
-                : "bg-[#FCD28A] dark:bg-[#F4B9AD] flex items-center lg:items-start lg:justify-center"
+                : "bg-[#FCD28A] dark:bg-[#F4B9AD] min-[1264px]:justify-center"
             } text-black`}
             onClick={() => (itemVisible.value = index)}
           >
-            <button
-              className={`flex items-center w-full ${
+            <div
+              className={`flex items-start ${
                 itemVisible.value == index ? "pt-8" : "py-3"
               } px-6 lg:py-8`}
             >
@@ -48,8 +48,17 @@ export default function Accordion(props: Props) {
                   {index + 1}
                 </span>
               </div>
-              {itemVisible.value == index && (
-                <h3 className="min-[1264px]:hidden pl-6 lg:pl-12 font-black text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
+            </div>
+            <div
+              className={`grid 
+              overflow-hidden transition-all duration-700 ease-in-out ${
+                itemVisible.value === index
+                  ? "grid-rows-[1fr] min-[1264px]:grid-cols-[1fr] opacity-100 px-6 py-8 lg:px-12 lg:py-16 gap-10"
+                  : "grid-rows-[0fr] min-[1264px]:grid-cols-[0fr] opacity-0 lg:w-0"
+              }`}
+            >
+              <div className="overflow-hidden space-y-10">
+                <h3 className="font-black text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
                   {firstTitle}
                   <div className="flex items-center">
                     <div class="p-1 lg:p-4 mr-4">
@@ -60,40 +69,13 @@ export default function Accordion(props: Props) {
                         strokeWidth={20}
                       />
                     </div>
-                    <span className="text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
-                      {secondTitle}
-                    </span>
-                  </div>
-                </h3>
-              )}
-            </button>
-            <div
-              className={`grid 
-              overflow-hidden transition-all duration-700 ease-in-out ${
-                itemVisible.value === index
-                  ? "grid-rows-[1fr] opacity-100 ml-4 pl-8 pr-6 py-8 lg:px-12 lg:py-16 lg:pt-0 gap-10"
-                  : "grid-rows-[0fr] opacity-0 lg:w-0"
-              }`}
-            >
-              <div className="overflow-hidden pl-2 lg:pl-12">
-                <h3 className="hidden min-[1264px]:block pl-6 lg:pl-0 lg:pb-10 font-black text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
-                  {firstTitle}
-                  <div className="flex items-center">
-                    <div class="p-4 mr-4">
-                      <Icon
-                        id="InverseExternalLink"
-                        class="mx-0"
-                        size={38.24}
-                        strokeWidth={20}
-                      />
-                    </div>
 
                     <span className="text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
                       {secondTitle}
                     </span>
                   </div>
                 </h3>
-                <p className="ml-6 lg:ml-0 font-merriweather text-base lg:text-[1.5rem] lg:leading-9">
+                <p className="font-merriweather text-base lg:text-[1.5rem] lg:leading-9">
                   {c.description}
                 </p>
               </div>
