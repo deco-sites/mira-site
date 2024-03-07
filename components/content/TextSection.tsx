@@ -19,10 +19,10 @@ export default function RichText(
 ) {
   return (
     <div class="dark:bg-base-300">
-      <div class="w-full max-w-[1440px] flex flex-col lg:flex-row justify-center gap-6 lg:gap-0 lg:justify-between items-start px-6 lg:px-16 py-10 lg:py-24 mx-auto">
+      <div class="w-full lg:max-w-[1224px] min-[1440px]:max-w-[1440px] flex flex-col lg:flex-row justify-center gap-6 lg:gap-0 lg:justify-between items-start px-6 lg:px-16 py-10 lg:py-24 mx-auto">
         <div class="flex flex-col w-full lg:w-[55.031%] gap-3">
           <div
-            class="text-base-200 dark:text-black text-2xl lg:text-[32px] xl:text-[40px] font-black leading-[110%] uppercase"
+            class="text-base-200 dark:text-black text-2xl lg:text-[32px] min-[1440px]:text-[40px] font-black leading-[110%] uppercase"
             dangerouslySetInnerHTML={{ __html: BigText }}
           >
           </div>
@@ -32,7 +32,7 @@ export default function RichText(
             class="hidden lg:block left-[-1px] w-[121%] fill-primary dark:fill-secondary"
           />
         </div>
-        <div class="lg:w-[28.583%] font-merryweather text-base-200 font-merriweather text-base lg:text-2xl leading-[150%] overflow-auto dark:text-black">
+        <div class="lg:w-[28.583%] font-merryweather text-base-200 font-merriweather text-base lg:text-xl min-[1440px]:text-2xl leading-[150%] overflow-auto dark:text-black">
           {smallText}
         </div>
       </div>

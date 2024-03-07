@@ -43,7 +43,7 @@ export default function Card(props: Props) {
               loading="lazy"
             />
           </h4>
-          <p class="text-[18px] leading-[150%]">{text}</p>
+          <p class="text-[15px] lg:text-[16px] leading-[150%]">{text}</p>
         </div>
         <div class="flex flex-col justify-end">
           <p class="text-[16px] leading-[150%] font-bold">
