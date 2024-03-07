@@ -12,9 +12,19 @@ export interface WidgetData {
   height?: number;
 }
 
+export interface Logo {
+  srcDark?: ImageWidget;
+  srcLight?: ImageWidget;
+  alt?: string;
+  width?: number;
+  height?: number;
+}
+
 export interface Props {
   /** @format html */
   title?: string;
+
+  logo?: Logo;
 
   widget1?: WidgetData;
   widget2?: WidgetData;
@@ -34,6 +44,7 @@ const DEFAULT_TEXT =
 export default function Features(
   {
     title = DEFAULT_TEXT,
+    logo,
     widget1,
     widget2,
     description1,
@@ -49,16 +60,31 @@ export default function Features(
             class="lg:col-span-2 font-black text-2xl leading-[1.65rem] lg:text-[2.4rem] xl:text-[2.5rem] lg:leading-[3.5rem] text-base-200 dark:text-black"
             dangerouslySetInnerHTML={{ __html: title }}
           />
-          <div class="flex items-center max-[1024px]:mt-6">
+          <div class="flex items-center max-[1024px]:mt-6 gap-1 lg:gap-8">
             <Image
-              class="inline dark:hidden mr-1 lg:mr-8 w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
+              class="inline dark:hidden w-[3.938rem] h-[1.573rem]"
+              src={logo?.srcDark || ""}
+              alt={logo?.alt || ""}
+              width={logo?.width || 100}
+              height={logo?.height || 13}
+            />
+            <Image
+              class="hidden dark:inline w-[3.938rem] h-[1.573rem]"
+              src={logo?.srcLight || ""}
+              alt={logo?.alt || ""}
+              width={logo?.width || 100}
+              height={logo?.height || 13}
+            />
+
+            <Image
+              class="inline dark:hidden w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
               src={widget1?.srcDark || ""}
               alt={widget1?.alt || ""}
               width={widget1?.width || 40}
               height={widget1?.height || 20}
             />
             <Image
-              class="hidden dark:inline mr-1 lg:mr-8 w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
+              class="hidden dark:inline w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
               src={widget1?.srcLight || ""}
               alt={widget1?.alt || ""}
               width={widget1?.width || 40}
