@@ -33,7 +33,7 @@ export default function ImageSection({
   return (
     <div class="w-full dark:bg-base-300">
       <div
-        class={`flex flex-col lg:flex-row w-full gap-10 max-w-[1440px] px-6 lg:px-16 py-10 lg:py-24 lg:mx-auto ${
+        class={`flex flex-col lg:flex-row gap-10 max-[1440px]:max-w-[1224px] max-w-[1440px] px-6 lg:px-16 py-10 lg:py-24 lg:mx-auto ${
           PLACEMENT[placement]
         } text-left justify-between`}
       >

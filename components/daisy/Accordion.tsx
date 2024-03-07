@@ -1,4 +1,5 @@
 import { useSignal } from "@preact/signals";
+import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
 
 interface Child {
   title?: string;
@@ -18,38 +19,61 @@ export default function Accordion(props: Props) {
   return (
     <>
       {children2.map((c, index) => {
+        const firstTitle = c.title?.split(" ")[0];
+        const secondTitle = c.title?.split(" ")[1];
         return (
           <li
-            key={index}
-            className={`flex w-[calc((100%/${len})-${len2}px)] items-start lg:mr-2 rounded-[24px] mb-2 text-black hover:cursor-pointer
-            ${
+            className={`flex flex-row w-[calc((100%/${len})-${len2}px)] max-h-[453px] list-none min-[1264px]:mr-2 rounded-[24px] mb-2 ${
               itemVisible.value == index
                 ? "bg-primary dark:bg-secondary"
-                : "bg-[#FCD28A] dark:bg-[#F4B9AD]"
-            }
-            `}
+                : "bg-[#FCD28A] dark:bg-[#F4B9AD] min-[1264px]:justify-center  hover:cursor-pointer hover:opacity-75 transition-opacity duration-300"
+            } text-black`}
             onClick={() => (itemVisible.value = index)}
           >
-            <p
-              className={`flex justify-center items-center 
-              ${
-                itemVisible.value == index ? "px-4 py-8" : "px-6 py-3"
-              } lg:px-6 w-[66px] text-[2rem] lg:text-[3rem] font-black leading-[100%] tracking-[-3.2px] lg:leading-[140%] lg:tracking-[-4.8px]`}
-            >
-              {index + 1}
-            </p>
             <div
-              className={`${
-                itemVisible.value == index ? "flex" : "hidden"
-              } flex-col px-6 py-8 lg:px-12 lg:py-16 gap-10 items-start`}
+              className={`flex items-start ${
+                itemVisible.value == index ? "pt-8" : "py-3"
+              } px-6 min-[1264px]:py-8`}
             >
-              <h3 className="flex items-start font-black text-[1.5rem] leading-relaxed lg:text-[4rem] lg:leading-[110%]">
-                {c.title}
-              </h3>
-              <div className="overflow-hidden transition-max-height duration-300 ease-in-out 
-              mt-5 mr-6 mb-8 max-h-[1000px]
-              ">
-                <p className="font-merriweather text-base lg:text-[1.5rem] lg:leading-9">
+              <div
+                className={`${
+                  itemVisible.value !== index &&
+                  "flex items-center min-[1264px]:items-start min-[1264px]:justify-center"
+                }`}
+              >
+                <span
+                  className={`text-[2rem] min-[1264px]:text-[3rem] font-black leading-[100%] tracking-[-3.2px] min-[1264px]:leading-[140%] min-[1264px]:tracking-[-4.8px]`}
+                >
+                  {index + 1}
+                </span>
+              </div>
+            </div>
+            <div
+              className={`grid 
+              overflow-hidden transition-all min-[1264px]:transition-opacity duration-700 min-[1264px]:duration-[1200ms] ease-in-out ${
+                itemVisible.value === index
+                  ? "max-[1263px]:grid-rows-[1fr] min-[1264px]:grid-cols-[1fr] opacity-100 px-6 py-8 min-[1264px]:px-12 min-[1264px]:py-16 gap-10"
+                  : "max-[1263px]:grid-rows-[0fr] min-[1264px]:grid-cols-[0fr] opacity-0 min-[1264px]:w-0"
+              }`}
+            >
+              <div className="overflow-hidden space-y-10">
+                <h3 className="font-black text-[1.5rem] leading-relaxed min-[1264px]:text-[3.5rem] min-[1264px]:leading-[110%]">
+                  {firstTitle}
+                  <div className="flex items-center">
+                    <div class="p-1 min-[1264px]:p-4 mr-4">
+                      <Icon
+                        id="InverseExternalLink"
+                        class="mx-0 min-[1264px]:w-[35px] min-[1264px]:h-[35px]"
+                        size={14.2}
+                        strokeWidth={20}
+                      />
+                    </div>
+                    <span className="text-[1.5rem] leading-relaxed min-[1264px]:text-[3.5rem] min-[1264px]:leading-[110%]">
+                      {secondTitle}
+                    </span>
+                  </div>
+                </h3>
+                <p className="font-merriweather text-base min-[1264px]:text-[1.5rem] min-[1264px]:leading-9">
                   {c.description}
                 </p>
               </div>
