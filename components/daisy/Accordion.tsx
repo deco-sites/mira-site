@@ -25,7 +25,7 @@ export default function Accordion(props: Props) {
           <li
             className={`flex flex-row w-[calc((100%/${len})-${len2}px)] max-h-[453px] list-none min-[1264px]:mr-2 rounded-[24px] mb-2 ${
               itemVisible.value == index
-                ? "bg-primary dark:bg-secondary"
+                ? "bg-main dark:bg-sub"
                 : "bg-[#FCD28A] dark:bg-[#F4B9AD] min-[1264px]:justify-center  hover:cursor-pointer hover:opacity-75 transition-opacity duration-300"
             } text-black`}
             onClick={() => (itemVisible.value = index)}

@@ -91,7 +91,7 @@ export default function GallerySlider(props: Props) {
             <Slider.Dot index={index}>
               <Image
                 style={{ aspectRatio }}
-                class="group-disabled:border-base-300 border rounded "
+                class="group-disabled:border-b-300 border rounded "
                 width={63}
                 height={87.5}
                 src={img.url!}

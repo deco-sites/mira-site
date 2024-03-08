@@ -7,7 +7,7 @@ interface Props {
 
 function Placeholder() {
   return (
-    <div class="rounded h-48 grid place-content-center w-full bg-base-100 text-base-300 text-sm">
+    <div class="rounded h-48 grid place-content-center w-full bg-base-100 text-b-300 text-sm">
       Content
     </div>
   );
@@ -16,7 +16,7 @@ function Placeholder() {
 function Container({ children }: Props) {
   if (!context.isDeploy && typeof children?.Component !== "function") {
     return (
-      <div class="bg-primary bg-opacity-5 p-4">
+      <div class="bg-main bg-opacity-5 p-4">
         <Container children={{ Component: Placeholder, props: {} }} />
       </div>
     );

@@ -81,7 +81,7 @@ function CookieConsent(props: Props) {
       >
         <div
           class={`
-          p-4 mx-4 my-2 flex flex-col gap-4 shadow bg-base-100 rounded border border-base-200 
+          p-4 mx-4 my-2 flex flex-col gap-4 shadow bg-base-100 rounded border border-b-200 
           ${
             !layout?.position || layout?.position === "Expanded"
               ? "lg:container lg:mx-auto"
@@ -115,7 +115,7 @@ function CookieConsent(props: Props) {
               />
             )}
 
-            <a href={policy.link} class="text-sm link link-secondary">
+            <a href={policy.link} class="text-sm link link-sub">
               {policy.text}
             </a>
           </div>

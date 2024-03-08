@@ -31,7 +31,7 @@ export default function ImageSection({
   placement,
 }: Props) {
   return (
-    <div class="w-full dark:bg-base-300">
+    <div class="w-full bg-black dark:bg-b-300">
       <div
         class={`flex flex-col lg:flex-row gap-10 max-[1440px]:max-w-[1224px] max-w-[1440px] px-6 lg:px-16 py-10 lg:py-24 lg:mx-auto ${
           PLACEMENT[placement]
@@ -51,20 +51,18 @@ export default function ImageSection({
             <embed width="320" height="240" src={video} />
           </object>
         </video>
-        <div class="w-full flex flex-col lg:w-[46.95%] space-y-2 lg:space-y-4 lg:max-w-xl gap-10 text-base-200 justify-center">
+        <div class="w-full flex flex-col lg:w-[46.95%] space-y-2 lg:space-y-4 lg:max-w-xl gap-10 text-b-200 justify-center">
           {textIndex?.map((text, index) => (
             <div
               class={`w-full items-start justify-center border-l-2 pl-8 ${
                 index === 0
-                  ? "border-primary dark:border-secondary"
+                  ? "border-main dark:border-sub"
                   : "border-transparent"
               }`}
             >
               <p
                 class={`text-[32px] leading-[130%] font-black pb-4 uppercase dark:text-black ${
-                  index === 0
-                    ? "text-primary dark:text-secondary"
-                    : "border-transparent"
+                  index === 0 ? "text-main dark:text-sub" : "border-transparent"
                 }`}
               >
                 {text.label}

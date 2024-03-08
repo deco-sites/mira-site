@@ -17,7 +17,7 @@ export default function AgendaCard(
   return (
     <a
       href={url}
-      class={`group w-[calc(100vw/1.2-48px)] flex flex-col lg:w-[calc((100vw/2.5)-128px)] items-center text-base-200 dark:text-black ${
+      class={`group w-[calc(100vw/1.2-48px)] flex flex-col lg:w-[calc((100vw/2.5)-128px)] items-center text-b-200 dark:text-black ${
         alignment === "center" ? "text-center" : "text-left"
       }`}
     >
@@ -30,7 +30,7 @@ export default function AgendaCard(
         decoding="async"
         loading="lazy"
       />
-      <div class="w-full flex items-center justify-between py-2 px-[18px] lg:px-8 lg:py-4 rounded-b-[24px] group-hover:bg-primary dark:group-hover:bg-secondary border-t-[0.5px] border-base-200 dark:border-black">
+      <div class="w-full flex items-center justify-between py-2 px-[18px] lg:px-8 lg:py-4 rounded-b-[24px] group-hover:bg-main dark:group-hover:bg-sub border-t-[0.5px] border-b-200 dark:border-black">
         {description && (
           <div class="flex items-center gap-1 lg:gap-2 text-[10px] lg:text-[16px] leading-[150%] tracking-[-0.16px] uppercase group-hover:text-black">
             {description}
@@ -38,13 +38,13 @@ export default function AgendaCard(
               width={24}
               height={24}
               id="ArrowUpRight"
-              class="hidden lg:flex fill-base-200 group-hover:fill-black dark:fill-black"
+              class="hidden lg:flex fill-b-200 group-hover:fill-black dark:fill-black"
             />
             <Icon
               width={12}
               height={12}
               id="ArrowUpRight"
-              class="flex lg:hidden fill-base-200 group-hover:fill-black dark:fill-black"
+              class="flex lg:hidden fill-b-200 group-hover:fill-black dark:fill-black"
             />
           </div>
         )}

@@ -12,7 +12,7 @@ export default function Hero(props: Props) {
   const { title, description, cta, image, imageOnRight } = props;
 
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-b-200">
       <div
         className={image
           ? "hero-content flex-col lg:flex-row"
@@ -32,7 +32,7 @@ export default function Hero(props: Props) {
           <p className="py-6">{description}</p>
           {cta && (
             <a href={cta.href}>
-              <button className="btn btn-primary">{cta.text}</button>
+              <button className="btn btn-main">{cta.text}</button>
             </a>
           )}
         </div>
