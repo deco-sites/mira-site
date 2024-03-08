@@ -1,7 +1,7 @@
 import Icon from "$store/components/ui/Icon.tsx";
 import Image from "apps/website/components/Image.tsx";
 import { Logo, WorkshopButton } from "$store/components/header/Header.tsx";
-import ToggleDarkMode from "deco-sites/mira-site/components/header/Buttons/ToggleDarkMode.tsx";
+import ThemeController from "$store/components/daisy/ThemeController.tsx";
 
 function Navbar({
   logo,
@@ -44,7 +44,7 @@ function Navbar({
               </>
             )}
           </a>
-          <ToggleDarkMode />
+          <ThemeController />
         </div>
         <h3 class="text-[0.813rem]  leading-[0.975rem]  font-black text-white dark:text-black">
           {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
@@ -90,7 +90,7 @@ function Navbar({
             <p class="text-nowrap">{workshopButton.text}</p>
             <Icon id="ExternalLink" size={14} strokeWidth={0.01} />
           </a>
-          <ToggleDarkMode />
+          <ThemeController />
         </div>
       </div>
     </>
