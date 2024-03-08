@@ -84,7 +84,7 @@ function Navbar({
         </div>
         <div class="flex xl:w-1/3 items-center justify-end gap-6">
           <a
-            class="flex flex-nowrap px-3 py-2 items-center rounded-full border-none font-light text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-primary dark:bg-secondary"
+            class="flex flex-nowrap px-3 py-2 items-center rounded-full border-none font-light text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main dark:bg-sub"
             href={workshopButton.url}
           >
             <p class="text-nowrap">{workshopButton.text}</p>

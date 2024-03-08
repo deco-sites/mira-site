@@ -37,7 +37,7 @@ function Header({
     <>
       <header class="h-[95.59px] lg:h-[80.25px]" // style={{ height: headerHeight }}
       >
-        <div class="fixed w-full z-50 bg-black  dark:bg-[#FFF8E6]">
+        <div class="fixed w-full z-50 bg-black  dark:bg-b-300">
           {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
           <Navbar
             logo={logo}

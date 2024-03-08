@@ -20,7 +20,7 @@ export default function Card(props: Props) {
     role,
   } = props;
   return (
-    <div class="shadow-xl p-8 text-base-200 rounded-[24px_24px_0_24px]">
+    <div class="shadow-xl p-8 text-b-200 rounded-[24px_24px_0_24px]">
       <div class="flex flex-col h-full gap-6 items-start font-merriweather justify-between dark:text-black">
         <div class="flex flex-col gap-12">
           <h4 class="card-title">

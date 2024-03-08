@@ -13,7 +13,6 @@ export default defineApp(async (_req, ctx) => {
 
   return (
     <>
-
       {/* Include Icons and manifest */}
       <Head>
         {/* Enable View Transitions API */}

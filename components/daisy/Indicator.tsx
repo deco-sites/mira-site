@@ -11,12 +11,12 @@ export default function Indicator(props: Props) {
 
   return (
     <div className="indicator">
-      <span className="indicator-item badge badge-secondary">
+      <span className="indicator-item badge badge-sub">
         {badgeText ? badgeText : ""}
       </span>
       <div
         className={`w-20 h-20 rounded-lg ${
-          !avatar && "grid bg-base-300 place-items-center"
+          !avatar && "grid bg-b-300 place-items-center"
         }`}
       >
         {!avatar && text}
