@@ -1,12 +1,9 @@
-import Icon from "$store/components/ui/Icon.tsx";
-
 export default function ThemeController() {
   return (
-    <label class="cursor-pointer grid place-items-center dark:text-b-300 ">
+    <label class="cursor-pointer grid place-items-center">
       <input
         type="checkbox"
-        // TODO: b-300 não funciona no --tglbg:
-        class="toggle theme-controller checked:[--tglbg:#FFF8E6]  row-start-1 col-start-1 col-span-2 text-main dark:text-sub "
+        class="toggle theme-controller [--tglbg:black] checked:[--tglbg:#FFF8E6]  row-start-1 col-start-1 col-span-2 text-main dark:text-sub "
         data-toggle-darkmode
       />
     </label>
