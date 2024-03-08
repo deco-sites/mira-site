@@ -9,18 +9,6 @@ export default function ThemeController() {
         class="toggle theme-controller checked:[--tglbg:#FFF8E6]  row-start-1 col-start-1 col-span-2 text-main dark:text-sub "
         data-toggle-darkmode
       />
-
-      <Icon
-        id="Sun"
-        class="col-start-1 row-start-1 dark:fill-b-300"
-        size={14}
-      />
-
-      <Icon
-        id="Moon"
-        class="col-start-2 row-start-1"
-        size={14}
-      />
     </label>
   );
 }
