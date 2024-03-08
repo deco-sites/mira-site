@@ -29,7 +29,7 @@ export default function Pillars(
 ) {
   return (
     <section class="w-full bg-black dark:bg-b-300">
-      <div class="flex flex-col max-[1440px]:max-w-[1224px] max-w-[1440px] text-b-200 px-6 py-10 lg:px-16 lg:py-24 mx-auto gap-10 lg:gap-20">
+      <div class="flex flex-col lg:max-w-[1224px] min-[1650px]:max-w-[1440px] text-b-200 px-6 py-10 lg:px-16 lg:py-24 mx-auto gap-10 lg:gap-20">
         <div class="max-w-[640px] space-y-6">
           <h2 class="text-[1.5rem] lg:text-[2.5rem] leading-relaxed lg:leading-[2.75rem] font-black dark:text-black">
             {title}
