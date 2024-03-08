@@ -22,10 +22,20 @@ export default function Card(props: Props) {
   return (
     <div class="shadow-xl p-8 text-base-200 rounded-[24px_24px_0_24px]">
       <div class="flex flex-col h-full gap-6 items-start font-merriweather justify-between dark:text-black">
-        <div class="flex flex-col gap-12">
-          <h4 class="card-title">
+        <p class="text-[15px] lg:text-[16px] leading-[150%]">{text}</p>
+        <div class="flex justify-between w-full">
+          <div class="flex flex-col">
+            <p class="text-[16px] leading-[150%] font-bold">
+              {name}
+            </p>
+            <p class="text-[16px] leading-[150%]">
+              {role}
+            </p>
+          </div>
+          <div class="card-title">
             <Image
-              width={50}
+              width={40}
+              height={15}
               class="w-[80px] object-fit dark:hidden"
               sizes="(max-width: 640px) 100vw, 30vw"
               src={logo ?? ""}
@@ -34,7 +44,8 @@ export default function Card(props: Props) {
               loading="lazy"
             />
             <Image
-              width={50}
+              width={40}
+              height={15}
               class="hidden w-[80px] object-fit dark:flex"
               sizes="(max-width: 640px) 100vw, 30vw"
               src={logoDark ?? ""}
@@ -42,16 +53,7 @@ export default function Card(props: Props) {
               decoding="async"
               loading="lazy"
             />
-          </h4>
-          <p class="text-[15px] lg:text-[16px] leading-[150%]">{text}</p>
-        </div>
-        <div class="flex flex-col justify-end">
-          <p class="text-[16px] leading-[150%] font-bold">
-            {name}
-          </p>
-          <p class="text-[16px] leading-[150%]">
-            {role}
-          </p>
+          </div>
         </div>
       </div>
     </div>

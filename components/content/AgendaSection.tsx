@@ -41,8 +41,8 @@ function AgendaSection(props: Props) {
           </Slider>
         </div>
         {/* Progress*/}
-          {/* <Slider.Progress /> */}
-          <SliderJS rootId={id} /> 
+        {/* <Slider.Progress /> */}
+        <SliderJS rootId={id} />
       </div>
     </div>
   );
