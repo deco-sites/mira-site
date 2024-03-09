@@ -94,7 +94,7 @@ function Cart({
             {/* Cart Footer */}
             <footer class="w-full">
               {/* Subtotal */}
-              <div class="border-t border-base-200 py-2 flex flex-col">
+              <div class="border-t border-b-200 py-2 flex flex-col">
                 {discounts > 0 && (
                   <div class="flex justify-between items-center px-4">
                     <span class="text-sm">Descontos</span>
@@ -115,14 +115,14 @@ function Cart({
               </div>
 
               {/* Total */}
-              <div class="border-t border-base-200 pt-4 flex flex-col justify-end items-end gap-2 mx-4">
+              <div class="border-t border-b-200 pt-4 flex flex-col justify-end items-end gap-2 mx-4">
                 <div class="flex justify-between items-center w-full">
                   <span>Total</span>
                   <span class="font-medium text-xl">
                     {formatPrice(total, currency, locale)}
                   </span>
                 </div>
-                <span class="text-sm text-base-300">
+                <span class="text-sm text-b-300">
                   Taxas e fretes serão calculados no checkout
                 </span>
               </div>
@@ -131,7 +131,7 @@ function Cart({
                 <a class="inline-block w-full" href={checkoutHref}>
                   <Button
                     data-deco="buy-button"
-                    class="btn-primary btn-block"
+                    class="btn-main btn-block"
                     disabled={loading || isEmtpy}
                     onClick={() => {
                       sendEvent({

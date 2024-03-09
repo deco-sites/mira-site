@@ -13,7 +13,7 @@ export interface Props {
 }
 
 const DEFAULT_TEXT =
-  '<p>Trabalhamos com líderes</br><span class="text-primary dark:text-secondary">comprometidos com o futuro:</span></p>';
+  '<p>Trabalhamos com líderes</br><span class="text-main dark:text-sub">comprometidos com o futuro:</span></p>';
 [];
 
 function CardsCarousel(
@@ -27,10 +27,10 @@ function CardsCarousel(
   }
 
   return (
-    <div class="w-full dark:bg-base-300">
+    <div class="w-full bg-black dark:bg-b-300">
       <div class="w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] py-10 flex flex-col gap-10 lg:gap-20 px-6 lg:px-16 mx-auto lg:py-24">
         <h3
-          class="text-base-200 dark:text-black text-2xl lg:text-[32px] xl:text-[40px] font-black leading-[110%] uppercase"
+          class="text-b-200 dark:text-black text-2xl lg:text-[32px] xl:text-[40px] font-black leading-[110%] uppercase"
           dangerouslySetInnerHTML={{ __html: title }}
         >
         </h3>
@@ -43,7 +43,7 @@ function CardsCarousel(
             {clientCard?.map((card, index) => (
               <Slider.Item
                 index={index}
-                class="carousel-item w-[calc(100%-2px)] lg:w-[calc((100%-46px)/3)] sm:first:pl-0 sm:last:pr-0 bg-transparent border-base-200 rounded-[24px_24px_0_24px] border-[0.5px] dark:border-black"
+                class="carousel-item w-[calc(100%-2px)] lg:w-[calc((100%-46px)/3)] sm:first:pl-0 sm:last:pr-0 bg-transparent border-b-200 rounded-[24px_24px_0_24px] border-[0.5px] dark:border-black"
               >
                 <Card {...card} />
               </Slider.Item>
@@ -54,26 +54,26 @@ function CardsCarousel(
               {items?.map((_, index) => (
                 <li class="carousel-item">
                   <Slider.Dot index={index}>
-                    <div class="w-2 h-2 rounded-full group-disabled:bg-base-200 bg-[#71717A] dark:group-disabled:bg-black border-[1px]" />
+                    <div class="w-2 h-2 rounded-full group-disabled:bg-b-200 bg-[#71717A] dark:group-disabled:bg-black border-[1px]" />
                   </Slider.Dot>
                 </li>
               ))}
             </ul>
             <div class="flex">
-              <Slider.PrevButton class="btn btn-circle !bg-[transparent] border border-base-200 dark:border-black ">
+              <Slider.PrevButton class="btn btn-circle !bg-[transparent] border border-b-200 dark:border-black ">
                 <Icon
                   size={24}
                   id="ArrowPointingLeft"
                   strokeWidth={3}
-                  class="fill-base-200 group-hover:fill-black dark:fill-black"
+                  class="fill-b-200 group-hover:fill-black dark:fill-black"
                 />
               </Slider.PrevButton>
-              <Slider.NextButton class="btn btn-circle !bg-[transparent] border border-base-200 dark:border-black">
+              <Slider.NextButton class="btn btn-circle !bg-[transparent] border border-b-200 dark:border-black">
                 <Icon
                   size={24}
                   id="ArrowPointingRight"
                   strokeWidth={3}
-                  class="fill-base-200 group-hover:fill-black dark:fill-black"
+                  class="fill-b-200 group-hover:fill-black dark:fill-black"
                 />
               </Slider.NextButton>
             </div>

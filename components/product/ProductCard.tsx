@@ -303,7 +303,7 @@ function ProductCard({
                 } ${align === "center" ? "justify-center" : "justify-end"}`}
               >
                 <div
-                  class={`line-through text-base-300 text-xs font-light ${
+                  class={`line-through text-b-300 text-xs font-light ${
                     l?.basics?.oldPriceSize === "Normal" ? "lg:text-sm" : ""
                   }`}
                 >
@@ -330,7 +330,7 @@ function ProductCard({
                 )
                 : (
                   <li>
-                    <span class="text-base-300 font-light text-sm truncate">
+                    <span class="text-b-300 font-light text-sm truncate">
                       ou {installments}
                     </span>
                   </li>

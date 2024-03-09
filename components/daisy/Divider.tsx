@@ -9,13 +9,13 @@ export default function Divider(props: Props) {
 
   return (
     <div className="flex flex-col w-full lg:flex-row">
-      <div className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">
+      <div className="grid flex-grow h-32 card bg-b-300 rounded-box place-items-center">
         {leftContent}
       </div>
       <div className="divider lg:divider-horizontal">
         {dividerText ? dividerText : ""}
       </div>
-      <div className="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">
+      <div className="grid flex-grow h-32 card bg-b-300 rounded-box place-items-center">
         {rightContent}
       </div>
     </div>

@@ -59,7 +59,7 @@ export default function Benefits(
     return (
       <div
         class={`${
-          reverse ? "bg-primary text-primary-content p-4 lg:px-8 lg:py-4" : ""
+          reverse ? "bg-main text-main-content p-4 lg:px-8 lg:py-4" : ""
         } flex gap-4 ${
           benefitLayout == "piledup" ? "flex-col items-center text-center" : ""
         } ${
@@ -126,7 +126,7 @@ export default function Benefits(
             alignment={layout?.headerAlignment || "center"}
           />
           <div class="w-full flex justify-center">
-            <div class="grid grid-cols-2 gap-4 w-full py-6 px-4 border border-base-300 lg:gap-8 lg:grid-flow-col lg:auto-cols-fr lg:p-10">
+            <div class="grid grid-cols-2 gap-4 w-full py-6 px-4 border border-b-300 lg:gap-8 lg:grid-flow-col lg:auto-cols-fr lg:p-10">
               {listOfBenefits}
             </div>
           </div>

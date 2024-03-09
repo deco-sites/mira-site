@@ -26,7 +26,7 @@ export default function CallToAction({ text = "Call to Action", cta }: Props) {
               target={item?.href.includes("http") ? "_blank" : "_self"}
               class={`group relative overflow-hidden rounded-full hover:bg-gradient-to-r px-6 py-2 lg:px-8 lg:py-3 transition-all duration-300 ease-out ${
                 item.variant === "Reverse"
-                  ? "bg-secondary text-white"
+                  ? "bg-sub text-white"
                   : "bg-accent text-black"
               }`}
             >

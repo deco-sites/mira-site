@@ -19,7 +19,7 @@ function AgendaSection(props: Props) {
   const id = useId();
 
   return (
-    <div class="w-full dark:bg-base-300">
+    <div class="w-full bg-black dark:bg-b-300">
       <div class="w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] px-6 gap-10 lg:gap-20 py-10 lg:px-16 lg:py-24 flex flex-col relative lg:justify-between mx-auto">
         <h2 class="w-full font-black leading-[110%] uppercase text-base-200 text-[24px] lg:text-[40px] text-left dark:text-black">
           {title}
@@ -31,7 +31,7 @@ function AgendaSection(props: Props) {
                 return (
                   <Slider.Item
                     index={index}
-                    class="border-[0.5px] h-auto border-base-200 dark:border-black rounded-[24px]"
+                    class="border-[0.5px] h-auto border-b-200 dark:border-black rounded-[24px]"
                   >
                     <AgendaCard {...card} />
                   </Slider.Item>
