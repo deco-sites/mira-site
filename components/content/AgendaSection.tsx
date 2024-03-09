@@ -20,7 +20,7 @@ function AgendaSection(props: Props) {
 
   return (
     <div class="w-full dark:bg-base-300">
-      <div class="w-full lg:max-w-[1224px] min-[1440px]:max-w-[1440px] px-6 gap-10 lg:gap-20 py-10 lg:px-16 lg:py-24 flex flex-col relative lg:justify-between mx-auto">
+      <div class="w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] px-6 gap-10 lg:gap-20 py-10 lg:px-16 lg:py-24 flex flex-col relative lg:justify-between mx-auto">
         <h2 class="w-full font-black leading-[110%] uppercase text-base-200 text-[24px] lg:text-[40px] text-left dark:text-black">
           {title}
         </h2>

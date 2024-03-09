@@ -34,8 +34,7 @@ export default function Card(props: Props) {
           </div>
           <div class="card-title">
             <Image
-              width={40}
-              height={15}
+              width={50}
               class="w-[80px] object-fit dark:hidden"
               sizes="(max-width: 640px) 100vw, 30vw"
               src={logo ?? ""}
@@ -44,8 +43,7 @@ export default function Card(props: Props) {
               loading="lazy"
             />
             <Image
-              width={40}
-              height={15}
+              width={50}
               class="hidden w-[80px] object-fit dark:flex"
               sizes="(max-width: 640px) 100vw, 30vw"
               src={logoDark ?? ""}
