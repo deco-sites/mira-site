@@ -40,8 +40,8 @@ export default function ImageSection({
         <video
           width="616"
           height="640"
-          controls
           autoplay
+          muted
           loading="lazy"
           loop
           class="w-full lg:w-[46.95%] object-fit rounded-3xl"
