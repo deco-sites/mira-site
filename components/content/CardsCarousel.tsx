@@ -27,10 +27,10 @@ function CardsCarousel(
   }
 
   return (
-    <div class="w-full bg-black dark:bg-b-300">
+    <div class="w-full bg-black dark:bg-b-300 max-[1650px]:scale-90">
       <div class="w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] py-10 flex flex-col gap-10 lg:gap-20 px-6 lg:px-16 mx-auto lg:py-24">
         <h3
-          class="text-b-200 dark:text-black text-2xl lg:text-[32px] xl:text-[40px] font-black leading-[110%] uppercase"
+          class="text-b-200 dark:text-black text-2xl lg:text-[34px] min-[1650px]:text-[40px] font-black leading-[110%] uppercase"
           dangerouslySetInnerHTML={{ __html: title }}
         >
         </h3>

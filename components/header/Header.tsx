@@ -35,9 +35,9 @@ function Header({
 }: Props) {
   return (
     <>
-      <header class="h-[95.59px] lg:h-[80.25px]" // style={{ height: headerHeight }}
+      <header class="h-[95.59px] lg:h-[80.25px] bg-black dark:bg-b-300" // style={{ height: headerHeight }}
       >
-        <div class="fixed w-full z-50 bg-black  dark:bg-b-300">
+        <div class="fixed w-full z-50 bg-black dark:bg-b-300">
           {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
           <Navbar
             logo={logo}

@@ -19,13 +19,24 @@ function AgendaSection(props: Props) {
   const id = useId();
 
   return (
-    <div class="w-full bg-black dark:bg-b-300">
-      <div class="w-full lg:max-w-[1224px] min-[1440px]:max-w-[1440px] px-6 gap-10 lg:gap-20 py-10 lg:px-16 lg:py-24 flex flex-col relative lg:justify-between mx-auto">
-        <h2 class="w-full font-black leading-[110%] uppercase text-b-200 text-[24px] lg:text-[40px] text-left dark:text-black">
+    <div class="w-full bg-black dark:bg-b-300 max-[1650px]:scale-90">
+      <div class="w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] px-6 gap-10 lg:gap-20 py-10 lg:px-16 lg:py-24 flex flex-col relative lg:justify-between mx-auto">
+        <h2 class="w-full font-black leading-[110%] uppercase text-base-200 text-[24px] lg:text-[34px] min-[1650px]:text-[40px] text-left dark:text-black">
           {title}
         </h2>
-        <div id={id} class="w-full h-full">
-          <Slider class="flex pr-[17px] gap-6 w-full overflow-hidden lg:snap-y lg:snap-mandatory overflow-x-auto scroll-smooth pb-10">
+        <div
+          id={id}
+          class="w-full lg:h-[260px] min-[1240px]:h-[299px] min-[1430px]:h-[337px] overflow-hidden"
+        >
+          <Slider
+            class="flex pr-[17px] gap-6 w-full overflow-hidden lg:snap-y lg:snap-mandatory overflow-x-scroll scroll-smooth pb-10"
+            onWheel={`(function(event) {
+                event.preventDefault();
+                const slider = event.currentTarget;
+                const scrollAmount = event.deltaY > 0 ? 400 : -400;
+                slider.scrollLeft += scrollAmount;
+              })(event)`}
+          >
             {cards?.map(
               (card, index) => {
                 return (
