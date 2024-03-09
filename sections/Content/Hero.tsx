@@ -29,11 +29,11 @@ export default function HeroFlats({
       <div class="flex flex-col h-full w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] gap-6 lg:gap-10 px-6 pb-10 lg:px-16 lg:pb-0 justify-center mx-auto">
         <div class="flex flex-col lg:w-full gap-6 lg:gap-10 lg:h-full lg:justify-center">
           <h1
-            class="font-black text-b-200 text-[2rem] max-w-[324px] lg:max-w-[722px] lg:text-[4.5rem] lg:w-full leading-8 lg:leading-[4.5rem] dark:text-black uppercase"
+            class="font-black text-b-200 text-[2rem] max-w-[324px] lg:max-w-[610px] min-[1650px]:max-w-[722px] lg:text-[3.825rem] min-[1650px]:text-[4.5rem] lg:w-full leading-8 lg:leading-[4.5rem] dark:text-black uppercase"
             dangerouslySetInnerHTML={{ __html: title }}
           />
-          <div class="w-full flex items-start lg:items-end lg:justify-end">
-            <p class="max-w-[185px] lg:max-w-[375px] font-merriweather text-b-200 text-base lg:text-[1.5rem] lg:leading-[2.25rem] dark:text-black">
+          <div class="w-full flex items-start">
+            <p class="max-w-[185px] lg:max-w-[375px] font-merriweather text-b-200 text-base lg:text-[1.275rem] min-[1650px]:text-[1.5rem] lg:leading-[2.25rem] dark:text-black">
               {description}
             </p>
           </div>

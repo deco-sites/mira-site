@@ -22,7 +22,9 @@ export default function Card(props: Props) {
   return (
     <div class="shadow-xl p-8 text-b-200 rounded-[24px_24px_0_24px]">
       <div class="flex flex-col h-full gap-6 items-start font-merriweather justify-between dark:text-black">
-        <p class="text-[15px] lg:text-[16px] leading-[150%]">{text}</p>
+        <p class="text-[15px] min-[1650px]:text-[16px] leading-[150%]">
+          {text}
+        </p>
         <div class="flex justify-between w-full">
           <div class="flex flex-col">
             <p class="text-[16px] leading-[150%] font-bold">

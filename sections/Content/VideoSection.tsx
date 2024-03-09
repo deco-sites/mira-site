@@ -31,9 +31,9 @@ export default function ImageSection({
   placement,
 }: Props) {
   return (
-    <div class="w-full bg-black dark:bg-b-300">
+    <div class="w-full bg-black dark:bg-b-300 max-[1650px]:scale-90">
       <div
-        class={`flex flex-col lg:flex-row gap-10 max-[1440px]:max-w-[1224px] max-w-[1440px] px-6 lg:px-16 py-10 lg:py-24 lg:mx-auto ${
+        class={`flex flex-col lg:flex-row gap-10 lg:max-w-[1224px] min-[1650px]:max-w-[1440px] px-6 lg:px-16 py-10 lg:py-24 lg:mx-auto ${
           PLACEMENT[placement]
         } text-left justify-between`}
       >
@@ -61,13 +61,13 @@ export default function ImageSection({
               }`}
             >
               <p
-                class={`text-[32px] leading-[130%] font-black pb-4 uppercase dark:text-black ${
+                class={`text-[32px] lg:text-[1.7rem] min-[1650px]:text-[32px] leading-[130%] font-black pb-4 uppercase dark:text-black ${
                   index === 0 ? "text-main dark:text-sub" : "border-transparent"
                 }`}
               >
                 {text.label}
               </p>
-              <p class="text-zinc-400 text-[16px] md:text-[16px] leading-[150%] font-merriweather dark:text-black">
+              <p class="text-zinc-400 text-[16px] lg:text-[0.875rem] min-[1650px]:text-[16px] leading-[150%] font-merriweather dark:text-black">
                 {text.description}
               </p>
             </div>

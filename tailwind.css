@@ -11,6 +11,11 @@
     font-family: var(--font-family);
   }
 
+  html.dark{
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 248 230 / var(--tw-bg-opacity));
+  }
+
   mark {
     @apply bg-accent text-accent-content;
   }
