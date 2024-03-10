@@ -23,7 +23,7 @@ export default function Accordion(props: Props) {
         const secondTitle = c.title?.split(" ")[1];
         return (
           <li
-            className={`flex flex-row w-[calc((100%/${len})-${len2}px)] max-h-[453px] list-none min-[1264px]:mr-2 rounded-[24px] mb-2 ${
+            className={`flex flex-row w-[calc((100%/${len})-${len2}px)] max-h-[540px] list-none min-[1264px]:mr-2 rounded-[24px] mb-2 ${
               itemVisible.value == index
                 ? "bg-main dark:bg-sub"
                 : "bg-[#FCD28A] dark:bg-[#F4B9AD] min-[1264px]:justify-center  hover:cursor-pointer hover:opacity-75 transition-opacity duration-300"
@@ -57,10 +57,10 @@ export default function Accordion(props: Props) {
               }`}
             >
               <div className="overflow-hidden space-y-10">
-                <h3 className="font-black text-[1.5rem] leading-relaxed min-[1264px]:text-[3.5rem] min-[1264px]:leading-[110%]">
+                <h3 className="font-black text-[1.35rem] leading-relaxed min-[1264px]:text-[2.5rem] min-[1264px]:leading-[110%]">
                   {firstTitle}
-                  <div className="flex items-center">
-                    <div class="p-1 min-[1264px]:p-4 mr-4">
+                  <div className="flex items-center flex-wrap">
+                    <div class="p-1 min-[1264px]:p-4 mr-1">
                       <Icon
                         id="InverseExternalLink"
                         class="mx-0 min-[1264px]:w-[35px] min-[1264px]:h-[35px]"
@@ -68,7 +68,7 @@ export default function Accordion(props: Props) {
                         strokeWidth={20}
                       />
                     </div>
-                    <span className="text-[1.5rem] leading-relaxed min-[1264px]:text-[3.5rem] min-[1264px]:leading-[110%]">
+                    <span className="text-[1.35rem] leading-relaxed min-[1264px]:text-[2.5rem] min-[1264px]:leading-[110%]">
                       {secondTitle}
                     </span>
                   </div>
