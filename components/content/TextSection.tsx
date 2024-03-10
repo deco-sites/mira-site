@@ -22,7 +22,7 @@ export default function RichText(
       <div class="w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] flex flex-col lg:flex-row justify-center gap-6 lg:gap-0 lg:justify-between items-start px-6 lg:px-16 py-10 lg:py-24 mx-auto">
         <div class="flex flex-col w-full lg:w-[55.031%] gap-3">
           <div
-            class="text-b-200 dark:text-black text-2xl lg:text-[32px] max-[1650px]:text-[40px] font-black leading-[110%] uppercase"
+            class="text-b-200 dark:text-black text-2xl lg:text-[32px] min-[1650px]:text-[40px] font-black leading-[110%] uppercase"
             dangerouslySetInnerHTML={{ __html: BigText }}
           >
           </div>
