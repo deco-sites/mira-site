@@ -18,8 +18,8 @@ export default function RichText(
   { BigText = DEFAULT_TEXT, smallText = DEFAULT_SMALL_TEXT }: Props,
 ) {
   return (
-    <div class="bg-black dark:bg-b-300 max-[1650px]:scale-90">
-      <div class="w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] flex flex-col lg:flex-row justify-center gap-6 lg:gap-0 lg:justify-between items-start px-6 lg:px-16 py-10 lg:py-24 mx-auto">
+    <section class="bg-black dark:bg-b-300">
+      <div class="w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] flex flex-col lg:flex-row justify-center gap-6 lg:gap-0 lg:justify-between items-start px-6 lg:px-16 py-10 lg:py-24 mx-auto min-[1024px]:scale-90 min-[1650px]:scale-100">
         <div class="flex flex-col w-full lg:w-[55.031%] gap-3">
           <div
             class="text-b-200 dark:text-black text-2xl lg:text-[32px] min-[1650px]:text-[40px] font-black leading-[110%] uppercase"
@@ -36,6 +36,6 @@ export default function RichText(
           {smallText}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
