@@ -5,18 +5,19 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 /** @titleBy url */
 export interface CardInfo {
   image?: ImageWidget;
-  alt?: string;
-  url?: string;
-  description?: string;
+  callTitle?: string;
+  eventName?: string;
+  href?: string;
   alignment?: "center" | "left";
 }
 
 export default function AgendaCard(
-  { url, description, alignment, image, alt }: CardInfo,
+  { href, eventName, alignment, image, callTitle }: CardInfo,
 ) {
   return (
     <a
-      href={url}
+      href={href}
+      target="_blank"
       class={`group flex flex-col w-[calc(100vw/1.2-48px)] lg:w-[calc((100vw/2.5)-128px)] lg:max-w-[500px] items-center text-b-200 dark:text-black ${
         alignment === "center" ? "text-center" : "text-left"
       }`}
@@ -26,14 +27,14 @@ export default function AgendaCard(
         class="w-full p-4 object-fit z-10 rounded-[8px]"
         sizes="(max-width: 640px) 100vw, 30vw"
         src={image ?? ""}
-        alt={alt}
+        alt={eventName}
         decoding="async"
         loading="lazy"
       />
       <div class="w-full flex items-center justify-between py-2 px-[18px] lg:px-8 lg:py-4 rounded-b-[24px] group-hover:bg-main dark:group-hover:bg-sub border-t-[0.5px] border-b-200 dark:border-black">
-        {description && (
+        {callTitle && (
           <div class="flex items-center gap-1 lg:gap-2 text-[10px] lg:text-[16px] leading-[150%] tracking-[-0.16px] uppercase group-hover:text-black">
-            {description}
+            {callTitle}
             <Icon
               width={24}
               height={24}
@@ -48,9 +49,9 @@ export default function AgendaCard(
             />
           </div>
         )}
-        {url && (
+        {eventName && (
           <div class="text-[10px] lg:text-[16px] leading-[150%] tracking-[-0.16px] group-hover:text-black">
-            {url}
+            {eventName}
           </div>
         )}
       </div>
