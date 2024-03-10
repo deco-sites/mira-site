@@ -46,7 +46,7 @@ export default function Features(
   return (
     <section class="w-full bg-black dark:bg-b-300 transform">
       <div class="py-10 lg:py-24 min-[1024px]:scale-90 min-[1650px]:scale-100">
-        <div class="bg-black lg:max-w-[1224px] min-[1650px]:max-w-[1440px] mx-auto px-6 lg:px-16 self-center">
+        <div class="lg:max-w-[1224px] min-[1650px]:max-w-[1440px] mx-auto px-6 lg:px-16 self-center">
           <div class="grid lg:grid-cols-3 pb-6 lg:pb-20">
             <div
               class="lg:col-span-2 font-black text-2xl leading-[1.65rem] lg:text-[2.125rem] min-[1650px]:text-[2.5rem] lg:leading-[3.5rem] text-b-200 dark:text-black"

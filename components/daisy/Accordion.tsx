@@ -59,7 +59,7 @@ export default function Accordion(props: Props) {
               <div className="overflow-hidden space-y-10">
                 <h3 className="font-black text-[1.35rem] leading-relaxed min-[1264px]:text-[2.5rem] min-[1264px]:leading-[110%]">
                   {firstTitle}
-                  <div className="flex items-center flex-wrap">
+                  <div className="flex items-center flex-wrap-reverse">
                     <div class="p-1 min-[1264px]:p-4 mr-1">
                       <Icon
                         id="InverseExternalLink"
