@@ -28,8 +28,8 @@ export default function Pillars(
   }: Props,
 ) {
   return (
-    <section class="w-full bg-black dark:bg-b-300 max-[1650px]:scale-90">
-      <div class="flex flex-col lg:max-w-[1224px] min-[1650px]:max-w-[1440px] text-b-200 px-6 py-10 lg:px-16 lg:py-24 mx-auto gap-10 lg:gap-20">
+    <section class="w-full bg-black dark:bg-b-300">
+      <div class="flex flex-col lg:max-w-[1224px] min-[1650px]:max-w-[1440px] text-b-200 px-6 py-10 lg:px-16 lg:py-24 mx-auto gap-10 lg:gap-20 min-[1024px]:scale-90 min-[1650px]:scale-100">
         <div class="lg:max-w-[575px] min-[1650px]:max-w-[640px] space-y-6">
           <h2 class="text-[1.5rem] lg:text-[2.125rem] min-[1650px]:text-[2.5rem] leading-relaxed lg:leading-[2.75rem] font-black dark:text-black">
             {title}
