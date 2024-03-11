@@ -4,10 +4,10 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 
 /** @titleBy url */
 export interface CardInfo {
-  image?:{
+  image?: {
     srcDark?: ImageWidget;
     srcLight?: ImageWidget;
-  }
+  };
   callTitle?: string;
   eventName?: string;
   href?: string;

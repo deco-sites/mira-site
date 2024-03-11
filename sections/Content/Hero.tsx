@@ -14,7 +14,7 @@ export interface Props {
   heroVideo?: {
     dark?: VideoWidget;
     light?: VideoWidget;
-  }
+  };
   workshopButton?: WorkshopButton;
 }
 
@@ -29,7 +29,7 @@ export default function HeroFlats({
     text: "PARTICIPE DO PRÓXIMO WORKSHOP",
     url: "https://www.miraeducacao.com.br/",
   },
-  heroVideo
+  heroVideo,
 }: Props) {
   return (
     <section class="flex h-[calc(100vh-95px)] lg:h-[calc(100vh-80.25px)] justify-center items-center bg-black dark:bg-b-300">
@@ -50,7 +50,7 @@ export default function HeroFlats({
           </object>
         </video>
         <video
-          width="616" 
+          width="616"
           height="640"
           autoPlay
           muted

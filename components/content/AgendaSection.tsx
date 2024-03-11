@@ -24,9 +24,7 @@ function AgendaSection(props: Props) {
         <h2 class="w-full font-black leading-[110%] uppercase text-base-200 text-[24px] lg:text-[34px] min-[1650px]:text-[40px] text-left dark:text-black">
           {title}
         </h2>
-        <div
-          class="w-full overflow-hidden"
-        >
+        <div class="w-full overflow-hidden">
           <Slider
             class="flex pr-[17px] gap-6 w-full overflow-hidden lg:snap-y lg:snap-mandatory overflow-x-scroll scroll-smooth"
             // deno-lint-ignore ban-ts-comment
