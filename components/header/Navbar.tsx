@@ -86,6 +86,7 @@ function Navbar({
           <a
             class="flex flex-nowrap px-3 py-2 items-center rounded-full border-none font-light text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main dark:bg-sub"
             href={workshopButton.url}
+            target="_blank"
           >
             <p class="text-nowrap">{workshopButton.text}</p>
             <Icon id="ExternalLink" size={14} strokeWidth={0.01} />
