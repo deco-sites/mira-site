@@ -4,7 +4,10 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 
 /** @titleBy url */
 export interface CardInfo {
-  image?: ImageWidget;
+  image?:{
+    srcDark?: ImageWidget;
+    srcLight?: ImageWidget;
+  }
   callTitle?: string;
   eventName?: string;
   href?: string;
@@ -24,9 +27,18 @@ export default function AgendaCard(
     >
       <Image
         width={616}
-        class="w-full p-4 object-fit z-10 rounded-[8px]"
+        class="w-full p-4 object-fit z-10 rounded-[8px] dark:hidden"
         sizes="(max-width: 640px) 100vw, 30vw"
-        src={image ?? ""}
+        src={image?.srcDark ?? ""}
+        alt={eventName}
+        decoding="async"
+        loading="lazy"
+      />
+      <Image
+        width={616}
+        class="w-full p-4 object-fit z-10 rounded-[8px] hidden dark:block"
+        sizes="(max-width: 640px) 100vw, 30vw"
+        src={image?.srcLight ?? ""}
         alt={eventName}
         decoding="async"
         loading="lazy"

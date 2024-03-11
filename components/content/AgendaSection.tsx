@@ -19,17 +19,16 @@ function AgendaSection(props: Props) {
   const id = useId();
 
   return (
-    <section class="w-full bg-black dark:bg-b-300">
-      <div class="w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] px-6 gap-10 lg:gap-20 py-10 lg:px-16 lg:py-24 flex flex-col relative lg:justify-between mx-auto min-[1024px]:scale-90 min-[1650px]:scale-100">
+    <section id="AgendaSection" class="w-full bg-black dark:bg-b-300">
+      <div class="w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] px-6 gap-10 lg:gap-20 py-10 lg:px-16 lg:py-24 flex flex-col lg:flex-row relative lg:justify-between mx-auto min-[1024px]:scale-90 min-[1650px]:scale-100">
         <h2 class="w-full font-black leading-[110%] uppercase text-base-200 text-[24px] lg:text-[34px] min-[1650px]:text-[40px] text-left dark:text-black">
           {title}
         </h2>
         <div
-          id={id}
-          class="w-full lg:h-[260px] min-[1240px]:h-[299px] min-[1430px]:h-[337px] overflow-hidden"
+          class="w-full overflow-hidden"
         >
           <Slider
-            class="flex pr-[17px] gap-6 w-full overflow-hidden lg:snap-y lg:snap-mandatory overflow-x-scroll scroll-smooth pb-10"
+            class="flex pr-[17px] gap-6 w-full overflow-hidden lg:snap-y lg:snap-mandatory overflow-x-scroll scroll-smooth"
             // deno-lint-ignore ban-ts-comment
             // @ts-ignore
             onWheel={`(function(event) {
@@ -53,9 +52,6 @@ function AgendaSection(props: Props) {
             )}
           </Slider>
         </div>
-        {/* Progress*/}
-        {/* <Slider.Progress /> */}
-        <SliderJS rootId={id} />
       </div>
     </section>
   );
