@@ -26,15 +26,15 @@ export default function Logo({ logo, copyrightText }: Props) {
               class="inline dark:hidden"
               src={logo.srcDark || ""}
               alt={logo.alt || ""}
-              width={63}
-              height={17.15}
+              width={90}
+              height={19}
             />
             <Image
               class="hidden dark:inline"
               src={logo.srcLight || ""}
               alt={logo.alt || ""}
-              width={63}
-              height={17.15}
+              width={90}
+              height={19}
             />
           </a>
         )}
