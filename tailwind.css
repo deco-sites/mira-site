@@ -9,10 +9,13 @@
   /* Allow changing font family via CMS */
   html {
     font-family: var(--font-family);
+  }
+
+  body{
     background-color: black;
   }
 
-  html.dark{
+  html.dark body{
     --tw-bg-opacity: 1;
     background-color: rgb(255 248 230 / var(--tw-bg-opacity));
   }
