@@ -1,6 +1,3 @@
-import type { ImageWidget } from "apps/admin/widgets.ts";
-import Icon from "$store/components/ui/Icon.tsx";
-import Image from "apps/website/components/Image.tsx";
 import { VideoWidget } from "apps/admin/widgets.ts";
 
 interface Index {
@@ -40,7 +37,8 @@ export default function ImageSection({
         <video
           width="616"
           height="640"
-          autoplay
+          autoPlay
+          playsInline
           muted
           loading="lazy"
           loop
