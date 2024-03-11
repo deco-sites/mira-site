@@ -28,18 +28,18 @@ function Navbar({
             {logo && (
               <>
                 <Image
-                  class="inline dark:hidden w-[3.938rem] h-[1.073rem]"
+                  class="inline dark:hidden"
                   src={logo.srcDark || ""}
                   alt={logo.alt || ""}
-                  width={logo.width || 100}
-                  height={logo.height || 13}
+                  width={logo.width || 90}
+                  height={logo.height || 20}
                 />
                 <Image
-                  class="hidden dark:inline w-[3.938rem] h-[1.073rem]"
+                  class="hidden dark:inline"
                   src={logo.srcLight || ""}
                   alt={logo.alt || ""}
-                  width={logo.width || 100}
-                  height={logo.height || 13}
+                  width={logo.width || 90}
+                  height={logo.height || 20}
                 />
               </>
             )}
@@ -65,14 +65,14 @@ function Navbar({
             {logo && (
               <>
                 <Image
-                  class="inline dark:hidden w-[3.938rem] h-[1.573rem]"
+                  class="inline dark:hidden"
                   src={logo.srcDark || ""}
                   alt={logo.alt || ""}
                   width={logo.width || 100}
                   height={logo.height || 13}
                 />
                 <Image
-                  class="hidden dark:inline w-[3.938rem] h-[1.573rem]"
+                  class="hidden dark:inline"
                   src={logo.srcLight || ""}
                   alt={logo.alt || ""}
                   width={logo.width || 100}
