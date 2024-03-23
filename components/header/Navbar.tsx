@@ -7,7 +7,8 @@ function Navbar({
   logo,
   slogan,
   workshopButton = {
-    text: "PARTICIPE DO PRÓXIMO WORKSHOP",
+    textMobile: "PARTICIPE",
+    textDesktop: "PARTICIPE DO PRÓXIMO WORKSHOP",
     url: "https://www.miraeducacao.com.br/",
   },
 }: {
@@ -18,37 +19,49 @@ function Navbar({
   return (
     <>
       {/* Mobile Version */}
-      <div class="lg:hidden flex flex-col items-start w-full p-6 border-none gap-2">
-        <div class="flex flex-row w-full items-center justify-between">
+      <div class="lg:hidden flex justify-between items-center w-full p-6 border-none gap-2">
+        <a
+          class="flex justify-center items-start"
+          href="/"
+          aria-label="Store logo"
+        >
+          {logo && (
+            <>
+              <Image
+                class="inline dark:hidden"
+                src={logo.srcDark || ""}
+                alt={logo.alt || ""}
+                width={logo.width || 90}
+                height={logo.height || 20}
+                loading={"lazy"}
+              />
+              <Image
+                class="hidden dark:inline"
+                src={logo.srcLight || ""}
+                alt={logo.alt || ""}
+                width={logo.width || 90}
+                height={logo.height || 20}
+                loading={"lazy"}
+              />
+            </>
+          )}
+        </a>
+        <div class="flex gap-2">
           <a
-            class="flex flex-col justify-center items-start"
-            href="/"
-            aria-label="Store logo"
+            class="flex flex-nowrap px-3 py-2 items-center rounded-full border-none font-light text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main dark:bg-sub"
+            href={workshopButton.url}
+            target="_blank"
           >
-            {logo && (
-              <>
-                <Image
-                  class="inline dark:hidden"
-                  src={logo.srcDark || ""}
-                  alt={logo.alt || ""}
-                  width={logo.width || 90}
-                  height={logo.height || 20}
-                />
-                <Image
-                  class="hidden dark:inline"
-                  src={logo.srcLight || ""}
-                  alt={logo.alt || ""}
-                  width={logo.width || 90}
-                  height={logo.height || 20}
-                />
-              </>
-            )}
+            <p class="text-nowrap">{workshopButton.textMobile}</p>
+            <Icon id="ExternalLink" size={14} strokeWidth={0.01} />
           </a>
           <ThemeController />
         </div>
-        <h3 class="text-[0.813rem]  leading-[0.975rem]  font-black text-white dark:text-black">
+        {
+          /* <h3 class="text-[0.813rem]  leading-[0.975rem]  font-black text-white dark:text-black">
           {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
-        </h3>
+        </h3> */
+        }
       </div>
 
       {/* Desktop Version */}
@@ -70,6 +83,7 @@ function Navbar({
                   alt={logo.alt || ""}
                   width={logo.width || 100}
                   height={logo.height || 13}
+                  loading={"lazy"}
                 />
                 <Image
                   class="hidden dark:inline"
@@ -77,6 +91,7 @@ function Navbar({
                   alt={logo.alt || ""}
                   width={logo.width || 100}
                   height={logo.height || 13}
+                  loading={"lazy"}
                 />
               </>
             )}
@@ -88,7 +103,7 @@ function Navbar({
             href={workshopButton.url}
             target="_blank"
           >
-            <p class="text-nowrap">{workshopButton.text}</p>
+            <p class="text-nowrap">{workshopButton.textDesktop}</p>
             <Icon id="ExternalLink" size={14} strokeWidth={0.01} />
           </a>
           <ThemeController />
