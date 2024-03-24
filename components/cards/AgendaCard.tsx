@@ -13,10 +13,14 @@ export interface CardInfo {
   image1?: {
     srcDark?: ImageWidget;
     srcLight?: ImageWidget;
+    width?: number;
+    height?: number;
   };
   image2?: {
     srcDark?: ImageWidget;
     srcLight?: ImageWidget;
+    width?: number;
+    height?: number;
   };
   callTitle?: string;
   eventName?: string;
@@ -75,32 +79,32 @@ export default function AgendaCard(
 
           <div class="flex flex-col lg:flex-row items-center justify-center gap-[4.92px] lg:gap-[8.4px]">
             <Image
-              class="inline dark:hidden"
+              class="inline dark:hidden lg:w-full lg:h-full object-scale-down"
               src={image1?.srcDark || ""}
-              width={31}
-              height={31}
+              width={image1?.width || 31}
+              height={image1?.height || 31}
               loading={"lazy"}
             />
             <Image
-              class="hidden dark:inline"
+              class="hidden dark:inline lg:w-full lg:h-full object-scale-down"
               src={image1?.srcLight || ""}
-              width={31}
-              height={31}
+              width={image1?.width || 31}
+              height={image1?.height || 31}
               loading={"lazy"}
             />
 
             <Image
-              class="inline dark:hidden"
+              class="inline dark:hidden lg:w-full lg:h-full object-scale-down"
               src={image2?.srcDark || ""}
-              width={36}
-              height={23}
+              width={image2?.width || 36}
+              height={image2?.height || 23}
               loading={"lazy"}
             />
             <Image
-              class="hidden dark:inline"
+              class="hidden dark:inline lg:w-full lg:h-full object-scale-down"
               src={image2?.srcLight || ""}
-              width={36}
-              height={23}
+              width={image2?.width || 36}
+              height={image2?.height || 23}
               loading={"lazy"}
             />
           </div>
