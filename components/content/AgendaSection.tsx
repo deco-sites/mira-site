@@ -59,7 +59,7 @@ function AgendaSection(props: Props) {
                 </li>
               ))}
             </ul>
-            <div class="flex">
+            <div class="flex gap-[15px]">
               <Slider.PrevButton class="btn btn-circle !bg-[transparent] border border-b-200 dark:border-black ">
                 <Icon
                   size={24}
