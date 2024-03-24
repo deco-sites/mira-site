@@ -35,7 +35,7 @@ export default function HeroFlats({
 }: Props) {
   return (
     <section class="flex h-[calc(100vh-95px)] lg:h-[calc(100vh-80.25px)] justify-center items-center bg-black dark:bg-b-300">
-      <div class="flex flex-col lg:flex-row items-center justify-center mx-auto h-full w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] gap-6 lg:gap-12 px-6 pb-16 lg:px-16 lg:pb-0">
+      <div class="flex flex-col lg:flex-row items-center max-lg:pt-16 lg:justify-center mx-auto h-full w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] gap-6 lg:gap-12 px-6 pb-16 lg:px-16 lg:pb-0">
         <div class="flex flex-col items-center lg:items-start max-lg:item w-full gap-6 lg:gap-10 lg:h-full lg:justify-center">
           <h3 class="text-center lg:text-left text-[12px] leading-[16px] lg:text-[18px] lg:leading-[27px] font-black text-white dark:text-black">
             {slogan}
