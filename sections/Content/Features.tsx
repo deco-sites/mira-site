@@ -45,8 +45,8 @@ export default function Features(
 ) {
   return (
     <section class="w-full bg-black dark:bg-b-300 transform">
-      <div class="py-10 lg:py-24 min-[1024px]:scale-90 min-[1650px]:scale-100">
-        <div class="lg:max-w-[1224px] min-[1650px]:max-w-[1440px] mx-auto px-6 lg:px-16 self-center">
+      <div class="py-16 px-6 lg:py-[104px] lg:px-16 min-[1024px]:scale-90 min-[1650px]:scale-100">
+        <div class="lg:max-w-[1224px] min-[1650px]:max-w-[1440px] mx-auto self-center">
           <div class="grid lg:grid-cols-3 pb-6 lg:pb-20">
             <div
               class="lg:col-span-2 font-black text-2xl leading-[1.65rem] lg:text-[2.125rem] min-[1650px]:text-[2.5rem] lg:leading-[3.5rem] text-b-200 dark:text-black"
@@ -88,14 +88,14 @@ export default function Features(
               />
             </div>
           </div>
-          <div class="font-normal lg:flex lg:flex-row lg:gap-8">
+          <div class="font-normal lg:flex lg:gap-8">
             <div
-              class="text-b-200 font-merriweather dark:text-black text-base lg:text-lg 2xl:text-2xl lg:leading-9"
+              class="text-b-200 lg:w-1/2 font-merriweather dark:text-black text-base lg:text-lg 2xl:text-2xl lg:leading-9"
               dangerouslySetInnerHTML={{ __html: description1 || "" }}
             />
 
             <div
-              class="text-b-200 font-merriweather dark:text-black text-base lg:text-lg 2xl:text-2xl lg:leading-9"
+              class="text-b-200 lg:w-1/2 font-merriweather dark:text-black text-base lg:text-lg 2xl:text-2xl lg:leading-9"
               dangerouslySetInnerHTML={{ __html: description2 || "" }}
             />
           </div>

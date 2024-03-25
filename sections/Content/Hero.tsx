@@ -10,6 +10,7 @@ export interface WorkshopButton {
 export interface Props {
   /** @format html */
   title: string;
+  slogan?: string;
   description: string;
   heroVideo?: {
     dark?: VideoWidget;
@@ -24,6 +25,7 @@ const DEFAULT_TEXT =
 
 export default function HeroFlats({
   title = DEFAULT_TEXT,
+  slogan = "COMUNICAÇÃO DE ALTO DESEMPENHO",
   description = "A MIRA escala o alto desempenho através da comunicação.",
   workshopButton = {
     text: "PARTICIPE DO PRÓXIMO WORKSHOP",
@@ -33,7 +35,19 @@ export default function HeroFlats({
 }: Props) {
   return (
     <section class="flex h-[calc(100vh-95px)] lg:h-[calc(100vh-80.25px)] justify-center items-center bg-black dark:bg-b-300">
-      <div class="flex flex-col items-center lg:flex-row-reverse h-full w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] gap-6 lg:gap-10 px-6 pb-10 lg:px-16 lg:pb-0 max-[380px]:justify-center  lg:justify-center mx-auto">
+      <div class="flex flex-col lg:flex-row items-center max-lg:pt-16 lg:justify-center mx-auto h-full w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] gap-6 lg:gap-12 px-6 pb-16 lg:px-16 lg:pb-0">
+        <div class="flex flex-col items-center lg:items-start max-lg:item w-full gap-6 lg:gap-10 lg:h-full lg:justify-center">
+          <h3 class="text-center lg:text-left text-[12px] leading-[16px] lg:text-[18px] lg:leading-[27px] font-black text-white dark:text-black">
+            {slogan}
+          </h3>
+          <h1
+            class="text-center lg:text-left font-black text-b-200 text-[2rem] max-w-[324px] lg:max-w-[613px] min-[1650px]:max-w-[722px] lg:text-[3.825rem] min-[1650px]:text-[4.5rem] lg:w-full leading-8 lg:leading-[4.5rem] dark:text-black uppercase"
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
+          <p class="text-center lg:text-left max-w-[185px] lg:max-w-[375px] font-merriweather text-b-200 text-base lg:text-[1.275rem] min-[1650px]:text-[1.5rem] lg:leading-[2.25rem] dark:text-black">
+            {description}
+          </p>
+        </div>
         <video
           width="616"
           height="640"
@@ -64,26 +78,6 @@ export default function HeroFlats({
             <embed width="400" height="400" src={heroVideo?.light} />
           </object>
         </video>
-        <div class="flex flex-col w-full gap-6 lg:gap-10 lg:h-full lg:justify-center">
-          <h1
-            class="font-black text-b-200 text-[2rem] max-w-[324px] lg:max-w-[613px] min-[1650px]:max-w-[722px] lg:text-[3.825rem] min-[1650px]:text-[4.5rem] lg:w-full leading-8 lg:leading-[4.5rem] dark:text-black uppercase"
-            dangerouslySetInnerHTML={{ __html: title }}
-          />
-          <div class="w-full flex items-start">
-            <p class="max-w-[185px] lg:max-w-[375px] font-merriweather text-b-200 text-base lg:text-[1.275rem] min-[1650px]:text-[1.5rem] lg:leading-[2.25rem] dark:text-black">
-              {description}
-            </p>
-          </div>
-        </div>
-        <div class="flex w-full max-[320px]:hidden items-center justify-start lg:hidden">
-          <a
-            class="inline-flex items-center justify-center px-3 py-2 rounded-full border-none font-light text-black text-[13px] leading-[150%] tracking-[-0.13px] gap-2 bg-main dark:bg-sub"
-            href={workshopButton.url}
-          >
-            <p class="text-nowrap">{workshopButton.text}</p>
-            <Icon id="ExternalLink" class="mb-1" size={20} strokeWidth={0.01} />
-          </a>
-        </div>
       </div>
     </section>
   );

@@ -28,7 +28,7 @@ function CardsCarousel(
 
   return (
     <section class="w-full bg-black dark:bg-b-300">
-      <div class="w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] py-10 flex flex-col gap-10 lg:gap-20 px-6 lg:px-16 mx-auto lg:py-24 min-[1024px]:scale-90 min-[1650px]:scale-100">
+      <div class="w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] py-16 flex flex-col gap-10 lg:gap-20 px-6 lg:px-16 mx-auto lg:py-[104px] min-[1024px]:scale-90 min-[1650px]:scale-100">
         <h3
           class="text-b-200 dark:text-black text-2xl lg:text-[34px] min-[1650px]:text-[40px] font-black leading-[110%] uppercase"
           dangerouslySetInnerHTML={{ __html: title }}
@@ -59,7 +59,7 @@ function CardsCarousel(
                 </li>
               ))}
             </ul>
-            <div class="flex">
+            <div class="flex gap-[15px]">
               <Slider.PrevButton class="btn btn-circle !bg-[transparent] border border-b-200 dark:border-black ">
                 <Icon
                   size={24}
