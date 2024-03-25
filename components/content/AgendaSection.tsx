@@ -7,18 +7,42 @@ import Icon from "$store/components/ui/Icon.tsx";
 import { ComponentChildren, toChildArray } from "preact";
 import { useId } from "$store/sdk/useId.ts";
 import AgendaCard, { CardInfo } from "$store/components/cards/AgendaCard.tsx";
+import { AppContext } from "$store/apps/site.ts";
 
 interface Props {
   title?: string;
   cards?: CardInfo[];
 }
 
-function AgendaSection(props: Props) {
-  const {
-    title = "PRÓXIMOS PROGRAMAS:",
-    cards,
-  } = props;
+export const loader = async (
+  props: Props,
+  req: Request,
+  ctx: AppContext,
+) => {
+  const device = ctx.device;
 
+  if (device === "desktop") {
+    return {
+      ...props,
+      isDesktop: true,
+    };
+  } else {
+    return {
+      ...props,
+      isDesktop: false,
+    };
+  }
+};
+
+function AgendaSection(
+  { title = "PRÓXIMOS PROGRAMAS:", cards, isDesktop }:
+    & Omit<Props, "isDesktop">
+    & {
+      title?: string;
+      cards?: CardInfo[];
+      isDesktop: boolean;
+    },
+) {
   const id = useId();
   const items = toChildArray(cards);
 
@@ -52,7 +76,11 @@ function AgendaSection(props: Props) {
           <div class="w-full flex justify-between items-center">
             <ul class="carousel items-end justify-center col-span-full gap-4 z-10 row-start-4">
               {items?.map((_, index) => (
-                <li class="carousel-item">
+                <li
+                  class={`carousel-item ${
+                    isDesktop && index % 3 !== 0 ? "hidden" : ""
+                  }`}
+                >
                   <Slider.Dot index={index}>
                     <div class="w-2 h-2 rounded-full group-disabled:bg-b-200 bg-[#71717A] dark:group-disabled:bg-black border-[1px]" />
                   </Slider.Dot>

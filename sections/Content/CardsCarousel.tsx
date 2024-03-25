@@ -1,1 +1,1 @@
-export { default } from "$store/components/content/CardsCarousel.tsx";
+export { default, loader } from "$store/components/content/CardsCarousel.tsx";

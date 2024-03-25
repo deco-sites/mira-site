@@ -5,6 +5,7 @@ import Card from "$store/components/content/Card.tsx";
 import type { Props as CardProps } from "$store/components/content/Card.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import { ComponentChildren, toChildArray } from "preact";
+import { AppContext } from "$store/apps/site.ts";
 import { useId } from "$store/sdk/useId.ts";
 
 export interface Props {
@@ -16,8 +17,32 @@ const DEFAULT_TEXT =
   '<p>Trabalhamos com líderes</br><span class="text-main dark:text-sub">comprometidos com o futuro:</span></p>';
 [];
 
+export const loader = async (
+  props: Props,
+  req: Request,
+  ctx: AppContext,
+) => {
+  const device = ctx.device;
+
+  if (device === "desktop") {
+    return {
+      ...props,
+      isDesktop: true,
+    };
+  } else {
+    return {
+      ...props,
+      isDesktop: false,
+    };
+  }
+};
+
 function CardsCarousel(
-  { title = DEFAULT_TEXT, clientCard }: Props,
+  { title = DEFAULT_TEXT, clientCard, isDesktop }: Omit<Props, "isDesktop"> & {
+    title?: HTMLWidget;
+    clientCard?: CardProps[];
+    isDesktop: boolean;
+  },
 ) {
   const id = useId();
   const items = toChildArray(clientCard);
@@ -52,7 +77,11 @@ function CardsCarousel(
           <div class="w-full flex justify-between items-center">
             <ul class="carousel items-end justify-center col-span-full gap-4 z-10 row-start-4">
               {items?.map((_, index) => (
-                <li class="carousel-item">
+                <li
+                  class={`carousel-item ${
+                    isDesktop && index % 3 !== 0 ? "hidden" : ""
+                  }`}
+                >
                   <Slider.Dot index={index}>
                     <div class="w-2 h-2 rounded-full group-disabled:bg-b-200 bg-[#71717A] dark:group-disabled:bg-black border-[1px]" />
                   </Slider.Dot>
