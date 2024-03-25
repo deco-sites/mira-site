@@ -54,7 +54,7 @@ export default function AgendaCard(
       class="group flex flex-col items-center text-b-200 dark:text-black"
     >
       <div class="space-y-6 lg:space-y-8 py-6 px-[23px] lg:p-8">
-        <h2 class="font-bold text-[20px] leading-[24px] lg:text-[28px] lg:leading-[33.6px] group-hover:text-main uppercase">
+        <h2 class="font-bold text-[20px] leading-[24px] lg:text-[28px] lg:leading-[33.6px] text-main dark:text-sub uppercase">
           {title}
         </h2>
 
@@ -111,20 +111,20 @@ export default function AgendaCard(
         </div>
       </div>
 
-      <div class="w-full flex items-center justify-between py-2 px-[18px] lg:px-8 lg:py-4 rounded-b-[24px] group-hover:bg-main dark:group-hover:bg-sub border-t-[0.5px] border-b-200 dark:border-black">
+      <div class="w-full flex items-center justify-between py-2 px-[18px] lg:px-8 lg:py-4 rounded-b-[24px] bg-main dark:bg-sub border-t-[0.5px] border-b-200 dark:border-black">
         {callTitle && (
-          <div class="flex items-center gap-2 text-[14px] lg:text-[16px] leading-[150%] tracking-[-0.16px] uppercase group-hover:text-black">
+          <div class="flex items-center gap-2 text-[14px] lg:text-[16px] leading-[150%] tracking-[-0.16px] uppercase text-black">
             {callTitle}
             <Icon
               width={10}
               height={10}
               id="ArrowUpRight"
-              class="flex h-5 w-5 lg:h-6 lg:w-6 fill-b-200 group-hover:fill-black dark:fill-black"
+              class="flex h-5 w-5 lg:h-6 lg:w-6 fill-black"
             />
           </div>
         )}
         {eventName && (
-          <div class="hidden lg:block lg:text-[16px] leading-[150%] tracking-[-0.16px] group-hover:text-black">
+          <div class="hidden lg:block lg:text-[16px] leading-[150%] tracking-[-0.16px] text-black">
             {eventName}
           </div>
         )}

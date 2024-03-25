@@ -14,6 +14,7 @@ interface Props {
   cards?: CardInfo[];
 }
 
+// deno-lint-ignore require-await
 export const loader = async (
   props: Props,
   req: Request,
@@ -63,7 +64,7 @@ function AgendaSection(
           id={id}
           class="w-full flex flex-col gap-8"
         >
-          <Slider class="w-full carousel carousel-start gap-2 lg:gap-[15px] col-span-full row-start-2 row-end-5 overflow">
+          <Slider class="w-full carousel carousel-start p-[3px] lg:p-0 gap-2 lg:gap-[15px] col-span-full row-start-2 row-end-5 overflow">
             {cards?.map((card, index) => (
               <Slider.Item
                 index={index}

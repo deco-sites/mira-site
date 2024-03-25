@@ -17,6 +17,7 @@ const DEFAULT_TEXT =
   '<p>Trabalhamos com líderes</br><span class="text-main dark:text-sub">comprometidos com o futuro:</span></p>';
 [];
 
+// deno-lint-ignore require-await
 export const loader = async (
   props: Props,
   req: Request,
@@ -64,7 +65,7 @@ function CardsCarousel(
           id={id}
           class="w-full flex flex-col gap-8"
         >
-          <Slider class="w-full carousel carousel-start gap-2 lg:gap-[15px] col-span-full row-start-2 row-end-5 overflow">
+          <Slider class="w-full carousel carousel-start p-[3px] lg:p-0 gap-2 lg:gap-[15px] col-span-full row-start-2 row-end-5 overflow">
             {clientCard?.map((card, index) => (
               <Slider.Item
                 index={index}
