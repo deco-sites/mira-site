@@ -61,7 +61,10 @@ function Navbar({
 
       {/* Desktop Version */}
       <div class="hidden lg:flex border-none w-full py-6 px-16 justify-between items-center">
-        <div class="flex justify-start">
+        <h3 class="flex items-center justify-center text-[0.875rem] min-[1440px]:text-[1rem] leading-6 font-black text-white dark:text-black">
+          {slogan != undefined ? slogan : "COMUNICAÇÃO DE ALTO DESEMPENHO"}
+        </h3>
+        <div class="flex xl:w-1/3 justify-start -order-1">
           <a
             href="/"
             aria-label="Mira logo"
