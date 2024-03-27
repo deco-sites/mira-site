@@ -25,7 +25,7 @@ export default function Card(props: Props) {
         <p class="text-[0.8125rem] lg:text-[15px] min-[1650px]:text-[16px] leading-[150%]">
           {text}
         </p>
-        <div class="flex justify-between w-full">
+        <div class="flex justify-between w-full items-center">
           <div class="flex flex-col">
             <p class="text-xs font-bold">
               {name}
