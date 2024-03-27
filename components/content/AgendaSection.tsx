@@ -64,7 +64,7 @@ function AgendaSection(
           id={id}
           class="w-full flex flex-col gap-8 pl-[0.05rem] lg:pl-0"
         >
-          <Slider class="w-full carousel carousel-start p-[3px] lg:p-0 gap-2 lg:gap-[15px] col-span-full row-start-2 row-end-5 overflow">
+          <Slider class="w-full carousel carousel-start p-[1px] lg:p-0 gap-2 lg:gap-[15px] col-span-full row-start-2 row-end-5 overflow">
             {cards?.map((card, index) => (
               <Slider.Item
                 index={index}
@@ -79,7 +79,7 @@ function AgendaSection(
               {items?.map((_, index) => (
                 <li
                   class={`carousel-item ${
-                    isDesktop && index % 3 !== 0 ? "hidden" : ""
+                    isDesktop && index % 2 !== 0 ? "hidden" : ""
                   }`}
                 >
                   <Slider.Dot index={index}>
