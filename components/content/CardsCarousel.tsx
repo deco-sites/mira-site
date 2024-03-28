@@ -65,7 +65,7 @@ function CardsCarousel(
           id={id}
           class="w-full flex flex-col gap-8"
         >
-          <Slider class="w-full carousel carousel-start gap-[10px] lg:gap-[15px] col-span-full row-start-2 row-end-5 overflow-y-hidden">
+          <Slider class="pr-[2px] w-full carousel carousel-center gap-[10px] lg:gap-[15px] col-span-full row-start-2 row-end-5 overflow-y-hidden">
             {clientCard?.map((card, index) => (
               <Slider.Item
                 index={index}
