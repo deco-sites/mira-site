@@ -9,7 +9,8 @@ interface Index {
 }
 
 export interface Props {
-  video?: VideoWidget;
+  videoDark?: VideoWidget;
+  videoLight?: VideoWidget;   
   textIndex?: Index[];
   placement: "left" | "right";
 }
@@ -23,7 +24,8 @@ const DEFAULT_IMAGE =
   "https://videos.ctfassets.net/v44fuld738we/61vOMvs1aJJ01U02Td4p7U/774df3a30fe4584a5ec8309f9fc1312d/self_directed-en-CA.mp4";
 
 export default function ImageSection({
-  video = DEFAULT_IMAGE,
+  videoDark = DEFAULT_IMAGE,
+  videoLight = DEFAULT_IMAGE,
   textIndex,
   placement,
 }: Props) {
@@ -42,11 +44,26 @@ export default function ImageSection({
           muted
           loading="lazy"
           loop
-          class="w-full lg:w-[46.95%] object-fit rounded-3xl"
+          class="w-full lg:w-[46.95%] object-fit rounded-3xl dark:hidden"
         >
-          <source src={video} type="video/mp4" />
+          <source src={videoDark} type="video/mp4" />
           <object data="" width="320" height="240">
-            <embed width="320" height="240" src={video} />
+            <embed width="320" height="240" src={videoDark} />
+          </object>
+        </video>
+        <video
+          width="616"
+          height="640"
+          autoPlay
+          playsInline
+          muted
+          loading="lazy"
+          loop
+          class="w-full lg:w-[46.95%] object-fit rounded-3xl hidden dark:block"
+        >
+          <source src={videoLight} type="video/mp4" />
+          <object data="" width="320" height="240">
+            <embed width="320" height="240" src={videoLight} />
           </object>
         </video>
         <div class="w-full flex flex-col lg:w-[46.95%] space-y-2 lg:space-y-4 lg:max-w-xl gap-10 text-b-200 justify-center">
