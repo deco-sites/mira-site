@@ -74,7 +74,7 @@ export default function AgendaCard(
             </p>
           </div>
 
-          <div class="flex flex-col max-h-[44px] lg:flex-row items-center justify-center gap-2 lg:gap-4 text-white dark:text-black">
+          <div class="flex flex-col lg:max-h-[44px] lg:flex-row items-center justify-center gap-2 lg:gap-4 text-white dark:text-black">
             <Icon
               id={image1?.src ?? "Vanto"}
               class="flex h-[23px] w-[23px] lg:h-[36px] lg:w-[34px] fill-white dark:fill-black"
