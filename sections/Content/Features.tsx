@@ -2,11 +2,10 @@ import { ImageWidget } from "apps/admin/widgets.ts";
 import SlideBanner, {
   Props as SlideBannerProps,
 } from "deco-sites/mira-site/sections/Miscellaneous/Slide.tsx";
-import Image from "apps/website/components/Image.tsx";
+import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 
 export interface WidgetData {
-  srcDark?: ImageWidget;
-  srcLight?: ImageWidget;
+  src?: AvailableIcons;
   alt?: string;
   width?: number;
   height?: number;
@@ -52,8 +51,8 @@ export default function Features(
               class="lg:col-span-2 font-black text-2xl leading-[1.65rem] lg:text-[2.125rem] min-[1650px]:text-[2.5rem] lg:leading-[3.5rem] text-b-200 dark:text-black"
               dangerouslySetInnerHTML={{ __html: title }}
             />
-            <div class="flex items-center max-[1024px]:mt-6 gap-1 lg:gap-8">
-              <Image
+            <div class="flex items-center max-[1024px]:mt-6 gap-4 lg:gap-9 text-white dark:text-black">
+              {/* <Image
                 class="inline dark:hidden w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
                 src={widget1?.srcDark || ""}
                 alt={widget1?.alt || ""}
@@ -85,6 +84,18 @@ export default function Features(
                 alt={widget2?.alt || ""}
                 width={widget2?.width || 40}
                 height={widget2?.height || 20}
+              /> */}
+              <Icon
+                width={72}
+                height={74}
+                id={widget1?.src || "Vanto"}
+                class="flex w-[31px] h-[32px] lg:w-[72px] lg:h-[74px] fill-white dark:fill-black"
+              />
+              <Icon
+                width={139.3}
+                height={95.6}
+                id={widget2?.src || "Forbes"}
+                class="flex w-[3.748rem] h-[2.625rem] lg:h-[5.984rem] lg:w-[8.70666rem] fill-white dark:fill-black"
               />
             </div>
           </div>

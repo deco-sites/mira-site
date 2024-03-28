@@ -1,5 +1,4 @@
-import Icon from "$store/components/ui/Icon.tsx";
-import Image from "apps/website/components/Image.tsx";
+import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 
 /** @titleBy url */
@@ -11,14 +10,12 @@ export interface CardInfo {
   hours?: string;
   idiom?: string;
   image1?: {
-    srcDark?: ImageWidget;
-    srcLight?: ImageWidget;
+    src?: AvailableIcons;
     width?: number;
     height?: number;
   };
   image2?: {
-    srcDark?: ImageWidget;
-    srcLight?: ImageWidget;
+    src?: AvailableIcons;
     width?: number;
     height?: number;
   };
@@ -77,36 +74,15 @@ export default function AgendaCard(
             </p>
           </div>
 
-          <div class="flex flex-col lg:flex-row items-center justify-center gap-[4.92px] lg:gap-[8.4px]">
-            <Image
-              class="inline dark:hidden lg:w-full lg:h-full object-scale-down"
-              src={image1?.srcDark || ""}
-              width={image1?.width || 31}
-              height={image1?.height || 31}
-              loading={"lazy"}
-            />
-            <Image
-              class="hidden dark:inline lg:w-full lg:h-full object-scale-down"
-              src={image1?.srcLight || ""}
-              width={image1?.width || 31}
-              height={image1?.height || 31}
-              loading={"lazy"}
-            />
-
-            <Image
-              class="inline dark:hidden lg:w-full lg:h-full object-scale-down"
-              src={image2?.srcDark || ""}
-              width={image2?.width || 36}
-              height={image2?.height || 23}
-              loading={"lazy"}
-            />
-            <Image
-              class="hidden dark:inline lg:w-full lg:h-full object-scale-down"
-              src={image2?.srcLight || ""}
-              width={image2?.width || 36}
-              height={image2?.height || 23}
-              loading={"lazy"}
-            />
+          <div class="flex flex-col max-h-[44px] lg:flex-row items-center justify-center gap-2 lg:gap-4 text-white dark:text-black">
+            <Icon
+              id={image1?.src ?? "Vanto"}
+              class="flex h-[23px] w-[23px] lg:h-[36px] lg:w-[34px] fill-white dark:fill-black"
+             />
+            <Icon
+              id={image2?.src ?? "miraLC"}
+              class="flex h-[23.6px] w-[36.2px] py-1 lg:py-2 lg:h-[52.8px] lg:w-[81px] fill-white dark:fill-black"
+             />
           </div>
         </div>
       </div>

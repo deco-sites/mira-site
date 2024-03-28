@@ -1,10 +1,7 @@
-import Icon from "$store/components/ui/Icon.tsx";
-import Image from "apps/website/components/Image.tsx";
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 
 export interface Props {
-  logo?: ImageWidget;
-  logoDark?: ImageWidget;
+  logo?: AvailableIcons;
   /** @format textarea */
   text?: string;
   name?: string;
@@ -14,7 +11,6 @@ export interface Props {
 export default function Card(props: Props) {
   const {
     logo,
-    logoDark,
     text,
     name,
     role,
@@ -26,33 +22,19 @@ export default function Card(props: Props) {
           {text}
         </p>
         <div class="flex justify-between w-full items-center">
-          <div class="flex flex-col">
-            <p class="text-xs font-bold">
+          <div class="flex flex-col leading-[150%]">
+            <p class="text-[0.88rem] font-bold">
               {name}
             </p>
             <p class="text-xs">
               {role}
             </p>
           </div>
-          <div class="max-w-[104px] max-h-[52px] p-2 flex justify-center items-center">
-            <Image
-              width={50}
-              class="w-[80px] object-scale-down dark:hidden"
-              sizes="(max-width: 640px) 100vw, 30vw"
-              src={logo ?? ""}
-              alt={role}
-              decoding="async"
-              loading="lazy"
-            />
-            <Image
-              width={50}
-              class="hidden w-[80px] object-scale-down dark:flex"
-              sizes="(max-width: 640px) 100vw, 30vw"
-              src={logoDark ?? ""}
-              alt={role}
-              decoding="async"
-              loading="lazy"
-            />
+          <div class="max-w-[104px] max-h-[52px] p-2 flex justify-center items-center text-white dark:text-black">
+            <Icon
+                id={logo || "miraLC"}
+                class="flex fill-white dark:fill-black"
+              />
           </div>
         </div>
       </div>
