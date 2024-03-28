@@ -63,13 +63,13 @@ function CardsCarousel(
 
         <div
           id={id}
-          class="w-full flex flex-col gap-8 px-[1px] lg:px-0"
+          class="w-full flex flex-col gap-8"
         >
           <Slider class="w-full carousel carousel-start gap-2 lg:gap-[15px] col-span-full row-start-2 row-end-5 overflow-y-hidden">
             {clientCard?.map((card, index) => (
               <Slider.Item
                 index={index}
-                class="carousel-item w-[calc(100%-2px)] lg:w-[calc((100%-46px)/3)] bg-transparent border-b-200 rounded-[24px_24px_0_24px] border-[0.5px] dark:border-black"
+                class="carousel-item w-[calc(100%-5px)] lg:w-[calc((100%-46px)/3)] bg-transparent border-b-200 rounded-[24px_24px_0_24px] border-[0.5px] dark:border-black"
               >
                 <Card {...card} />
               </Slider.Item>
