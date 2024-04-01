@@ -14,8 +14,10 @@ document.head.appendChild(metaThemeColor);
 Array.from(toggles).forEach(tgl => {
     tgl.addEventListener('change', (e) => {   
         if (e.target.checked) {
+            metaThemeColor.setAttribute('content', '#FFFFFF');
             htmlElement.classList.add('dark');
         } else {
+            metaThemeColor.setAttribute('content', '#000000');
             htmlElement.classList.remove('dark');
         }
     });
