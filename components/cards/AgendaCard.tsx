@@ -48,41 +48,45 @@ export default function AgendaCard(
     <a
       href={href}
       target="_blank"
-      class="group flex flex-col items-center text-b-200 dark:text-black"
+      class="group flex flex-col justify-between text-b-200 dark:text-black"
     >
-      <div class="space-y-6 lg:space-y-8 py-6 px-[23px] lg:p-8">
-        <h2 class="font-bold text-[20px] leading-[24px] lg:text-[28px] lg:leading-[33.6px] text-main dark:text-sub uppercase">
-          {title}
-        </h2>
+      <div class="h-full flex flex-col justify-between gap-y-6 lg:gap-y-8 py-6 px-[23px] lg:p-8">
+        <div class="space-y-6 lg:space-y-8">
+          <h2 class="font-bold text-[20px] leading-[24px] lg:text-[28px] lg:leading-[33.6px] text-main dark:text-sub uppercase">
+            {title}
+          </h2>
 
-        <p class="font-merriweather font-normal text-[14px] leading-[21px] lg:text-[16px] lg:leading-[24px]">
-          {description}
-        </p>
+          <p class="font-merriweather font-normal text-[14px] leading-[21px] lg:text-[16px] lg:leading-[24px]">
+            {description}
+          </p>
+        </div>
 
-        <div class="h-[0.5px] opacity-60 bg-b-200"></div>
+        <div class="space-y-6 lg:space-y-8">
+          <div class="h-[0.5px] opacity-60 bg-b-200"></div>
 
-        <div class="flex justify-between">
-          <div class="space-y-[6.56px]">
-            <p class="font-merriweather text-[14px] leading-[16.8px] lg:text-[14.76px] lg:leading-[17.71px]">
-              <span class="font-bold">Data:</span> {date}
-            </p>
-            <p class="font-merriweather text-[14px] leading-[16.8px] lg:text-[14.76px] lg:leading-[17.71px]">
-              <span class="font-bold">Horários:</span> {hours}
-            </p>
-            <p class="font-merriweather text-[14px] leading-[16.8px] lg:text-[14.76px] lg:leading-[17.71px]">
-              <span class="font-bold">Idioma:</span> {idiom}
-            </p>
-          </div>
+          <div class="flex justify-between">
+            <div class="space-y-[6.56px]">
+              <p class="font-merriweather text-[14px] leading-[16.8px] lg:text-[14.76px] lg:leading-[17.71px]">
+                <span class="font-bold">Data:</span> {date}
+              </p>
+              <p class="font-merriweather text-[14px] leading-[16.8px] lg:text-[14.76px] lg:leading-[17.71px]">
+                <span class="font-bold">Horários:</span> {hours}
+              </p>
+              <p class="font-merriweather text-[14px] leading-[16.8px] lg:text-[14.76px] lg:leading-[17.71px]">
+                <span class="font-bold">Idioma:</span> {idiom}
+              </p>
+            </div>
 
-          <div class="flex flex-col lg:max-h-[44px] lg:flex-row items-center justify-center gap-2 lg:gap-4 text-white dark:text-black">
-            <Icon
-              id={image1?.src ?? "Vanto"}
-              class="flex h-[23px] w-[23px] lg:h-[36px] lg:w-[34px] fill-white dark:fill-black"
-             />
-            <Icon
-              id={image2?.src ?? "miraLC"}
-              class="flex h-[23.6px] w-[36.2px] py-1 lg:py-2 lg:h-[52.8px] lg:w-[81px] fill-white dark:fill-black"
-             />
+            <div class="flex flex-col lg:max-h-[44px] lg:flex-row items-center justify-center gap-2 lg:gap-4 text-white dark:text-black">
+              <Icon
+                id={image1?.src ?? "Vanto"}
+                class="flex h-[23px] w-[23px] lg:h-[36px] lg:w-[34px] fill-white dark:fill-black"
+              />
+              <Icon
+                id={image2?.src ?? "miraLC"}
+                class="flex h-[23.6px] w-[36.2px] py-1 lg:py-2 lg:h-[52.8px] lg:w-[81px] fill-white dark:fill-black"
+              />
+            </div>
           </div>
         </div>
       </div>
