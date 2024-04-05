@@ -51,7 +51,7 @@ export default function AgendaCard(
       class="group flex flex-col justify-between text-b-200 dark:text-black"
     >
       <div class="h-full flex flex-col justify-between gap-y-6 lg:gap-y-8 py-6 px-[23px] lg:p-8">
-        <div class="space-y-6 lg:space-y-8">
+        <div class="h-full flex flex-col justify-between space-y-6 lg:space-y-8">
           <h2 class="font-bold text-[20px] leading-[24px] lg:text-[28px] lg:leading-[33.6px] text-main dark:text-sub uppercase">
             {title}
           </h2>
