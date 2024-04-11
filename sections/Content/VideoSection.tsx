@@ -10,7 +10,7 @@ interface Index {
 
 export interface Props {
   videoDark?: VideoWidget;
-  videoLight?: VideoWidget;   
+  videoLight?: VideoWidget;
   textIndex?: Index[];
   placement: "left" | "right";
 }

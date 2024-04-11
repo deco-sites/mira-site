@@ -52,7 +52,8 @@ export default function Features(
               dangerouslySetInnerHTML={{ __html: title }}
             />
             <div class="flex items-center max-[1024px]:mt-6 gap-4 lg:gap-9 text-white dark:text-black">
-              {/* <Image
+              {
+                /* <Image
                 class="inline dark:hidden w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
                 src={widget1?.srcDark || ""}
                 alt={widget1?.alt || ""}
@@ -84,7 +85,8 @@ export default function Features(
                 alt={widget2?.alt || ""}
                 width={widget2?.width || 40}
                 height={widget2?.height || 20}
-              /> */}
+              /> */
+              }
               <Icon
                 width={72}
                 height={74}
