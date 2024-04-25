@@ -10,14 +10,18 @@ export interface CardInfo {
   hours?: string;
   idiom?: string;
   image1?: {
+    show?: boolean;
     src?: AvailableIcons;
     width?: number;
     height?: number;
+    increaseProportionDesktop?: number;
   };
   image2?: {
+    show?: boolean;
     src?: AvailableIcons;
     width?: number;
     height?: number;
+    increaseProportionDesktop?: number;
   };
   callTitle?: string;
   eventName?: string;
@@ -78,14 +82,44 @@ export default function AgendaCard(
             </div>
 
             <div class="flex flex-col lg:max-h-[44px] lg:flex-row items-center justify-center gap-2 lg:gap-4 text-white dark:text-black">
-              <Icon
-                id={image1?.src ?? "Vanto"}
-                class="flex h-[23px] w-[23px] lg:h-[36px] lg:w-[34px] fill-white dark:fill-black"
-              />
-              <Icon
-                id={image2?.src ?? "miraLC"}
-                class="flex h-[23.6px] w-[36.2px] py-1 lg:py-2 lg:h-[52.8px] lg:w-[81px] fill-white dark:fill-black"
-              />
+              {!image1?.show &&
+                (
+                  <>
+                    <Icon
+                      id={image1?.src ?? "Vanto"}
+                      width={image1?.width ?? 23}
+                      height={image1?.height ?? 23}
+                      class={`flex lg:hidden fill-white dark:fill-black`}
+                    />
+                    <Icon
+                      id={image1?.src ?? "Vanto"}
+                      width={(image1?.width ?? 23) *
+                        (image1?.increaseProportionDesktop ?? 3)}
+                      height={(image1?.height ?? 23) *
+                        (image1?.increaseProportionDesktop ?? 3)}
+                      class={`hidden lg:flex fill-white dark:fill-black`}
+                    />
+                  </>
+                )}
+              {!image2?.show &&
+                (
+                  <>
+                    <Icon
+                      id={image2?.src ?? "miraLC"}
+                      width={image2?.width ?? 23}
+                      height={image2?.height ?? 23}
+                      class={`flex lg:hidden fill-white dark:fill-black`}
+                    />
+                    <Icon
+                      id={image2?.src ?? "miraLC"}
+                      width={(image2?.width ?? 23) *
+                        (image2?.increaseProportionDesktop ?? 3)}
+                      height={(image2?.height ?? 23) *
+                        (image2?.increaseProportionDesktop ?? 3)}
+                      class={`hidden lg:flex fill-white dark:fill-black`}
+                    />
+                  </>
+                )}
             </div>
           </div>
         </div>

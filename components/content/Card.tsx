@@ -32,9 +32,9 @@ export default function Card(props: Props) {
           </div>
           <div class="max-w-[104px] max-h-[52px] p-2 flex justify-center items-center text-white dark:text-black">
             <Icon
-                id={logo || "miraLC"}
-                class="flex fill-white dark:fill-black max-h-[50px]"
-              />
+              id={logo || "miraLC"}
+              class="flex fill-white dark:fill-black max-h-[50px]"
+            />
           </div>
         </div>
       </div>
