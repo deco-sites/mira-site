@@ -16,23 +16,23 @@ export interface Props {
 }
 
 const PromoExample = {
-  title: "<p>FIQUE LIGADO</p>",
+  title: "<p>CONVERSAS DE ALTO DESEMPENHO:</p>",
   description:
-    "<p>Confira um trechinho de uma de nossas &uacute;ltimas conversas:</p>",
+    "<p>Confira nossa última conversa</p>",
 };
 
 export default function PromoVideo(
   {
-    title = "OS PILARES DO MÉTODO MIRA",
+    title = PromoExample.title,
     description =
-      "<p>Confira um trechinho de uma de nossas &uacute;ltimas conversas:</p>",
+      PromoExample.description,
     video,
   }: Props,
 ) {
   return (
     <section class="w-full bg-black dark:bg-b-300">
       <div class="flex flex-col lg:max-w-[1224px] min-[1650px]:max-w-[1440px] text-b-200 px-6 py-16 lg:px-16 lg:py-[104px] mx-auto gap-10 lg:gap-20 min-[1024px]:scale-90 min-[1650px]:scale-100">
-        <div class="lg:max-w-[575px] min-[1650px]:max-w-[640px] space-y-6">
+        <div class="space-y-6">
           <h2
             class="text-[1.5rem] lg:text-[2.125rem] min-[1650px]:text-[2.5rem] leading-relaxed lg:leading-[2.75rem] font-black dark:text-black"
             dangerouslySetInnerHTML={{ __html: title }}
@@ -43,14 +43,14 @@ export default function PromoVideo(
             dangerouslySetInnerHTML={{ __html: description }}
           />
         </div>
-        <div class="flex w-full">
+        <div class="flex w-full justify-center">
           <video
             width="616"
             height="640"
             playsInline
             loading="lazy"
             controls
-            class="w-full aspect-video object-cover rounded-3xl"
+            class="w-full lg:w-4/5 aspect-video object-cover rounded-3xl"
           >
             <source src={video} type="video/mp4" />
             <object data="" width="400" height="400">
