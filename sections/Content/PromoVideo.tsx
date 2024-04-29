@@ -23,7 +23,8 @@ export default function PromoVideo(
   {
     title = PromoExample.title,
     description = PromoExample.description,
-    video = "https://drive.google.com/file/d/1wrvHfqvXQBM-0T4E1LhN0sFYmP-4fGl0/preview",
+    video =
+      "https://drive.google.com/file/d/1wrvHfqvXQBM-0T4E1LhN0sFYmP-4fGl0/preview",
   }: Props,
 ) {
   return (
@@ -41,7 +42,8 @@ export default function PromoVideo(
           />
         </div>
         <div class="flex w-full justify-center">
-          {/* <video
+          {
+            /* <video
             width="616"
             height="640"
             playsInline
@@ -53,8 +55,14 @@ export default function PromoVideo(
             <object data="" width="400" height="400">
               <embed width="400" height="400" src={video} />
             </object>
-          </video> */}
-          <iframe src={video} class="w-full lg:w-4/5 aspect-video" allow="autoplay"></iframe>
+          </video> */
+          }
+          <iframe
+            src={video}
+            class="w-full lg:w-4/5 aspect-video"
+            allow="autoplay"
+          >
+          </iframe>
         </div>
       </div>
     </section>
