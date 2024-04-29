@@ -1,5 +1,4 @@
 import Accordion from "$store/islands/Accordion.tsx";
-import { VideoWidget } from "apps/admin/widgets.ts";
 
 export interface AccordionItems {
   title?: string;
@@ -12,21 +11,19 @@ export interface Props {
   title?: string;
   /** @format html */
   description?: string;
-  video: VideoWidget;
+  video: string;
 }
 
 const PromoExample = {
   title: "<p>CONVERSAS DE ALTO DESEMPENHO:</p>",
-  description:
-    "<p>Confira nossa última conversa</p>",
+  description: "<p>Confira nossa última conversa</p>",
 };
 
 export default function PromoVideo(
   {
     title = PromoExample.title,
-    description =
-      PromoExample.description,
-    video,
+    description = PromoExample.description,
+    video = "https://drive.google.com/file/d/1wrvHfqvXQBM-0T4E1LhN0sFYmP-4fGl0/preview",
   }: Props,
 ) {
   return (
@@ -44,7 +41,7 @@ export default function PromoVideo(
           />
         </div>
         <div class="flex w-full justify-center">
-          <video
+          {/* <video
             width="616"
             height="640"
             playsInline
@@ -56,7 +53,8 @@ export default function PromoVideo(
             <object data="" width="400" height="400">
               <embed width="400" height="400" src={video} />
             </object>
-          </video>
+          </video> */}
+          <iframe src={video} class="w-full lg:w-4/5 aspect-video" allow="autoplay"></iframe>
         </div>
       </div>
     </section>
