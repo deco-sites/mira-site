@@ -57,10 +57,20 @@ export default function PromoVideo(
             </object>
           </video> */
           }
-          <iframe
+          {/* <iframe
             src={video}
             class="w-full lg:w-4/5 aspect-video"
             allow="autoplay"
+          >
+          </iframe> */}
+          <iframe
+            class="w-full lg:w-4/5 aspect-video rounded border-[0.5px] border-white dark:border-0"
+            src={`https://www.youtube.com/embed/${video}`}
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           >
           </iframe>
         </div>
