@@ -42,27 +42,6 @@ export default function PromoVideo(
           />
         </div>
         <div class="flex w-full justify-center">
-          {
-            /* <video
-            width="616"
-            height="640"
-            playsInline
-            loading="lazy"
-            controls
-            class="w-full lg:w-4/5 aspect-video object-cover rounded-3xl"
-          >
-            <source src={video} type="video/mp4" />
-            <object data="" width="400" height="400">
-              <embed width="400" height="400" src={video} />
-            </object>
-          </video> */
-          }
-          {/* <iframe
-            src={video}
-            class="w-full lg:w-4/5 aspect-video"
-            allow="autoplay"
-          >
-          </iframe> */}
           <iframe
             class="w-full lg:w-4/5 aspect-video rounded border-[0.5px] border-white dark:border-0"
             src={`https://www.youtube.com/embed/${video}`}
