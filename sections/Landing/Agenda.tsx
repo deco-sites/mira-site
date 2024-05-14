@@ -2,7 +2,9 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 
 export interface Post {
+  /** @format html */
   title: string;
+  /** @format html */
   author: string;
   excerpt: string;
   image: ImageWidget;
@@ -82,9 +84,14 @@ export default function BlogPosts({
               />
               <div class="p-6 text-b-200 dark:text-black gap-4 flex flex-col items-center text-center">
                 <div class="space-y-6 flex flex-col">
-                  <h3 class="text-2xl">{post.title}</h3>
-                  {/* <div class="font-semibold">{post.readingTime}</div> */}
-                  <p class="text-base">{post.excerpt}</p>
+                  <h3 class="text-2xl"dangerouslySetInnerHTML={{
+                __html: post.title ?? "",
+              }}
+            />
+                  <p class="text-base" dangerouslySetInnerHTML={{
+                __html: post.excerpt ?? "",
+              }}
+            />
                 </div>
               </div>
             </div>
