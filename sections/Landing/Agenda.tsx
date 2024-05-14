@@ -12,7 +12,7 @@ export interface Post {
 }
 
 export interface Props {
-  /** @format HTML */
+  /** @format html */
   title?: string;
   posts?: Post[];
 }

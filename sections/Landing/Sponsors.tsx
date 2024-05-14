@@ -11,7 +11,7 @@ export interface Image {
 }
 
 export interface Props {
-  /** @format HTML */
+  /** @format html */
   title?: string;
   brands?: {
     title?: string;
