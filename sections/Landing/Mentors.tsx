@@ -71,9 +71,9 @@ export default function BlogPosts({
             </p>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-items-center">
+        <div class="flex justify-center gap-8">
           {posts?.map((post) => (
-            <a href={post.linkedin} class="overflow-hidden">
+            <a href={post.linkedin} class="overflow-hidden max-w-[204.8px]">
               <Image
                 width={640}
                 class="w-full object-fit z-10 aspect-square"
