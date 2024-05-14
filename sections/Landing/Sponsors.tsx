@@ -51,7 +51,7 @@ function Sponsors(props: Props) {
   function Logo(element: Image) {
     return (
       <div
-        class="flex items-center justify-center w-[109px] sm:w-[138px] sl:w-[124px] rounded-[20px] md:w-auto 2xl:w-[16%] backdrop-filter backdrop-blur-22 relative"
+        class="flex items-center justify-center w-[109px] sm:w-[138px] sl:w-[124px] rounded-[20px] md:w-auto backdrop-filter backdrop-blur-22 relative"
         style={{ "borderRadius": "16px" }}
       >
         <div class="w-full h-full z-60 relative flex items-center justify-center px-[18px] py-2.5 lg:px-[35px] lg:py-[10px] gap-6">
