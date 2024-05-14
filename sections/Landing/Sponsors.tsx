@@ -36,7 +36,7 @@ const IMAGES = [
   },
 ];
 
-function OurBrands(props: Props) {
+function Sponsors(props: Props) {
   const {
     title,
     brands,
@@ -102,4 +102,4 @@ function OurBrands(props: Props) {
   );
 }
 
-export default OurBrands;
+export default Sponsors;

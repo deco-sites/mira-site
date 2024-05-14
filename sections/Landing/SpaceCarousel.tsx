@@ -155,7 +155,7 @@ function Buttons() {
   );
 }
 
-function BannerCarousel(props: Props) {
+function SpaceCarousel(props: Props) {
   const id = useId();
   const { title, description, images, preload, interval } = {
     ...DEFAULT_PROPS,
@@ -215,4 +215,4 @@ function BannerCarousel(props: Props) {
   );
 }
 
-export default BannerCarousel;
+export default SpaceCarousel;
