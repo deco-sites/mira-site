@@ -9,8 +9,9 @@ export interface CTA {
 }
 
 export interface Props {
+  /** @format HTML */
   title?: string;
-  /** @format textarea */
+  /** @format HTML */
   description?: string;
   tagline?: string;
   image?: ImageWidget;
@@ -45,48 +46,24 @@ export default function ImageWithParagraph({
 }: Props) {
   return (
     <div class="lg:container md:max-w-6xl lg:mx-auto mx-4 text-sm">
-      <div
-        class={`flex ${
-          PLACEMENT[placement]
-        } gap-12 md:gap-20 text-left items-center z-10 ${
-          disableSpacing?.top ? "" : "pt-12 lg:pt-28"
-        } ${disableSpacing?.bottom ? "" : "pb-12 lg:pb-28"}`}
-      >
-        <div class="w-full md:w-1/2 overflow-hidden">
-          <Image
-            width={640}
-            height={640}
-            class="object-fit z-10"
-            sizes="(max-width: 640px) 100vw, 30vw"
-            src={image}
-            alt={image}
-            decoding="async"
-            loading="lazy"
-          />
-        </div>
-        <div class="w-full text-b-200 dark:text-black md:w-1/2 space-y-2 md:space-y-4 md:max-w-xl gap-4 z-10">
-          <p class="text-4xl leading-snug">
-            {title}
-          </p>
-          <p class="leading-normal">
-            {description}
-          </p>
-          <div class="flex gap-3 pt-4">
-            {cta?.map((item) => (
-              <a
-                key={item?.id}
-                id={item?.id}
-                href={item?.href}
-                target={item?.href.includes("http") ? "_blank" : "_self"}
-                class={`font-normal btn btn-primary dark:btn-secondary
-                  ${!item.style || item.style == "Outline" && "btn-outline"}
-                  ${item.style == "Painted" && ""}
-                `}
-              >
-                {item?.text}
-              </a>
-            ))}
+      <div class="flex flex-col items-center gap-4 mt-36 lg:mt-48">
+        <div class="flex flex-col items-center gap-6 lg:gap-12 z-10">
+          <div
+            class="mx-6 lg:mx-0 inline-block text-[36px] lg:text-[104px] text-center leading-[110%] lg:leading-[100%] lg:tracking-[-3.12px] font-medium text-white max-w-lg lg:max-w-none"
+            dangerouslySetInnerHTML={{
+              __html: title,
+            }}
+          >
           </div>
+          {description && (
+            <div
+              class="mx-11 inline-block lg:text-[26px] text-center leading-[150%] text-gray-400 max-w-lg lg:max-w-none"
+              dangerouslySetInnerHTML={{
+                __html: description,
+              }}
+            >
+            </div>
+          )}
         </div>
       </div>
     </div>
