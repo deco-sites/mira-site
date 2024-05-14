@@ -27,6 +27,9 @@ export interface Banner {
 }
 
 export interface Props {
+  /** @format HTML */
+  title?: string;
+  description?: string;
   images?: Banner[];
   /**
    * @description Check this option when this banner is the biggest image on the screen for image optimizations
@@ -114,8 +117,7 @@ function Dots({ images, interval = 0 }: Props) {
       />
       <ul className="carousel justify-center col-span-full gap-4 z-10">
         {images?.map((_, index) => (
-          <li
-            class="carousel-item">
+          <li class="carousel-item">
             <Slider.Dot index={index}>
               <div class="w-2 h-2 rounded-full group-disabled:bg-main bg-[#71717A] dark:group-disabled:bg-sub border-[1px]" />
             </Slider.Dot>
@@ -155,14 +157,28 @@ function Buttons() {
 
 function BannerCarousel(props: Props) {
   const id = useId();
-  const { images, preload, interval } = { ...DEFAULT_PROPS, ...props };
+  const { title, description, images, preload, interval } = {
+    ...DEFAULT_PROPS,
+    ...props,
+  };
 
   return (
     <div
       id={id}
-      class="relative lg:container mx-auto md:max-w-6xl flex flex-col w-full m-auto py-10 gap-4"
+      class="relative lg:container mx-auto md:max-w-6xl flex flex-col items-center w-full m-auto py-10 gap-4"
     >
-      <div class="relative h-fit">
+      <div class="flex flex-col items-center space-y-6 w-full">
+        <h2
+          class="text-b-200 dark:text-black text-4xl leading-snug"
+          dangerouslySetInnerHTML={{
+            __html: title ?? "",
+          }}
+        />
+        <p class="text-b-200 dark:text-black text-lg">
+          {description}
+        </p>
+      </div>
+      <div class="relative h-fit w-4/5">
         <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-3 lg:gap-6">
           {images?.map((image, index) => {
             const params = { promotion_name: image.alt };
