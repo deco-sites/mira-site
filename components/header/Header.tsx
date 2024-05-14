@@ -12,6 +12,7 @@ export interface Logo {
 }
 
 export interface WorkshopButton {
+  active?: boolean;
   textDesktop?: string;
   textMobile?: string;
   url?: string;

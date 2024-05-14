@@ -7,6 +7,7 @@ function Navbar({
   logo,
   slogan,
   workshopButton = {
+    active: true,
     textMobile: "PARTICIPE",
     textDesktop: "PARTICIPE DO PRÓXIMO WORKSHOP",
     url: "https://www.miraeducacao.com.br/",
@@ -49,7 +50,7 @@ function Navbar({
           )}
         </a>
         <div class="flex gap-2">
-          {workshopButton &&
+          {workshopButton.active &&
             (
               <a
                 class="flex flex-nowrap px-3 py-2 items-center rounded-full border-none font-light text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main dark:bg-sub"
