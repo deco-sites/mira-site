@@ -4,8 +4,8 @@ import { ImageWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 
 export interface Image {
-  mobile?: ImageWidget;
-  desktop?: ImageWidget;
+  dark?: ImageWidget;
+  light?: ImageWidget;
   altText?: string;
   href: string;
 }
@@ -21,14 +21,14 @@ export interface Props {
 const IMAGES = [
   {
     altText: "deco",
-    desktop:
+    dark:
       "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/637e8601-6b86-4979-aa97-68013a2a60fd",
     active: false,
     href: "",
   },
   {
     altText: "deco",
-    desktop:
+    dark:
       "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/637e8601-6b86-4979-aa97-68013a2a60fd",
     active: false,
     href: "",
@@ -55,21 +55,40 @@ function Sponsors(props: Props) {
         style={{ "borderRadius": "16px" }}
       >
         <div class="w-full h-full z-60 relative flex items-center justify-center px-[18px] py-2.5 lg:px-[35px] lg:py-[10px] gap-6">
-          {element.mobile && (
+          {element.dark && (
             <Picture>
               <Source
                 media="(max-width: 767px)"
-                src={element.mobile}
+                src={element.dark}
                 width={60}
                 class=""
               />
               <Source
                 media="(min-width: 768px)"
-                src={element.desktop ? element.desktop : element.mobile}
+                src={element.dark}
                 width={110}
               />
               <img
-                class="object-contain md:w-[90px] lg:w-[110px]"
+                class="object-contain md:w-[90px] lg:w-[110px] dark:hidden"
+                src={element.dark}
+              />
+            </Picture>
+          )}
+          {element.light && (
+            <Picture>
+              <Source
+                media="(max-width: 767px)"
+                src={element.dark}
+                width={60}
+                class=""
+              />
+              <Source
+                media="(min-width: 768px)"
+                src={element.dark ? element.desktop : element.mobile}
+                width={110}
+              />
+              <img
+                class="hidden dark:block object-contain md:w-[90px] lg:w-[110px]"
                 src={element.mobile}
               />
             </Picture>
