@@ -71,7 +71,7 @@ export default function BlogPosts({
             </p>
           </div>
         </div>
-        <div class="flex flex-col lg:flex-row items-center justify-center gap-8">
+        <div class="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8">
           {posts?.map((post) => (
             <a href={post.linkedin} class="overflow-hidden max-w-[204.8px]">
               <Image

@@ -5,7 +5,6 @@ export interface Post {
   /** @format html */
   title: string;
   /** @format html */
-  author: string;
   excerpt: string;
   image: ImageWidget;
   date: string;
@@ -27,7 +26,6 @@ export default function BlogPosts({
   posts = [
     {
       title: "Title of blogpost #1",
-      author: "Name of the author",
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       image: DEFAULT_IMAGE,
@@ -37,7 +35,6 @@ export default function BlogPosts({
     },
     {
       title: "Title of blogpost #2",
-      author: "Name of the author",
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       image: DEFAULT_IMAGE,
@@ -47,7 +44,6 @@ export default function BlogPosts({
     },
     {
       title: "Title of blogpost #3",
-      author: "Name of the author",
       excerpt:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       image: DEFAULT_IMAGE,
