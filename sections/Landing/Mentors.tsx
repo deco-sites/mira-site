@@ -58,7 +58,7 @@ export default function BlogPosts({
   return (
     <div class="lg:container md:max-w-6xl lg:mx-auto mx-4 text-sm py-12 lg:py-28">
       <div class="space-y-16">
-        <div class="flex flex-col lg:flex-row gap-4 justify-between">
+        <div class="flex flex-col lg:flex-row gap-4 justify-between items-center">
           <div class="flex flex-col items-center space-y-6 w-full">
             <h2
               class="text-b-200 dark:text-black text-4xl leading-snug"
@@ -66,12 +66,12 @@ export default function BlogPosts({
                 __html: title ?? "",
               }}
             />
-            <p class="text-b-200 dark:text-black text-lg">
+            <p class="text-b-200 dark:text-black text-lg text-center">
               {description}
             </p>
           </div>
         </div>
-        <div class="flex justify-center gap-8">
+        <div class="flex flex-col lg:flex-row items-center justify-center gap-8">
           {posts?.map((post) => (
             <a href={post.linkedin} class="overflow-hidden max-w-[204.8px]">
               <Image

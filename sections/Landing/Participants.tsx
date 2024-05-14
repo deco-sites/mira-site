@@ -88,7 +88,7 @@ export default function BlogPosts({
             <a href={post.linkedin}class="overflow-hidden flex flex-col items-center">
               <Image
                 width={240}
-                class="w-1/4 aspect-square object-fit z-10 rounded-full"
+                class="w-2/5 aspect-square object-fit z-10 rounded-full"
                 sizes="(max-width: 240px) 100vw, 30vw"
                 src={post.image}
                 alt={post.image}
