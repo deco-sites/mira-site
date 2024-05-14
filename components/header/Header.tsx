@@ -26,6 +26,7 @@ export interface Props {
 
   /** @title Logo */
   logo?: Logo;
+  themeController?: boolean;
 }
 
 function Header({
@@ -33,6 +34,7 @@ function Header({
   logo,
   slogan,
   workshopButton,
+  themeController,
 }: Props) {
   return (
     <>
@@ -44,6 +46,7 @@ function Header({
             logo={logo}
             slogan={slogan}
             workshopButton={workshopButton}
+            themeController={themeController}
           />
         </div>
         <script type="module" src="/dark.js" />

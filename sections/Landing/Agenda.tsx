@@ -12,8 +12,8 @@ export interface Post {
 }
 
 export interface Props {
+  /** @format HTML */
   title?: string;
-  description?: string;
   posts?: Post[];
 }
 
@@ -22,7 +22,6 @@ const DEFAULT_IMAGE =
 
 export default function BlogPosts({
   title = "Agenda",
-  description = "This subheading is fully editable, remember?",
   posts = [
     {
       title: "Title of blogpost #1",
@@ -61,14 +60,12 @@ export default function BlogPosts({
       <div class="space-y-16">
         <div class="flex flex-col lg:flex-row gap-4 justify-between">
           <div class="flex flex-col items-center space-y-4 w-full">
-            <span class="text-b-200 dark:text-black">-</span>
-            <h2 class="text-b-200 dark:text-black text-4xl leading-snug">
-              {title}
-            </h2>
-            <span class="text-b-200 dark:text-black">-</span>
-            {/* <p class="text-b-200 dark:text-black text-lg">
-              {description}
-            </p> */}
+            <h2
+              class="text-b-200 dark:text-black text-4xl leading-snug"
+              dangerouslySetInnerHTML={{
+                __html: title ?? "",
+              }}
+            />
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
