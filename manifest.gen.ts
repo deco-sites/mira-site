@@ -44,7 +44,7 @@ import * as $$$$$$32 from "./sections/Images/ImageGallery.tsx";
 import * as $$$$$$33 from "./sections/Images/ShoppableBanner.tsx";
 import * as $$$$$$34 from "./sections/Landing/Agenda.tsx";
 import * as $$$$$$35 from "./sections/Landing/Footer.tsx";
-import * as $$$$$$36 from "./sections/Landing/ImageWithButton.tsx";
+import * as $$$$$$36 from "./sections/Landing/HeroLanding.tsx";
 import * as $$$$$$37 from "./sections/Landing/Mentors.tsx";
 import * as $$$$$$38 from "./sections/Landing/Participants.tsx";
 import * as $$$$$$39 from "./sections/Landing/SpaceCarousel.tsx";
