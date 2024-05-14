@@ -14,7 +14,6 @@ export interface Props {
   /** @format html */
   title?: string;
   brands?: {
-    title?: string;
     logos?: Image[];
   };
 }
@@ -56,7 +55,6 @@ function Sponsors(props: Props) {
         style={{ "borderRadius": "16px" }}
       >
         <div class="w-full h-full z-60 relative flex items-center justify-center px-[18px] py-2.5 lg:px-[35px] lg:py-[10px] gap-6">
-          <h4 class="text-b-200 dark:text-black">{title}</h4>
           {element.mobile && (
             <Picture>
               <Source
@@ -88,7 +86,7 @@ function Sponsors(props: Props) {
           <div
             class="text-white font-medium text-[16px] lg:text-[24px] leading-[100%] tracking-[-0.48px]"
             dangerouslySetInnerHTML={{
-              __html: brands?.title ?? "",
+              __html: title ?? "",
             }}
           />
           <div class="flex flex-wrap justify-center gap-2 md:gap-4">
