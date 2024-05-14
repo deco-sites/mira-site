@@ -78,18 +78,18 @@ function Sponsors(props: Props) {
             <Picture>
               <Source
                 media="(max-width: 767px)"
-                src={element.dark}
+                src={element.light}
                 width={60}
                 class=""
               />
               <Source
                 media="(min-width: 768px)"
-                src={element.dark ? element.desktop : element.mobile}
+                src={element.light}
                 width={110}
               />
               <img
                 class="hidden dark:block object-contain md:w-[90px] lg:w-[110px]"
-                src={element.mobile}
+                src={element.light}
               />
             </Picture>
           )}
