@@ -35,14 +35,6 @@ export default function ImageWithParagraph({
   title = "Here's an intermediate size heading you can edit",
   description =
     "This text is fully editable and ready for your personal touch. Just click here, head over to the section window, or dive straight into the code to make changes as you see fit. Whether it's about the content, formatting, font, or anything in between, editing is just a click away.",
-  tagline = "Tagline",
-  image = DEFAULT_IMAGE,
-  placement = "left",
-  disableSpacing,
-  cta = [
-    { id: "change-me-1", href: "/", text: "Change me", style: "Outline" },
-    { id: "change-me-2", href: "/", text: "Change me", style: "Painted" },
-  ],
 }: Props) {
   return (
     <div class="lg:container md:max-w-6xl lg:mx-auto mx-4 text-sm">

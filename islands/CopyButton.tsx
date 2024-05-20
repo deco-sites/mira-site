@@ -3,7 +3,7 @@ import Icon from "$store/components/ui/Icon.tsx";
 import { useSignal } from "@preact/signals";
 
 export default function CopyButton(
-  { contactButton = "CONTATO@MIRACOMPANY.CO" }: Props,
+  { contactButton = "contato@miracompany.co" }: Props,
 ) {
   const clicked = useSignal(false);
 

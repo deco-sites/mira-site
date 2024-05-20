@@ -80,14 +80,18 @@ export default function BlogPosts({
               />
               <div class="p-6 text-b-200 dark:text-black gap-4 flex flex-col items-center text-center">
                 <div class="space-y-6 flex flex-col">
-                  <h3 class="text-2xl"dangerouslySetInnerHTML={{
-                __html: post.title ?? "",
-              }}
-            />
-                  <p class="text-base" dangerouslySetInnerHTML={{
-                __html: post.excerpt ?? "",
-              }}
-            />
+                  <h3
+                    class="text-2xl"
+                    dangerouslySetInnerHTML={{
+                      __html: post.title ?? "",
+                    }}
+                  />
+                  <p
+                    class="text-base"
+                    dangerouslySetInnerHTML={{
+                      __html: post.excerpt ?? "",
+                    }}
+                  />
                 </div>
               </div>
             </div>

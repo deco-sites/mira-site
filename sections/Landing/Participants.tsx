@@ -33,7 +33,7 @@ export default function BlogPosts({
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
       readingTime: "10 min",
-      linkedin: '',
+      linkedin: "",
     },
     {
       title: "Title of blogpost #2",
@@ -43,7 +43,7 @@ export default function BlogPosts({
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
       readingTime: "10 min",
-      linkedin: '',
+      linkedin: "",
     },
     {
       title: "Title of blogpost #3",
@@ -53,7 +53,7 @@ export default function BlogPosts({
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
       readingTime: "10 min",
-      linkedin: '',
+      linkedin: "",
     },
     {
       title: "Title of blogpost #3",
@@ -63,7 +63,7 @@ export default function BlogPosts({
       image: DEFAULT_IMAGE,
       date: "01 Apr 2024",
       readingTime: "10 min",
-      linkedin: '',
+      linkedin: "",
     },
   ],
 }: Props) {
@@ -85,7 +85,10 @@ export default function BlogPosts({
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           {posts?.map((post) => (
-            <a href={post.linkedin}class="overflow-hidden flex flex-col items-center">
+            <a
+              href={post.linkedin}
+              class="overflow-hidden flex flex-col items-center"
+            >
               <Image
                 width={240}
                 class="w-2/5 aspect-square object-fit z-10 rounded-full"
