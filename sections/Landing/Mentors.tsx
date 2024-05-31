@@ -56,9 +56,9 @@ export default function BlogPosts({
   ],
 }: Props) {
   return (
-    <div class="lg:container md:max-w-6xl lg:mx-auto mx-4 text-sm py-12 lg:py-28">
+    <div class="container max-w-6xl mx-auto text-sm py-28 zoom">
       <div class="space-y-16">
-        <div class="flex flex-col lg:flex-row gap-4 justify-between items-center">
+        <div class="flex flex-row gap-4 justify-between items-center">
           <div class="flex flex-col items-center space-y-6 w-full">
             <h2
               class="text-b-200 dark:text-black text-4xl leading-snug"
@@ -71,7 +71,7 @@ export default function BlogPosts({
             </p>
           </div>
         </div>
-        <div class="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8">
+        <div class="flex flex-row items-start justify-center gap-8">
           {posts?.map((post) => (
             <a href={post.linkedin} class="overflow-hidden max-w-[204.8px]">
               <Image

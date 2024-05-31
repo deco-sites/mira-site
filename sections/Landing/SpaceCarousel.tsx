@@ -165,7 +165,7 @@ function SpaceCarousel(props: Props) {
   return (
     <div
       id={id}
-      class="relative lg:container mx-auto md:max-w-6xl flex flex-col items-center w-full m-auto py-10 gap-4"
+      class="relative container mx-auto max-w-6xl flex flex-col items-center w-full m-auto py-10 gap-4 zoom"
     >
       <div class="flex flex-col items-center space-y-6 w-full">
         <h2
@@ -179,7 +179,7 @@ function SpaceCarousel(props: Props) {
         </p>
       </div>
       <div class="relative h-fit w-4/5">
-        <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-3 lg:gap-6">
+        <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6">
           {images?.map((image, index) => {
             const params = { promotion_name: image.alt };
 

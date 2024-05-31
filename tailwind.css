@@ -41,6 +41,12 @@
   #AgendaSection ul::-webkit-scrollbar{
       width: 0px;
   }
+
+  @media (max-width: 600px) {
+    .zoom {
+        zoom: 30%;
+    }
+}
 }
 
 @layer components {

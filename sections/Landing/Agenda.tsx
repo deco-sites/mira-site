@@ -54,9 +54,9 @@ export default function BlogPosts({
   ],
 }: Props) {
   return (
-    <div class="lg:container md:max-w-6xl lg:mx-auto mx-4 text-sm py-12 lg:py-28">
+    <div class="container max-w-6xl mx-auto text-sm py-28 zoom">
       <div class="space-y-16">
-        <div class="flex flex-col lg:flex-row gap-4 justify-between">
+        <div class="flex flex-row gap-4 justify-between">
           <div class="flex flex-col items-center space-y-4 w-full">
             <h2
               class="text-b-200 dark:text-black text-4xl leading-snug"
@@ -66,7 +66,7 @@ export default function BlogPosts({
             />
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-3 gap-8">
           {posts?.map((post) => (
             <div class="overflow-hidden">
               <Image

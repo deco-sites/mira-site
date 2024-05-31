@@ -51,10 +51,10 @@ function Sponsors(props: Props) {
   function Logo(element: Image) {
     return (
       <div
-        class="flex items-center justify-center w-[109px] sm:w-[138px] sl:w-[124px] rounded-[20px] md:w-auto backdrop-filter backdrop-blur-22 relative"
+        class="flex items-center justify-center rounded-[20px] w-auto backdrop-filter backdrop-blur-22 relative zoom"
         style={{ "borderRadius": "16px" }}
       >
-        <div class="w-full h-full z-60 relative flex items-center justify-center px-[18px] py-2.5 lg:px-[35px] lg:py-[10px] gap-6">
+        <div class="w-full h-full z-60 relative flex items-center justify-center px-[35px] py-[10px] gap-6">
           {element.dark && (
             <Picture>
               <Source
@@ -69,7 +69,7 @@ function Sponsors(props: Props) {
                 width={110}
               />
               <img
-                class="object-contain md:w-[90px] lg:w-[110px] dark:hidden"
+                class="object-contain w-[110px] dark:hidden"
                 src={element.dark}
               />
             </Picture>
@@ -88,7 +88,7 @@ function Sponsors(props: Props) {
                 width={110}
               />
               <img
-                class="hidden dark:block object-contain md:w-[90px] lg:w-[110px]"
+                class="hidden dark:block object-contain w-[110px]"
                 src={element.light}
               />
             </Picture>
