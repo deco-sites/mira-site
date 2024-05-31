@@ -51,7 +51,7 @@ function Sponsors(props: Props) {
   function Logo(element: Image) {
     return (
       <div
-        class="flex items-center justify-center rounded-[20px] w-auto backdrop-filter backdrop-blur-22 relative zoom"
+        class="flex items-center justify-center rounded-[20px] w-auto backdrop-filter backdrop-blur-22 relative"
         style={{ "borderRadius": "16px" }}
       >
         <div class="w-full h-full z-60 relative flex items-center justify-center px-[35px] py-[10px] gap-6">
@@ -99,7 +99,7 @@ function Sponsors(props: Props) {
   }
 
   return (
-    <div class="bg-black">
+    <div class="bg-black zoom">
       <div class="container py-8 flex flex-col gap-8 lg:gap-12 lg:py-[52px] lg:pb-20 lg:px-16">
         <div class="flex flex-col gap-12 items-center">
           <div
