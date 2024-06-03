@@ -25,7 +25,9 @@ export default function Footer({
     >
       <div class="flex flex-col items-center gap-6 text-b-200 dark:text-black">
         <div class="flex items-center flex-col lg:flex-row gap-6">
-          <h4 class="font-semibold text-[28px] lg:text-4xl">{subscribe?.title}</h4>
+          <h4 class="font-semibold text-[28px] lg:text-4xl">
+            {subscribe?.title}
+          </h4>
           <CopyButton contactButton={contactButton} />
         </div>
         <p class="text-center font-normal">{subscribe.description}</p>

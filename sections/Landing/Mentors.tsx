@@ -73,7 +73,10 @@ export default function BlogPosts({
         </div>
         <div class="grid grid-cols-2 lg:flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8">
           {posts?.map((post) => (
-            <a href={post.linkedin} class="overflow-hidden max-w-[204.8px] h-full">
+            <a
+              href={post.linkedin}
+              class="overflow-hidden max-w-[204.8px] h-full"
+            >
               <Image
                 width={640}
                 class="w-full object-fit z-10 aspect-square rounded"
@@ -86,7 +89,9 @@ export default function BlogPosts({
               <div class="p-4 lg:p-6 text-b-200 dark:text-black gap-4 flex flex-col items-center text-center">
                 <div class="space-y-2 flex flex-col">
                   <h3 class="text-[16px] lg:text-2xl">{post.title}</h3>
-                  <div class="text-[12px] lg:text-[16px] font-semibold">{post.position}</div>
+                  <div class="text-[12px] lg:text-[16px] font-semibold">
+                    {post.position}
+                  </div>
                   <p class="text-[12px] lg:text-base">{post.excerpt}</p>
                 </div>
               </div>

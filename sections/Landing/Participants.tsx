@@ -101,7 +101,9 @@ export default function BlogPosts({
               <div class="p-4 lg:p-6 text-b-200 dark:text-black gap-4 flex flex-col items-center text-center">
                 <div class="space-y-2 flex flex-col">
                   <h3 class="text-[14px] lg:text-2xl">{post.title}</h3>
-                  <div class="text-[10px] lg:text-[14px] font-semibold">{post.readingTime}</div>
+                  <div class="text-[10px] lg:text-[14px] font-semibold">
+                    {post.readingTime}
+                  </div>
                 </div>
               </div>
             </a>
