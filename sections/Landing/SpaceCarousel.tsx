@@ -27,7 +27,7 @@ export interface Banner {
 }
 
 export interface Props {
-  /** @format html */
+  /** @format rich-text */
   title?: string;
   description?: string;
   images?: Banner[];
@@ -165,16 +165,16 @@ function SpaceCarousel(props: Props) {
   return (
     <div
       id={id}
-      class="relative container mx-auto max-w-6xl flex flex-col items-center w-full m-auto py-10 gap-4 zoom"
+      class="relative container mx-auto max-w-6xl flex flex-col items-center w-full m-auto py-10 gap-4 px-4"
     >
       <div class="flex flex-col items-center space-y-6 w-full">
         <h2
-          class="text-b-200 dark:text-black text-4xl leading-snug"
+          class="text-b-200 dark:text-black text-[28px] lg:text-5xl leading-snug"
           dangerouslySetInnerHTML={{
             __html: title ?? "",
           }}
         />
-        <p class="text-b-200 dark:text-black text-lg">
+        <p class="text-b-200 dark:text-black text-[16px] lg:text-lg">
           {description}
         </p>
       </div>

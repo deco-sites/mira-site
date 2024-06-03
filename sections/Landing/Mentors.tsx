@@ -13,7 +13,7 @@ export interface Post {
 }
 
 export interface Props {
-  /** @format html */
+  /** @format rich-text */
   title?: string;
   description?: string;
   posts?: Post[];
@@ -56,38 +56,38 @@ export default function BlogPosts({
   ],
 }: Props) {
   return (
-    <div class="container max-w-6xl mx-auto text-sm py-28 zoom">
+    <div class="container max-w-6xl mx-auto text-sm py-14 lg:py-28 px-4">
       <div class="space-y-16">
         <div class="flex flex-row gap-4 justify-between items-center">
           <div class="flex flex-col items-center space-y-6 w-full">
             <h2
-              class="text-b-200 dark:text-black text-4xl leading-snug"
+              class="text-b-200 dark:text-black text-[28px] lg:text-5xl leading-snug"
               dangerouslySetInnerHTML={{
                 __html: title ?? "",
               }}
             />
-            <p class="text-b-200 dark:text-black text-lg text-center">
+            <p class="text-b-200 dark:text-black text-[16px] lg:text-lg text-center">
               {description}
             </p>
           </div>
         </div>
-        <div class="flex flex-row items-start justify-center gap-8">
+        <div class="grid grid-cols-2 lg:flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8">
           {posts?.map((post) => (
-            <a href={post.linkedin} class="overflow-hidden max-w-[204.8px]">
+            <a href={post.linkedin} class="overflow-hidden max-w-[204.8px] h-full">
               <Image
                 width={640}
-                class="w-full object-fit z-10 aspect-square"
+                class="w-full object-fit z-10 aspect-square rounded"
                 sizes="(max-width: 640px) 100vw, 30vw"
                 src={post.image}
                 alt={post.image}
                 decoding="async"
                 loading="lazy"
               />
-              <div class="p-6 text-b-200 dark:text-black gap-4 flex flex-col items-center text-center">
+              <div class="p-4 lg:p-6 text-b-200 dark:text-black gap-4 flex flex-col items-center text-center">
                 <div class="space-y-2 flex flex-col">
-                  <h3 class="text-2xl">{post.title}</h3>
-                  <div class="font-semibold">{post.position}</div>
-                  <p class="text-base">{post.excerpt}</p>
+                  <h3 class="text-[16px] lg:text-2xl">{post.title}</h3>
+                  <div class="text-[12px] lg:text-[16px] font-semibold">{post.position}</div>
+                  <p class="text-[12px] lg:text-base">{post.excerpt}</p>
                 </div>
               </div>
             </a>

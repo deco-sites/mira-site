@@ -2,9 +2,9 @@ import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 
 export interface Post {
-  /** @format html */
+  /** @format rich-text */
   title: string;
-  /** @format html */
+  /** @format rich-text */
   excerpt: string;
   image: ImageWidget;
   date: string;
@@ -13,7 +13,7 @@ export interface Post {
 }
 
 export interface Props {
-  /** @format html */
+  /** @format rich-text */
   title?: string;
   posts?: Post[];
 }
@@ -54,19 +54,19 @@ export default function BlogPosts({
   ],
 }: Props) {
   return (
-    <div class="container max-w-6xl mx-auto text-sm py-28 zoom">
+    <div class="container max-w-6xl mx-auto text-sm py-14 lg:py-28 px-4">
       <div class="space-y-16">
         <div class="flex flex-row gap-4 justify-between">
           <div class="flex flex-col items-center space-y-4 w-full">
             <h2
-              class="text-b-200 dark:text-black text-4xl leading-snug"
+              class="text-b-200 dark:text-black text-[28px] lg:text-5xl leading-snug"
               dangerouslySetInnerHTML={{
                 __html: title ?? "",
               }}
             />
           </div>
         </div>
-        <div class="grid grid-cols-3 gap-8">
+        <div class="grid lg:grid-cols-3 gap-8">
           {posts?.map((post) => (
             <div class="overflow-hidden">
               <Image

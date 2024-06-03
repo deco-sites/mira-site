@@ -8,7 +8,6 @@ export interface Subscribe {
 export interface Props {
   subscribe?: Subscribe;
   contactButton?: string;
-  _true: boolean;
 }
 
 export default function Footer({
@@ -22,18 +21,14 @@ export default function Footer({
   return (
     <div
       id="subscribe"
-      class="container mx-auto max-w-6xl px-0 p-16 text-sm zoom"
+      class="lg:container mx-auto md:max-w-6xl px-4 lg:px-0 p-16 text-sm"
     >
-      <div class="flex flex-col gap-20 items-center">
-        <div class="flex gap-20 justify-between items-center flex-row-reverse">
-          <div class="flex flex-col items-center gap-6 text-b-200 dark:text-black">
-            <div class="flex flex-row items-center gap-6">
-              <h4 class="font-semibold text-4xl">{subscribe?.title}</h4>
-              <CopyButton contactButton={contactButton} />
-            </div>
-            <p class="font-normal">{subscribe.description}</p>
-          </div>
+      <div class="flex flex-col items-center gap-6 text-b-200 dark:text-black">
+        <div class="flex items-center flex-col lg:flex-row gap-6">
+          <h4 class="font-semibold text-[28px] lg:text-4xl">{subscribe?.title}</h4>
+          <CopyButton contactButton={contactButton} />
         </div>
+        <p class="text-center font-normal">{subscribe.description}</p>
       </div>
     </div>
   );

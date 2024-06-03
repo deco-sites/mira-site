@@ -11,7 +11,7 @@ export interface Image {
 }
 
 export interface Props {
-  /** @format html */
+  /** @format rich-text */
   title?: string;
   brands?: {
     logos?: Image[];
@@ -54,7 +54,7 @@ function Sponsors(props: Props) {
         class="flex items-center justify-center rounded-[20px] w-auto backdrop-filter backdrop-blur-22 relative"
         style={{ "borderRadius": "16px" }}
       >
-        <div class="w-full h-full z-60 relative flex items-center justify-center px-[35px] py-[10px] gap-6">
+        <div class="w-full h-full z-60 relative flex items-center justify-center p-4 lg:px-[35px] lg:py-[10px] gap-6">
           {element.dark && (
             <Picture>
               <Source
@@ -69,7 +69,7 @@ function Sponsors(props: Props) {
                 width={110}
               />
               <img
-                class="object-contain w-[110px] dark:hidden"
+                class="object-contain w-[50px] lg:w-[110px] dark:hidden"
                 src={element.dark}
               />
             </Picture>
@@ -88,7 +88,7 @@ function Sponsors(props: Props) {
                 width={110}
               />
               <img
-                class="hidden dark:block object-contain w-[110px]"
+                class="hidden dark:block object-contain w-[50px] lg:w-[110px]"
                 src={element.light}
               />
             </Picture>
@@ -99,11 +99,11 @@ function Sponsors(props: Props) {
   }
 
   return (
-    <div class="bg-black zoom">
+    <div class="bg-black">
       <div class="container py-8 flex flex-col gap-8 lg:gap-12 lg:py-[52px] lg:pb-20 lg:px-16">
         <div class="flex flex-col gap-12 items-center">
           <div
-            class="text-white font-medium text-[16px] lg:text-[24px] leading-[100%] tracking-[-0.48px]"
+            class="text-white font-medium text-[28px] lg:text-5xl leading-[100%] tracking-[-0.48px]"
             dangerouslySetInnerHTML={{
               __html: title ?? "",
             }}
