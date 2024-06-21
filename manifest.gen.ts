@@ -20,48 +20,49 @@ import * as $$$$$$9 from "./sections/Content/Benefits.tsx";
 import * as $$$$$$10 from "./sections/Content/BlogPosts.tsx";
 import * as $$$$$$11 from "./sections/Content/CallToAction.tsx";
 import * as $$$$$$12 from "./sections/Content/CardsCarousel.tsx";
-import * as $$$$$$13 from "./sections/Content/Faq.tsx";
-import * as $$$$$$14 from "./sections/Content/Features.tsx";
-import * as $$$$$$15 from "./sections/Content/Hero.tsx";
-import * as $$$$$$16 from "./sections/Content/Intro.tsx";
-import * as $$$$$$17 from "./sections/Content/Logos.tsx";
-import * as $$$$$$18 from "./sections/Content/Partners.tsx";
-import * as $$$$$$19 from "./sections/Content/Pillars.tsx";
-import * as $$$$$$20 from "./sections/Content/PromoVideo.tsx";
-import * as $$$$$$21 from "./sections/Content/RichText.tsx";
-import * as $$$$$$22 from "./sections/Content/Table.tsx";
-import * as $$$$$$23 from "./sections/Content/Testimonials.tsx";
-import * as $$$$$$24 from "./sections/Content/TextSection.tsx";
-import * as $$$$$$25 from "./sections/Content/TextWithImage.tsx";
-import * as $$$$$$26 from "./sections/Content/VideoSection.tsx";
-import * as $$$$$$27 from "./sections/Footer/Footer.tsx";
-import * as $$$$$$28 from "./sections/Gallery.tsx";
-import * as $$$$$$29 from "./sections/Header/Header.tsx";
-import * as $$$$$$30 from "./sections/Images/BannerGrid.tsx";
-import * as $$$$$$31 from "./sections/Images/Carousel.tsx";
-import * as $$$$$$32 from "./sections/Images/ImageGallery.tsx";
-import * as $$$$$$33 from "./sections/Images/ShoppableBanner.tsx";
-import * as $$$$$$34 from "./sections/Landing/Agenda.tsx";
-import * as $$$$$$35 from "./sections/Landing/Footer.tsx";
-import * as $$$$$$36 from "./sections/Landing/HeroLanding.tsx";
-import * as $$$$$$37 from "./sections/Landing/Mentors.tsx";
-import * as $$$$$$38 from "./sections/Landing/Participants.tsx";
-import * as $$$$$$39 from "./sections/Landing/SpaceCarousel.tsx";
-import * as $$$$$$40 from "./sections/Landing/Sponsors.tsx";
-import * as $$$$$$41 from "./sections/Layout/Container.tsx";
-import * as $$$$$$42 from "./sections/Layout/Flex.tsx";
-import * as $$$$$$43 from "./sections/Layout/Grid.tsx";
-import * as $$$$$$44 from "./sections/Layout/GridItem.tsx";
-import * as $$$$$$45 from "./sections/Links/LinkTree.tsx";
-import * as $$$$$$46 from "./sections/Links/Shortcuts.tsx";
-import * as $$$$$$47 from "./sections/Miscellaneous/CampaignTimer.tsx";
-import * as $$$$$$48 from "./sections/Miscellaneous/CookieConsent.tsx";
-import * as $$$$$$49 from "./sections/Miscellaneous/DoubleSlider.tsx";
-import * as $$$$$$50 from "./sections/Miscellaneous/Slide.tsx";
-import * as $$$$$$51 from "./sections/Newsletter/Newsletter.tsx";
-import * as $$$$$$52 from "./sections/Social/InstagramPosts.tsx";
-import * as $$$$$$53 from "./sections/Social/WhatsApp.tsx";
-import * as $$$$$$54 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$13 from "./sections/Content/CostumerPains.tsx";
+import * as $$$$$$14 from "./sections/Content/Faq.tsx";
+import * as $$$$$$15 from "./sections/Content/Features.tsx";
+import * as $$$$$$16 from "./sections/Content/Hero.tsx";
+import * as $$$$$$17 from "./sections/Content/Intro.tsx";
+import * as $$$$$$18 from "./sections/Content/Logos.tsx";
+import * as $$$$$$19 from "./sections/Content/Partners.tsx";
+import * as $$$$$$20 from "./sections/Content/Pillars.tsx";
+import * as $$$$$$21 from "./sections/Content/PromoVideo.tsx";
+import * as $$$$$$22 from "./sections/Content/RichText.tsx";
+import * as $$$$$$23 from "./sections/Content/Table.tsx";
+import * as $$$$$$24 from "./sections/Content/Testimonials.tsx";
+import * as $$$$$$25 from "./sections/Content/TextSection.tsx";
+import * as $$$$$$26 from "./sections/Content/TextWithImage.tsx";
+import * as $$$$$$27 from "./sections/Content/VideoSection.tsx";
+import * as $$$$$$28 from "./sections/Footer/Footer.tsx";
+import * as $$$$$$29 from "./sections/Gallery.tsx";
+import * as $$$$$$30 from "./sections/Header/Header.tsx";
+import * as $$$$$$31 from "./sections/Images/BannerGrid.tsx";
+import * as $$$$$$32 from "./sections/Images/Carousel.tsx";
+import * as $$$$$$33 from "./sections/Images/ImageGallery.tsx";
+import * as $$$$$$34 from "./sections/Images/ShoppableBanner.tsx";
+import * as $$$$$$35 from "./sections/Landing/Agenda.tsx";
+import * as $$$$$$36 from "./sections/Landing/Footer.tsx";
+import * as $$$$$$37 from "./sections/Landing/HeroLanding.tsx";
+import * as $$$$$$38 from "./sections/Landing/Mentors.tsx";
+import * as $$$$$$39 from "./sections/Landing/Participants.tsx";
+import * as $$$$$$40 from "./sections/Landing/SpaceCarousel.tsx";
+import * as $$$$$$41 from "./sections/Landing/Sponsors.tsx";
+import * as $$$$$$42 from "./sections/Layout/Container.tsx";
+import * as $$$$$$43 from "./sections/Layout/Flex.tsx";
+import * as $$$$$$44 from "./sections/Layout/Grid.tsx";
+import * as $$$$$$45 from "./sections/Layout/GridItem.tsx";
+import * as $$$$$$46 from "./sections/Links/LinkTree.tsx";
+import * as $$$$$$47 from "./sections/Links/Shortcuts.tsx";
+import * as $$$$$$48 from "./sections/Miscellaneous/CampaignTimer.tsx";
+import * as $$$$$$49 from "./sections/Miscellaneous/CookieConsent.tsx";
+import * as $$$$$$50 from "./sections/Miscellaneous/DoubleSlider.tsx";
+import * as $$$$$$51 from "./sections/Miscellaneous/Slide.tsx";
+import * as $$$$$$52 from "./sections/Newsletter/Newsletter.tsx";
+import * as $$$$$$53 from "./sections/Social/InstagramPosts.tsx";
+import * as $$$$$$54 from "./sections/Social/WhatsApp.tsx";
+import * as $$$$$$55 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
   "loaders": {
@@ -85,48 +86,49 @@ const manifest = {
     "deco-sites/mira-site/sections/Content/BlogPosts.tsx": $$$$$$10,
     "deco-sites/mira-site/sections/Content/CallToAction.tsx": $$$$$$11,
     "deco-sites/mira-site/sections/Content/CardsCarousel.tsx": $$$$$$12,
-    "deco-sites/mira-site/sections/Content/Faq.tsx": $$$$$$13,
-    "deco-sites/mira-site/sections/Content/Features.tsx": $$$$$$14,
-    "deco-sites/mira-site/sections/Content/Hero.tsx": $$$$$$15,
-    "deco-sites/mira-site/sections/Content/Intro.tsx": $$$$$$16,
-    "deco-sites/mira-site/sections/Content/Logos.tsx": $$$$$$17,
-    "deco-sites/mira-site/sections/Content/Partners.tsx": $$$$$$18,
-    "deco-sites/mira-site/sections/Content/Pillars.tsx": $$$$$$19,
-    "deco-sites/mira-site/sections/Content/PromoVideo.tsx": $$$$$$20,
-    "deco-sites/mira-site/sections/Content/RichText.tsx": $$$$$$21,
-    "deco-sites/mira-site/sections/Content/Table.tsx": $$$$$$22,
-    "deco-sites/mira-site/sections/Content/Testimonials.tsx": $$$$$$23,
-    "deco-sites/mira-site/sections/Content/TextSection.tsx": $$$$$$24,
-    "deco-sites/mira-site/sections/Content/TextWithImage.tsx": $$$$$$25,
-    "deco-sites/mira-site/sections/Content/VideoSection.tsx": $$$$$$26,
-    "deco-sites/mira-site/sections/Footer/Footer.tsx": $$$$$$27,
-    "deco-sites/mira-site/sections/Gallery.tsx": $$$$$$28,
-    "deco-sites/mira-site/sections/Header/Header.tsx": $$$$$$29,
-    "deco-sites/mira-site/sections/Images/BannerGrid.tsx": $$$$$$30,
-    "deco-sites/mira-site/sections/Images/Carousel.tsx": $$$$$$31,
-    "deco-sites/mira-site/sections/Images/ImageGallery.tsx": $$$$$$32,
-    "deco-sites/mira-site/sections/Images/ShoppableBanner.tsx": $$$$$$33,
-    "deco-sites/mira-site/sections/Landing/Agenda.tsx": $$$$$$34,
-    "deco-sites/mira-site/sections/Landing/Footer.tsx": $$$$$$35,
-    "deco-sites/mira-site/sections/Landing/HeroLanding.tsx": $$$$$$36,
-    "deco-sites/mira-site/sections/Landing/Mentors.tsx": $$$$$$37,
-    "deco-sites/mira-site/sections/Landing/Participants.tsx": $$$$$$38,
-    "deco-sites/mira-site/sections/Landing/SpaceCarousel.tsx": $$$$$$39,
-    "deco-sites/mira-site/sections/Landing/Sponsors.tsx": $$$$$$40,
-    "deco-sites/mira-site/sections/Layout/Container.tsx": $$$$$$41,
-    "deco-sites/mira-site/sections/Layout/Flex.tsx": $$$$$$42,
-    "deco-sites/mira-site/sections/Layout/Grid.tsx": $$$$$$43,
-    "deco-sites/mira-site/sections/Layout/GridItem.tsx": $$$$$$44,
-    "deco-sites/mira-site/sections/Links/LinkTree.tsx": $$$$$$45,
-    "deco-sites/mira-site/sections/Links/Shortcuts.tsx": $$$$$$46,
-    "deco-sites/mira-site/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$47,
-    "deco-sites/mira-site/sections/Miscellaneous/CookieConsent.tsx": $$$$$$48,
-    "deco-sites/mira-site/sections/Miscellaneous/DoubleSlider.tsx": $$$$$$49,
-    "deco-sites/mira-site/sections/Miscellaneous/Slide.tsx": $$$$$$50,
-    "deco-sites/mira-site/sections/Newsletter/Newsletter.tsx": $$$$$$51,
-    "deco-sites/mira-site/sections/Social/InstagramPosts.tsx": $$$$$$52,
-    "deco-sites/mira-site/sections/Social/WhatsApp.tsx": $$$$$$53,
-    "deco-sites/mira-site/sections/Theme/Theme.tsx": $$$$$$54,
+    "deco-sites/mira-site/sections/Content/CostumerPains.tsx": $$$$$$13,
+    "deco-sites/mira-site/sections/Content/Faq.tsx": $$$$$$14,
+    "deco-sites/mira-site/sections/Content/Features.tsx": $$$$$$15,
+    "deco-sites/mira-site/sections/Content/Hero.tsx": $$$$$$16,
+    "deco-sites/mira-site/sections/Content/Intro.tsx": $$$$$$17,
+    "deco-sites/mira-site/sections/Content/Logos.tsx": $$$$$$18,
+    "deco-sites/mira-site/sections/Content/Partners.tsx": $$$$$$19,
+    "deco-sites/mira-site/sections/Content/Pillars.tsx": $$$$$$20,
+    "deco-sites/mira-site/sections/Content/PromoVideo.tsx": $$$$$$21,
+    "deco-sites/mira-site/sections/Content/RichText.tsx": $$$$$$22,
+    "deco-sites/mira-site/sections/Content/Table.tsx": $$$$$$23,
+    "deco-sites/mira-site/sections/Content/Testimonials.tsx": $$$$$$24,
+    "deco-sites/mira-site/sections/Content/TextSection.tsx": $$$$$$25,
+    "deco-sites/mira-site/sections/Content/TextWithImage.tsx": $$$$$$26,
+    "deco-sites/mira-site/sections/Content/VideoSection.tsx": $$$$$$27,
+    "deco-sites/mira-site/sections/Footer/Footer.tsx": $$$$$$28,
+    "deco-sites/mira-site/sections/Gallery.tsx": $$$$$$29,
+    "deco-sites/mira-site/sections/Header/Header.tsx": $$$$$$30,
+    "deco-sites/mira-site/sections/Images/BannerGrid.tsx": $$$$$$31,
+    "deco-sites/mira-site/sections/Images/Carousel.tsx": $$$$$$32,
+    "deco-sites/mira-site/sections/Images/ImageGallery.tsx": $$$$$$33,
+    "deco-sites/mira-site/sections/Images/ShoppableBanner.tsx": $$$$$$34,
+    "deco-sites/mira-site/sections/Landing/Agenda.tsx": $$$$$$35,
+    "deco-sites/mira-site/sections/Landing/Footer.tsx": $$$$$$36,
+    "deco-sites/mira-site/sections/Landing/HeroLanding.tsx": $$$$$$37,
+    "deco-sites/mira-site/sections/Landing/Mentors.tsx": $$$$$$38,
+    "deco-sites/mira-site/sections/Landing/Participants.tsx": $$$$$$39,
+    "deco-sites/mira-site/sections/Landing/SpaceCarousel.tsx": $$$$$$40,
+    "deco-sites/mira-site/sections/Landing/Sponsors.tsx": $$$$$$41,
+    "deco-sites/mira-site/sections/Layout/Container.tsx": $$$$$$42,
+    "deco-sites/mira-site/sections/Layout/Flex.tsx": $$$$$$43,
+    "deco-sites/mira-site/sections/Layout/Grid.tsx": $$$$$$44,
+    "deco-sites/mira-site/sections/Layout/GridItem.tsx": $$$$$$45,
+    "deco-sites/mira-site/sections/Links/LinkTree.tsx": $$$$$$46,
+    "deco-sites/mira-site/sections/Links/Shortcuts.tsx": $$$$$$47,
+    "deco-sites/mira-site/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$48,
+    "deco-sites/mira-site/sections/Miscellaneous/CookieConsent.tsx": $$$$$$49,
+    "deco-sites/mira-site/sections/Miscellaneous/DoubleSlider.tsx": $$$$$$50,
+    "deco-sites/mira-site/sections/Miscellaneous/Slide.tsx": $$$$$$51,
+    "deco-sites/mira-site/sections/Newsletter/Newsletter.tsx": $$$$$$52,
+    "deco-sites/mira-site/sections/Social/InstagramPosts.tsx": $$$$$$53,
+    "deco-sites/mira-site/sections/Social/WhatsApp.tsx": $$$$$$54,
+    "deco-sites/mira-site/sections/Theme/Theme.tsx": $$$$$$55,
   },
   "apps": {
     "deco-sites/mira-site/apps/decohub.ts": $$$$$$$$$$$0,
