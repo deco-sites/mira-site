@@ -23,7 +23,7 @@ export default function Card(props: Props) {
   } = props;
   return (
     <div class="p-6 lg:p-8 text-b-200 rounded-[24px_24px_0_24px]">
-      <div class="flex flex-col h-full gap-6 items-start font-merriweather justify-between dark:text-black">
+      <div class="flex flex-col h-full gap-6 items-start justify-between dark:text-black">
         <div class="space-y-6">
           <div class="max-w-[104px] max-h-[52px] p-2 flex justify-center items-center text-white dark:text-black">
             <Icon
@@ -50,7 +50,7 @@ export default function Card(props: Props) {
             <p class="leading-[135%] lg:leading-[150%] font-bold">
               {name}
             </p>
-            <p class="text-main leading-[135%] lg:leading-[120%] tracking-[-0.6px]">
+            <p class="text-main font-merriweather leading-[135%] lg:leading-[120%] tracking-[-0.6px]">
               {role}
             </p>
           </div>
