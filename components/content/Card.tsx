@@ -46,11 +46,11 @@ export default function Card(props: Props) {
             fetchPriority="low"
             preload
           />
-          <div class="flex flex-col leading-[150%]">
-            <p class="leading-[135%] lg:leading-[150%] text-[1rem] lg:text-[1.25rem] font-bold">
+          <div class="flex flex-col text-[1rem] lg:text-[1.115rem] min-w-[1500px]:text-[1.25rem] leading-[150%]">
+            <p class="leading-[135%] lg:leading-[150%] font-bold">
               {name}
             </p>
-            <p class="text-main leading-[135%] lg:leading-[120%] text-[1rem] lg:text-[1.25rem] tracking-[-0.6px]">
+            <p class="text-main leading-[135%] lg:leading-[120%] tracking-[-0.6px]">
               {role}
             </p>
           </div>
