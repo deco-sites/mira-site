@@ -32,6 +32,13 @@ function Navbar({
       <nav class="drawer drawer-end lg:hidden">
         <input id="mobile-drawer-nav" type="checkbox" class="drawer-toggle" />
         <div class="flex justify-between items-center w-full p-6 border-none gap-2">
+          <div class="flex gap-2 items-center">
+          <label
+            for="mobile-drawer-nav"
+            class="drawer-button text-b-200"
+          >
+            <Icon id="Bars3" size={36} strokeWidth={0.1} />
+          </label>
           <a
             class="flex justify-center items-start"
             href="/"
@@ -58,6 +65,7 @@ function Navbar({
               </>
             )}
           </a>
+          </div>
           <div class="flex gap-2">
             {workshopButton.active && (
               <a
@@ -68,12 +76,6 @@ function Navbar({
                 <Icon id="ExternalLink" size={14} strokeWidth={0.01} />
               </a>
             )}
-            <label
-              for="mobile-drawer-nav"
-              class="drawer-button text-b-200"
-            >
-              <Icon id="Bars3" size={36} strokeWidth={0.1} />
-            </label>
           </div>
         </div>
 
