@@ -33,38 +33,38 @@ function Navbar({
         <input id="mobile-drawer-nav" type="checkbox" class="drawer-toggle" />
         <div class="flex justify-between items-center w-full p-6 border-none gap-2">
           <div class="flex gap-2 items-center">
-          <label
-            for="mobile-drawer-nav"
-            class="drawer-button text-b-200"
-          >
-            <Icon id="Bars3" size={36} strokeWidth={0.1} />
-          </label>
-          <a
-            class="flex justify-center items-start"
-            href="/"
-            aria-label="Store logo"
-          >
-            {logo && (
-              <>
-                <Image
-                  class="inline dark:hidden"
-                  src={logo.srcDark || ""}
-                  alt={logo.alt || ""}
-                  width={logo.width || 90}
-                  height={logo.height || 20}
-                  loading="lazy"
-                />
-                <Image
-                  class="hidden dark:inline"
-                  src={logo.srcLight || ""}
-                  alt={logo.alt || ""}
-                  width={logo.width || 90}
-                  height={logo.height || 20}
-                  loading="lazy"
-                />
-              </>
-            )}
-          </a>
+            <label
+              for="mobile-drawer-nav"
+              class="drawer-button text-b-200"
+            >
+              <Icon id="Bars3" size={36} strokeWidth={0.1} />
+            </label>
+            <a
+              class="flex justify-center items-start"
+              href="/"
+              aria-label="Store logo"
+            >
+              {logo && (
+                <>
+                  <Image
+                    class="inline dark:hidden"
+                    src={logo.srcDark || ""}
+                    alt={logo.alt || ""}
+                    width={logo.width || 90}
+                    height={logo.height || 20}
+                    loading="lazy"
+                  />
+                  <Image
+                    class="hidden dark:inline"
+                    src={logo.srcLight || ""}
+                    alt={logo.alt || ""}
+                    width={logo.width || 90}
+                    height={logo.height || 20}
+                    loading="lazy"
+                  />
+                </>
+              )}
+            </a>
           </div>
           <div class="flex gap-2">
             {workshopButton.active && (
