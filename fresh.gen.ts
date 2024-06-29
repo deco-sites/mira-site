@@ -20,6 +20,7 @@ import * as $Header_Cart_vtex from "./islands/Header/Cart/vtex.tsx";
 import * as $Header_Cart_wake from "./islands/Header/Cart/wake.tsx";
 import * as $Header_Searchbar from "./islands/Header/Searchbar.tsx";
 import * as $Newsletter from "./islands/Newsletter.tsx";
+import * as $OpenModalButton from "./islands/OpenModalButton.tsx";
 import * as $OutOfStock from "./islands/OutOfStock.tsx";
 import * as $ProductImageZoom from "./islands/ProductImageZoom.tsx";
 import * as $SearchControls from "./islands/SearchControls.tsx";
@@ -52,6 +53,7 @@ const manifest = {
     "./islands/Header/Cart/wake.tsx": $Header_Cart_wake,
     "./islands/Header/Searchbar.tsx": $Header_Searchbar,
     "./islands/Newsletter.tsx": $Newsletter,
+    "./islands/OpenModalButton.tsx": $OpenModalButton,
     "./islands/OutOfStock.tsx": $OutOfStock,
     "./islands/ProductImageZoom.tsx": $ProductImageZoom,
     "./islands/SearchControls.tsx": $SearchControls,

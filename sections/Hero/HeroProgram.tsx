@@ -4,6 +4,8 @@ import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
 import Image from "apps/website/components/Image.tsx";
 import { useUI } from "$store/sdk/useUI.ts";
 import ToggleButton from "deco-sites/mira-site/islands/ToggleButton.tsx";
+import OpenModalButton from "$store/islands/OpenModalButton.tsx";
+import Modal from "$store/components/hero/Modal.tsx"; 
 
 interface CTA {
     label?: string;
@@ -57,6 +59,16 @@ export default function HeroProgram({
 
     const { displayProgram } = useUI();
 
+    const isModalOpen = useSignal(false);
+
+    const openModal = () => {
+        isModalOpen.value = true;
+    };
+
+    const closeModal = () => {
+        isModalOpen.value = false;
+    };
+
     console.log("displayProgram", displayProgram.value)
 
     const renderContent = () => {
@@ -78,26 +90,28 @@ export default function HeroProgram({
                     className="text-[1.5rem] lg:text-[3.375rem] leading-7 lg:leading-[110%] font-extrabold lg:text-center text-b-200"
                     dangerouslySetInnerHTML={{ __html: activeProgram?.bigDesc ?? "" }}
                 />
-                <div className="flex flex-col lg:flex-row lg:items-start w-full h-full gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 w-full h-full gap-6">
                     {activeProgram?.contents.map((content, index) => (
-                        <div className="flex flex-col flex-1 min-h-full w-full lg:space-y-20" key={index}>
+                         <div className="flex flex-col justify-end flex-1 min-h-full w-full space-y-20" key={index}>
                             <div
-                                className="hidden lg:block w-full font-bold text-[1.5rem] text-b-200 leading-[135%] lg:text-center py-6"
+                                className="hidden lg:block w-full h-[132px] font-bold text-[1.5rem] text-b-200 leading-[135%] lg:text-center py-6"
                                 dangerouslySetInnerHTML={{
                                     __html: content.recomendation ?? "",
                                 }}
                             />
                             <div
-                                className="flex-1 flex flex-col w-full border border-b-200 rounded-3xl mb-4"
+                                className="flex-1 flex flex-col justify-between w-full border border-b-200 rounded-3xl"
                             >
                                 <div className="flex items-center justify-between bg-main text-black rounded-t-3xl p-6">
                                     <div>
                                         <h2 className="font-extrabold text-[1rem] lg:text-[2rem]">{content.title}</h2>
                                         <p className="text-[1rem] lg:text-[2rem] italic">{content.description}</p>
                                     </div>
+                                    {(!displayProgram.value &&
                                     <span className="border border-black text-sm leading-[120%] lg:text-2xl px-5 py-1 rounded-full">
                                         REMOTO
                                     </span>
+                                    )}
                                 </div>
                                 <div className="flex flex-col justify-between h-full gap-8 lg:gap-12 p-6 lg:p-8 flex-1">
                                     <div>
@@ -132,15 +146,23 @@ export default function HeroProgram({
                                             </ul>
                                         </div>
                                         <div className="flex flex-start gap-6 mt-12">
-                                            {content.buttons?.map((cta, index) => (
-                                                <a
-                                                    className={`flex flex-nowrap px-8 py-2 items-center rounded-3xl border border-main ${index === 0 ? 'text-black' : 'text-main'} text-base gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer ${index === 0 ? 'bg-main' : ''}`}
-                                                    href={cta.url}
-                                                    key={index}
-                                                >
-                                                    <p className="text-nowrap">{cta.label}</p>
-                                                    <Icon id="ExternalLink" size={20} strokeWidth={0.01} />
-                                                </a>
+                                        {content.buttons?.map((cta, index) => (
+                                                index === 1 ? (
+                                                    <OpenModalButton
+                                                        key={index}
+                                                        label={cta.label ?? ""}
+                                                        onOpen={openModal}
+                                                    />
+                                                ) : (
+                                                    <a
+                                                        className={`flex flex-nowrap px-8 py-2 items-center rounded-3xl border border-main ${index === 0 ? 'text-black' : 'text-main'} text-base gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer ${index === 0 ? 'bg-main' : ''}`}
+                                                        href={cta.url}
+                                                        key={index}
+                                                    >
+                                                        <p className="text-nowrap">{cta.label}</p>
+                                                        <Icon id="ExternalLink" class={`${index === 0 ? '' : 'text-main'}`} size={20} strokeWidth={0.01} />
+                                                    </a>
+                                                )
                                             ))}
                                         </div>
                                     </div>
