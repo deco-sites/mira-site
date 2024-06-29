@@ -1,6 +1,7 @@
 import { VideoWidget } from "apps/admin/widgets.ts";
 
 interface Index {
+  /** @format rich-text */
   label?: string;
   /**
    * @format textarea
@@ -30,11 +31,10 @@ export default function ImageSection({
   placement,
 }: Props) {
   return (
-    <section class="w-full bg-black dark:bg-b-300">
+    <section class="w-full bg-black">
       <div
-        class={`flex flex-col lg:flex-row gap-10 lg:max-w-[1224px] min-[1650px]:max-w-[1440px] px-6 lg:px-16 py-16 lg:py-[104px] lg:mx-auto ${
-          PLACEMENT[placement]
-        } text-left justify-between min-[1024px]:scale-90 min-[1650px]:scale-100`}
+        class={`flex flex-col lg:flex-row gap-10 lg:max-w-[1224px] min-[1650px]:max-w-[1440px] px-6 lg:px-16 py-16 lg:py-[104px] lg:mx-auto ${PLACEMENT[placement]
+          } text-left justify-between min-[1024px]:scale-90 min-[1650px]:scale-100`}
       >
         <video
           width="616"
@@ -69,20 +69,13 @@ export default function ImageSection({
         <div class="w-full flex flex-col lg:w-[46.95%] space-y-2 lg:space-y-4 lg:max-w-xl gap-10 text-b-200 justify-center">
           {textIndex?.map((text, index) => (
             <div
-              class={`w-full items-start justify-center border-l-2 pl-8 ${
-                index === 0
-                  ? "border-main dark:border-sub"
-                  : "border-transparent"
-              }`}
+              class={`w-full items-start justify-center border-l-2 pl-8 border-main`}
             >
               <p
-                class={`text-[32px] lg:text-[1.7rem] min-[1650px]:text-[32px] leading-[130%] font-black pb-4 uppercase dark:text-black ${
-                  index === 0 ? "text-main dark:text-sub" : "border-transparent"
-                }`}
-              >
-                {text.label}
-              </p>
-              <p class="text-zinc-400 text-[16px] lg:text-[0.875rem] min-[1650px]:text-[16px] leading-[150%] font-merriweather dark:text-black">
+                class="lg:col-span-2 font-black text-[1.25rem] lg:text-[3.375rem] uppercase leading-6 lg:leading-[110%] text-b-200"
+                dangerouslySetInnerHTML={{ __html: text.label ?? '' }}
+              />
+              <p class="text-zinc-400 text-[16px] lg:text-[0.875rem] min-[1650px]:text-[16px] leading-[150%] mt-6">
                 {text.description}
               </p>
             </div>

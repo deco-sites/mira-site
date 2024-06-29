@@ -1,5 +1,6 @@
 import Image from "apps/website/components/Image.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
+import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
 
 export interface Props {
   label?: string;
@@ -16,7 +17,7 @@ export default function Card(
   },
 ) {
   return (
-    <div class="relative overflow-hidden group-has-[:checked]:transition-transform ease-in-out duration-500 card group/item h-full flex-auto group-has-[:checked]:flex-1 w-full group-has-[:checked]:w-[800px] motion-reduce:transition-none">
+    <div class="relative overflow-hidden group-has-[:checked]:transition-transform ease-in-out duration-500 card group/item h-full flex-auto group-has-[:checked]:flex-1 w-[calc(100vh-48px)] lg:w-full group-has-[:checked]:w-[800px] motion-reduce:transition-none">
       {label && (
         <div class="text-[2.25rem] leading-[110%] tracking-[-1.08px] text-main font-merriweather italic">
           {label}
@@ -28,7 +29,7 @@ export default function Card(
             src={photo}
             width={328}
             height={450}
-            class={`group/img object-cover aspect-[328/450] w-full h-full group-has-[:checked]:opacity-0 transition-all ease-in-out duration-100`}
+            class={`group/img object-cover bg-center aspect-[327/180] lg:aspect-[328/450] w-[100vw] lg:w-full h-full group-has-[:checked]:opacity-0 transition-all ease-in-out duration-100`}
             loading="lazy"
             decoding="async"
             fetchPriority="low"
@@ -45,6 +46,9 @@ export default function Card(
           >
           </iframe>
         )}
+        <div class="absolute bottom-8 left-8 lg:top-8 lg:right-8 bg-main rounded-full p-[14.4px]">
+          <Icon id='ExternalLink' class="text-black" size={24} />
+        </div>
       </div>
       <style jsx>
         {`

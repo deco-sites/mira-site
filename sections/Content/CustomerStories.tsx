@@ -61,7 +61,7 @@ function CustomerStories(
               <label
                 htmlFor={`card${index}`}
                 data-size={index}
-                className="relative group card rounded-lg shadow-lg cursor-pointer  peer-checked:flex-1 peer-checked:w-[800px] peer-checked:min-w-[calc((100%-800px)/2)] flex-auto w-[calc((100% - 20px) / 4)] max-h-[32vw]"
+                className="relative group card rounded-lg shadow-lg cursor-pointer  peer-checked:flex-1 peer-checked:w-[800px] peer-checked:min-w-[calc((100%-800px)/2)] flex-auto lg:w-[calc((100% - 20px) / 4)] lg:max-h-[32vw]"
               >
                 <input
                   type="radio"

@@ -145,7 +145,7 @@ export default function HeroProgram({
                                                 ))}
                                             </ul>
                                         </div>
-                                        <div className="flex flex-start gap-6 mt-12">
+                                        <div className="flex flex-start gap-2 lg:gap-6 mt-12">
                                         {content.buttons?.map((cta, index) => (
                                                 index === 1 ? (
                                                     <OpenModalButton
@@ -160,7 +160,7 @@ export default function HeroProgram({
                                                         key={index}
                                                     >
                                                         <p className="text-nowrap">{cta.label}</p>
-                                                        <Icon id="ExternalLink" class={`${index === 0 ? '' : 'text-main'}`} size={20} strokeWidth={0.01} />
+                                                        <Icon id="ExternalLink" class={`hidden lg:block ${index === 0 ? '' : 'text-main'}`} size={20} strokeWidth={0.01} />
                                                     </a>
                                                 )
                                             ))}
