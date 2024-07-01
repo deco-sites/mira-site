@@ -46,12 +46,12 @@ export default function Features(
     <section class="w-full bg-black dark:bg-b-300 transform">
       <div class="min-[1024px]:scale-90 min-[1650px]:scale-100">
         <div class="py-16 px-6 lg:py-[104px] lg:px-16 lg:max-w-[1224px] min-[1650px]:max-w-[1440px] mx-auto self-center">
-          <div class="grid lg:grid-cols-3 pb-6 lg:pb-20">
+          <div class="grid lg:grid-cols-3">
             <div
-              class="lg:col-span-2 font-black text-2xl leading-[1.65rem] lg:text-[2.125rem] min-[1650px]:text-[2.5rem] lg:leading-[3.5rem] text-b-200 dark:text-black"
+              class="lg:col-span-2 font-black text-[1.25rem] lg:text-[3.375rem] leading-6 lg:leading-[110%] text-b-200"
               dangerouslySetInnerHTML={{ __html: title }}
             />
-            <div class="flex items-center max-[1024px]:mt-6 gap-4 lg:gap-9 text-white dark:text-black">
+            <div class="flex items-center justify-end lg:justify-center max-[1024px]:mt-2 gap-4 lg:gap-9 text-white">
               {
                 /* <Image
                 class="inline dark:hidden w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
@@ -101,7 +101,7 @@ export default function Features(
               />
             </div>
           </div>
-          <div class="font-normal lg:flex lg:gap-8">
+          <div class="font-normal lg:flex lg:gap-8 mt-10 lg:mt-20">
             <div
               class="text-b-200 lg:w-1/2 font-merriweather dark:text-black text-base lg:text-lg 2xl:text-2xl lg:leading-9"
               dangerouslySetInnerHTML={{ __html: description1 || "" }}

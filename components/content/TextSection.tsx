@@ -19,10 +19,10 @@ export default function RichText(
 ) {
   return (
     <section class="bg-black dark:bg-b-300">
-      <div class="w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] flex flex-col lg:flex-row justify-center gap-6 lg:gap-0 lg:justify-between items-start px-6 lg:px-16 py-16 lg:py-[104px] mx-auto min-[1024px]:scale-90 min-[1650px]:scale-100">
+      <div class="w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] flex flex-col lg:flex-row justify-center gap-6 lg:gap-0 lg:justify-between items-start px-6 lg:px-16 py-16 lg:py-[104px] mx-auto min-[1024px]:scale-90 min-[1650px]:scale-100">
         <div class="flex flex-col w-full lg:w-[55.031%] gap-3">
           <div
-            class="text-b-200 dark:text-black text-2xl lg:text-[32px] min-[1650px]:text-[40px] font-black leading-[110%] uppercase"
+            class="text-b-200 text-[1.25rem] lg:text-[3.375rem] leading-[120%] lg:leading-[110%] font-extrabold uppercase"
             dangerouslySetInnerHTML={{ __html: BigText }}
           >
           </div>

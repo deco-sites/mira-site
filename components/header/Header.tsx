@@ -11,6 +11,11 @@ export interface Logo {
   height?: number;
 }
 
+export interface Navigation {
+  label?: string;
+  url?: string;
+}
+
 export interface WorkshopButton {
   active?: boolean;
   textDesktop?: string;
@@ -21,7 +26,7 @@ export interface WorkshopButton {
 export interface Props {
   alerts?: string[];
 
-  slogan?: string;
+  menu?: Navigation[];
 
   workshopButton?: WorkshopButton;
 
@@ -33,7 +38,7 @@ export interface Props {
 function Header({
   alerts,
   logo,
-  slogan,
+  menu,
   workshopButton,
   themeController,
 }: Props) {
@@ -45,7 +50,7 @@ function Header({
           {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
           <Navbar
             logo={logo}
-            slogan={slogan}
+            menu={menu}
             workshopButton={workshopButton}
             themeController={themeController}
           />

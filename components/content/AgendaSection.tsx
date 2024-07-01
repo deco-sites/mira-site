@@ -53,9 +53,9 @@ function AgendaSection(
 
   return (
     <section id="AgendaSection" class="w-full bg-black dark:bg-b-300">
-      <div class="w-full lg:max-w-[1224px] min-[1650px]:max-w-[1440px] py-16 flex flex-col gap-10 lg:gap-20 px-6 lg:px-16 mx-auto lg:py-[104px] min-[1024px]:scale-90 min-[1650px]:scale-100">
+      <div class="w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] py-16 flex flex-col gap-10 lg:gap-20 px-6 lg:px-16 mx-auto lg:py-[104px] min-[1024px]:scale-90 min-[1650px]:scale-100">
         <h3
-          class="text-b-200 dark:text-black text-2xl lg:text-[34px] min-[1650px]:text-[40px] font-black leading-[110%] uppercase"
+          class="text-b-200 text-[1.25rem] lg:text-[3.375rem] leading-7 lg:leading-[110%] font-extrabold uppercase"
           dangerouslySetInnerHTML={{ __html: title }}
         >
         </h3>
