@@ -85,11 +85,11 @@ function Navbar({
             aria-label="close sidebar"
             class="drawer-overlay"
           />
-          <div class="flex flex-col bg-black gap-8 w-80 text-base-content mt-28 mx-auto rounded-3xl">
-            <ul class="menu p-6 text-b-200 text-lg font-medium">
+          <div class="flex flex-col bg-black gap-8 w-80 text-base-content mt-28 mx-auto rounded-3xl p-6">
+            <ul class="menu text-b-200 text-lg font-medium">
               {menu?.map((link) => (
                 <li class="p-4">
-                  <a href={link.url} aria-label={link.label}>
+                  <a href={link.url} aria-label={link.label} class="p-0">
                     {link.label}
                   </a>
                 </li>
@@ -97,15 +97,7 @@ function Navbar({
             </ul>
             {workshopButton.active && (
               <a
-                href={workshopButton.url}
-                class="font-normal btn btn-white mt-16 px-3 py-2"
-              >
-                {workshopButton.textMobile}
-              </a>
-            )}
-            {workshopButton.active && (
-              <a
-                class="flex flex-nowrap px-3 py-2 mt-16 items-center rounded-full border-none font-light text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main"
+                class="flex flex-nowrap w-fit px-3 py-2 items-center rounded-full border-none font-light text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main"
                 href={workshopButton.url}
               >
                 <p class="text-nowrap">{workshopButton.textMobile}</p>
