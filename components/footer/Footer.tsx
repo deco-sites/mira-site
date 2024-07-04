@@ -13,7 +13,7 @@ function Footer({
   contactButton = "CONTATO@MIRA.LC",
 }: Props) {
   return (
-    <footer class="w-full flex flex-col bg-black dark:bg-b-300">
+    <footer id="contato" class="w-full flex flex-col bg-black dark:bg-b-300">
       <div class="flex flex-col w-full px-6 py-16 lg:px-16 lg:py-[104px] lg:mx-auto gap-6 lg:gap-[80px]">
         <div class="flex flex-col lg:flex-row lg:justify-between self-stretch items-start lg:items-end gap-6 lg:gap-0">
           <div class="text-b-200 dark:text-black font-extrabold leading-[90%] lg:leading-[100px] uppercase max-[320px]:text-[36px] text-[48px] lg:text-[100px]">
