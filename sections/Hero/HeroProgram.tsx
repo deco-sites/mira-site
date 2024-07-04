@@ -49,7 +49,7 @@ export interface Props {
 }
 
 const DEFAULT_TEXT =
-    '<p class="gap-4"><span class="font-merryweather text-[1.25rem] lg:text-[2rem] text-main font-normal">Empresas nos contratam para</span><br>CRIAR EQUIPES DE <br> ALTO DESEMPENHO.</p>';
+    '<p class="gap-4"><span class="f-roman text-[1.25rem] lg:text-[2rem] text-main font-normal">Empresas nos contratam para</span><br>CRIAR EQUIPES DE <br> ALTO DESEMPENHO.</p>';
 
 export default function HeroProgram({
     title = DEFAULT_TEXT,

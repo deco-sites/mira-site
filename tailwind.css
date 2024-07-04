@@ -43,6 +43,10 @@
       width: 0px;
   }
 
+  .f-roman{
+    font-family: 'Times New Roman', Times, serif;
+  }
+
   @media (max-width: 600px) {
     .zoom {
         zoom: 30%;

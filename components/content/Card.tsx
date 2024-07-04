@@ -50,7 +50,7 @@ export default function Card(props: Props) {
             <p class="leading-[135%] lg:leading-[150%] font-bold">
               {name}
             </p>
-            <p class="text-main font-merriweather leading-[135%] lg:leading-[120%] tracking-[-0.6px]">
+            <p class="text-main f-roman leading-[135%] lg:leading-[120%] tracking-[-0.6px]">
               {role}
             </p>
           </div>
