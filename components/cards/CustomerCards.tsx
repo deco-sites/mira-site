@@ -46,7 +46,7 @@ export default function Card(
           >
           </iframe>
         )}
-        <div class="absolute flex items-center justify-center max-w-[57.6px] max-h-[57.6px] bottom-8 left-8 lg:top-8 bg-main rounded-full p-[14.4px]">
+        <div class="absolute flex items-center justify-center max-w-[57.6px] max-h-[57.6px] bottom-8 left-8 lg:top-8 bg-main rounded-full p-[14.4px] group-has-[:checked]:hidden">
           <Icon id='ExternalLink' class="text-black" size={24} />
         </div>
       </div>
