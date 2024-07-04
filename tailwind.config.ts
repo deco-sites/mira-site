@@ -7,9 +7,9 @@ export default {
   darkMode: "class",
   theme: {
     colors: {
-      "main": "#F5BF62",
+      "main": "#FFBC4E",
       "sub": "#FF8352",
-      "b-200": "#FFFBF0",
+      "b-200": "#FCF0D0",
       "b-300": "#FFF8E6",
       "black": "#000000",
       "white": "#FFFFFF",

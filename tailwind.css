@@ -9,6 +9,7 @@
   /* Allow changing font family via CMS */
   html {
     font-family: var(--font-family);
+    scroll-behavior: smooth;
   }
 
   body{
@@ -46,6 +47,18 @@
     .zoom {
         zoom: 30%;
     }
+  }
+
+  .drawer-toggle:checked ~ .drawer-side > .drawer-overlay {
+    background-color: rgba(50, 50, 50, 0.60)!important;
+    backdrop-filter: blur(2px);
+  }
+  .drawer-end .drawer-toggle ~ .drawer-side > *:not(.drawer-overlay) {
+    transform: translateX(111%)!important;
+  }
+
+  .drawer-end .drawer-toggle:checked ~ .drawer-side > *:not(.drawer-overlay) {
+    transform: translateX(0%)!important;
 }
 }
 
