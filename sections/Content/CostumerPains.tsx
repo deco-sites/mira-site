@@ -1,9 +1,10 @@
 import Image from "apps/website/components/Image.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import type { HTMLWidget } from "apps/admin/widgets.ts";
+import { ImageWidget } from "apps/admin/widgets.ts";
 
 interface Pinup {
-  iconBefore: string;
+  iconBefore: ImageWidget;
   labelBefore: string;
   labelAfter: string;
 }
@@ -44,7 +45,7 @@ export interface Props {
 const DEFAULT_TITLE =
   'DORES FREQUENTES DOS NOSSOS CLIENTES <span class="text-main">E COMO SOLUCIONAMOS</span>';
 
-export default function CostumerPains({ title = DEFAULT_TITLE }: Props) {
+export default function CostumerPains({ title = DEFAULT_TITLE, pinups = pinupsData }: Props) {
   return (
     <section class="bg-black dark:bg-b-300">
       <div class="w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] flex flex-col justify-center items-start px-6 lg:px-16 py-16 lg:py-[104px] mx-auto min-[1024px]:scale-90 min-[1650px]:scale-100">
@@ -58,17 +59,18 @@ export default function CostumerPains({ title = DEFAULT_TITLE }: Props) {
             <span>ANTES</span>
             <span class="text-main">DEPOIS</span>
           </div>
-          {pinupsData.map((pinup, index) => (
+          {pinups?.map((pinup, index) => (
             <div
               key={index}
               class="flex flex-row items-center lg:justify-between gap-6 lg:gap-8 p-2 border border-b-200 rounded-3xl lg:rounded-full"
             >
-              <div class="flex flex-col lg:flex-row items-center justify-start gap-2 lg:gap-4 px-4 py-2 lg:p-6 text-b-200 font-merriweather">
+              <div class="flex flex-col lg:flex-row items-start lg:items-center justify-start gap-2 lg:gap-4 px-4 py-2 lg:p-6 text-b-200 font-merriweather">
                 <Image
                   src={pinup.iconBefore}
                   alt={pinup.labelBefore}
-                  width={24}
-                  height={24}
+                  width={40}
+                  height={40}
+                  class="w-6 lg:w-10 h-6 lg:h-10 "
                 />
                 <span>{pinup.labelBefore}</span>
               </div>
