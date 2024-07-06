@@ -105,7 +105,7 @@ export default function HeroProgram({
                 )}
                 <div class="relative grid grid-cols-1 lg:grid-cols-2 w-full h-full gap-6">
                     {activeProgram?.contents.map((content, index) => (
-                        <div class="flex flex-col justify-end flex-1 min-h-full w-full" key={index}>
+                        <div class="flex flex-col justify-end w-full" key={index}>
                             {(content.recomendation &&
                                 <div
                                     class="hidden lg:block w-full h-[132px] font-bold text-[1.5rem] text-b-200 leading-[135%] lg:text-center py-6 lg:mb-20"
