@@ -86,7 +86,7 @@ function Navbar({
             class="drawer-overlay"
           />
           <div class="flex flex-col bg-black gap-8 w-80 text-base-content mt-28 mx-auto rounded-3xl p-6">
-            <ul class="menu text-b-200 text-lg font-medium">
+            <ul class="menu text-b-200 text-lg font-medium p-0">
               {menu?.map((link) => (
                 <li class="p-4">
                   <a href={link.url} aria-label={link.label} class="p-0">

@@ -29,6 +29,7 @@ import * as $SliderJS from "./islands/SliderJS.tsx";
 import * as $ToggleButton from "./islands/ToggleButton.tsx";
 import * as $WishlistButton_vtex from "./islands/WishlistButton/vtex.tsx";
 import * as $WishlistButton_wake from "./islands/WishlistButton/wake.tsx";
+import * as $teste from "./islands/teste.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -62,6 +63,7 @@ const manifest = {
     "./islands/ToggleButton.tsx": $ToggleButton,
     "./islands/WishlistButton/vtex.tsx": $WishlistButton_vtex,
     "./islands/WishlistButton/wake.tsx": $WishlistButton_wake,
+    "./islands/teste.tsx": $teste,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

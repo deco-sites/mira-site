@@ -1,4 +1,5 @@
 import { useSignal } from "@preact/signals";
+import { useEffect } from "preact/hooks";
 import { ImageWidget } from "apps/admin/widgets.ts";
 import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
 import Image from "apps/website/components/Image.tsx";
@@ -59,26 +60,15 @@ export default function HeroProgram({
 
     const { displayProgram } = useUI();
 
-    const isModalOpen = useSignal(false);
-
-    const openModal = () => {
-        isModalOpen.value = true;
-    };
-
-    const closeModal = () => {
-        isModalOpen.value = false;
-    };
-
-    console.log("displayProgram", displayProgram.value)
+    const activeProgram = !displayProgram.value
+        ? programs?.open
+        : programs?.exclusive;
 
     const renderContent = () => {
-        const activeProgram = !displayProgram.value
-            ? programs?.open
-            : programs?.exclusive;
 
-        // if (!activeProgram) {
-        //     return null;
-        // }
+        if (!activeProgram) {
+            return null;
+        }
 
         return (
             <div id="treinamentos" class="flex flex-col gap-10 lg:gap-20 w-full">
@@ -107,19 +97,23 @@ export default function HeroProgram({
                         </div>
                     </div>
                 </div>
-                <h2
-                    class="text-[1.5rem] lg:text-[3.375rem] leading-7 lg:leading-[110%] font-extrabold lg:text-center text-b-200 mt-6"
-                    dangerouslySetInnerHTML={{ __html: activeProgram?.bigDesc ?? "" }}
-                />
-                <div class="grid grid-cols-1 lg:grid-cols-2 w-full h-full gap-6">
+                {(activeProgram.bigDesc &&
+                    <h2
+                        class="text-[1.5rem] lg:text-[3.375rem] leading-7 lg:leading-[110%] font-extrabold lg:text-center text-b-200 mt-6"
+                        dangerouslySetInnerHTML={{ __html: activeProgram?.bigDesc }}
+                    />
+                )}
+                <div class="relative grid grid-cols-1 lg:grid-cols-2 w-full h-full gap-6">
                     {activeProgram?.contents.map((content, index) => (
                         <div class="flex flex-col justify-end flex-1 min-h-full w-full" key={index}>
-                            <div
-                                class="hidden lg:block w-full h-[132px] font-bold text-[1.5rem] text-b-200 leading-[135%] lg:text-center py-6 lg:mb-20"
-                                dangerouslySetInnerHTML={{
-                                    __html: content.recomendation ?? "",
-                                }}
-                            />
+                            {(content.recomendation &&
+                                <div
+                                    class="hidden lg:block w-full h-[132px] font-bold text-[1.5rem] text-b-200 leading-[135%] lg:text-center py-6 lg:mb-20"
+                                    dangerouslySetInnerHTML={{
+                                        __html: content.recomendation,
+                                    }}
+                                />
+                            )}
                             <div
                                 class="flex-1 flex flex-col justify-between w-full border border-b-200 rounded-3xl"
                             >
@@ -136,43 +130,43 @@ export default function HeroProgram({
                                 </div>
                                 <div class="flex flex-col justify-between h-full gap-8 lg:gap-12 p-6 lg:p-8 flex-1">
                                     <div>
-                                        <p class="text-b-200 text-[1.25rem] font-bold leading-[150%] text-center uppercase">{content.subtitle}</p>
-
-                                        <ul class="flex flex-col gap-6 mt-6 lg:mt-12">
-                                            {content.infos?.map((info, index) => (
-                                                <li key={index} class="flex gap-2">
-                                                    <Image
-                                                        src={info.icon ?? ''}
-                                                        width={32}
-                                                        height={32}
-                                                        loading="lazy"
-                                                        decoding="async"
-                                                        fetchPriority="low"
-                                                        preload
-                                                    />
-                                                    {info.label}
-                                                </li>
-                                            ))}
-                                        </ul>
+                                        <p class="text-b-200 text-sm lg:text-[1.25rem] font-bold leading-[150%] text-center uppercase">{content.subtitle}</p>
+                                        {(content.infos &&
+                                            <ul class="flex flex-col gap-6 mt-6 lg:mt-12 text-[1rem] lg:text-xl text-b-200 font-light">
+                                                {content.infos?.map((info, index) => (
+                                                    <li key={index} class="flex gap-2 items-center">
+                                                        <Image
+                                                            src={info.icon ?? ''}
+                                                            width={32}
+                                                            height={32}
+                                                            loading="lazy"
+                                                            decoding="async"
+                                                            fetchPriority="low"
+                                                            preload
+                                                        />
+                                                        {info.label}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
                                     </div>
 
                                     <div>
-
-                                        <div class="flex flex-col">
-                                            {content.details?.title && <h3 class="text-main text-base font-bold">{content.details.title}</h3>}
-                                            <ul class="list-disc text-b-200 mt-4 ml-3">
-                                                {content.details?.list?.map((detail, index) => (
-                                                    <li key={index}>{detail}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
+                                        {(content.details &&
+                                            <div class="flex flex-col">
+                                                {content.details?.title && <h3 class="text-main text-xs lg:text-base font-extrabold lg:font-bold">{content.details.title}</h3>}
+                                                <ul class="list-disc text-b-200 mt-4 ml-3 pl-3 text-sm lg:text-[1.25rem] leading-[135%] lg:leading-[150%] font-light">
+                                                    {content.details?.list?.map((detail, index) => (
+                                                        <li key={index}>{detail}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
                                         <div class="flex flex-start gap-2 lg:gap-6 mt-12">
                                             {content.buttons?.map((cta, index) => (
                                                 index === 1 ? (
                                                     <OpenModalButton
-                                                        key={index}
                                                         label={cta.label ?? ""}
-                                                        onOpen={openModal}
                                                     />
                                                 ) : (
                                                     <a
@@ -180,7 +174,7 @@ export default function HeroProgram({
                                                         href={cta.url}
                                                         key={index}
                                                     >
-                                                        <p class="text-nowrap">{cta.label}</p>
+                                                        <p class="text-nowrap text-sm lg:text-[1rem]">{cta.label}</p>
                                                         <Icon id="ExternalLink" class={`hidden lg:block ${index === 0 ? '' : 'text-main'}`} size={20} strokeWidth={0.01} />
                                                     </a>
                                                 )

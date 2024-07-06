@@ -27,6 +27,7 @@ export type AvailableIcons =
   | "Discount"
   | "Elo"
   | "ExternalLink"
+  | "closeModal"
   | "InverseExternalLink"
   | "Facebook"
   | "FilterList"
