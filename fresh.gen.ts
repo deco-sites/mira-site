@@ -19,6 +19,7 @@ import * as $Header_Cart_vnda from "./islands/Header/Cart/vnda.tsx";
 import * as $Header_Cart_vtex from "./islands/Header/Cart/vtex.tsx";
 import * as $Header_Cart_wake from "./islands/Header/Cart/wake.tsx";
 import * as $Header_Searchbar from "./islands/Header/Searchbar.tsx";
+import * as $HeroProgram from "./islands/HeroProgram.tsx";
 import * as $Newsletter from "./islands/Newsletter.tsx";
 import * as $OpenModalButton from "./islands/OpenModalButton.tsx";
 import * as $OutOfStock from "./islands/OutOfStock.tsx";
@@ -29,7 +30,6 @@ import * as $SliderJS from "./islands/SliderJS.tsx";
 import * as $ToggleButton from "./islands/ToggleButton.tsx";
 import * as $WishlistButton_vtex from "./islands/WishlistButton/vtex.tsx";
 import * as $WishlistButton_wake from "./islands/WishlistButton/wake.tsx";
-import * as $teste from "./islands/teste.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -53,6 +53,7 @@ const manifest = {
     "./islands/Header/Cart/vtex.tsx": $Header_Cart_vtex,
     "./islands/Header/Cart/wake.tsx": $Header_Cart_wake,
     "./islands/Header/Searchbar.tsx": $Header_Searchbar,
+    "./islands/HeroProgram.tsx": $HeroProgram,
     "./islands/Newsletter.tsx": $Newsletter,
     "./islands/OpenModalButton.tsx": $OpenModalButton,
     "./islands/OutOfStock.tsx": $OutOfStock,
@@ -63,7 +64,6 @@ const manifest = {
     "./islands/ToggleButton.tsx": $ToggleButton,
     "./islands/WishlistButton/vtex.tsx": $WishlistButton_vtex,
     "./islands/WishlistButton/wake.tsx": $WishlistButton_wake,
-    "./islands/teste.tsx": $teste,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
