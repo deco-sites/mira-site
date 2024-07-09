@@ -58,7 +58,7 @@
     backdrop-filter: blur(2px);
   }
   .drawer-end .drawer-toggle ~ .drawer-side > *:not(.drawer-overlay) {
-    transform: translateX(111%)!important;
+    transform: translateX(200%)!important;
   }
 
   .drawer-end .drawer-toggle:checked ~ .drawer-side > *:not(.drawer-overlay) {

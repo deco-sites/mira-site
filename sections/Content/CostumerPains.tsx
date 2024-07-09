@@ -56,13 +56,13 @@ export default function CostumerPains({ title = DEFAULT_TITLE, pinups = pinupsDa
         </div>
         <div class="space-y-6 lg:space-y-8 mt-10 lg:mt-20 w-full max-w-[1026px] mx-auto">
           <div class="flex justify-between max-w-[572px] mx-auto text-xs leading-[135%] font-extrabold lg:font-bold">
-            <span>ANTES</span>
-            <span class="text-main">DEPOIS</span>
+            <span class="text-b-200 text-base">ANTES</span>
+            <span class="text-main text-base">DEPOIS</span>
           </div>
           {pinups?.map((pinup, index) => (
             <div
               key={index}
-              class="flex flex-row items-center lg:justify-between gap-6 lg:gap-8 p-2 border border-b-200 rounded-3xl lg:rounded-full"
+              class="flex flex-row items-center justify-between gap-6 lg:gap-8 p-2 border border-b-200 rounded-3xl lg:rounded-full"
             >
               <div class="flex flex-col lg:flex-row items-start lg:items-center justify-start gap-2 lg:gap-4 px-4 py-2 lg:p-6 text-b-200">
                 <Image
@@ -74,7 +74,7 @@ export default function CostumerPains({ title = DEFAULT_TITLE, pinups = pinupsDa
                 />
                 <span class="f-roman text-[1rem] lg:text-[1.5rem]">{pinup.labelBefore}</span>
               </div>
-              <div class="flex items-center justify-center w-1/2 bg-main text-black px-4 py-2 lg:p-6 rounded-3xl lg:rounded-full">
+              <div class="flex self-stretch items-center justify-center w-1/2 bg-main text-black px-4 py-2 lg:p-6 rounded-3xl lg:rounded-full">
                 <span class="text-sm lg:text-[1.25rem] leading-[130%] lg:leading-[150%] text-center font-bold">
                   {pinup.labelAfter}
                 </span>
