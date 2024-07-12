@@ -52,7 +52,7 @@ function CustomerStories(
   }
 
   return (
-    <section id="clientes" className="w-full bg-black dark:bg-b-300">
+    <section id="stories" className="w-full bg-black dark:bg-b-300">
       <div className="w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] py-16 flex flex-col gap-10 lg:gap-20 px-6 lg:px-16 mx-auto lg:py-[104px] min-[1024px]:scale-90 min-[1650px]:scale-100">
         <SectionHeading {...title} />
         <div id={id} className="w-full flex flex-col gap-8">

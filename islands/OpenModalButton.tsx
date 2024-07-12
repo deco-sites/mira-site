@@ -55,23 +55,23 @@ function OpenModal({ label }: ModalProps) {
                         <form onSubmit={handleSubmit} class="text-white">
                             <div className="flex flex-col mb-8">
                                 <label>Seu nome <span class="text-main">*</span></label>
-                                <input type="text" className="w-full p-2 border rounded-full bg-transparent mt-2" required />
+                                <input type="text" className="w-full p-2 border border-b-200 rounded-full bg-transparent mt-2" required />
                             </div>
                             <div className="flex flex-col mb-8">
                                 <label>Seu e-mail <span class="text-main">*</span></label>
-                                <input type="email" className="w-full p-2 border rounded-full bg-transparent mt-2" required />
+                                <input type="email" className="w-full p-2 border border-b-200 rounded-full bg-transparent mt-2" required />
                             </div>
                             <div className="flex flex-col mb-8">
                                 <label>Seu telefone <span class="text-main">*</span></label>
-                                <input type="tel" className="w-full p-2 border rounded-full bg-transparent mt-2" required />
+                                <input type="tel" className="w-full p-2 border border-b-200 rounded-full bg-transparent mt-2" required />
                             </div>
                             <div className="flex flex-col mb-8">
                                 <label>Para você, o treinamento ideal resolveria o quê?</label>
-                                <textarea className="w-full p-2 border rounded bg-transparent mt-2" required></textarea>
+                                <textarea className="w-full p-2 border border-b-200 rounded bg-transparent mt-2" required></textarea>
                             </div>
                             <div className="flex flex-col mb-8">
                                 <label>Em qual mês você gostaria de realizar o seu treinamento? <span class="text-main">*</span></label>
-                                <select className="w-full p-2 border rounded-full bg-transparent mt-2" required>
+                                <select className="w-full p-2 border border-b-200 rounded-full bg-transparent mt-2" required>
                                     <option>Abril</option>
                                     <option>Maio</option>
                                     <option>Junho</option>
@@ -80,7 +80,7 @@ function OpenModal({ label }: ModalProps) {
                             </div>
                             <div className="flex flex-col mb-8">
                                 <label>Qual dos treinamentos do nosso site você se interessa mais?</label>
-                                <select className="w-full p-2 border rounded-full bg-transparent mt-2" required>
+                                <select className="w-full p-2 border border-b-200 rounded-full bg-transparent mt-2" required>
                                     <option>Módulo I</option>
                                     <option>Módulo II</option>
                                     {/* Add other options as needed */}
@@ -88,7 +88,7 @@ function OpenModal({ label }: ModalProps) {
                             </div>
                             <div className="flex flex-col mb-8">
                                 <label>Agende uma conversa conosco:</label>
-                                <input type="datetime-local" className="w-full p-2 border rounded-full bg-transparent mt-2" required />
+                                <input type="datetime-local" className="w-full p-2 border border-b-200 rounded-full bg-transparent mt-2" required />
                             </div>
 
                             <button type="submit"

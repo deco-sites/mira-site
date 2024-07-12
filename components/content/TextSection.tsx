@@ -32,7 +32,7 @@ export default function RichText(
             class="hidden lg:block left-[-1px] w-[121%] fill-main dark:fill-sub"
           />
         </div>
-        <div class="lg:w-[28.583%] f-roman text-b-200 text-base lg:text-[1.275rem] min-[1650px]:text-2xl leading-[150%] overflow-auto dark:text-black">
+        <div class="lg:w-[28.583%] text-b-200 text-base lg:text-[1.275rem] min-[1650px]:text-2xl leading-[150%] overflow-auto dark:text-black">
           {smallText}
         </div>
       </div>

@@ -73,7 +73,7 @@ export default function Accordion(props: Props) {
                     </span>
                   </div>
                 </h3>
-                <p className="font-merriweather text-base min-[1264px]:text-[1.15rem] min-[1264px]:leading-7">
+                <p className="text-base min-[1264px]:text-[1.15rem] min-[1264px]:leading-7">
                   {c.description}
                 </p>
               </div>

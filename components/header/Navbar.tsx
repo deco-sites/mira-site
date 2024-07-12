@@ -69,7 +69,7 @@ function Navbar({
           <div class="flex gap-2">
             {workshopButton.active && (
               <a
-                class="flex flex-nowrap px-3 py-2 items-center rounded-full border-none font-light text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main dark:bg-sub"
+                class="flex flex-nowrap px-3 py-2 items-center rounded-full border-none text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main dark:bg-sub"
                 href={workshopButton.url}
               >
                 <p class="text-nowrap">{workshopButton.textMobile}</p>
@@ -88,8 +88,8 @@ function Navbar({
           <div class="flex flex-col bg-black gap-8 w-80 text-base-content mt-28 mx-auto rounded-3xl p-6">
             <ul class="menu text-b-200 text-lg font-medium p-0">
               {menu?.map((link) => (
-                <li class="p-4">
-                  <a href={link.url} aria-label={link.label} class="p-0">
+                <li class="">
+                  <a href={link.url} aria-label={link.label} class="p-4 rounded-full hover:bg-[#FFBC4E33]">
                     {link.label}
                   </a>
                 </li>
@@ -97,7 +97,7 @@ function Navbar({
             </ul>
             {workshopButton.active && (
               <a
-                class="flex flex-nowrap w-fit px-3 py-2 items-center rounded-full border-none font-light text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main"
+                class="flex flex-nowrap w-fit px-3 py-2 items-center rounded-full border-none text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main"
                 href={workshopButton.url}
               >
                 <p class="text-nowrap">{workshopButton.textMobile}</p>
@@ -141,7 +141,7 @@ function Navbar({
         </div>
         <div class="flex items-center justify-end gap-6 xl:w-1/3">
           <a
-            class="flex flex-nowrap px-3 py-2 items-center rounded-full border-none font-light text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main dark:bg-sub"
+            class="flex flex-nowrap px-3 py-2 items-center rounded-full border-none text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main dark:bg-sub"
             href={workshopButton.url}
           >
             <p class="text-nowrap">{workshopButton.textDesktop}</p>

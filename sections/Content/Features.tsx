@@ -103,12 +103,12 @@ export default function Features(
           </div>
           <div class="font-normal lg:flex lg:gap-8 mt-10 lg:mt-20">
             <div
-              class="text-b-200 lg:w-1/2 font-merriweather dark:text-black text-base lg:text-lg 2xl:text-2xl lg:leading-9"
+              class="text-b-200 lg:w-1/2 dark:text-black text-base lg:text-lg 2xl:text-2xl lg:leading-9"
               dangerouslySetInnerHTML={{ __html: description1 || "" }}
             />
 
             <div
-              class="text-b-200 lg:w-1/2 font-merriweather dark:text-black text-base lg:text-lg 2xl:text-2xl lg:leading-9"
+              class="text-b-200 lg:w-1/2 dark:text-black text-base lg:text-lg 2xl:text-2xl lg:leading-9"
               dangerouslySetInnerHTML={{ __html: description2 || "" }}
             />
           </div>
