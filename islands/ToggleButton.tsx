@@ -29,14 +29,14 @@ function ToggleButton() {
                 ></span>
                 <span
                     className={`w-1/2 text-center px-6 py-2 lg:py-4 font-bold transition duration-300 z-10 ${
-                        !displayProgram.value ? 'text-black' : 'text-white'
+                        !displayProgram.value ? 'text-black' : 'text-b-200'
                     }`}
                 >
                     ABERTOS
                 </span>
                 <span
                     className={`w-1/2 text-center px-6 py-2 lg:py-4 font-bold transition duration-300 z-10 ${
-                        displayProgram.value ? 'text-black' : 'text-white'
+                        displayProgram.value ? 'text-black' : 'text-b-200'
                     }`}
                 >
                     EXCLUSIVOS
