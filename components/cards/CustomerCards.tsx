@@ -19,7 +19,7 @@ export default function Card(
   return (
     <div class="relative overflow-hidden group-has-[:checked]:transition-transform ease-in-out duration-500 card group/item h-full flex-auto group-has-[:checked]:flex-1 w-[calc(100vh-48px)] lg:w-full group-has-[:checked]:w-[800px] motion-reduce:transition-none">
       {label && (
-        <div class="text-[2.25rem] leading-[110%] tracking-[-1.08px] text-main font-merriweather italic">
+        <div class="text-[2.25rem] leading-[110%] tracking-[-1.08px] text-main f-roman italic">
           {label}
         </div>
       )}

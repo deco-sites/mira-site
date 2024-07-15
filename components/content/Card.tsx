@@ -31,14 +31,14 @@ export default function Card(props: Props) {
               class="flex fill-white dark:fill-black max-h-[50px]"
             />
           </div>
-          <p class="text-white text-[0.8125rem] lg:text-[15px] min-[1650px]:text-[16px] leading-[150%]">
+          <p class="text-white font-light text-[0.8125rem] lg:text-[15px] min-[1650px]:text-[16px] leading-[150%]">
             {text}
           </p>
         </div>
         <div class="flex justify-start w-full items-center gap-4">
             <Image
               src={photo ?? ""}
-              class="aspect-[1/1] object-contain rounded-lg grayscale-[80%]"
+              class="aspect-[1/1] object-contain rounded-lg "
               width={IMAGE_WIDTH}
               height={IMAGE_WIDTH}
               loading="lazy"
