@@ -45,7 +45,9 @@ export interface Props {
 const DEFAULT_TITLE =
   'DORES FREQUENTES DOS NOSSOS CLIENTES <span class="text-main">E COMO SOLUCIONAMOS</span>';
 
-export default function CostumerPains({ title = DEFAULT_TITLE, pinups = pinupsData }: Props) {
+export default function CostumerPains(
+  { title = DEFAULT_TITLE, pinups = pinupsData }: Props,
+) {
   return (
     <section class="bg-black dark:bg-b-300">
       <div class="w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] flex flex-col justify-center items-start px-6 lg:px-16 py-16 lg:py-[104px] mx-auto min-[1024px]:scale-90 min-[1650px]:scale-100">
@@ -72,7 +74,9 @@ export default function CostumerPains({ title = DEFAULT_TITLE, pinups = pinupsDa
                   height={40}
                   class="w-6 lg:w-10 h-6 lg:h-10 "
                 />
-                <span class="f-roman text-[1rem] lg:text-[1.5rem]">{pinup.labelBefore}</span>
+                <span class="f-roman text-[1rem] lg:text-[1.5rem]">
+                  {pinup.labelBefore}
+                </span>
               </div>
               <div class="flex self-stretch items-center justify-center w-1/2 bg-main text-black px-4 py-2 lg:p-6 rounded-3xl lg:rounded-full">
                 <span class="text-sm lg:text-[1.25rem] leading-[130%] lg:leading-[150%] text-center font-bold">

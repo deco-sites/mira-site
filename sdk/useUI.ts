@@ -18,7 +18,7 @@ const state = {
   displaySearchPopup,
   displaySearchDrawer,
   displayProgram,
-  displayContactModal
+  displayContactModal,
 };
 
 // Keyboard event listeners

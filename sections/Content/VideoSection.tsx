@@ -33,8 +33,9 @@ export default function ImageSection({
   return (
     <section class="w-full bg-black">
       <div
-        class={`flex flex-col lg:flex-row gap-10 lg:max-w-[1224px] min-[1650px]:max-w-[1440px] px-6 lg:px-16 py-16 lg:py-[104px] lg:mx-auto ${PLACEMENT[placement]
-          } text-left justify-between min-[1024px]:scale-90 min-[1650px]:scale-100`}
+        class={`flex flex-col lg:flex-row gap-10 lg:max-w-[1224px] min-[1650px]:max-w-[1440px] px-6 lg:px-16 py-16 lg:py-[104px] lg:mx-auto ${
+          PLACEMENT[placement]
+        } text-left justify-between min-[1024px]:scale-90 min-[1650px]:scale-100`}
       >
         <video
           width="616"
@@ -73,7 +74,7 @@ export default function ImageSection({
             >
               <p
                 class="lg:col-span-2 font-black text-[1.25rem] lg:text-[3.375rem] uppercase leading-6 lg:leading-[110%] text-b-200"
-                dangerouslySetInnerHTML={{ __html: text.label ?? '' }}
+                dangerouslySetInnerHTML={{ __html: text.label ?? "" }}
               />
               <p class="text-zinc-400 font-light text-base lg:text-[1.275rem] leading-[150%] mt-6">
                 {text.description}

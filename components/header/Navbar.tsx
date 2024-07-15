@@ -89,7 +89,11 @@ function Navbar({
             <ul class="menu text-b-200 text-lg font-medium p-0">
               {menu?.map((link) => (
                 <li class="">
-                  <a href={link.url} aria-label={link.label} class="p-4 rounded-full hover:bg-[#FFBC4E33]">
+                  <a
+                    href={link.url}
+                    aria-label={link.label}
+                    class="p-4 rounded-full hover:bg-[#FFBC4E33]"
+                  >
                     {link.label}
                   </a>
                 </li>

@@ -1,1 +1,1 @@
-export { default } from "$store/sections/Hero/HeroProgram.tsx"
+export { default } from "$store/sections/Hero/HeroProgram.tsx";

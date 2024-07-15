@@ -36,16 +36,16 @@ export default function Card(props: Props) {
           </p>
         </div>
         <div class="flex justify-start w-full items-center gap-4">
-            <Image
-              src={photo ?? ""}
-              class="aspect-[1/1] object-contain rounded-lg "
-              width={IMAGE_WIDTH}
-              height={IMAGE_WIDTH}
-              loading="lazy"
-              decoding="async"
-              fetchPriority="low"
-              preload
-            />
+          <Image
+            src={photo ?? ""}
+            class="aspect-[1/1] object-contain rounded-lg "
+            width={IMAGE_WIDTH}
+            height={IMAGE_WIDTH}
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            preload
+          />
           <div class="flex flex-col text-[1rem] lg:text-[1.115rem] min-w-[1500px]:text-[1.25rem] leading-[150%]">
             <p class="leading-[135%] lg:leading-[150%] font-bold">
               {name}
