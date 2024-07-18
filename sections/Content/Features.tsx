@@ -45,13 +45,13 @@ export default function Features(
   return (
     <section class="w-full bg-black dark:bg-b-300 transform">
       <div class="min-[1024px]:scale-90 min-[1650px]:scale-100">
-        <div class="py-16 px-6 lg:py-[104px] lg:px-16 lg:max-w-[1224px] min-[1650px]:max-w-[1440px] mx-auto self-center">
+        <div class="py-16 px-6 md:py-20 lg:py-[104px] md:px-8 lg:px-16 lg:max-w-[1224px] min-[1650px]:max-w-[1440px] mx-auto self-center">
           <div class="grid lg:grid-cols-3">
             <div
-              class="lg:col-span-2 font-black text-[1.25rem] lg:text-[3.375rem] leading-6 lg:leading-[110%] text-b-200"
+              class="md:col-span-2 font-black text-[1.25rem] md:text-[3.375rem] leading-6 md:leading-[110%] text-b-200"
               dangerouslySetInnerHTML={{ __html: title }}
             />
-            <div class="flex items-center justify-end lg:justify-center max-[1024px]:mt-2 gap-4 lg:gap-9 text-white">
+            <div class="flex items-center justify-end md:justify-center max-[767px]:mt-2 max-[1023px]:mt-6 gap-4 md:gap-10 text-white">
               {
                 /* <Image
                 class="inline dark:hidden w-[3.125rem] h-[3.125rem] md:w-[6.25rem] md:h-[6.25rem]"
@@ -88,27 +88,27 @@ export default function Features(
               /> */
               }
               <Icon
-                width={72}
-                height={74}
+                width={77}
+                height={80}
                 id={widget1?.src || "Vanto"}
-                class="flex w-[31px] h-[32px] lg:w-[72px] lg:h-[74px] fill-white dark:fill-black"
+                class="flex w-8 h-10 md:w-[3.85rem] lg:w-20 md:h-16 lg:h-20 fill-white dark:fill-black"
               />
               <Icon
-                width={139.3}
-                height={95.6}
+                width={112}
+                height={80}
                 id={widget2?.src || "Forbes"}
-                class="flex w-[3.748rem] h-[2.625rem] lg:h-[5.984rem] lg:w-[8.70666rem] fill-white dark:fill-black"
+                class="flex w-12 h-[2.09rem] md:h-16 lg:h-20 md:w-[5.705rem] lg:w-28 fill-white dark:fill-black"
               />
             </div>
           </div>
-          <div class="font-normal lg:flex lg:gap-8 mt-10 lg:mt-20">
+          <div class="font-normal md:flex md:justify-between lg:gap-8 mt-10 lg:mt-20">
             <div
-              class="text-b-200 lg:w-1/2 dark:text-black text-base lg:text-lg 2xl:text-2xl lg:leading-9"
+              class="text-b-200 md:w-[47%] lg:w-1/2 dark:text-black text-base md:text-xl 2xl:text-2xl md:leading-[135%]"
               dangerouslySetInnerHTML={{ __html: description1 || "" }}
             />
 
             <div
-              class="text-b-200 lg:w-1/2 dark:text-black text-base lg:text-lg 2xl:text-2xl lg:leading-9"
+              class="text-b-200 md:w-[47%] lg:w-1/2 dark:text-black text-base md:text-lg 2xl:text-2xl lg:leading-9"
               dangerouslySetInnerHTML={{ __html: description2 || "" }}
             />
           </div>

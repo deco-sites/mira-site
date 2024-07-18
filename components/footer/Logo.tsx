@@ -38,7 +38,7 @@ export default function Logo({ logo, copyrightText }: Props) {
             />
           </a>
         )}
-        <div class="text-sm font-normal text-[#FFFBF0] dark:text-black">
+        <div class="text-sm font-normal text-b-200 dark:text-black">
           {copyrightText}
         </div>
       </div>

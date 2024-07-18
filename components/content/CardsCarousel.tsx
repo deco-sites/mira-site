@@ -54,7 +54,7 @@ function CardsCarousel(
 
   return (
     <section id="clientes" class="w-full bg-black dark:bg-b-300">
-      <div class="w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] py-16 flex flex-col gap-10 lg:gap-20 px-6 lg:px-16 mx-auto lg:py-[104px] min-[1024px]:scale-90 min-[1650px]:scale-100">
+      <div class="w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] py-16 flex flex-col gap-10 lg:gap-20 px-6 md:px-8 lg:px-16 mx-auto md:py-20 lg:py-[104px] min-[1024px]:scale-90 min-[1650px]:scale-100">
         <h3
           class="text-b-200 text-[1.25rem] lg:text-[3.375rem] leading-6 lg:leading-[110%] font-extrabold uppercase"
           dangerouslySetInnerHTML={{ __html: title }}
@@ -65,11 +65,11 @@ function CardsCarousel(
           id={id}
           class="w-full flex flex-col gap-8"
         >
-          <Slider class="pr-[2px] w-full carousel carousel-center gap-[10px] lg:gap-[15px] col-span-full row-start-2 row-end-5 overflow-y-hidden">
+          <Slider class="pr-[2px] w-full carousel carousel-center gap-4 col-span-full row-start-2 row-end-5 overflow-y-hidden">
             {clientCard?.map((card, index) => (
               <Slider.Item
                 index={index}
-                class="carousel-item w-[calc(100%-5px)] lg:w-[calc((100%-46px)/3)] bg-transparent border-b-200 rounded-[24px_24px_0_24px] border-[0.5px] dark:border-black"
+                class="carousel-item w-[calc((100%-5px))] sm:w-[calc((100%-18px)/2)] lg:w-[calc((100%-46px)/3)] bg-transparent border-b-200 rounded-[24px_24px_0_24px] border-[0.5px] dark:border-black"
               >
                 <Card {...card} />
               </Slider.Item>

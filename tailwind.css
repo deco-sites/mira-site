@@ -16,6 +16,23 @@
     background-color: black;
   }
 
+  select, input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+  }
+  
+  select::after, input[type="date"]::after {
+    content: '';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+
   html.dark body{
     --tw-bg-opacity: 1;
     background-color: rgb(255 248 230 / var(--tw-bg-opacity));
