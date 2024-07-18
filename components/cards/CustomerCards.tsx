@@ -17,9 +17,9 @@ export default function Card(
   },
 ) {
   return (
-    <div class="relative overflow-hidden group-has-[:checked]:transition-transform ease-in-out duration-500 card group/item h-full flex-auto group-has-[:checked]:flex-1 w-[calc(100vh-48px)] lg:w-full group-has-[:checked]:w-[800px] motion-reduce:transition-none">
+    <div class="relative overflow-hidden group-has-[:checked]:transition-transform ease-in-out duration-500 card group/item h-full flex-auto group-has-[:checked]:flex-1 w-[calc(100vw-48px)] lg:w-full md:group-has-[:checked]:w-[55vw] lg:group-has-[:checked]:max-w-[1002px] motion-reduce:transition-none">
       {label && (
-        <div class="text-[2.25rem] leading-[110%] tracking-[-1.08px] text-main f-roman italic">
+        <div class="text-2xl md:text-[2.25rem] leading-[135%] md:leading-[110%] md:tracking-[-1.08px] text-main f-roman italic">
           {label}
         </div>
       )}
@@ -29,7 +29,7 @@ export default function Card(
             src={photo}
             width={328}
             height={450}
-            class={`group/img object-cover bg-center aspect-[327/180] lg:aspect-[328/450] w-[100vw] lg:w-full h-full group-has-[:checked]:opacity-0 transition-all ease-in-out duration-100`}
+            class={`group/img object-cover bg-center aspect-[327/180] md:aspect-[328/450] w-[100vw] md:w-full h-full group-has-[:checked]:opacity-0 transition-all ease-in-out duration-100`}
             loading="lazy"
             decoding="async"
             fetchPriority="low"
@@ -46,7 +46,7 @@ export default function Card(
           >
           </iframe>
         )}
-        <div class="absolute flex items-center justify-center max-w-[57.6px] max-h-[57.6px] bottom-8 left-8 lg:top-8 bg-main rounded-full p-[14.4px] group-has-[:checked]:hidden">
+        <div class="absolute flex items-center justify-center p-4 bg-main rounded-full lg:top-8 lg:left-8 bottom-8 right-8 lg:max-w-[57.6px] lg:max-h-[57.6px] lg:p-[14.4px] group-has-[:checked]:hidden">
           <Icon id="ExternalLink" class="text-black" size={24} />
         </div>
       </div>

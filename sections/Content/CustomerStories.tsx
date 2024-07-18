@@ -53,15 +53,18 @@ function CustomerStories(
 
   return (
     <section id="stories" className="w-full bg-black dark:bg-b-300">
-      <div className="w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] py-16 flex flex-col gap-10 lg:gap-20 px-6 lg:px-16 mx-auto lg:py-[104px] min-[1024px]:scale-90 min-[1650px]:scale-100">
+      <div className="w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] py-16 flex flex-col gap-10 lg:gap-20 px-6 md:px-8 lg:px-16 mx-auto md:py-20 lg:py-[104px] min-[1024px]:scale-90 min-[1650px]:scale-100">
         <SectionHeading {...title} />
         <div id={id} className="w-full flex flex-col gap-8">
-          <Slider className="pr-[2px] w-full carousel carousel-center gap-2 col-span-full row-start-2 row-end-5 overflow-y-hidden">
+          <Slider className="pr-[2px] w-full flex max-md:flex-col md:carousel carousel-center gap-2 col-span-full row-start-2 row-end-5 overflow-y-hidden">
             {clientCard?.map((card, index: number) => (
+              <Slider.Item
+              index={index}
+              >
               <label
                 htmlFor={`card${index}`}
                 data-size={index}
-                className="relative group card rounded-lg shadow-lg cursor-pointer  peer-checked:flex-1 peer-checked:w-[800px] peer-checked:min-w-[calc((100%-800px)/2)] flex-auto lg:w-[calc((100% - 20px) / 4)] lg:max-h-[32vw]"
+                className="relative group card rounded-lg shadow-lg cursor-pointer  peer-checked:flex-1 peer-checked:w-[800px] peer-checked:min-w-[calc((100%-800px)/2)] flex-auto lg:h-full lg:max-h-[610px]"
               >
                 <input
                   type="radio"
@@ -72,10 +75,11 @@ function CustomerStories(
                 />
                 <Card {...card} index={index} />
               </label>
+              </Slider.Item>
             ))}
           </Slider>
-          {items.length > 3 ||
-            (items.length > 1 && !isDesktop) && (
+          {items.length > 3 && isDesktop
+             && (
                 <div className="w-full flex justify-between items-center">
                   <ul className="carousel items-end justify-center col-span-full gap-4 z-10 row-start-4">
                     {items?.map((_, index) => (
