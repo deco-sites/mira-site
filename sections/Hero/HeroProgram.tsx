@@ -37,6 +37,7 @@ interface Training {
   /** @format rich-text */
   bigDesc?: string;
   contents: Content[];
+  video?: string;
 }
 
 export interface Props {
@@ -210,7 +211,7 @@ export default function HeroProgram({
               <div class="flex w-full max-h-[387px] lg:w-2/3 min-[1850px]:w-1/2 justify-center">
                 <iframe
                   class="w-full aspect-video rounded-xl border border-b-200 dark:border-0 p-0.5"
-                  src={`https://www.youtube.com/embed/f15_nHaVPvw?si=BX5pZBRbRsH_vtpc`}
+                  src={activeProgram?.video ?? `https://player.vimeo.com/video/973597501?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`}
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
