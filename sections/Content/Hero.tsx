@@ -40,17 +40,17 @@ export default function HeroFlats({
         {slogan}
       </h3> */
       }
-      <div class="flex flex-col lg:flex-row items-center max-lg:pt-16 lg:justify-center mx-auto h-full w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] gap-6 lg:gap-12 px-6 pb-16 lg:px-16 lg:pb-0">
+      <div class="flex flex-col-reverse lg:flex-row items-center lg:justify-center mx-auto h-full w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] gap-6 lg:gap-12 px-6 pb-16 md:px-8 lg:px-16 py-16 md:py-20 lg:py-[104px] min-[1024px]:scale-90 min-[1650px]:scale-100">
         <div class="flex flex-col items-start max-lg:item w-full gap-6 lg:h-full lg:justify-center">
           <h1
-            class="text-left font-black text-b-200 text-[2rem] max-w-[324px] lg:max-w-[613px] min-[1650px]:max-w-[722px] lg:text-[3.375rem] lg:w-full leading-[120%] lg:leading-[110%] dark:text-black uppercase"
+            class="text-left font-black text-b-200 text-[2rem] max-w-[324px] md:max-w-[704px] lg:max-w-[613px] min-[1650px]:max-w-[722px] md:text-[3.375rem] lg:w-full leading-[120%] md:leading-[110%] dark:text-black uppercase"
             dangerouslySetInnerHTML={{ __html: title }}
           />
           <p class="text-left text-b-200 text-base lg:text-[1.25rem] min-[1650px]:text-[1.5rem] lg:leading-[2.25rem] dark:text-black">
             {description}
           </p>
           <a
-            class="flex flex-nowrap px-3 py-2 items-center rounded-full border-none font-light text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main dark:bg-sub"
+            class="flex flex-nowrap px-3 py-2 items-center rounded-full border-none font-light text-black text-sm md:text-base leading-[150%] tracking-[-0.14px] md:tracking-normal gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main dark:bg-sub"
             href={workshopButton.url}
           >
             <p class="text-nowrap">{workshopButton.text}</p>
@@ -65,7 +65,7 @@ export default function HeroFlats({
           playsInline
           loading="lazy"
           loop
-          class="hidden lg:block w-4/5 max-w-[500px] lg:max-w-[100%] lg:w-[40%] min-[1650px]:w-[46.95%] aspect-square lg:aspect-auto object-cover rounded-3xl"
+          class="hidden md:block w-4/5 max-w-[435px] lg:max-w-[100%] lg:w-[40%] min-[1650px]:w-[46.95%] aspect-square lg:aspect-auto object-cover rounded-3xl"
         >
           <source src={heroVideo?.dark} type="video/mp4" />
           <object data="" width="400" height="400">

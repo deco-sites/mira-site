@@ -50,7 +50,7 @@ export interface Props {
 }
 
 const DEFAULT_TEXT =
-  '<p class="gap-4"><span class="f-roman text-[1.25rem] lg:text-[2rem] text-main font-normal">Empresas nos contratam para</span><br>CRIAR EQUIPES DE <br> ALTO DESEMPENHO.</p>';
+  '<span class="f-roman text-[1.25rem] md:text-[2rem] lg:text-[2.25rem] leading-[120%] md:leading-[110%] tracking-[-0.6px] md:tracking-[-0.96px] lg:tracking-[-1.08px] text-main font-normal mb-2 md:mb-4">Empresas nos contratam para</span>CRIAR EQUIPES DE <br> ALTO DESEMPENHO.';
 
 export default function HeroProgram({
   title = DEFAULT_TEXT,
@@ -71,20 +71,20 @@ export default function HeroProgram({
     return (
       <div
         id="treinamentos"
-        class="flex flex-col gap-10 lg:gap-20 w-full"
+        class="flex flex-col gap-10 lg:gap-20 w-full {"
       >
         <div
           class={`flex ${
             activeProgram == programs?.exclusive ? "lg:flex-row-reverse" : ""
-          } gap-2.5 lg:w-full lg:mx-auto items-center justify-evenly`}
+          } gap-2.5 md:gap-14 md:w-full md:mx-auto items-center justify-evenly max-w-[646px]`}
         >
           <p
-            class="w-2/3 lg:w-1/2 max-w-[450px] font-bold text-main text-base lg:text-[1.25rem] leading-[110%] lg:leading-[150%] lg:text-center"
+            class="w-2/3 md:w-full max-w-[450px] font-bold text-main text-base md:text-[1.25rem] leading-[110%] md:leading-[150%] md:text-center"
             dangerouslySetInnerHTML={{
               __html: activeProgram?.smallDesc ?? "",
             }}
           />
-          <div class="hidden lg:flex flex-col gap-2 items-center justify-center">
+          <div class="hidden md:flex flex-col gap-2 items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="52"
@@ -139,7 +139,7 @@ export default function HeroProgram({
           <div
             class={`w-1/3 flex ${
               activeProgram == programs?.exclusive ? "flex-row-reverse" : ""
-            } lg:hidden flex-col gap-2 items-center justify-center`}
+            } md:hidden flex-col gap-2 items-center justify-center`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -197,19 +197,19 @@ export default function HeroProgram({
         </div>
         {activeProgram.bigDesc &&
           (
-            <h2
-              class="text-[1.5rem] lg:text-[3.375rem] leading-7 lg:leading-[110%] font-extrabold lg:text-center text-b-200 mt-6"
+            <div
+              class="md:text-center mt-6 text-[1.25rem] md:text-[2rem] lg:text-[2.25rem] tracking-[-0.6px] md:tracking-[-0.96px] lg:tracking-[-1.08px]"
               dangerouslySetInnerHTML={{
                 __html: activeProgram?.bigDesc,
               }}
             />
           )}
-        <div class="flex flex-col-reverse min-[1650px]:flex-row gap-12 lg:gap-16">
+        <div class="flex flex-col-reverse items-center min-[1850px]:flex-row gap-12 lg:gap-16">
           {displayProgram.value &&
             (
-              <div class="flex w-full min-[1650px]:w-1/2 justify-center">
+              <div class="flex w-full max-h-[387px] lg:w-2/3 min-[1850px]:w-1/2 justify-center">
                 <iframe
-                  class="w-full lg:w-4/5 aspect-video rounded-xl border border-b-200 dark:border-0 p-0.5"
+                  class="w-full aspect-video rounded-xl border border-b-200 dark:border-0 p-0.5"
                   src={`https://www.youtube.com/embed/f15_nHaVPvw?si=BX5pZBRbRsH_vtpc`}
                   title="YouTube video player"
                   frameborder="0"
@@ -223,7 +223,7 @@ export default function HeroProgram({
           <div
             class={`relative grid grid-cols-1 lg:grid-cols-2 w-full h-full gap-6 ${
               activeProgram == programs?.exclusive
-                ? "min-[1650px]:flex flex-col"
+                ? "min-[1850px]:flex flex-col min-[1850px]:w-1/2"
                 : ""
             }`}
           >
@@ -235,7 +235,7 @@ export default function HeroProgram({
                 {content.recomendation &&
                   (
                     <div
-                      class="hidden lg:block w-full h-[132px] font-bold text-[1.5rem] text-b-200 leading-[135%] lg:text-center py-6 lg:mb-20"
+                      class="hidden lg:block w-full h-[132px] font-bold text-[1.25rem] text-b-200 leading-[135%] lg:text-center py-6 lg:mb-20"
                       dangerouslySetInnerHTML={{
                         __html: content.recomendation,
                       }}
@@ -244,38 +244,38 @@ export default function HeroProgram({
                 <div class="flex-1 flex flex-col justify-between w-full border border-b-200 rounded-3xl">
                   <div class="flex items-center justify-between bg-main text-black rounded-t-3xl p-6">
                     <div>
-                      <h2 class="font-extrabold text-[1rem] lg:text-[1.5rem] min-[1650px]:text-[2rem]">
+                      <h2 class="font-extrabold text-[1rem] md:text-[1.5rem] min-[1650px]:text-[2rem]">
                         {content.title}
                       </h2>
-                      <p class="f-roman text-[1rem] lg:text-[1.5rem] min-[1650px]:text-[2rem] italic">
+                      <p class="f-roman text-[1rem] md:text-[1.5rem] md:leading-[110%] min-[1650px]:text-[2rem] italic">
                         {content.description}
                       </p>
                     </div>
                     {!displayProgram.value
                       ? (
-                        <span class="border-2 font-bold border-black text-sm leading-[120%] lg:text-[1.125rem] min-[1650px]:text-2xl px-5 py-1 rounded-full">
+                        <span class="border-2 font-bold border-black text-sm leading-[120%] md:text-[1.125rem] min-[1650px]:text-2xl px-5 py-1 rounded-full">
                           REMOTO
                         </span>
                       )
                       : (
                         <div class="flex flex-col gap-1.5">
-                          <span class="border-2 font-bold border-black text-sm leading-[120%] lg:text-[1.125rem] min-[1650px]:text-2xl px-5 py-1 rounded-full">
+                          <span class="flex justify-center border-2 font-bold border-black text-sm leading-[120%] md:text-[1.125rem] min-[1650px]:text-2xl px-5 py-1 rounded-full">
                             REMOTO
                           </span>
-                          <span class="border-2 font-bold border-black text-sm leading-[120%] lg:text-[1.125rem] min-[1650px]:text-2xl px-5 py-1 rounded-full">
+                          <span class="flex justify-center border-2 font-bold border-black text-sm leading-[120%] md:text-[1.125rem] min-[1650px]:text-2xl px-5 py-1 rounded-full">
                             PRESENCIAL
                           </span>
                         </div>
                       )}
                   </div>
-                  <div class="flex flex-col justify-between h-full gap-8 lg:gap-12 p-6 lg:p-8 flex-1">
+                  <div class="flex flex-col justify-between h-full gap-8 md:gap-10 p-6 md:p-8 flex-1">
                     <div>
-                      <p class="text-b-200 text-sm lg:text-[1.25rem] font-bold leading-[150%] text-center uppercase">
+                      <p class="text-b-200 text-sm md:text-[1.25rem] font-bold leading-[150%] text-center uppercase">
                         {content.subtitle}
                       </p>
                       {content.infos &&
                         (
-                          <ul class="flex flex-col gap-6 mt-6 lg:mt-12 text-[1rem] lg:text-xl text-b-200 font-light">
+                          <ul class="flex flex-col gap-6 mt-6 md:mt-10 text-[1rem] md:text-xl text-b-200 font-light">
                             {content.infos?.map((
                               info,
                               index,
@@ -306,12 +306,12 @@ export default function HeroProgram({
                         (
                           <div class="flex flex-col">
                             {content.details?.title && (
-                              <h3 class="text-main text-xs lg:text-base font-extrabold lg:font-bold">
+                              <h3 class="text-main text-xs md:text-base font-extrabold md:font-bold">
                                 {content.details
                                   .title}
                               </h3>
                             )}
-                            <ul class="list-disc text-b-200 mt-4 ml-3 pl-3 text-sm lg:text-[1.25rem] leading-[135%] lg:leading-[150%] font-light">
+                            <ul class="list-disc text-b-200 mt-4 ml-3 pl-3 text-sm md:text-[1.25rem] leading-[135%] md:leading-[150%] font-light">
                               {content.details?.list
                                 ?.map((
                                   detail,
@@ -324,7 +324,7 @@ export default function HeroProgram({
                             </ul>
                           </div>
                         )}
-                      <div class="flex flex-start gap-2 lg:gap-6 mt-12">
+                      <div class={`flex flex-start gap-2 md:gap-6 ${!displayProgram.value ? "mt-12" : ''}`}>
                         {content.buttons?.map((
                           cta,
                           index,
@@ -340,7 +340,7 @@ export default function HeroProgram({
                             )
                             : (
                               <a
-                                class={`flex flex-nowrap px-4 lg:px-8 py-2 items-center rounded-3xl border border-main ${
+                                class={`flex flex-nowrap px-4 md:px-8 py-2 items-center rounded-3xl border border-main ${
                                   index === 0 ? "text-black" : "text-main"
                                 } text-base gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer ${
                                   index === 0 ? "bg-main" : ""
@@ -348,12 +348,12 @@ export default function HeroProgram({
                                 href={cta.url}
                                 key={index}
                               >
-                                <p class="text-nowrap text-sm lg:text-[1rem]">
+                                <p class="text-nowrap text-sm md:text-[1rem]">
                                   {cta.label}
                                 </p>
                                 <Icon
                                   id="ExternalLink"
-                                  class={`hidden lg:block ${
+                                  class={`hidden md:block ${
                                     index === 0 ? "" : "text-main"
                                   }`}
                                   size={20}
@@ -376,13 +376,13 @@ export default function HeroProgram({
 
   return (
     <section class="flex flex-col justify-center items-center bg-black">
-      <div class="flex flex-col items-center w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] py-16 lg:py-[104px] px-6 lg:px-16 mx-auto">
+      <div class="flex flex-col items-center w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] py-16 lg:pt-0 min-[1650px]:pt-16 lg:pb-[104px] px-6 md:px-8 lg:px-16 mx-auto min-[1024px]:scale-90 min-[1650px]:scale-100">
         <h1
-          class="font-extrabold text-b-200 text-[2.25rem] lg:text-[5.0625rem] leading-[120%] lg:leading-[110%] text-center"
+          class="flex flex-col font-extrabold text-b-200 text-[2.25rem] md:text-[4rem] lg:text-[5.0625rem] leading-[120%] lg:leading-[110%] text-center"
           dangerouslySetInnerHTML={{ __html: title }}
         />
 
-        <div class="flex flex-col justify-center items-center w-full mt-12 lg:mt-8">
+        <div class="flex flex-col justify-center items-center w-full mt-12">
           <p class="font-bold lg:font-extrabold text-b-200 text-[1rem] leading-[135%] lg:leading-[150%]">
             {description}
           </p>
