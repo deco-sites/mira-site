@@ -9,7 +9,7 @@ function ToggleButton() {
   };
 
   return (
-    <div className="flex justify-center items-center mt-4 relative bg-transparent border border-b-200 rounded-full p-2 lg:p-3 w-full lg:max-w-[548px]">
+    <div className="flex justify-center items-center mt-4 relative bg-transparent border border-b-200 rounded-full p-2 lg:p-3 w-full max-w-[548px]">
       <label className="cursor-pointer relative w-full flex justify-center items-center">
         <input
           type="checkbox"
