@@ -19,20 +19,20 @@ export default function RichText(
 ) {
   return (
     <section class="bg-black dark:bg-b-300">
-      <div class="w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] flex flex-col lg:flex-row justify-center gap-6 lg:gap-0 lg:justify-between items-start px-6 lg:px-16 py-16 lg:py-[104px] mx-auto min-[1024px]:scale-90 min-[1650px]:scale-100">
-        <div class="flex flex-col w-full lg:w-[55.031%] gap-3">
+      <div class="w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] flex flex-col lg:flex-row justify-center gap-10 md:gap-16 lg:justify-between items-start px-6 md:px-8 lg:px-16 py-16 md:py-20 lg:py-[104px] mx-auto min-[1024px]:scale-90 min-[1650px]:scale-100">
+        <div class="flex flex-col w-full lg:w-[55.031%] md:gap-6">
           <div
-            class="text-b-200 text-[1.25rem] lg:text-[3.375rem] leading-[120%] lg:leading-[110%] font-extrabold uppercase"
+            class="text-b-200 text-[1.25rem] md:text-[2.5rem] lg:text-[3.375rem] leading-[120%] md:leading-[110%] font-extrabold uppercase"
             dangerouslySetInnerHTML={{ __html: BigText }}
           >
           </div>
           <Icon
             id="LongBar"
             stroke-width={1}
-            class="hidden lg:block left-[-1px] w-[121%] fill-main dark:fill-sub"
+            class="hidden md:block left-[-1px] h-1.5 lg:w-[121%] fill-main dark:fill-sub"
           />
         </div>
-        <div class="lg:w-[28.583%] text-b-200 text-base lg:text-[1.275rem] min-[1650px]:text-2xl leading-[150%] overflow-auto dark:text-black">
+        <div class="lg:w-[28.583%] text-b-200 text-base md:text-[1.275rem] min-[1650px]:text-2xl leading-[150%] overflow-auto dark:text-black">
           {smallText}
         </div>
       </div>

@@ -33,7 +33,7 @@ export default function ImageSection({
   return (
     <section class="w-full bg-black">
       <div
-        class={`flex flex-col lg:flex-row gap-10 lg:max-w-[1224px] min-[1650px]:max-w-[1440px] px-6 lg:px-16 py-16 lg:py-[104px] lg:mx-auto ${
+        class={`flex flex-col lg:flex-row gap-10 lg:max-w-[1224px] min-[1650px]:max-w-[1440px] px-6 md:px-8 lg:px-16 py-16 md:py-20 lg:py-[104px] lg:mx-auto ${
           PLACEMENT[placement]
         } text-left justify-between min-[1024px]:scale-90 min-[1650px]:scale-100`}
       >
@@ -45,7 +45,7 @@ export default function ImageSection({
           muted
           loading="lazy"
           loop
-          class="w-full lg:w-[46.95%] object-fit rounded-3xl dark:hidden"
+          class="w-full md:w-2/3 md:mx-auto lg:mx-0 lg:w-[46.95%] object-fit rounded-3xl dark:hidden"
         >
           <source src={videoDark} type="video/mp4" />
           <object data="" width="320" height="240">
@@ -73,10 +73,10 @@ export default function ImageSection({
               class={`w-full items-start justify-center border-l-2 pl-8 border-main`}
             >
               <p
-                class="lg:col-span-2 font-black text-[1.25rem] lg:text-[3.375rem] uppercase leading-6 lg:leading-[110%] text-b-200"
+                class="md:col-span-2 font-black text-[1.25rem] md:text-[3.375rem] uppercase leading-6 md:leading-[110%] text-b-200"
                 dangerouslySetInnerHTML={{ __html: text.label ?? "" }}
               />
-              <p class="text-zinc-400 font-light text-base lg:text-[1.275rem] leading-[150%] mt-6">
+              <p class="text-zinc-400 font-light text-base md:text-[1.275rem] leading-[150%] mt-6">
                 {text.description}
               </p>
             </div>
