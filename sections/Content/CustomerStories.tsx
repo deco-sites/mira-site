@@ -24,6 +24,8 @@ export const loader = async (
 ) => {
   const device = ctx.device;
 
+  console.log("device", device);
+
   if (device === "desktop") {
     return {
       ...props,
@@ -56,7 +58,7 @@ function CustomerStories(
       <div className="w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] py-16 flex flex-col gap-10 lg:gap-20 px-6 md:px-8 lg:px-16 mx-auto md:py-20 lg:py-[104px] min-[1024px]:scale-90 min-[1650px]:scale-100">
         <SectionHeading {...title} />
         <div id={id} className="w-full flex flex-col gap-8">
-          <Slider className="pr-[2px] w-full flex max-lg:flex-col lg:carousel carousel-center gap-4 md:gap-6 lg:gap-2 col-span-full row-start-2 row-end-5 overflow-y-hidden">
+          <Slider className="pr-[2px] w-full flex max-md:flex-col md:carousel carousel-center gap-4 md:gap-2 col-span-full row-start-2 row-end-5 overflow-y-hidden">
             {clientCard?.map((card, index: number) => (
               <Slider.Item
               index={index}
@@ -64,7 +66,7 @@ function CustomerStories(
               <label
                 htmlFor={`card${index}`}
                 data-size={index}
-                className="relative group card rounded-lg shadow-lg cursor-pointer  peer-checked:flex-1 peer-checked:w-[800px] peer-checked:min-w-[calc((100%-800px)/2)] flex-auto lg:h-full lg:max-h-[610px]"
+                className="relative group card rounded-lg shadow-lg cursor-pointer  peer-checked:flex-1 peer-checked:w-[800px] peer-checked:min-w-[calc((100%-800px)/2)] flex-auto md:h-full md:max-h-[400px] lg:max-h-[610px]"
               >
                 <input
                   type="radio"

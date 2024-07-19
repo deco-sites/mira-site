@@ -11,6 +11,7 @@ const displaySearchPopup = signal(false);
 const displaySearchDrawer = signal(false);
 const displayProgram = signal(false);
 const displayContactModal = signal(false);
+const displayConfirmationModal = signal(false);
 
 const state = {
   displayCart,
@@ -19,6 +20,7 @@ const state = {
   displaySearchDrawer,
   displayProgram,
   displayContactModal,
+  displayConfirmationModal
 };
 
 // Keyboard event listeners

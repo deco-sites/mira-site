@@ -17,7 +17,7 @@ export default function Card(
   },
 ) {
   return (
-    <div class="relative overflow-hidden group-has-[:checked]:transition-transform ease-in-out duration-500 card group/item h-full flex-auto group-has-[:checked]:flex-1 w-[calc(100vw-48px)] md:w-[calc(100vw-64px)] lg:w-full md:group-has-[:checked]:w-[55vw] lg:group-has-[:checked]:max-w-[1002px] motion-reduce:transition-none">
+    <div class="relative overflow-hidden group-has-[:checked]:transition-transform ease-in-out duration-500 card group/item h-full flex-auto group-has-[:checked]:flex-1 w-[calc(100vw-48px)] md:w-full md:group-has-[:checked]:w-[55vw] lg:group-has-[:checked]:max-w-[1002px] motion-reduce:transition-none">
       {label && (
         <div class="text-2xl md:text-[2.25rem] leading-[135%] md:leading-[110%] md:tracking-[-1.08px] text-main f-roman italic">
           {label}
@@ -29,7 +29,7 @@ export default function Card(
             src={photo}
             width={328}
             height={450}
-            class={`group/img object-cover bg-center aspect-[327/180] lg:aspect-[328/450] w-[100vw] lg::w-full h-full group-has-[:checked]:opacity-0 transition-all ease-in-out duration-100`}
+            class={`group/img object-cover bg-center aspect-[327/180] md:aspect-[328/450] w-[100vw] lg::w-full h-full group-has-[:checked]:opacity-0 transition-all ease-in-out duration-100`}
             loading="lazy"
             decoding="async"
             fetchPriority="low"
