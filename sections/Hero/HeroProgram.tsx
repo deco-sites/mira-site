@@ -243,7 +243,7 @@ export default function HeroProgram({
                     />
                   )}
                 <div class="flex-1 flex flex-col justify-between w-full border border-b-200 rounded-3xl">
-                  <div class="flex items-center justify-between bg-main text-black rounded-t-3xl p-6">
+                  <div class="flex items-center justify-between gap-1 bg-main text-black rounded-t-3xl p-6">
                     <div>
                       <h2 class="font-extrabold text-[1rem] md:text-[1.5rem] min-[1650px]:text-[2rem]">
                         {content.title}
@@ -254,16 +254,16 @@ export default function HeroProgram({
                     </div>
                     {!displayProgram.value
                       ? (
-                        <span class="border-2 font-bold border-black text-sm leading-[120%] md:text-[1.125rem] min-[1650px]:text-2xl px-5 py-1 rounded-full">
+                        <span class="border-2 font-bold border-black text-sm leading-[120%] md:text-[1.125rem] min-[1650px]:text-2xl px-4 py-1 rounded-full">
                           REMOTO
                         </span>
                       )
                       : (
                         <div class="flex flex-col gap-1.5">
-                          <span class="flex justify-center border-2 font-bold border-black text-sm leading-[120%] md:text-[1.125rem] min-[1650px]:text-2xl px-5 py-1 rounded-full">
+                          <span class="flex justify-center border-2 font-bold border-black text-sm leading-[120%] md:text-[1.125rem] min-[1650px]:text-2xl px-4 py-1 rounded-full">
                             REMOTO
                           </span>
-                          <span class="flex justify-center border-2 font-bold border-black text-sm leading-[120%] md:text-[1.125rem] min-[1650px]:text-2xl px-5 py-1 rounded-full">
+                          <span class="flex justify-center border-2 font-bold border-black text-sm leading-[120%] md:text-[1.125rem] min-[1650px]:text-2xl px-4 py-1 rounded-full">
                             PRESENCIAL
                           </span>
                         </div>

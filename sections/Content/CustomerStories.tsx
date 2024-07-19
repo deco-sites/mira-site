@@ -56,7 +56,7 @@ function CustomerStories(
       <div className="w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] py-16 flex flex-col gap-10 lg:gap-20 px-6 md:px-8 lg:px-16 mx-auto md:py-20 lg:py-[104px] min-[1024px]:scale-90 min-[1650px]:scale-100">
         <SectionHeading {...title} />
         <div id={id} className="w-full flex flex-col gap-8">
-          <Slider className="pr-[2px] w-full flex max-md:flex-col md:carousel carousel-center gap-2 col-span-full row-start-2 row-end-5 overflow-y-hidden">
+          <Slider className="pr-[2px] w-full flex max-lg:flex-col lg:carousel carousel-center gap-4 md:gap-6 lg:gap-2 col-span-full row-start-2 row-end-5 overflow-y-hidden">
             {clientCard?.map((card, index: number) => (
               <Slider.Item
               index={index}
