@@ -211,7 +211,8 @@ export default function HeroProgram({
               <div class="flex w-full max-h-[387px] lg:w-2/3 min-[1850px]:w-1/2 justify-center">
                 <iframe
                   class="w-full aspect-video rounded-xl border border-b-200 dark:border-0 p-0.5"
-                  src={activeProgram?.video ?? `https://player.vimeo.com/video/973597501?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`}
+                  src={activeProgram?.video ??
+                    `https://player.vimeo.com/video/973597501?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`}
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -260,10 +261,10 @@ export default function HeroProgram({
                       )
                       : (
                         <div class="flex flex-col gap-1.5">
-                          <span class="flex justify-center border-2 font-bold border-black text-sm leading-[120%] md:text-[1.125rem] min-[1650px]:text-2xl px-4 py-1 rounded-full">
+                          <span class="flex justify-center border-2 font-bold border-black text-sm leading-[120%] md:text-[1.125rem] min-[1650px]:text-2xl px-2 md:px-4 py-1 rounded-full">
                             REMOTO
                           </span>
-                          <span class="flex justify-center border-2 font-bold border-black text-sm leading-[120%] md:text-[1.125rem] min-[1650px]:text-2xl px-4 py-1 rounded-full">
+                          <span class="flex justify-center border-2 font-bold border-black text-sm leading-[120%] md:text-[1.125rem] min-[1650px]:text-2xl px-2 md:px-4 py-1 rounded-full">
                             PRESENCIAL
                           </span>
                         </div>
@@ -325,7 +326,11 @@ export default function HeroProgram({
                             </ul>
                           </div>
                         )}
-                      <div class={`flex flex-start gap-2 md:gap-6 ${!displayProgram.value ? "mt-12" : ''}`}>
+                      <div
+                        class={`flex flex-start gap-2 md:gap-6 ${
+                          !displayProgram.value ? "mt-12" : ""
+                        }`}
+                      >
                         {content.buttons?.map((
                           cta,
                           index,
@@ -379,7 +384,7 @@ export default function HeroProgram({
     <section class="flex flex-col justify-center items-center bg-black">
       <div class="flex flex-col items-center w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] py-16 lg:pt-0 min-[1650px]:pt-16 lg:pb-[104px] px-6 md:px-8 lg:px-16 mx-auto min-[1024px]:scale-90 min-[1650px]:scale-100">
         <h1
-          class="flex flex-col font-extrabold text-b-200 text-[2.25rem] md:text-[4rem] lg:text-[5.0625rem] leading-[120%] lg:leading-[110%] text-center"
+          class="flex flex-col font-extrabold text-b-200 text-[2.05rem] md:text-[4rem] lg:text-[5.0625rem] leading-[120%] lg:leading-[110%] text-center"
           dangerouslySetInnerHTML={{ __html: title }}
         />
 

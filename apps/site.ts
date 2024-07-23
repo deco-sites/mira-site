@@ -1,9 +1,21 @@
 import { App, AppContext as AC } from "deco/mod.ts";
-import website, { Props } from "apps/website/mod.ts";
+import website, { Props as WebsiteAPP } from "apps/website/mod.ts";
+import { Secret } from "apps/website/loaders/secret.ts";
 
 import manifest, { Manifest } from "../manifest.gen.ts";
 
 type WebsiteApp = ReturnType<typeof website>;
+
+export type Props = {
+  /**
+   * @title Active Commerce Platform
+   * @description Choose the active ecommerce platform
+   * @default custom
+   */
+  airtableKey: Secret;
+  airtableBase: string;
+  airtableTable: string;
+} & WebsiteAPP;
 
 export default function Site(
   state: Props,

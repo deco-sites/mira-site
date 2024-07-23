@@ -20,7 +20,7 @@ const state = {
   displaySearchDrawer,
   displayProgram,
   displayContactModal,
-  displayConfirmationModal
+  displayConfirmationModal,
 };
 
 // Keyboard event listeners
