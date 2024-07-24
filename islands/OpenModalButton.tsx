@@ -2,6 +2,7 @@ import { useUI } from "$store/sdk/useUI.ts";
 import { h } from "preact";
 import { useSignal } from "@preact/signals";
 import { useCallback, useEffect, useState } from "preact/hooks";
+import { invoke } from "deco-sites/mira-site/runtime.ts";
 import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
 
 interface ModalProps {
@@ -9,95 +10,75 @@ interface ModalProps {
 }
 
 function OpenModal({ label }: ModalProps) {
-  const { displayContactModal, displayConfirmationModal } = useUI();
-  const formValues = useSignal({
-    name: "",
-    company: "",
-    email: "",
-    phone: "",
-    message: "",
-    training: "",
-    month: "",
-    date: "",
-  });
-  const loading = useSignal(false);
-  const feedbackMessage = useSignal({
-    message: "",
-    buttonMessage: "Reserve sua vaga",
-  });
+    const { displayContactModal, displayConfirmationModal } = useUI();
+    const formValues = useSignal({
+      name: "",
+      company: "",
+      email: "",
+      phone: "",
+      message: "",
+      trainingInterest: "",
+      trainingMonth: "",
+      trainingDate: "",
+    });
+    const loading = useSignal(false);
+    const feedbackMessage = useSignal({
+      message: "",
+      buttonMessage: "Reserve sua vaga",
+    });
+  
+    const onRsvp = useCallback(async () => {
+      loading.value = true;
 
-  const onRsvp = useCallback(async () => {
-    loading.value = true;
-
-    try {
-      const response = await fetch(
-        "https://api.airtable.com/v0/YOUR_BASE_ID/YOUR_TABLE_NAME",
-        {
-          method: "POST",
-          headers: {
-            "Authorization": `Bearer YOUR_AIRTABLE_KEY`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            records: [
-              {
-                fields: formValues.value,
-              },
-            ],
-          }),
+      const invokeResponse = await invoke({
+        key: "deco-sites/mira-sites/actions/submitRsvp.ts",
+        props: {
+          data: formValues.value,
         },
-      );
-
-      const data = await response.json();
-
-      if (response.ok) {
-        feedbackMessage.value = {
-          message: "Enviamos a confirmação para o seu e-mail.",
-          buttonMessage: "Você está dentro!",
-        };
-      } else {
-        feedbackMessage.value = {
-          message: "Ops, houve um erro.",
-          buttonMessage: "Tente novamente",
-        };
-      }
-    } catch (error) {
-      feedbackMessage.value = {
-        message: "Ops, houve um erro.",
-        buttonMessage: "Tente novamente",
-      };
-    } finally {
-      loading.value = false;
-    }
-  }, [formValues.value]);
-
-  const handleClick = (e: MouseEvent) => {
-    e.preventDefault();
-    displayContactModal.value = true;
-  };
-
-  const handleChange = (e: h.JSX.TargetedEvent<HTMLInputElement>) => {
-    const { name, value } = e.currentTarget;
-    formValues.value = { ...formValues.value, [name]: value };
-  };
-
-  const handleSubmit = async (e: h.JSX.TargetedEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    onRsvp();
-    displayContactModal.value = false;
-    displayConfirmationModal.value = true;
-  };
-
-  useEffect(() => {
-    if (displayContactModal.value || displayConfirmationModal.value) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
+      });
+  
+        if (invokeResponse.ok) {
+          feedbackMessage.value = {
+            message: "Enviamos a confirmação para o seu e-mail.",
+            buttonMessage: "Você está dentro!",
+          };
+        } else {
+          feedbackMessage.value = {
+            message: "Ops, houve um erro.",
+            buttonMessage: "Tente novamente",
+          };
+        }
+      
+        loading.value = false;
+    }, [formValues.value]);
+  
+    const handleClick = (e: MouseEvent) => {
+      e.preventDefault();
+      displayContactModal.value = true;
     };
-  }, [displayContactModal.value, displayConfirmationModal.value]);
+  
+    const handleChange = (e: h.JSX.TargetedEvent<HTMLInputElement| HTMLSelectElement | HTMLTextAreaElement>) => {
+      const { name, value } = e.currentTarget;
+      formValues.value = { ...formValues.value, [name]: value };
+    };
+  
+    const handleSubmit = async (e: h.JSX.TargetedEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      onRsvp();
+      displayContactModal.value = false;
+      displayConfirmationModal.value = true;
+    };
+  
+    useEffect(() => {
+      if (displayContactModal.value || displayConfirmationModal.value) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
+      return () => {
+        document.body.style.overflow = "";
+      };
+    }, [displayContactModal.value, displayConfirmationModal.value]);
 
   return (
     <div>
@@ -194,7 +175,7 @@ function OpenModal({ label }: ModalProps) {
                 </label>
                 <select
                   name="trainingMonth"
-                  value={formValues.value.month}
+                  value={formValues.value.trainingMonth}
                   onChange={handleChange}
                   className="w-full px-6 py-3 border border-b-200 rounded-full bg-transparent mt-2 placeholder-opacity-50"
                   required
@@ -236,15 +217,15 @@ function OpenModal({ label }: ModalProps) {
                 </label>
                 <select
                   name="trainingInterest"
-                  value={formValues.value.training}
+                  value={formValues.value.trainingInterest}
                   onChange={handleChange}
                   className="w-full px-6 py-3 border border-b-200 rounded-full bg-transparent mt-2 placeholder-opacity-50"
                   required
                 >
-                  <option class="bg-black text-white">
+                  <option value="Módulo I" class="bg-black text-white">
                     Módulo I
                   </option>
-                  <option class="bg-black text-white">
+                  <option value="Módulo II" class="bg-black text-white">
                     Módulo II
                   </option>
                   {/* Add other options as needed */}
@@ -276,7 +257,7 @@ function OpenModal({ label }: ModalProps) {
                 <input
                   type="date"
                   name="trainingDate"
-                  value={formValues.value.date}
+                  value={formValues.value.trainingDate}
                   onChange={handleChange}
                   className="w-full px-6 py-3 border border-b-200 rounded-full bg-transparent mt-2 placeholder-opacity-50"
                   required

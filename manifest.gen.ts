@@ -2,6 +2,7 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
+import * as $$$$$$$$$0 from "./actions/submitRsvp.ts";
 import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
 import * as $$$$$$$$$$$1 from "./apps/site.ts";
 import * as $$$1 from "./loaders/availableIcons.ts";
@@ -133,6 +134,9 @@ const manifest = {
     "deco-sites/mira-site/sections/Social/InstagramPosts.tsx": $$$$$$55,
     "deco-sites/mira-site/sections/Social/WhatsApp.tsx": $$$$$$56,
     "deco-sites/mira-site/sections/Theme/Theme.tsx": $$$$$$57,
+  },
+  "actions": {
+    "deco-sites/mira-site/actions/submitRsvp.ts": $$$$$$$$$0,
   },
   "apps": {
     "deco-sites/mira-site/apps/decohub.ts": $$$$$$$$$$$0,

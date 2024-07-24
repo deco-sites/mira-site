@@ -1,4 +1,4 @@
-import { ComponentChildren, toChildArray } from "preact";
+import { toChildArray } from "preact";
 import { AppContext } from "$store/apps/site.ts";
 import { useId } from "$store/sdk/useId.ts";
 import SectionHeading from "deco-sites/mira-site/components/ui/SectionHeading.tsx";
