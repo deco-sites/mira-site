@@ -1,4 +1,4 @@
-import { ComponentChildren, toChildArray } from "preact";
+import { toChildArray } from "preact";
 import { AppContext } from "$store/apps/site.ts";
 import { useId } from "$store/sdk/useId.ts";
 import SectionHeading from "deco-sites/mira-site/components/ui/SectionHeading.tsx";
@@ -61,62 +61,62 @@ function CustomerStories(
           <Slider className="pr-[2px] w-full flex max-md:flex-col md:carousel carousel-center gap-4 md:gap-2 col-span-full row-start-2 row-end-5 overflow-y-hidden">
             {clientCard?.map((card, index: number) => (
               <Slider.Item
-              index={index}
+                index={index}
               >
-              <label
-                htmlFor={`card${index}`}
-                data-size={index}
-                className="relative group card rounded-lg shadow-lg cursor-pointer  peer-checked:flex-1 peer-checked:w-[800px] peer-checked:min-w-[calc((100%-800px)/2)] flex-auto md:h-full md:max-h-[400px] lg:max-h-[610px]"
-              >
-                <input
-                  type="radio"
-                  name="card"
-                  id={`card${index}`}
-                  className="hidden peer transition-all ease-in-out duration-300"
-                  defaultChecked={false}
-                />
-                <Card {...card} index={index} />
-              </label>
+                <label
+                  htmlFor={`card${index}`}
+                  data-size={index}
+                  className="relative group card rounded-lg shadow-lg cursor-pointer  peer-checked:flex-1 peer-checked:w-[800px] peer-checked:min-w-[calc((100%-800px)/2)] flex-auto md:h-full md:max-h-[400px] lg:max-h-[610px]"
+                >
+                  <input
+                    type="radio"
+                    name="card"
+                    id={`card${index}`}
+                    className="hidden peer transition-all ease-in-out duration-300"
+                    defaultChecked={false}
+                  />
+                  <Card {...card} index={index} />
+                </label>
               </Slider.Item>
             ))}
           </Slider>
-          {items.length > 3 && isDesktop
-             && (
-                <div className="w-full flex justify-between items-center">
-                  <ul className="carousel items-end justify-center col-span-full gap-4 z-10 row-start-4">
-                    {items?.map((_, index) => (
-                      <li
-                        key={index}
-                        className={`carousel-item ${
-                          isDesktop && index % 3 !== 0 ? "hidden" : ""
-                        }`}
-                      >
-                        <Slider.Dot index={index}>
-                          <div className="w-2 h-2 rounded-full group-disabled:bg-b-200 bg-[#71717A] dark:group-disabled:bg-black border-[1px]" />
-                        </Slider.Dot>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="flex gap-[15px]">
-                    <Slider.PrevButton className="btn btn-circle !bg-[transparent] border border-b-200 dark:border-black">
-                      <Icon
-                        size={24}
-                        id="ArrowPointingLeft"
-                        strokeWidth={3}
-                        className="fill-b-200 group-hover:fill-black dark:fill-black"
-                      />
-                    </Slider.PrevButton>
-                    <Slider.NextButton className="btn btn-circle !bg-[transparent] border border-b-200 dark:border-black">
-                      <Icon
-                        size={24}
-                        id="ArrowPointingRight"
-                        strokeWidth={3}
-                        className="fill-b-200 group-hover:fill-black dark:fill-black"
-                      />
-                    </Slider.NextButton>
-                  </div>
+          {items.length > 3 && isDesktop &&
+            (
+              <div className="w-full flex justify-between items-center">
+                <ul className="carousel items-end justify-center col-span-full gap-4 z-10 row-start-4">
+                  {items?.map((_, index) => (
+                    <li
+                      key={index}
+                      className={`carousel-item ${
+                        isDesktop && index % 3 !== 0 ? "hidden" : ""
+                      }`}
+                    >
+                      <Slider.Dot index={index}>
+                        <div className="w-2 h-2 rounded-full group-disabled:bg-b-200 bg-[#71717A] dark:group-disabled:bg-black border-[1px]" />
+                      </Slider.Dot>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex gap-[15px]">
+                  <Slider.PrevButton className="btn btn-circle !bg-[transparent] border border-b-200 dark:border-black">
+                    <Icon
+                      size={24}
+                      id="ArrowPointingLeft"
+                      strokeWidth={3}
+                      className="fill-b-200 group-hover:fill-black dark:fill-black"
+                    />
+                  </Slider.PrevButton>
+                  <Slider.NextButton className="btn btn-circle !bg-[transparent] border border-b-200 dark:border-black">
+                    <Icon
+                      size={24}
+                      id="ArrowPointingRight"
+                      strokeWidth={3}
+                      className="fill-b-200 group-hover:fill-black dark:fill-black"
+                    />
+                  </Slider.NextButton>
                 </div>
-              )}
+              </div>
+            )}
 
           <SliderJS rootId={id} infinite />
         </div>

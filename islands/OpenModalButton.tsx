@@ -1,6 +1,8 @@
 import { useUI } from "$store/sdk/useUI.ts";
 import { h } from "preact";
-import { useEffect, useState } from "preact/hooks";
+import { useSignal } from "@preact/signals";
+import { useCallback, useEffect, useState } from "preact/hooks";
+import { invoke } from "$store/runtime.ts";
 import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
 
 interface ModalProps {
@@ -9,15 +11,30 @@ interface ModalProps {
 
 function OpenModal({ label }: ModalProps) {
     const { displayContactModal, displayConfirmationModal } = useUI();
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        message: '',
-        trainingMonth: '',
-        trainingInterest: '',
-        trainingDate: ''
+    const formValues = useSignal({
+        name: "",
+        company: "",
+        email: "",
+        phone: "",
+        message: "",
+        trainingInterest: "",
+        trainingMonth: "",
+        trainingDate: "",
     });
+    const loading = useSignal(false);
+
+    const onRsvp = useCallback(async () => {
+        loading.value = true;
+
+        const invokeResponse = await invoke({
+            key: 'deco-sites/mira-site/actions/submitRsvp.ts',
+            props: formValues.value
+        });
+
+        console.log(invokeResponse);
+
+        loading.value = false;
+    }, [formValues.value]);
 
     const handleClick = (e: MouseEvent) => {
         e.preventDefault();
@@ -26,30 +43,14 @@ function OpenModal({ label }: ModalProps) {
 
     const handleChange = (e: h.JSX.TargetedEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = e.currentTarget;
-        setFormData({ ...formData, [name]: value });
+        formValues.value = { ...formValues.value, [name]: value };
     };
 
     const handleSubmit = async (e: h.JSX.TargetedEvent<HTMLFormElement>) => {
         e.preventDefault();
+        onRsvp();
         displayContactModal.value = false;
         displayConfirmationModal.value = true;
-
-        try {
-            const response = await fetch('https://getform.io/f/bgdylxga', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
-            if (response.ok) {
-                console.log("Formulário enviado com sucesso!");
-            } else {
-                console.error("Erro ao enviar o formulário");
-            }
-        } catch (error) {
-            console.error("Erro ao enviar o formulário", error);
-        }
     };
 
     useEffect(() => {
@@ -65,7 +66,7 @@ function OpenModal({ label }: ModalProps) {
 
     return (
         <div>
-            {/* <button
+            <button
                 className="flex flex-nowrap px-4 md:px-8 py-2 items-center rounded-3xl border border-main text-main text-base gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer"
                 onClick={handleClick}
             >
@@ -76,28 +77,30 @@ function OpenModal({ label }: ModalProps) {
                     size={20}
                     strokeWidth={0.01}
                 />
-            </button> */}
+            </button>
 
             {displayContactModal.value && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 overflow-y-auto">
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center z-50 overflow-y-auto">
                     <div className="bg-black p-8 rounded-lg w-full max-w-xl relative overflow-y-auto max-h-screen">
-                        <button
-                            className="absolute top-4 right-4"
-                            onClick={() => {
-                                displayContactModal.value = false;
-                            }}
-                        >
-                            <Icon
-                                id="closeModal"
-                                class="text-main"
-                                size={32}
-                                strokeWidth={0.01}
-                            />
-                        </button>
-                        <h2 className="text-main text-2xl font-bold mb-8">
-                            FALE CONOSCO
-                        </h2>
-                        <form onSubmit={handleSubmit} class="text-white">
+                        <div class="flex items-center justify-between">
+                            <h2 className="text-main text-2xl font-bold">
+                                FALE CONOSCO
+                            </h2>
+                            <button
+                                className="top-4 right-4"
+                                onClick={() => {
+                                    displayContactModal.value = false;
+                                }}
+                            >
+                                <Icon
+                                    id="closeModal"
+                                    class="text-main"
+                                    size={32}
+                                    strokeWidth={0.01}
+                                />
+                            </button>
+                        </div>
+                        <form onSubmit={handleSubmit} class="text-white mt-10">
                             <div className="flex flex-col mb-8">
                                 <label class="font-medium">
                                     Seu nome <span class="text-main">*</span>
@@ -105,7 +108,7 @@ function OpenModal({ label }: ModalProps) {
                                 <input
                                     type="text"
                                     name="name"
-                                    value={formData.name}
+                                    value={formValues.value.name}
                                     onChange={handleChange}
                                     className="w-full px-6 py-3 border border-b-200 rounded-full bg-transparent mt-2 placeholder-opacity-50"
                                     required
@@ -118,7 +121,7 @@ function OpenModal({ label }: ModalProps) {
                                 <input
                                     type="email"
                                     name="email"
-                                    value={formData.email}
+                                    value={formValues.value.email}
                                     onChange={handleChange}
                                     className="w-full px-6 py-3 border border-b-200 rounded-full bg-transparent mt-2 placeholder-opacity-50"
                                     required
@@ -126,13 +129,12 @@ function OpenModal({ label }: ModalProps) {
                             </div>
                             <div className="flex flex-col mb-8">
                                 <label class="font-medium">
-                                    Seu telefone{" "}
-                                    <span class="text-main">*</span>
+                                    Seu telefone <span class="text-main">*</span>
                                 </label>
                                 <input
                                     type="tel"
                                     name="phone"
-                                    value={formData.phone}
+                                    value={formValues.value.phone}
                                     onChange={handleChange}
                                     className="w-full px-6 py-3 border border-b-200 rounded-full bg-transparent mt-2 placeholder-opacity-50"
                                     required
@@ -141,12 +143,11 @@ function OpenModal({ label }: ModalProps) {
                             </div>
                             <div className="flex flex-col mb-8">
                                 <label class="font-medium">
-                                    Para você, o treinamento ideal resolveria o
-                                    quê?
+                                    Para você, o treinamento ideal resolveria o quê?
                                 </label>
                                 <textarea
                                     name="message"
-                                    value={formData.message}
+                                    value={formValues.value.message}
                                     onChange={handleChange}
                                     className="w-full p-6 border border-b-200 rounded bg-transparent mt-2 placeholder-opacity-50"
                                     required
@@ -155,13 +156,12 @@ function OpenModal({ label }: ModalProps) {
                             </div>
                             <div className="flex flex-col mb-8 relative">
                                 <label class="font-medium">
-                                    Em qual mês você gostaria de realizar o seu
-                                    treinamento?{" "}
+                                    Em qual mês você gostaria de realizar o seu treinamento?{" "}
                                     <span class="text-main">*</span>
                                 </label>
                                 <select
                                     name="trainingMonth"
-                                    value={formData.trainingMonth}
+                                    value={formValues.value.trainingMonth}
                                     onChange={handleChange}
                                     className="w-full px-6 py-3 border border-b-200 rounded-full bg-transparent mt-2 placeholder-opacity-50"
                                     required
@@ -177,7 +177,7 @@ function OpenModal({ label }: ModalProps) {
                                     </option>
                                     {/* Add other options as needed */}
                                 </select>
-                                <div className="absolute right-6 top-2/3 transform -translate-y-1/2 pointer-events-none">
+                                <div className="absolute right-6 top-3/4 md:top-2/3 transform -translate-y-1/2 pointer-events-none">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="24"
@@ -199,25 +199,24 @@ function OpenModal({ label }: ModalProps) {
                             </div>
                             <div className="flex flex-col mb-8 relative">
                                 <label class="font-medium">
-                                    Qual dos treinamentos do nosso site você se
-                                    interessa mais?
+                                    Qual dos treinamentos do nosso site você se interessa mais?
                                 </label>
                                 <select
                                     name="trainingInterest"
-                                    value={formData.trainingInterest}
+                                    value={formValues.value.trainingInterest}
                                     onChange={handleChange}
                                     className="w-full px-6 py-3 border border-b-200 rounded-full bg-transparent mt-2 placeholder-opacity-50"
                                     required
                                 >
-                                    <option class="bg-black text-white">
+                                    <option value="Módulo I" class="bg-black text-white">
                                         Módulo I
                                     </option>
-                                    <option class="bg-black text-white">
+                                    <option value="Módulo II" class="bg-black text-white">
                                         Módulo II
                                     </option>
                                     {/* Add other options as needed */}
                                 </select>
-                                <div className="absolute right-6 top-2/3 transform -translate-y-1/2 pointer-events-none">
+                                <div className="absolute right-6 top-3/4 md:top-2/3 transform -translate-y-1/2 pointer-events-none">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="24"
@@ -244,7 +243,7 @@ function OpenModal({ label }: ModalProps) {
                                 <input
                                     type="date"
                                     name="trainingDate"
-                                    value={formData.trainingDate}
+                                    value={formValues.value.trainingDate}
                                     onChange={handleChange}
                                     className="w-full px-6 py-3 border border-b-200 rounded-full bg-transparent mt-2 placeholder-opacity-50"
                                     required
@@ -289,10 +288,13 @@ function OpenModal({ label }: ModalProps) {
             )}
             {displayConfirmationModal.value && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 overflow-y-auto">
-                    <div className="bg-black p-8 rounded-lg w-full max-w-xl relative overflow-y-auto max-h-[80vh]">
+                    <div className="bg-black p-8 rounded-lg w-full max-w-xl relative overflow-y-auto max-h-[80vh] shadow-sm">
                         <div class="flex items-center justify-between">
+                            <h2 className="text-main text-2xl font-bold">
+                                FALE CONOSCO
+                            </h2>
                             <button
-                                className="absolute top-4 right-4"
+                                className="top-4 right-4"
                                 onClick={() => {
                                     displayConfirmationModal.value = false;
                                 }}
@@ -304,19 +306,15 @@ function OpenModal({ label }: ModalProps) {
                                     strokeWidth={0.01}
                                 />
                             </button>
-                            <h2 className="text-main text-2xl font-bold mb-8">
-                                FALE CONOSCO
-                            </h2>
                         </div>
-                        <div class="flex flex-col items-center justify-center gap-10">
+                        <div class="flex flex-col items-center justify-center gap-10 mt-10">
                             <Icon
                                 id="CheckModal"
                                 class="text-main"
                                 size={96}
                             />
                             <p className="text-white text-4xl font-semibold leading-[120%] text-center">
-                                Obrigada! Entraremos em contato em no máximo
-                                {" "}
+                                Obrigada! Entraremos em contato em no máximo{" "}
                                 <span class="text-main f-roman font-bold">
                                     24h
                                 </span>.

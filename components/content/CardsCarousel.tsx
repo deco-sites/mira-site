@@ -4,7 +4,7 @@ import type { HTMLWidget } from "apps/admin/widgets.ts";
 import Card from "$store/components/content/Card.tsx";
 import type { Props as CardProps } from "$store/components/content/Card.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import { ComponentChildren, toChildArray } from "preact";
+import { toChildArray } from "preact";
 import { AppContext } from "$store/apps/site.ts";
 import { useId } from "$store/sdk/useId.ts";
 
