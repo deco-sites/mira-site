@@ -10,6 +10,11 @@ interface RsvpData {
   trainingDate: string;
 }
 
+// const isEmailValid = (email: string): boolean => {
+//   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//   return emailRegex.test(email);
+// };
+
 const fetchData = async (
   url: string,
   method: string,
@@ -34,11 +39,20 @@ const fetchData = async (
 
   const response = await fetch(url, options);
 
+  console.log("Resultado do POST: ", response.json())
+
   return response.json();
 };
 
-export default async (data: RsvpData, _req: Request, ctx: AppContext) => {
-  try{
+export default async function submitRvsp(data: RsvpData, _req: Request, ctx: AppContext) {
+  try {
+    // if (!isEmailValid(data.email)) {
+    //   return {
+    //     ok: false,
+    //     message: "Email inválido",
+    //   };
+    // }
+
     const url =
       `https://api.airtable.com/v0/${ctx.airtableBase}/tbla9t6kNxKI8AGwA`;
     const createRecord = await fetchData(url, "POST", ctx, {
@@ -61,10 +75,13 @@ export default async (data: RsvpData, _req: Request, ctx: AppContext) => {
         ok: false,
         status: "error",
       };
+    } else {
+      return {
+        ok: true,
+        status: "send",
+      };
     }
-  }
-  catch (error) {
-    // TODO: How to log to Hyperdx?
+  } catch (error) {
     console.error("error", error);
 
     return {
