@@ -81,7 +81,7 @@ function OpenModal({ label }: ModalProps) {
 
             {displayContactModal.value && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center z-50 overflow-y-auto">
-                    <div className="bg-black p-8 rounded-lg w-full max-w-xl relative overflow-y-auto max-h-screen">
+                    <div className="bg-black p-8 rounded-lg w-full max-w-xl relative overflow-y-auto max-h-svh lg:max-h-[80vh]">
                         <div class="flex items-center justify-between">
                             <h2 className="text-main text-2xl font-bold">
                                 FALE CONOSCO
