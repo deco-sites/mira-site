@@ -18,10 +18,10 @@ interface RsvpData {
 const fetchData = async (
   url: string,
   method: string,
-  _ctx: AppContext,
+  ctx: AppContext,
   body?: object,
 ) => {
-  const airtableToken = Deno.env.get("AIRTABLE_KEY");
+  const airtableToken = await ctx.airtableKey.get();
 
   const headers = {
     "Authorization": `Bearer ${airtableToken}`,
