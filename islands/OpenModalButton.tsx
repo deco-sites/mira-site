@@ -53,16 +53,16 @@ function OpenModal({ label }: ModalProps) {
         displayConfirmationModal.value = true;
     };
 
-    useEffect(() => {
-        if (displayContactModal.value || displayConfirmationModal.value) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "";
-        }
-        return () => {
-            document.body.style.overflow = "";
-        };
-    }, [displayContactModal.value, displayConfirmationModal.value]);
+    // useEffect(() => {
+    //     if (displayContactModal.value || displayConfirmationModal.value) {
+    //         document.body.style.overflow = "hidden";
+    //     } else {
+    //         document.body.style.overflow = "";
+    //     }
+    //     return () => {
+    //         document.body.style.overflow = "";
+    //     };
+    // }, [displayContactModal.value, displayConfirmationModal.value]);
 
     return (
         <div>
@@ -80,8 +80,8 @@ function OpenModal({ label }: ModalProps) {
             </button>
 
             {displayContactModal.value && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center z-50 overflow-y-auto">
-                    <div className="bg-black p-8 rounded-lg w-full max-w-xl relative overflow-y-auto max-h-svh lg:max-h-[80vh]">
+                <div className="inset-0 bg-black bg-opacity-50 flex items-end justify-center z-50 overflow-y-auto absolute">
+                    <div className="bg-black p-8 rounded-lg w-full max-w-xl overflow-y-auto max-h-svh lg:max-h-[80vh] lg:top-[50vh]">
                         <div class="flex items-center justify-between">
                             <h2 className="text-main text-2xl font-bold">
                                 FALE CONOSCO
@@ -287,7 +287,7 @@ function OpenModal({ label }: ModalProps) {
                 </div>
             )}
             {displayConfirmationModal.value && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 overflow-y-auto">
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center lg:items-end justify-center z-50 overflow-y-auto">
                     <div className="bg-black p-8 rounded-lg w-full max-w-xl relative overflow-y-auto max-h-[80vh] shadow-sm">
                         <div class="flex items-center justify-between">
                             <h2 className="text-main text-2xl font-bold">
