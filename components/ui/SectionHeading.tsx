@@ -1,6 +1,7 @@
 export interface HeadingProps {
   /** @format rich-text */
   title?: string;
+  /** @format rich-text */
   subtitle?: string;
 }
 
@@ -12,9 +13,9 @@ function SectionHeading({ title, subtitle }: HeadingProps) {
         dangerouslySetInnerHTML={{ __html: title ?? "" }}
       />
 
-      <p class="text-base md:text-[1.25rem] leading-[135%] md:leading-[150%] font-light">
-        {subtitle}
-      </p>
+      <p class="text-base md:text-[1.25rem] leading-[135%] md:leading-[150%] font-light"
+        dangerouslySetInnerHTML={{ __html: subtitle ?? "" }}
+      />
     </div>
   );
 }
