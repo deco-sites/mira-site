@@ -34,7 +34,7 @@ export default function PromoVideo(
         <div class="flex w-full justify-center">
           <iframe
             class="w-full lg:w-4/5 aspect-video rounded-xl border border-b-200 dark:border-0 p-0.5"
-            src={`https://www.youtube.com/embed/${video}`}
+            src={video}
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
