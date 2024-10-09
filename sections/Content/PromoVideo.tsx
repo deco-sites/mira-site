@@ -32,7 +32,7 @@ export default function PromoVideo(
             {isMobile ? (
               <>
                 <h2
-                  class="text-[1.5rem] md:text-[3.375rem] leading-7 md:leading-[110%] font-extrabold uppercase"
+                  class="text-[1.5rem] md:text-[3.375rem] leading-7 md:leading-[110%] font-extrabold"
                   dangerouslySetInnerHTML={{ __html: heading?.mobile?.title ?? "" }}
                 />
 
@@ -43,7 +43,7 @@ export default function PromoVideo(
             ) :
               <>
                 <h2
-                  class="text-[1.5rem] md:text-[3.375rem] leading-7 md:leading-[110%] font-extrabold uppercase"
+                  class="text-[1.5rem] md:text-[3.375rem] leading-7 md:leading-[110%] font-extrabold"
                   dangerouslySetInnerHTML={{ __html: heading?.desktop?.title ?? "" }}
                 />
 
