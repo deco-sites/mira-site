@@ -2,18 +2,20 @@ import { AppContext } from "$store/apps/site.ts";
 
 interface RichText{
   /** @format rich-text */
-  title?: string;
-  /** @format rich-text */
-  subtitle?: string;
+  content: string
+  fontFamily?: 'Inter' | 'Times';
 }
 
-interface HeadingProps {
-  mobile?: RichText;
-  desktop?: RichText;
+interface Heading{
+  title?: RichText;
+  subtitle?: RichText;
 }
 
 export interface Props {
-  heading?: HeadingProps;
+  heading?: {
+    mobile?: Heading;
+    desktop?: Heading;
+  }
   video: string;
 }
 
@@ -32,23 +34,23 @@ export default function PromoVideo(
             {isMobile ? (
               <>
                 <h2
-                  class="text-[1.5rem] md:text-[3.375rem] leading-7 md:leading-[110%] font-extrabold"
-                  dangerouslySetInnerHTML={{ __html: heading?.mobile?.title ?? "" }}
+                  class={`text-[1.5rem] md:text-[3.375rem] leading-7 font-extrabold ${heading?.mobile?.title?.fontFamily == 'Inter' ? '' : 'f-roman' } `}
+                  dangerouslySetInnerHTML={{ __html: heading?.mobile?.title?.content ?? "" }}
                 />
 
-                <p class="text-base md:text-[1.25rem] leading-[135%] md:leading-[150%] font-light"
-                  dangerouslySetInnerHTML={{ __html: heading?.mobile?.subtitle ?? "" }}
+                <p class={`text-base md:text-[1.25rem] leading-[135%] md:leading-[150%] font-light ${heading?.desktop?.title?.fontFamily == 'Inter' ? '' : 'f-roman' }`}
+                  dangerouslySetInnerHTML={{ __html: heading?.mobile?.subtitle?.content ?? "" }}
                 />
               </>
             ) :
               <>
                 <h2
-                  class="text-[1.5rem] md:text-[3.375rem] leading-7 md:leading-[110%] font-extrabold"
-                  dangerouslySetInnerHTML={{ __html: heading?.desktop?.title ?? "" }}
+                  class={`text-[1.5rem] md:text-[3.375rem] leading-7 font-extrabold ${heading?.mobile?.title?.fontFamily == 'Inter' ? '' : 'f-roman' } `}
+                  dangerouslySetInnerHTML={{ __html: heading?.desktop?.title?.content ?? "" }}
                 />
 
-                <p class="text-base md:text-[1.25rem] leading-[135%] md:leading-[150%] font-light"
-                  dangerouslySetInnerHTML={{ __html: heading?.desktop?.subtitle ?? "" }}
+                <p class={`text-base md:text-[1.25rem] leading-[135%] md:leading-[150%] font-light ${heading?.desktop?.title?.fontFamily == 'Inter' ? '' : 'f-roman' }`}
+                  dangerouslySetInnerHTML={{ __html: heading?.desktop?.subtitle?.content ?? "" }}
                 />
               </>
             }
