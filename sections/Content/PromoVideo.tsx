@@ -1,10 +1,15 @@
-import SectionHeading from "deco-sites/mira-site/components/ui/SectionHeading.tsx";
-import { HeadingProps } from "deco-sites/mira-site/components/ui/SectionHeading.tsx";
+import { AppContext } from "$store/apps/site.ts";
 
-export interface AccordionItems {
+interface RichText{
+  /** @format rich-text */
   title?: string;
-  /** @format textarea */
-  description?: string;
+  /** @format rich-text */
+  subtitle?: string;
+}
+
+interface HeadingProps {
+  mobile?: RichText;
+  desktop?: RichText;
 }
 
 export interface Props {
@@ -12,24 +17,42 @@ export interface Props {
   video: string;
 }
 
-const defaultHeading: HeadingProps = {
-  title: "CONVERSAS DE ALTO DESEMPENHO:",
-  subtitle:
-    "Confira nossa última conversa com Geraldo Thomaz (Co-CEO VTEX), Guilherme Rodrigues (CEO deco.cx) e Olga Loffredi (CEO Vanto Group) e descubra o impacto que comunicação de alto desempenho gerou nas suas empresas.",
-};
-
 export default function PromoVideo(
   {
-    heading = defaultHeading,
+    heading,
     video =
-      "https://drive.google.com/file/d/1wrvHfqvXQBM-0T4E1LhN0sFYmP-4fGl0/preview",
-  }: Props,
-) {
+    "https://drive.google.com/file/d/1wrvHfqvXQBM-0T4E1LhN0sFYmP-4fGl0/preview",
+    isMobile
+  }: ReturnType<typeof loader>) {
   return (
     <section class="w-full bg-black dark:bg-b-300">
       <div class="flex flex-col lg:max-w-[1228px] min-[1650px]:max-w-[1440px] text-b-200 py-16 md:py-20 lg:py-[104px] px-6 md:px-8 lg:px-16 mx-auto gap-10 md:gap-16 lg:gap-20 min-[1024px]:scale-90 min-[1650px]:scale-100">
         <div class="lg:text-center">
-          <SectionHeading {...heading} />
+          <div class="space-y-6 text-b-200">
+            {isMobile ? (
+              <>
+                <h2
+                  class="text-[1.5rem] md:text-[3.375rem] leading-7 md:leading-[110%] font-extrabold uppercase"
+                  dangerouslySetInnerHTML={{ __html: heading?.mobile?.title ?? "" }}
+                />
+
+                <p class="text-base md:text-[1.25rem] leading-[135%] md:leading-[150%] font-light"
+                  dangerouslySetInnerHTML={{ __html: heading?.mobile?.subtitle ?? "" }}
+                />
+              </>
+            ) :
+              <>
+                <h2
+                  class="text-[1.5rem] md:text-[3.375rem] leading-7 md:leading-[110%] font-extrabold uppercase"
+                  dangerouslySetInnerHTML={{ __html: heading?.desktop?.title ?? "" }}
+                />
+
+                <p class="text-base md:text-[1.25rem] leading-[135%] md:leading-[150%] font-light"
+                  dangerouslySetInnerHTML={{ __html: heading?.desktop?.subtitle ?? "" }}
+                />
+              </>
+            }
+          </div>
         </div>
         <div class="flex w-full justify-center">
           <iframe
@@ -37,7 +60,7 @@ export default function PromoVideo(
             src={video}
             title="YouTube video player"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
             referrerpolicy="strict-origin-when-cross-origin"
             allowFullScreen
           >
@@ -46,4 +69,11 @@ export default function PromoVideo(
       </div>
     </section>
   );
+}
+
+export function loader(props: Props, _req: Request, ctx: AppContext) {
+  return {
+    ...props,
+    isMobile: ctx.device !== 'desktop',
+  }
 }
