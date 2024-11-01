@@ -135,7 +135,7 @@ function Navbar({
                 <a
                   href={link.url}
                   aria-label={link.label}
-                  class="link no-underline hover:underline font-medium text-lg font-inter text-b-200"
+                  class="link no-underline hover:underline font-medium text-base xl:text-lg font-inter text-b-200"
                 >
                   {link.label}
                 </a>

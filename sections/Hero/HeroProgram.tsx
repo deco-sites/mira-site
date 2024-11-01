@@ -1,4 +1,4 @@
-import { ImageWidget } from "apps/admin/widgets.ts";
+import { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
 import Image from "apps/website/components/Image.tsx";
 import { useUI } from "$store/sdk/useUI.ts";
@@ -28,18 +28,20 @@ interface Content {
 }
 
 interface Training {
-  label: string;
-  /** @format rich-text */
-  smallDesc?: string;
-  /** @format rich-text */
-  bigDesc?: string;
+  smallDesc?: HTMLWidget;
+  bigDesc?: {
+    title: HTMLWidget;
+    subtitle: HTMLWidget;
+  };
   contents: Content[];
   video?: string;
 }
 
 export interface Props {
-  /** @format rich-text */
-  title?: string;
+  title?: {
+    top: HTMLWidget;
+    bottom: string;
+  }
   description?: string;
   programs?: {
     open?: Training;
@@ -47,11 +49,8 @@ export interface Props {
   };
 }
 
-const DEFAULT_TEXT =
-  '<span class="f-roman text-[1.25rem] md:text-[2rem] lg:text-[2.25rem] leading-[120%] md:leading-[110%] tracking-[-0.6px] md:tracking-[-0.96px] lg:tracking-[-1.08px] text-main font-normal mb-2 md:mb-4">Empresas nos contratam para</span>CRIAR EQUIPES DE <br> ALTO DESEMPENHO.';
-
 export default function HeroProgram({
-  title = DEFAULT_TEXT,
+  title,
   description = "CONHEÇA NOSSOS TREINAMENTOS",
   programs,
 }: Props) {
@@ -195,12 +194,18 @@ export default function HeroProgram({
         </div>
         {activeProgram.bigDesc &&
           (
-            <div
-              class="md:text-center mt-6 text-[1.25rem] md:text-[2rem] lg:text-[2.25rem] tracking-[-0.6px] md:tracking-[-0.96px] lg:tracking-[-1.08px]"
-              dangerouslySetInnerHTML={{
-                __html: activeProgram?.bigDesc,
-              }}
-            />
+            <div class="md:text-center mt-6 text-[1.25rem] md:text-[2rem] lg:text-[2.25rem] tracking-[-0.6px] md:tracking-[-0.96px] lg:tracking-[-1.08px]">
+              <h2 class="text-[1.5rem] md:text-[2.5rem] lg:text-[3.375rem] leading-[120%] md:leading-[110%] tracking-normal font-extrabold text-b-200"
+                dangerouslySetInnerHTML={{
+                  __html: activeProgram?.bigDesc.title,
+                }}
+              />
+              <h6 class="f-roman font-normal italic text-[1.25rem] md:text-[2rem] lg:text-[2.25rem] tracking-[-0.6px] md:tracking-[-0.96px] lg:tracking-[-1.08px] leading-[120%] md:leading-[110%] text-main"
+                dangerouslySetInnerHTML={{
+                  __html: activeProgram?.bigDesc.subtitle,
+                }}
+              />
+            </div>
           )}
         <div class="flex flex-col-reverse items-center min-[1850px]:flex-row gap-12 lg:gap-16">
           {displayProgram.value &&
@@ -381,9 +386,9 @@ export default function HeroProgram({
     <section class="flex flex-col justify-center items-center bg-black">
       <div class="flex flex-col items-center w-full lg:max-w-[1228px] min-[1650px]:max-w-[1440px] py-16 lg:pt-0 min-[1650px]:pt-16 lg:pb-[104px] px-6 md:px-8 lg:px-16 mx-auto min-[1024px]:scale-90 min-[1650px]:scale-100">
         <h1
-          class="flex flex-col font-extrabold text-b-200 text-[2.05rem] md:text-[4rem] lg:text-[5.0625rem] leading-[120%] lg:leading-[110%] text-center"
-          dangerouslySetInnerHTML={{ __html: title }}
-        />
+          class="flex flex-col font-extrabold text-b-200 text-[2.05rem] md:text-[4rem] lg:text-[5.0625rem] leading-[120%] lg:leading-[110%] text-center">
+            <span class="f-roman text-[1.25rem] md:text-[2rem] lg:text-[2.25rem] leading-[120%] md:leading-[110%] tracking-[-0.6px] md:tracking-[-0.96px] lg:tracking-[-1.08px] text-main font-normal mb-2 md:mb-4" dangerouslySetInnerHTML={{ __html: title?.top ?? '' }}/>{title?.bottom}
+        </h1>
 
         <div class="flex flex-col justify-center items-center w-full mt-12">
           <p class="font-bold lg:font-extrabold text-b-200 text-[1rem] leading-[135%] lg:leading-[150%]">
