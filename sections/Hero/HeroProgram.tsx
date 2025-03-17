@@ -81,58 +81,6 @@ export default function HeroProgram({
               __html: activeProgram?.smallDesc ?? "",
             }}
           />
-          <div class="hidden md:flex flex-col gap-2 items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="52"
-              height="52"
-              viewBox="0 0 52 52"
-              fill="none"
-            >
-              <g clip-path="url(#clip0_225_352)">
-                <path
-                  opacity="0.2"
-                  d="M25.9999 29.2999C31.3018 29.2999 35.5999 25.0018 35.5999 19.6999C35.5999 14.3979 31.3018 10.0999 25.9999 10.0999C20.698 10.0999 16.3999 14.3979 16.3999 19.6999C16.3999 25.0018 20.698 29.2999 25.9999 29.2999Z"
-                  fill="#FFBC4E"
-                />
-                <path
-                  d="M26 35.7C34.8366 35.7 42 28.5365 42 19.7C42 10.8634 34.8366 3.69995 26 3.69995C17.1634 3.69995 10 10.8634 10 19.7C10 28.5365 17.1634 35.7 26 35.7Z"
-                  stroke="#FFBC4E"
-                  stroke-width="3.2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M25.9999 29.2999C31.3018 29.2999 35.5999 25.0018 35.5999 19.6999C35.5999 14.3979 31.3018 10.0999 25.9999 10.0999C20.698 10.0999 16.3999 14.3979 16.3999 19.6999C16.3999 25.0018 20.698 29.2999 25.9999 29.2999Z"
-                  stroke="#FFBC4E"
-                  stroke-width="3.2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M35.5999 32.5V48.5L25.9979 43.7L16.3999 48.5V32.502"
-                  stroke="#FFBC4E"
-                  stroke-width="3.2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_225_352">
-                  <rect
-                    width="51.2"
-                    height="51.2"
-                    fill="white"
-                    transform="translate(0.399902 0.5)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
-            <div class="text-center text-b-200">
-              <p>Vanto Group</p>
-              <p class="font-extrabold">Parceiro Oficial</p>
-            </div>
-          </div>
           <div
             class={`w-1/3 flex ${
               activeProgram == programs?.exclusive ? "flex-row-reverse" : ""
