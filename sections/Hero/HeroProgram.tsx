@@ -81,64 +81,6 @@ export default function HeroProgram({
               __html: activeProgram?.smallDesc ?? "",
             }}
           />
-          <div
-            class={`w-1/3 flex ${
-              activeProgram == programs?.exclusive ? "flex-row-reverse" : ""
-            } md:hidden flex-col gap-2 items-center justify-center`}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="23"
-              height="23"
-              viewBox="0 0 23 23"
-              fill="none"
-            >
-              <g clip-path="url(#clip0_208_464)">
-                <path
-                  opacity="0.2"
-                  d="M11.5001 12.3929C13.7816 12.3929 15.6311 10.5433 15.6311 8.26186C15.6311 5.98037 13.7816 4.13086 11.5001 4.13086C9.21865 4.13086 7.36914 5.98037 7.36914 8.26186C7.36914 10.5433 9.21865 12.3929 11.5001 12.3929Z"
-                  fill="#FFBC4E"
-                />
-                <path
-                  d="M11.5 15.1472C15.3025 15.1472 18.385 12.0647 18.385 8.2622C18.385 4.45972 15.3025 1.3772 11.5 1.3772C7.69751 1.3772 4.61499 4.45972 4.61499 8.2622C4.61499 12.0647 7.69751 15.1472 11.5 15.1472Z"
-                  stroke="#FFBC4E"
-                  stroke-width="1.377"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M11.5001 12.3929C13.7816 12.3929 15.6311 10.5433 15.6311 8.26186C15.6311 5.98037 13.7816 4.13086 11.5001 4.13086C9.21865 4.13086 7.36914 5.98037 7.36914 8.26186C7.36914 10.5433 9.21865 12.3929 11.5001 12.3929Z"
-                  stroke="#FFBC4E"
-                  stroke-width="1.377"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M15.6311 13.77V20.655L11.4993 18.5895L7.36914 20.655V13.7709"
-                  stroke="#FFBC4E"
-                  stroke-width="1.377"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_208_464">
-                  <rect
-                    width="22.032"
-                    height="22.032"
-                    fill="white"
-                    transform="translate(0.483887)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
-            <div class="text-center text-b-200">
-              <p class="text-[10.71px]">Vanto Group</p>
-              <p class="text-xs font-extrabold">
-                Parceiro Oficial
-              </p>
-            </div>
-          </div>
         </div>
         {activeProgram.bigDesc &&
           (
