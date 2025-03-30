@@ -65,7 +65,7 @@ export default function HeroProgram({
               >
                 {/* Recommendation Header */}
                 {recommendation.header && (
-                  <div class="flex items-center justify-center text-b-200 text-[1.25rem] font-bold mb-8 gap-2">
+                  <div class="flex items-center justify-center text-b-200 text-[1.25rem] font-bold mb-2 gap-2">
                     {recommendation.header.prefix && (
                       <span>{recommendation.header.prefix}</span>
                     )}
@@ -73,7 +73,7 @@ export default function HeroProgram({
                       <img
                         src={recommendation.header.logo}
                         alt="Company logo"
-                        class="h-8 md:h-10 object-contain"
+                        class="max-h-5 md:max-h-7 object-contain"
                       />
                     )}
                     {recommendation.header.suffix && (
@@ -84,7 +84,7 @@ export default function HeroProgram({
 
                 {/* Recommendation Quote */}
                 <div
-                  class="w-full f-roman italic text-[1rem] text-main leading-[135%] text-center py-6"
+                  class="w-full italic text-[1rem] text-main leading-[135%] text-center"
                   dangerouslySetInnerHTML={{
                     __html: recommendation.quote,
                   }}
