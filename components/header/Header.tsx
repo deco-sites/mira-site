@@ -21,6 +21,7 @@ export interface WorkshopButton {
   textDesktop?: string;
   textMobile?: string;
   url?: string;
+  emailToCopy?: string;
 }
 
 export interface Props {
