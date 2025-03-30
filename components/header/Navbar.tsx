@@ -20,6 +20,7 @@ function Navbar({
     textMobile: "PARTICIPE",
     textDesktop: "PARTICIPE DO PRÓXIMO WORKSHOP",
     url: "https://www.miraeducacao.com.br/",
+    emailToCopy: "contato@miracompany.co",
   },
 }: {
   logo?: Logo;
@@ -71,6 +72,7 @@ function Navbar({
             {workshopButton.active && (
               <CopyButton
                 contactButton={workshopButton.textMobile}
+                emailToCopy={workshopButton.emailToCopy}
                 customClass="flex flex-nowrap px-3 py-2 items-center rounded-full border-none text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main dark:bg-sub"
                 iconSize={14}
               />
@@ -101,6 +103,7 @@ function Navbar({
             {workshopButton.active && (
               <CopyButton
                 contactButton={workshopButton.textMobile}
+                emailToCopy={workshopButton.emailToCopy}
                 customClass="flex flex-nowrap w-fit px-3 py-2 items-center rounded-full border-none text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main"
                 iconSize={14}
               />
@@ -143,6 +146,7 @@ function Navbar({
         <div class="flex items-center justify-end gap-6 xl:w-1/3">
           <CopyButton
             contactButton={workshopButton.textDesktop}
+            emailToCopy={workshopButton.emailToCopy}
             customClass="flex flex-nowrap px-3 py-2 items-center rounded-full border-none text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main dark:bg-sub"
             iconSize={14}
           />
