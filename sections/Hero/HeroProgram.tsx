@@ -1,19 +1,28 @@
-import { HTMLWidget } from "apps/admin/widgets.ts";
+import { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
+import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
+import Image from "apps/website/components/Image.tsx";
+import OpenModalButton from "$store/islands/OpenModalButton.tsx";
+
+interface CTA {
+  label?: string;
+  url?: string;
+}
 
 interface Content {
   /** @format rich-text */
+  recomendation?: string;
   title: string;
   description?: string;
   subtitle?: string;
+  infos: {
+    icon?: ImageWidget;
+    label?: string;
+  }[];
   details: {
     title?: string;
     list?: string[];
   };
-}
-
-interface Recommendation {
-  /** @format rich-text */
-  text: string;
+  buttons?: CTA[];
 }
 
 interface Training {
@@ -25,7 +34,6 @@ export interface Props {
     top: HTMLWidget;
     bottom: string;
   };
-  recommendations?: Recommendation[];
   programs?: {
     open?: Training;
   };
@@ -33,13 +41,12 @@ export interface Props {
 
 export default function HeroProgram({
   title,
-  recommendations,
   programs,
 }: Props) {
   const activeProgram = programs?.open;
 
   const renderContent = () => {
-    if (!activeProgram && !recommendations?.length) {
+    if (!activeProgram) {
       return null;
     }
 
@@ -49,76 +56,74 @@ export default function HeroProgram({
         class="flex flex-col gap-10 lg:gap-20 w-full"
       >
         {/* Recommendations Section */}
-        {recommendations && recommendations.length > 0 && (
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {recommendations.map((recommendation, index) => (
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {activeProgram?.contents.map((content, index) => (
+            content.recomendation && (
               <div
                 key={`recommendation-${index}`}
                 class="w-full font-bold text-[1.25rem] text-b-200 leading-[135%] text-center py-6"
                 dangerouslySetInnerHTML={{
-                  __html: recommendation.text,
+                  __html: content.recomendation,
                 }}
               />
-            ))}
-          </div>
-        )}
+            )
+          ))}
+        </div>
 
         {/* Modules Cards */}
-        {activeProgram && (
-          <div class="grid grid-cols-1 lg:grid-cols-2 w-full h-full gap-6">
-            {activeProgram.contents.map((content, index) => (
-              <div
-                class="flex flex-col justify-end w-full"
-                key={index}
-              >
-                <div class="flex-1 flex flex-col justify-between w-full border border-b-200 rounded-3xl overflow-hidden">
-                  <div class="flex items-center justify-between gap-1 bg-main text-black p-6">
-                    <div>
-                      <h2 class="font-extrabold text-[1rem] md:text-[1.5rem] min-[1650px]:text-[2rem]">
-                        {content.title}
-                      </h2>
-                      <p class="f-roman text-[1rem] md:text-[1.5rem] md:leading-[110%] min-[1650px]:text-[2rem] italic">
-                        {content.description}
-                      </p>
-                    </div>
-                    <div class="flex flex-col gap-1.5">
-                      <span class="flex justify-center border-2 font-bold border-black text-sm leading-[120%] md:text-[1.125rem] min-[1650px]:text-2xl px-2 md:px-4 py-1 rounded-full">
-                        REMOTO
-                      </span>
-                      <span class="flex justify-center border-2 font-bold border-black text-sm leading-[120%] md:text-[1.125rem] min-[1650px]:text-2xl px-2 md:px-4 py-1 rounded-full">
-                        PRESENCIAL
-                      </span>
-                    </div>
-                  </div>
-
-                  <div class="flex flex-col bg-black p-6 md:p-8 flex-1">
-                    <p class="text-b-200 text-center uppercase font-bold text-xl md:text-2xl leading-[150%] mb-6">
-                      {content.subtitle}
+        <div class="grid grid-cols-1 lg:grid-cols-2 w-full h-full gap-6">
+          {activeProgram?.contents.map((content, index) => (
+            <div
+              class="flex flex-col justify-end w-full"
+              key={index}
+            >
+              <div class="flex-1 flex flex-col justify-between w-full border border-b-200 rounded-3xl overflow-hidden">
+                <div class="flex items-center justify-between gap-1 bg-main text-black p-6">
+                  <div>
+                    <h2 class="font-extrabold text-[1rem] md:text-[1.5rem] min-[1650px]:text-[2rem]">
+                      {content.title}
+                    </h2>
+                    <p class="f-roman text-[1rem] md:text-[1.5rem] md:leading-[110%] min-[1650px]:text-[2rem] italic">
+                      {content.description}
                     </p>
+                  </div>
+                  <div class="flex flex-col gap-1.5">
+                    <span class="flex justify-center border-2 font-bold border-black text-sm leading-[120%] md:text-[1.125rem] min-[1650px]:text-2xl px-2 md:px-4 py-1 rounded-full">
+                      REMOTO
+                    </span>
+                    <span class="flex justify-center border-2 font-bold border-black text-sm leading-[120%] md:text-[1.125rem] min-[1650px]:text-2xl px-2 md:px-4 py-1 rounded-full">
+                      PRESENCIAL
+                    </span>
+                  </div>
+                </div>
 
-                    <div class="text-b-200 font-normal text-lg md:text-xl">
-                      {content.details?.title && (
-                        <p class="text-main text-lg md:text-xl font-bold mb-4">
-                          {content.details.title}
-                        </p>
+                <div class="flex flex-col bg-black p-6 md:p-8 flex-1">
+                  <p class="text-b-200 text-center uppercase font-bold text-xl md:text-2xl leading-[150%] mb-6">
+                    {content.subtitle}
+                  </p>
+
+                  <div class="text-b-200 font-normal text-lg md:text-xl">
+                    {content.details?.title && (
+                      <p class="text-main text-lg md:text-xl font-bold mb-4">
+                        {content.details.title}
+                      </p>
+                    )}
+
+                    <div class="mb-8">
+                      {content.details?.list && (
+                        <ul class="list-disc pl-5 space-y-2">
+                          {content.details.list.map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ul>
                       )}
-
-                      <div class="mb-8">
-                        {content.details?.list && (
-                          <ul class="list-disc pl-5 space-y-2">
-                            {content.details.list.map((item, i) => (
-                              <li key={i}>{item}</li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        )}
+            </div>
+          ))}
+        </div>
       </div>
     );
   };
