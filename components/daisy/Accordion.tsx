@@ -1,5 +1,5 @@
 import { useSignal } from "@preact/signals";
-import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
+import Icon from "site/components/ui/Icon.tsx";
 
 interface Child {
   title?: string;

@@ -1,7 +1,7 @@
 import { ImageWidget } from "apps/admin/widgets.ts";
 import SlideBanner, {
   Props as SlideBannerProps,
-} from "deco-sites/mira-site/sections/Miscellaneous/Slide.tsx";
+} from "site/sections/Miscellaneous/Slide.tsx";
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 
 export interface WidgetData {

@@ -1,4 +1,4 @@
-import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
+import Icon from "site/components/ui/Icon.tsx";
 import { VideoWidget } from "apps/admin/widgets.ts";
 import type { App as A, AppContext } from "deco/mod.ts";
 

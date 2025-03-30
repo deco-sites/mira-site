@@ -1,6 +1,6 @@
 import Accordion from "$store/islands/Accordion.tsx";
-import SectionHeading from "deco-sites/mira-site/components/ui/SectionHeading.tsx";
-import { HeadingProps } from "deco-sites/mira-site/components/ui/SectionHeading.tsx";
+import SectionHeading from "site/components/ui/SectionHeading.tsx";
+import { HeadingProps } from "site/components/ui/SectionHeading.tsx";
 
 export interface AccordionItems {
   title?: string;

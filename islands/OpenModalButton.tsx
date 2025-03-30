@@ -3,7 +3,7 @@ import { h } from "preact";
 import { useSignal } from "@preact/signals";
 import { useCallback, useEffect, useState } from "preact/hooks";
 import { invoke } from "$store/runtime.ts";
-import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
+import Icon from "site/components/ui/Icon.tsx";
 
 interface ModalProps {
     label: string;
@@ -27,7 +27,7 @@ function OpenModal({ label }: ModalProps) {
         loading.value = true;
 
         const invokeResponse = await invoke({
-            key: 'deco-sites/mira-site/actions/submitRsvp.ts',
+            key: 'site/actions/submitRsvp.ts',
             props: formValues.value
         });
 

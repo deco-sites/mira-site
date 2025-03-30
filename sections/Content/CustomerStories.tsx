@@ -1,8 +1,8 @@
 import { toChildArray } from "preact";
 import { AppContext } from "$store/apps/site.ts";
 import { useId } from "$store/sdk/useId.ts";
-import SectionHeading from "deco-sites/mira-site/components/ui/SectionHeading.tsx";
-import { HeadingProps } from "deco-sites/mira-site/components/ui/SectionHeading.tsx";
+import SectionHeading from "site/components/ui/SectionHeading.tsx";
+import { HeadingProps } from "site/components/ui/SectionHeading.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import Card from "$store/components/cards/CustomerCards.tsx";

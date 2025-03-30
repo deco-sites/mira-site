@@ -1,8 +1,8 @@
 import { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
-import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
+import Icon from "site/components/ui/Icon.tsx";
 import Image from "apps/website/components/Image.tsx";
 import { useUI } from "$store/sdk/useUI.ts";
-import ToggleButton from "deco-sites/mira-site/islands/ToggleButton.tsx";
+import ToggleButton from "site/islands/ToggleButton.tsx";
 import OpenModalButton from "$store/islands/OpenModalButton.tsx";
 
 interface CTA {

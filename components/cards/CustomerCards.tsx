@@ -1,6 +1,6 @@
 import Image from "apps/website/components/Image.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
-import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
+import Icon from "site/components/ui/Icon.tsx";
 
 export interface Props {
   label?: string;
