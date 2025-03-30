@@ -29,12 +29,14 @@ export interface Props {
   programs?: {
     open?: Training;
   };
+  videoUrl?: string;
 }
 
 export default function HeroProgram({
   title,
   recommendations,
   programs,
+  videoUrl,
 }: Props) {
   const activeProgram = programs?.open;
 
@@ -137,6 +139,23 @@ export default function HeroProgram({
         <div class="mt-[3.75rem] flex w-full justify-center items-center gap-6">
           {renderContent()}
         </div>
+
+        {videoUrl && (
+          <div class="w-full mt-10 lg:mt-20">
+            <div class="flex w-full justify-center">
+              <iframe
+                class="w-full lg:w-4/5 aspect-video rounded-xl border border-b-200 dark:border-0 p-0.5"
+                src={videoUrl}
+                title="Video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              >
+              </iframe>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
