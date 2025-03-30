@@ -57,43 +57,40 @@ export default function HeroProgram({
       >
         {/* Recommendations Section */}
         {recommendations && recommendations.length > 0 && (
-          <div class="flex flex-col w-full">
-            {/* Recommendations List */}
-            <div class="flex flex-col gap-16">
-              {recommendations.map((recommendation, index) => (
-                <div
-                  key={`recommendation-${index}`}
-                  class="flex flex-col w-full"
-                >
-                  {/* Recommendation Header */}
-                  {recommendation.header && (
-                    <div class="flex items-center justify-center text-b-200 text-[1.75rem] md:text-[2.25rem] font-bold mb-8 gap-3">
-                      {recommendation.header.prefix && (
-                        <span>{recommendation.header.prefix}</span>
-                      )}
-                      {recommendation.header.logo && (
-                        <img
-                          src={recommendation.header.logo}
-                          alt="Company logo"
-                          class="h-8 md:h-10 object-contain"
-                        />
-                      )}
-                      {recommendation.header.suffix && (
-                        <span>{recommendation.header.suffix}</span>
-                      )}
-                    </div>
-                  )}
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {recommendations.map((recommendation, index) => (
+              <div
+                key={`recommendation-${index}`}
+                class="w-full"
+              >
+                {/* Recommendation Header */}
+                {recommendation.header && (
+                  <div class="flex items-center justify-center text-b-200 text-[1.25rem] font-bold mb-8 gap-2">
+                    {recommendation.header.prefix && (
+                      <span>{recommendation.header.prefix}</span>
+                    )}
+                    {recommendation.header.logo && (
+                      <img
+                        src={recommendation.header.logo}
+                        alt="Company logo"
+                        class="h-8 md:h-10 object-contain"
+                      />
+                    )}
+                    {recommendation.header.suffix && (
+                      <span>{recommendation.header.suffix}</span>
+                    )}
+                  </div>
+                )}
 
-                  {/* Recommendation Quote */}
-                  <div
-                    class="w-full font-bold text-[1.25rem] text-b-200 leading-[135%] text-center py-6"
-                    dangerouslySetInnerHTML={{
-                      __html: recommendation.quote,
-                    }}
-                  />
-                </div>
-              ))}
-            </div>
+                {/* Recommendation Quote */}
+                <div
+                  class="w-full f-roman italic text-[1rem] text-main leading-[135%] text-center py-6"
+                  dangerouslySetInnerHTML={{
+                    __html: recommendation.quote,
+                  }}
+                />
+              </div>
+            ))}
           </div>
         )}
 
