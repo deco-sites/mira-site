@@ -29,7 +29,7 @@ export default function Card(
             src={photo}
             width={328}
             height={450}
-            class={`group/img object-cover bg-center aspect-[327/180] md:aspect-[328/450] w-[100vw] lg::w-full h-full group-has-[:checked]:opacity-0 transition-all ease-in-out duration-100`}
+            class={`group/img object-cover bg-center aspect-[327/180] md:aspect-[328/450] w-[100vw] lg::w-full h-full group-has-[:checked]:opacity-0 transition-all ease-in-out duration-100 grayscale`}
             loading="lazy"
             decoding="async"
             fetchPriority="low"
