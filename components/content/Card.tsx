@@ -38,7 +38,7 @@ export default function Card(props: Props) {
         <div class="flex justify-start w-full items-center gap-4">
           <Image
             src={photo ?? ""}
-            class="aspect-[1/1] object-contain rounded-lg "
+            class="aspect-[1/1] object-contain rounded-lg grayscale"
             width={IMAGE_WIDTH}
             height={IMAGE_WIDTH}
             loading="lazy"
