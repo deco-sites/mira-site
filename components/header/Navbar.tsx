@@ -1,6 +1,6 @@
 import Icon from "$store/components/ui/Icon.tsx";
 import Image from "apps/website/components/Image.tsx";
-import { useSignal } from "@preact/signals";
+import CopyButton from "$store/islands/CopyButton.tsx";
 import {
   Logo,
   Navigation,
@@ -27,20 +27,6 @@ function Navbar({
   workshopButton?: WorkshopButton;
   themeController?: boolean;
 }) {
-  const clicked = useSignal(false);
-
-  const copyToClipboard = async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      clicked.value = true;
-      setTimeout(() => {
-        clicked.value = false;
-      }, 2000);
-    } catch (err) {
-      console.log("Falha ao copiar o texto", err);
-    }
-  };
-
   return (
     <>
       {/* Mobile Version */}
@@ -83,18 +69,11 @@ function Navbar({
           </div>
           <div class="flex gap-2">
             {workshopButton.active && (
-              <button
-                onClick={() => copyToClipboard(workshopButton.url as string)}
-                type="button"
-                class="flex flex-nowrap px-3 py-2 items-center rounded-full border-none text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main dark:bg-sub"
-              >
-                <p class="text-nowrap">
-                  {!clicked.value
-                    ? workshopButton.textMobile
-                    : "EMAIL COPIADO!"}
-                </p>
-                <Icon id="ExternalLink" size={14} strokeWidth={0.01} />
-              </button>
+              <CopyButton
+                contactButton={workshopButton.textMobile}
+                customClass="flex flex-nowrap px-3 py-2 items-center rounded-full border-none text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main dark:bg-sub"
+                iconSize={14}
+              />
             )}
           </div>
         </div>
@@ -120,18 +99,11 @@ function Navbar({
               ))}
             </ul>
             {workshopButton.active && (
-              <button
-                onClick={() => copyToClipboard(workshopButton.url as string)}
-                type="button"
-                class="flex flex-nowrap w-fit px-3 py-2 items-center rounded-full border-none text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main"
-              >
-                <p class="text-nowrap">
-                  {!clicked.value
-                    ? workshopButton.textMobile
-                    : "EMAIL COPIADO!"}
-                </p>
-                <Icon id="ExternalLink" size={14} strokeWidth={0.01} />
-              </button>
+              <CopyButton
+                contactButton={workshopButton.textMobile}
+                customClass="flex flex-nowrap w-fit px-3 py-2 items-center rounded-full border-none text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main"
+                iconSize={14}
+              />
             )}
           </div>
         </aside>
@@ -169,16 +141,11 @@ function Navbar({
           </ul>
         </div>
         <div class="flex items-center justify-end gap-6 xl:w-1/3">
-          <button
-            onClick={() => copyToClipboard(workshopButton.url as string)}
-            type="button"
-            class="flex flex-nowrap px-3 py-2 items-center rounded-full border-none text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main dark:bg-sub"
-          >
-            <p class="text-nowrap">
-              {!clicked.value ? workshopButton.textDesktop : "EMAIL COPIADO!"}
-            </p>
-            <Icon id="ExternalLink" size={14} strokeWidth={0.01} />
-          </button>
+          <CopyButton
+            contactButton={workshopButton.textDesktop}
+            customClass="flex flex-nowrap px-3 py-2 items-center rounded-full border-none text-black text-[13px] leading-tight gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main dark:bg-sub"
+            iconSize={14}
+          />
         </div>
       </div>
     </>
