@@ -1,6 +1,7 @@
 import Icon from "deco-sites/mira-site/components/ui/Icon.tsx";
 import { VideoWidget } from "apps/admin/widgets.ts";
 import type { App as A, AppContext } from "deco/mod.ts";
+import { useSignal } from "@preact/signals";
 
 export interface WorkshopButton {
   text?: string;
@@ -33,6 +34,20 @@ export default function HeroFlats({
   },
   heroVideo,
 }: Props) {
+  const clicked = useSignal(false);
+
+  const copyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      clicked.value = true;
+      setTimeout(() => {
+        clicked.value = false;
+      }, 2000);
+    } catch (err) {
+      console.log("Falha ao copiar o texto", err);
+    }
+  };
+
   return (
     <section class="flex flex-col lg:h-[calc(100vh-80.25px)] justify-center items-center bg-black dark:bg-b-300">
       {
@@ -49,13 +64,16 @@ export default function HeroFlats({
           <p class="text-left text-b-200 text-base lg:text-[1.25rem] min-[1650px]:text-[1.5rem] lg:leading-[2.25rem] dark:text-black">
             {description}
           </p>
-          <a
+          <button
+            onClick={() => copyToClipboard(workshopButton.url as string)}
+            type="button"
             class="flex flex-nowrap px-3 py-2 items-center rounded-full border-none font-light text-black text-sm md:text-base leading-[150%] tracking-[-0.14px] md:tracking-normal gap-2 hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer bg-main dark:bg-sub"
-            href={workshopButton.url}
           >
-            <p class="text-nowrap">{workshopButton.text}</p>
+            <p class="text-nowrap">
+              {!clicked.value ? workshopButton.text : "EMAIL COPIADO!"}
+            </p>
             <Icon id="ExternalLink" size={14} strokeWidth={0.01} />
-          </a>
+          </button>
         </div>
         <video
           width="616"
