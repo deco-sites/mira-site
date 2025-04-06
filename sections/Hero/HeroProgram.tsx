@@ -123,7 +123,7 @@ export default function HeroProgram({
                   </div>
 
                   <div class="flex flex-col bg-black p-6 md:p-8 flex-1">
-                    <p class="text-b-200 text-center uppercase font-bold text-xl md:text-2xl leading-[150%] mb-6">
+                    <p class="text-b-200 text-center uppercase font-bold text-xl md:text-2xl leading-[150%] mb-6 h-[120px] flex items-center justify-center">
                       {content.subtitle}
                     </p>
 
