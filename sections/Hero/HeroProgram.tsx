@@ -65,7 +65,7 @@ export default function HeroProgram({
               >
                 {/* Recommendation Header */}
                 {recommendation.header && (
-                  <div class="flex items-center justify-center text-b-200 text-[1.25rem] font-bold mb-2 gap-2">
+                  <div class="flex items-center justify-center text-b-200 text-[1rem] sm:text-[1.25rem] font-bold mb-2 gap-2">
                     {recommendation.header.prefix && (
                       <span>{recommendation.header.prefix}</span>
                     )}
@@ -84,7 +84,7 @@ export default function HeroProgram({
 
                 {/* Recommendation Quote */}
                 <div
-                  class="w-full italic text-[1rem] text-main leading-[135%] text-center"
+                  class="w-full italic text-[0.80rem] text-main leading-[135%] text-center"
                   dangerouslySetInnerHTML={{
                     __html: recommendation.quote,
                   }}
