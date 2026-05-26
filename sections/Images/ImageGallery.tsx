@@ -80,9 +80,9 @@ const DEFAULT_PROPS: Props = {
   "banners": [
     {
       "srcMobile":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/b531631b-8523-4feb-ac37-5112873abad2",
+        "https://decoims.com/mira-site/e2f387fe-099b-4c73-9961-99bee2d881de/b00140565292e994.jpg",
       "srcDesktop":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/b531631b-8523-4feb-ac37-5112873abad2",
+        "https://decoims.com/mira-site/e2f387fe-099b-4c73-9961-99bee2d881de/b00140565292e994.jpg",
       "alt": "Fashion",
       "href": "/",
     },
@@ -90,23 +90,23 @@ const DEFAULT_PROPS: Props = {
       "alt": "Fashion",
       "href": "/",
       "srcMobile":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/1125d938-89ff-4aae-a354-63d4241394a6",
+        "https://decoims.com/mira-site/c3f8762c-9870-4542-acf6-d43753d67a3c/5a74f902da0bc031.jpg",
       "srcDesktop":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/1125d938-89ff-4aae-a354-63d4241394a6",
+        "https://decoims.com/mira-site/c3f8762c-9870-4542-acf6-d43753d67a3c/5a74f902da0bc031.jpg",
     },
     {
       "srcMobile":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/dd1e2acb-ff80-49f9-8f56-1deac3b7a42d",
+        "https://decoims.com/mira-site/142e5eea-14de-455e-93b0-fc5e1ce992c2/22f0a68a97a32230.jpg",
       "srcDesktop":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/dd1e2acb-ff80-49f9-8f56-1deac3b7a42d",
+        "https://decoims.com/mira-site/142e5eea-14de-455e-93b0-fc5e1ce992c2/22f0a68a97a32230.jpg",
       "href": "/",
       "alt": "Fashion",
     },
     {
       "srcMobile":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/0b85ba2d-48b1-4f5b-b619-7f4a7f50b455",
+        "https://decoims.com/mira-site/11059a8d-19c3-4f31-905b-8b689d459976/aa22385caef90351.jpg",
       "srcDesktop":
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/0b85ba2d-48b1-4f5b-b619-7f4a7f50b455",
+        "https://decoims.com/mira-site/11059a8d-19c3-4f31-905b-8b689d459976/aa22385caef90351.jpg",
       "alt": "Fashion",
       "href": "/",
     },

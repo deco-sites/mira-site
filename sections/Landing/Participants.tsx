@@ -19,7 +19,7 @@ export interface Props {
 }
 
 const DEFAULT_IMAGE =
-  "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4763/682eb374-def2-4e85-a45d-b3a7ff8a31a9";
+  "https://decoims.com/mira-site/b780f010-3221-43fc-9b2f-0c83eb16da1a/cb5f7d2d6113adbe.png";
 
 export default function BlogPosts({
   title = "Here's a component for you to showcase your blogposts",

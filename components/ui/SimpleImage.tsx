@@ -15,9 +15,9 @@ export default function SimpleImage({
   position = "Left",
   width,
   mobile =
-    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2753/b2278d2d-2270-482b-98d4-f09d5f05ba97",
+    "https://decoims.com/mira-site/0b631943-e376-431e-a703-938c32a96057/582958b887e90f47.png",
   desktop =
-    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2753/b2278d2d-2270-482b-98d4-f09d5f05ba97",
+    "https://decoims.com/mira-site/0b631943-e376-431e-a703-938c32a96057/582958b887e90f47.png",
 }: Props) {
   const style = {
     width: {

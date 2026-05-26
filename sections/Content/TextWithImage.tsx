@@ -26,7 +26,7 @@ export default function Services({
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam id tincidunt dapibus, elit arcu ultricies massa, quis ornare nisl libero vitae urna.",
       image:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/3290/488e5dc5-9a24-48c9-9795-09b97394fb5f",
+        "https://decoims.com/mira-site/bf3bcc85-9e1c-4abc-8c8f-56ee0851f272/068f68e3ff14afa1.png",
       placement: "left",
     },
   ],
