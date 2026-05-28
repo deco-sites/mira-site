@@ -4,11 +4,6 @@ import manifest, { Manifest } from "../manifest.gen.ts";
 import { type App, type AppContext as AC } from "@deco/deco";
 type WebsiteApp = ReturnType<typeof website>;
 export type Props = {
-    /**
-     * @title Active Commerce Platform
-     * @description Choose the active ecommerce platform
-     * @default custom
-     */
     airtableKey: Secret;
     airtableBase: string;
     airtableTable: string;

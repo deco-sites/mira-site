@@ -2,11 +2,6 @@
   "audiences": [
     {
       "__resolveType": "everyone"
-    },
-    {
-      "__resolveType": "vtex/loaders/proxy.ts",
-      "includeSiteMap": [],
-      "extraPathsToProxy": []
     }
   ],
   "__resolveType": "$live/handlers/routesSelection.ts"
