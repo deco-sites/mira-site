@@ -5,6 +5,7 @@
     "site/": "./",
     "deco/": "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.199.1/",
     "$live/": "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.199.1/",
+    "$live/handlers/routesSelection.ts": "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.153.0/compat/$live/handlers/routesSelection.ts",
     "apps/": "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.153.0/",
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
     "preact": "npm:preact@10.23.1",
