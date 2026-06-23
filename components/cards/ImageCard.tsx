@@ -58,7 +58,7 @@ function Card(
     buttonText = "Button",
     style,
     image =
-      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2753/b2278d2d-2270-482b-98d4-f09d5f05ba97",
+      "https://decoims.com/mira-site/a855f32d-b9c7-4899-8f47-74810ee067b8/b2278d2d-2270-482b-98d4-f09d5f05ba97.jpg",
   }: Props,
 ) {
   const position = style?.textPosition === "Bottom" ? "Bottom" : "Top";

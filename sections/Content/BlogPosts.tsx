@@ -45,7 +45,7 @@ function BlogPosts({
     {
       href: "/",
       image:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/80a115a2-3623-4e9b-aec7-42601c2ff416",
+        "https://decoims.com/mira-site/e950d7aa-9cef-482d-b6d7-ba8e0daccca8/80a115a2-3623-4e9b-aec7-42601c2ff416.jpg",
       alt: "alternative text",
       label: "Title Post",
       description: "Description",
@@ -55,7 +55,7 @@ function BlogPosts({
     {
       href: "/",
       image:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/80a115a2-3623-4e9b-aec7-42601c2ff416",
+        "https://decoims.com/mira-site/e950d7aa-9cef-482d-b6d7-ba8e0daccca8/80a115a2-3623-4e9b-aec7-42601c2ff416.jpg",
       alt: "alternative text",
       label: "Title Post",
       description: "Description",
@@ -65,7 +65,7 @@ function BlogPosts({
     {
       href: "/",
       image:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/80a115a2-3623-4e9b-aec7-42601c2ff416",
+        "https://decoims.com/mira-site/e950d7aa-9cef-482d-b6d7-ba8e0daccca8/80a115a2-3623-4e9b-aec7-42601c2ff416.jpg",
       alt: "alternative text",
       label: "Title Post",
       description: "Description",

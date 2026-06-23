@@ -29,7 +29,7 @@ const PLACEMENT = {
 };
 
 const DEFAULT_IMAGE =
-  "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4763/772e246e-1959-46ac-a309-3f25ab20af6f";
+  "https://decoims.com/mira-site/f235c61c-17ff-4150-a283-71bbabaf8b37/772e246e-1959-46ac-a309-3f25ab20af6f.jpg";
 
 export default function ImageWithParagraph({
   title = "Here's an intermediate size heading you can edit",

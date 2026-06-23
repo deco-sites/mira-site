@@ -22,14 +22,14 @@ const IMAGES = [
   {
     altText: "deco",
     dark:
-      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/637e8601-6b86-4979-aa97-68013a2a60fd",
+      "https://decoims.com/mira-site/60b57103-c6ab-47ae-86d5-69d4f1ce4634/637e8601-6b86-4979-aa97-68013a2a60fd.jpg",
     active: false,
     href: "",
   },
   {
     altText: "deco",
     dark:
-      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/637e8601-6b86-4979-aa97-68013a2a60fd",
+      "https://decoims.com/mira-site/60b57103-c6ab-47ae-86d5-69d4f1ce4634/637e8601-6b86-4979-aa97-68013a2a60fd.jpg",
     active: false,
     href: "",
   },

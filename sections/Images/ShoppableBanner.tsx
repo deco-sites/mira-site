@@ -68,7 +68,7 @@ const DEFAULT_PROPS: Props = {
   pins: [],
   image: {
     mobile:
-      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/cac2dc1c-48ac-4274-ad42-4016b0bbe947",
+      "https://decoims.com/mira-site/c1e88147-b150-443f-939e-37c0a6afc21a/cac2dc1c-48ac-4274-ad42-4016b0bbe947.jpg",
     altText: "Fashion",
   },
 };
