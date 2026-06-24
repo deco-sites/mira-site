@@ -93,17 +93,17 @@ const DEFAULT_PROPS: Props = {
       alt: "a",
       href: "a",
       srcMobile:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/82727553-f670-4e7c-b9c2-9452aed1955f",
+        "https://decoims.com/mira-site/9b02f898-670e-47ff-91c3-7aed9586b8fb/82727553-f670-4e7c-b9c2-9452aed1955f.jpg",
       srcDesktop:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/7b3a9d75-57a5-43cf-a3c5-f689a997f24e",
+        "https://decoims.com/mira-site/f55a42fe-1b1b-4e70-8e73-34b3530dbbea/7b3a9d75-57a5-43cf-a3c5-f689a997f24e.jpg",
     },
     {
       alt: "a",
       href: "a",
       srcMobile:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/c5c6bdf6-5555-488c-8b14-719e4158dea6",
+        "https://decoims.com/mira-site/2e4611e2-b78b-49bd-a1bd-76db80fc9011/c5c6bdf6-5555-488c-8b14-719e4158dea6.jpg",
       srcDesktop:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/3e2b7824-d75c-4704-8d32-621bfc9b20cf",
+        "https://decoims.com/mira-site/586bea81-eedd-4218-8b03-654966923321/3e2b7824-d75c-4704-8d32-621bfc9b20cf.jpg",
     },
   ],
   borderRadius: {

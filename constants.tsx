@@ -404,11 +404,11 @@ export const layoutClasses = {
 
 export const imgPh = {
   "sq":
-    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/ff6bb37e-0eab-40e1-a454-86856efc278e",
+    "https://decoims.com/mira-site/3653ecb6-71c4-429d-9d07-d5f1bb276c2b/ff6bb37e-0eab-40e1-a454-86856efc278e.jpg",
   "rct-sm":
-    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/b0f8ca2d-9c83-48f7-88de-1a6e6d1e9eb7",
+    "https://decoims.com/mira-site/7fb59e4f-afa9-4e00-8074-0b8e4b27cccc/b0f8ca2d-9c83-48f7-88de-1a6e6d1e9eb7.jpg",
   "rct-lg":
-    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/6fe9404a-f69c-472a-b521-78f6c1f87326",
+    "https://decoims.com/mira-site/8bb22744-496f-4af5-985d-00bcb3e30d10/6fe9404a-f69c-472a-b521-78f6c1f87326.jpg",
 };
 
 export const colorClasses = {

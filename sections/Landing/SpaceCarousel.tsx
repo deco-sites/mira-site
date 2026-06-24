@@ -49,9 +49,9 @@ const DEFAULT_PROPS = {
       href: "https://www.deco.cx/",
       label: "deco.cx",
       mobile:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/24278f9e-412d-4a8a-b2d3-57353bb1b368",
+        "https://decoims.com/mira-site/a80a38a3-0cea-4138-9d66-a074ef911ff3/24278f9e-412d-4a8a-b2d3-57353bb1b368.jpg",
       desktop:
-        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/afa2c07c-74f4-496d-8647-5cc58f48117b",
+        "https://decoims.com/mira-site/e1c1aa8d-bb14-4171-ba8a-6d034c3f90a6/afa2c07c-74f4-496d-8647-5cc58f48117b.jpg",
     },
   ],
   preload: true,

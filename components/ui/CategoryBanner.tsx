@@ -28,9 +28,9 @@ const DEFAULT_PROPS = {
     {
       image: {
         mobile:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/91102b71-4832-486a-b683-5f7b06f649af",
+          "https://decoims.com/mira-site/a98fc622-bb58-485f-81fd-b5f199bb55f6/91102b71-4832-486a-b683-5f7b06f649af.jpg",
         desktop:
-          "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/ec597b6a-dcf1-48ca-a99d-95b3c6304f96",
+          "https://decoims.com/mira-site/7d737479-2a60-49d6-a06b-1d20f13843b5/ec597b6a-dcf1-48ca-a99d-95b3c6304f96.jpg",
         alt: "a",
       },
       title: "Woman",
